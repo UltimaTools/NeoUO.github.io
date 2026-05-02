@@ -1,7 +1,383 @@
+2026-05-02
+  disable autologin if running with CUO
 
-Initial base copied from RazorEnhanced
+2026-05-01
+  misc cleanup: remove unicode separators, UI and persistence refactoring
+  refactor ClassicUO plugin init and add ServerConfig.FindServerEntry
+  fix Velopack locator for plugin mode by using WindowsVelopackLocator with known install path
+  change the way the next version is calculated to use release tags
+  upgrade the actions for beta and stable
+  Update beta build metadata [skip ci]
+  Update alpha build metadata [skip ci]
+  change channel default to alpha
+  Update alpha build metadata [skip ci]
+  Replace Engine.RootPath with AppPaths, add movable data directory support
+  Update alpha build metadata [skip ci]
 
-Version 1.0.0.3 [3/3/2026]
-  Dramoor added hotkey functionality to the Macros
-  Macro files moved from Macros/ into Scripts/ folder
+2026-04-30
+  some adjustment to fix the version label
 
+2026-05-01
+  Update alpha build metadata [skip ci]
+
+2026-04-30
+  Fix alpha action error
+  Linux/Mono cross-platform fixes and case-insensitive file resolution
+  fix Makfile to work for linux
+  an initialization didnt work for older compiler. just rename a var
+
+2026-04-29
+  Try a better delta process
+  Try a better delta process
+  remove cleanup
+  Update alpha build metadata [skip ci]
+  remove files used for delta generation
+  Update alpha build metadata [skip ci]
+  remove files used for delta generation
+  Update alpha build metadata [skip ci]
+  add back in delta generation
+  Update alpha build metadata [skip ci]
+
+2026-04-28
+  Remove some references to razor, and fix install version showing on window bar
+  Update alpha build metadata [skip ci]
+  Fixed the release mode hand at close
+  Update alpha build metadata [skip ci]
+  drop all delta code for now
+  hack the previous packages code
+  enable screen resize fields, add address validity check to crypt, output dll locations
+
+2026-04-27
+  change delta logic to only add changed files into delta
+
+2026-04-28
+  Update alpha build metadata [skip ci]
+
+2026-04-27
+  add web pages and dont autobuild for web page changes
+  add web pages
+  add chat to journal
+  clean up old text
+  add gtk schemas to BuildSupplementalFiles
+  Revert "WIP: File redirect layer for login.cfg and asset redirection (not ready yet)"
+  WIP: File redirect layer for login.cfg and asset redirection (not ready yet)
+  Fix client window close hang when clicking X
+  Refactor Crypt.cpp into focused modules
+  Update alpha build metadata [skip ci]
+  init profile manager earlier so its available
+  make alpha the default channel, and add build to window titles
+  Update alpha build metadata [skip ci]
+  setup gtk Settings directories, build will package extra files
+  Update alpha build metadata [skip ci]
+
+2026-04-26
+  change the velopack source to use a githubsource class
+
+2026-04-27
+  Update alpha build metadata [skip ci]
+
+2026-04-26
+  enable tls 1.2
+
+2026-04-27
+  Update alpha build metadata [skip ci]
+
+2026-04-26
+  Specify the user selected channel and correct github url
+  provide github information so that the update knows where to get updates
+  add the --url option so that the update knows where to get updates
+
+2026-04-27
+  Update alpha build metadata [skip ci]
+
+2026-04-26
+  use better pattern to match the nupkg for previous build
+
+2026-04-27
+  Update alpha build metadata [skip ci]
+
+2026-04-26
+  use better pattern to match the nupkg for previous build
+  use better pattern to match the nupkg for previous build
+  use better pattern to match the nupkg for previous build
+  use better pattern to match the nupkg for previous build
+  Add step to retrieve gtk3 - ucrt64 and package dll with release
+  Add step to retrieve gtk3 - ucrt64 and package dll with release
+  Update alpha build metadata [skip ci]
+  fix yet another bug
+  change sorting to correct for .9 sorting above .12
+  Update alpha build metadata [skip ci]
+  ensure all steps use bash shell
+  experimental change to use bash shell
+  ensure current build is never removed
+  Update alpha build metadata [skip ci]
+  Allow alpha workflow to be triggered manually
+  Update alpha build metadata [skip ci]
+  create directories and show on technical tab
+  Update stable build metadata [skip ci]
+  Update beta build metadata [skip ci]
+
+2026-04-25
+  Create separate workflows for beta and stable - identical to alpha with only suffix changed
+  Add channel suffix to all release tags (alpha/beta/stable) and skip builds on workflow/docs changes
+
+2026-04-26
+  Update alpha build metadata [skip ci]
+
+2026-04-25
+  Fix release workflow cleanup - use PowerShell syntax like alpha, update README with build instructions
+
+2026-04-26
+  Update alpha build metadata [skip ci]
+
+2026-04-25
+  Add Velopack auto-update system with alpha/beta/stable channels
+  Add Velopack auto-update system with alpha/beta/stable channels
+
+2026-04-24
+  Avoid ISCC command-line parsing: use /J include file for SourceDir define
+  Add Python editor syntax highlighting and auto-completion
+  added in argument parsing to match the RE options
+  Improve autologin, logic and ui
+  back to a* planning, with improved follow path
+  Revert "Implement tile-based queued pathfinding with sequence tracking"
+  Revert "This is broken, but I want to keep the history before I revert"
+  This is broken, but I want to keep the history before I revert
+
+2026-04-23
+  Implement tile-based queued pathfinding with sequence tracking
+  allow Crypt.dll to do movement keys. add a jps pathfinder to Pathfinder.cs experimentally
+  Add function to send keys via crypt.dll and enhance editor some
+  add seasons.txt to Config directory
+  Removed the WinFormsStub
+  Optimize IPC packet sending with data-ready flag
+
+2026-04-22
+  spellgrid and login data
+  implement the mobileInspector
+
+2026-04-21
+  Fix underscore display in screenshot filenames
+  Fix screenshot list click handling
+  Fix screenshot preview issues
+  Add screenshot list and preview to Screen Shots tab
+  Replace Advanced tab with Screen Shots tab
+  Hook up 'Take Screenshot Now' button and add proper error handling
+  Remove unused VideoCapture.cs and Accord.Video.FFMPEG (x86-only)
+  Fix all compiler warnings
+  Fix CSharpEngine.cs for Roslyn Scripting API compilation
+  Migrate C# scripting engine from CodeDOM to Roslyn Scripting API
+  Replace reflection-based initialization with direct calls
+  Add AppPaths for user data vs application files separation
+  WIP: Attempted Roslyn scripting engine integration
+  Clean up the profile managment
+  Multi-target net472+net10.0, Roslyn scripting engine, Linux mono build
+
+2026-04-16
+  Code style improvements and CounterStatBarSubTab updates
+  Fix skills duplication and add column sorting to SkillsTab
+  Change Win32MessageWindow to a singleton
+  fix the titlebar menu
+
+2026-04-15
+  changed to zlib.net-multiplatform, and removed unused DllImport functions
+
+2026-04-14
+  Add Statics.FindClearGroundLocations, cleaned up some more Move stuff
+
+2026-04-13
+  cleanup for Move drop on ground
+  Clean up Move class and migrate DragDropManager usages to Move
+  ensure Gtk queue is going through Customloop, more testing on Move.cs
+
+2026-04-12
+  Refactor Move class and agent threads for improved reliability and performance
+  Add hotkey registration system to filter keys at Crypt.dll level
+  Added a Move class that correctly impements uo's item moving protocol
+  Add Move class for proper lift/drop packet flow with agent UI logging
+
+2026-04-11
+  Add reusable SetupCustomTreeView helper in TabBase
+  tested and cleaned uo autoloot functionality
+  Add Scavenger property editing UI and persistence integration
+  Add AutolootEditPropsDialog with property editing UI
+  backup in case I totally mess this up
+  remove timing logs
+  fix setting weapon specials off in UOSteam script from RE git cherry-pick -n 800bfaf8
+
+2026-04-10
+  Packet handling performance optimizations
+  another Persistence refactoring
+  Persistence refactoring: Remove duplicate functions
+  Dress/Arm agent improvements
+
+2026-04-09
+  All Agent tabs layed out
+  a little more cleanup on scavenger
+  partial layout of agent windows
+
+2026-04-08
+  commit bootstrap, and mofe prototype NLog.config file to BuildSupplemental
+  Fix UO_Copilot not terminating after launching ClassicUO
+  change from Utility.logger to class specifi logger for clearer logging
+  Clean up for logging so that logs alwayd go in our exe directory
+  Fix BandageHeal race condition with TimeWithBuff mode
+  Have watchdog kill process if it doesn't exist within 5 seconds
+
+2026-04-07
+  remove zlib.dll that is no longer used
+  Replace native zlib with managed ZLib implementation
+  Replace native zlib.dll with managed ZLib implementation
+  Fix BandageHeal enable checkbox state
+  Remove BandageHeal UI stubs and use Persistence layer directly
+  Fix exception when UO Folder picker is clicked first
+  Disable Launch buttons when required paths are empty
+  Update .gitignore: track build/ scripts, ignore installer output
+  Add Inno Setup installer build scripts
+  Add Set Hotkey dialog to Scripting tab context menu
+  Add HotkeysChanged event to synchronize hotkey updates across UI
+  remove some unusged variables
+  Consolidate dynamic scripting subtabs into single ScriptSubTabBase class
+  Merge EnhancedScript into Scripts to eliminate redundant abstraction
+  Add Python script compilation caching with Preload optimization
+  Refactor BandageHeal threading and buff timing
+  Refactor persistence model to store Graphics/Color/Serial as proper integer types
+
+2026-04-06
+  Replace WinForms RE_MessageBox stub with GTK3 MessageBox implementation
+  Remove hotkey fields from hotkey.json, default to None when loading
+  Refactor hotkey system to use Hotkey type internally, Keys only at boundaries
+  add a null check for a termination race condition
+  Fix skill updates in SkillsTab to properly display and highlight changed skills
+  Refactor HandleComm to minimize mutex lock time
+  Fix SetCustomTitle to properly divide buffer and message handling
+  Refactor Crypt IPC to CryptIPC and Win32MessageWindow
+
+2026-04-05
+  Move game size application to ComputerSettingsSubTab and apply on login
+  Rename Razor Settings to Computer Settings and fix game size initialization
+  Dynamic scripting tabs with built-in Python editor
+  Add Window scaling
+  Some cleanup for bandage window
+  Added a GtkViewport that Glade expects
+  turn off Gtk debug
+
+2026-04-04
+  some bandage agent cleanup but its still ugly
+  Add process watchdog to monitor client.exe and auto-exit if it crashes
+  Fix CustomTreeView implementation and SkillsTab OnPopulate
+  Implement CustomTreeView to fix right-click context menu issue
+  Implement SkillsTab with full functionality
+  Refactor Target configuration to use Persistence classes directly
+  Add SuspendSave batching support and optimize persistence saves
+  Clean up hotkey wrappers from Settings.HotKey class
+  Refactor HotKeyData to use Persistence.Hotkey instead of Keys enum
+  Move hotkey Read functions from Settings.HotKey to HotKey.cs
+  Partial 2 cleanup of Settings.cs
+  Partial cleanup of Settings.cs
+  Key usage isolated, and key naming consistent
+  now key formatting looks right, but there are 11 conversion functions
+
+2026-04-03
+  Hotkey for scripts working, but key display is varied
+  Refactored a lot of Settings.cs, but there are still 120 errors without it. Code works
+  Refactor Settings wrapper classes to use Persistence directly
+  Complete m_Dataset removal: delete General class, migrate SpellGrid to ToolbarsConfig
+
+2026-04-02
+  a single script executed with a hotkey, needs more work
+  Rename the Config namespace and directory to Persistence
+  Add documentation for MSB3277 warning suppression
+  Fix 79 MSBuild and C# compiler warnings
+  code needed this to build
+
+2026-04-01
+  missed a file
+  Fix hotkey panel layout and dynamic macro/script loading
+  Fix Settings.cs migration code namespace references
+  Migrate from old Settings API to new Config system and implement Keys/HotKeys GTK3 support
+  Add missing Config elements so we can convert from old settings part 2
+  Add missing Config elements so we can convert from old settings
+
+2026-03-31
+  Add Theme menu to Server selection window
+  Fix some of the Settings that should be Config
+  remove fake Server.shards, added preliminary Theme setting
+  Implement Gump Inspector window
+  Convert ItemInspectorWindow to use GtkBuilder
+  enabled inspector window
+
+2026-03-29
+  Fix SubclassWndProc log flood and double-PatchMemory; fix GetPosition null ptr
+  Reapply "Fix WM_UONETEVENT command delivery via window subclassing (64-bit IPC)"
+  Revert "Fix WM_UONETEVENT command delivery via window subclassing (64-bit IPC)"
+
+2026-03-28
+  Fix WM_UONETEVENT command delivery via window subclassing (64-bit IPC)
+  Migrate uo_copilot to 64-bit (AnyCPU/x64) with shared-memory IPC bridge
+
+2026-03-27
+  Add platform-aware FileDialogHelper; fix Add Script button on Windows x86
+  Redesign MacrosTab and ScriptingTab UI; refactor scripting sub-tabs
+  checking all NLog config
+  Implement OSI auto-login with exponential back-off
+  Add stub handlers for server->client login sequence packets
+  Implement ShowLauncher auto-launch: skip shard selector when disabled
+
+2026-03-26
+  Enabl;e changelog to go to uo-copilot.github.io
+  Implement ChangeLog dialog: fetch changelog.html and display in scrollable GTK window
+  Move Smart Always on Top and Enable Remote Control to own rows
+  Fix RazorSettingsSubTab layout; implement opacity; remove Show In setting
+  Remove ForceSize/DisableGameSize/ProfilesComboBox stubs from IMainWindow
+  Remove IMainWindow filter/geometry stubs; apply game size on profile load
+  Route all IMainWindow filter/config stubs directly to FiltersConfig and OptionsConfig
+  Remove IMainWindow colour/flag stubs; route all callers directly to OptionsConfig and FiltersConfig
+  Options tab UI overhaul; migrate hue settings to OptionsConfig; add HueSelectorDialog
+
+2026-03-25
+  Profile change propagation to all UI tabs; GTK thread safety via CustomMainLoop
+  Fix GTK re-entrancy overflows, move RememberPasswords to ServerEntry, wire up profile persistence
+  get rid of RunModal() code, and fix save password logic
+
+2026-03-24
+  Integrate Config classes, fix resource namespace, password migration, and cleanup
+  fix fo some projects being skipped
+  maybe fix build skip issue
+  Move uo_copilot to first position in solution for default startup project
+  Add x86 GTK runtime NuGet package and sequential UI modal loop
+
+2026-03-23
+  Add a set of theme files for example to deployment
+  Remove tracked .vs/ files and fix .gitignore
+  Add documentation and inline comments to Crypt and Loader projects
+  Migrate UltimaSDK to SDK-style csproj, add central package management, clean up dead files
+  Migrate UltimaSDK to SDK-style csproj and add central package management
+  Fix NLog version conflict and restore deployment directory copy
+
+2026-03-22
+  Replace old uo_copilot project with SDK-style csproj (GTK working)
+  WinForms → GTK3 migration
+
+2026-03-20
+  Fix engine cross-references to WinForms; port Config layer from ShardManager
+  Remove WinForms UI; GTK3 is now the only UI
+
+2026-03-19
+  Add GTK3 UI layer and IMainWindow abstraction interface
+  Remove FastColoredTextBox dependency; introduce stub + fix language file naming
+
+2026-03-06
+  Clean up language translation file
+  change uo_copilot to build for x86 instead of x64
+  disable protobuf compile
+  pick up a missed file
+  merge changes for macro hotkey
+
+2026-02-13
+  lots of renames
+  add msys2 script to repo
+  added generator script for protobuf files and checked them in as they dont change often
+  Some directories renamed, but builds
+  Initial file copy
+  Initial empty directory
