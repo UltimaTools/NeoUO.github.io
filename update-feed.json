@@ -1,8 +1,8 @@
 {
-  "alpha-net10-linux": {
+  "alpha-net472": {
     "version": "0.0.103",
-    "tag": "v0.0.103-alpha-net10-linux",
-    "baseUrl": "https://github.com/UltimaTools/UO_CoPilot.github.io/releases/download/v0.0.103-alpha-net10-linux/",
-    "publishedAt": "2026-06-26T09:35:12Z"
+    "tag": "v0.0.103-alpha-net472",
+    "baseUrl": "https://github.com/UltimaTools/UO_CoPilot.github.io/releases/download/v0.0.103-alpha-net472/",
+    "publishedAt": "2026-06-26T09:39:51Z"
   }
 }
