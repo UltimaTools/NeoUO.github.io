@@ -21,69 +21,67 @@ jobs:
       with:
         path: website_repo
     
-    # Get latest version information from local latest.json
+    # Get latest version information from the net472 update feed
     - name: Get latest version information
       id: get_version
       run: |
-        $latestJsonPath = "website_repo/latest.json"
-        $latestJson = Get-Content -Path $latestJsonPath | ConvertFrom-Json
-        $version = $latestJson.version
-        $zipUrl = $latestJson.zipUrl
+        $feedPath = "website_repo/update-feed-alpha-net472.json"
+        $feed = Get-Content -Path $feedPath | ConvertFrom-Json
+        $version = $feed.version
+        $tag = $feed.tag
+        $baseUrl = $feed.baseUrl
+        $portableUrl = "$baseUrl" + "uo-copilot-net472-alpha-Portable.zip"
         Write-Host "Latest version: $version"
-        Write-Host "ZIP URL: $zipUrl"
+        Write-Host "Tag: $tag"
+        Write-Host "Portable URL: $portableUrl"
         echo "version=$version" >> $env:GITHUB_OUTPUT
-        echo "zip_url=$zipUrl" >> $env:GITHUB_OUTPUT
+        echo "tag=$tag" >> $env:GITHUB_OUTPUT
+        echo "portable_url=$portableUrl" >> $env:GITHUB_OUTPUT
       shell: pwsh
-    
-    # Download the zip file using the URL from latest.json
-    - name: Download release ZIP
+
+    # Download the Portable zip from the GitHub release
+    - name: Download Portable ZIP
       run: |
-        $zipUrl = "${{ steps.get_version.outputs.zip_url }}"
-        $outputFile = "RazorEnhanced-${{ steps.get_version.outputs.version }}.zip"
-        Write-Host "Downloading $zipUrl to $outputFile"
-        Invoke-WebRequest -Uri $zipUrl -OutFile $outputFile
+        $portableUrl = "${{ steps.get_version.outputs.portable_url }}"
+        $outputFile = "uo-copilot-portable.zip"
+        Write-Host "Downloading $portableUrl to $outputFile"
+        Invoke-WebRequest -Uri $portableUrl -OutFile $outputFile
       shell: pwsh
-    
-    # Extract the ZIP file
+
+    # Extract the Portable zip
     - name: Extract ZIP file
       run: |
-        # Create extraction directory
         New-Item -ItemType Directory -Path "extracted" -Force
-        
-        # Use the downloaded file
-        $outputFile = "RazorEnhanced-${{ steps.get_version.outputs.version }}.zip"
+        $outputFile = "uo-copilot-portable.zip"
         Write-Host "Extracting ZIP: $outputFile"
         7z x $outputFile -o"./extracted"
       shell: pwsh
-      
+
     - name: Display extracted files
       run: dir extracted
-  
-    # Try to run directly   
-    - name: Run RE to trigger the creation of AutoComplete.json
+
+    # Run the UO-CoPilot portable exe to generate AutoComplete.json
+    # --autoDocsOnly writes to ExeDirectory/Config/AutoComplete.json
+    - name: Run UO-CoPilot --autoDocsOnly
       run: |
-        cd extracted
-        RazorEnhanced.exe --autoDocsOnly
-        dir Config
+        cd extracted\current
+        .\uo-copilot-net472.exe --autoDocsOnly
+        dir Config\AutoComplete.json
       shell: cmd
-    
-    - name: Display directories
-      run: dir extracted/Config/
-      
-    # Build Docs (use the AutoDoc.py file from the repository)
+
+    # Generate HTML docs from AutoComplete.json using autodoc.py from the repo
+    # autodoc.py reads ./Config/AutoComplete.json and writes to ./doc/api/
     - name: Run autodoc.py
       run: |
-        cd extracted
-        # Copy AutoDoc.py from the repository
-        Copy-Item "../website_repo/doc/autodoc.py" -Destination "."
-        # Run AutoDoc
+        cd extracted\current
+        Copy-Item "..\..\website_repo\doc\autodoc.py" -Destination "." -Force
         python autodoc.py
       shell: pwsh
-    
-    # Copy generated docs to the repository
+
+    # Copy generated docs back to the repository
     - name: Update repo documentation
       run: |
-        Copy-Item -Path "extracted/doc/*" -Destination "website_repo/doc/" -Recurse -Force -Verbose
+        Copy-Item -Path "extracted/current/doc/*" -Destination "website_repo/doc/" -Recurse -Force -Verbose
       shell: pwsh
 
     # Commit changes
