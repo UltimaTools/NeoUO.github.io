@@ -6,6 +6,8 @@ name: AutoDoc API
 on:
   workflow_dispatch:
   push:
+    paths:
+      - 'update-feed-*.json'
 
 permissions:
   contents: write
