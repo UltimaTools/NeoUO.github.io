@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'update-feed-*.json'
+      - 'update-feed-alpha-net472.json'
 
 permissions:
   contents: write
