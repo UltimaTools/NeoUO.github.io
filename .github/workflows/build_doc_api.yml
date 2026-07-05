@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
   push:
 
+permissions:
+  contents: write
+
 jobs:
   rebuild_docs:
     runs-on: windows-latest
@@ -16,7 +19,6 @@ jobs:
     - name: Checkout website repo
       uses: actions/checkout@v3
       with:
-        repository: RazorEnhanced/razorenhanced.github.io
         path: website_repo
     
     # Get latest version information from local latest.json
@@ -99,6 +101,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         directory: website_repo
-        github_token: ${{ secrets.DEPLOYMENT_TOKEN }}
-        repository: RazorEnhanced/razorenhanced.github.io
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: main
