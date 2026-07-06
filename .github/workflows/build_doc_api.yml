@@ -11,6 +11,9 @@ on:
     paths:
       - 'update-feed-alpha-net472.json'
 
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
 permissions:
   contents: write
 
@@ -21,7 +24,7 @@ jobs:
     steps:
     # Checkout the repository (without LFS)
     - name: Checkout website repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: website_repo
     
@@ -98,10 +101,10 @@ jobs:
         git commit -m "GitHub Actions build_docs" || echo "No changes to commit"
       shell: pwsh
 
-    # Push changes using dedicated action
+    # Push changes using git directly
     - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        directory: website_repo
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: main
+      run: |
+        cd website_repo
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        git push origin main
+      shell: pwsh

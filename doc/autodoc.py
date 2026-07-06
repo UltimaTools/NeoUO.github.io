@@ -2,7 +2,7 @@
 Script: AutoDoc.py
 Version: 0.1
 Author: Dalamar Kanan
-Project: Razor Enhanced - AutoDoc
+    Project: UO-Copilot - AutoDoc
     
 Contact: 
     https://discord.gg/2NmXqQ5QAk (@RE Dev)
@@ -10,9 +10,9 @@ Contact:
     cesare.montresor@gmail.com 
     
 Abstract:
-    This script produce RazorEnhanced API documentation (only HTML atm) by reading the *Scripting API Data* contained in Config/AutoComplete.json
-    The AutoComplete.json file it produced by the counterpart of this script inside RarzorEnhaced engine:
-    https://github.com/RazorEnhanced/RazorEnhanced/blob/release/0.8/Razor/RazorEnhanced/AutoDoc.cs 
+    This script produce UO-Copilot API documentation (only HTML atm) by reading the *Scripting API Data* contained in Config/AutoComplete.json
+    The AutoComplete.json file it produced by the counterpart of this script inside UO-Copilot engine:
+    https://github.com/UltimaTools/UO_Copilot/blob/GTK-64bit/uo_copilot/AutoDoc.cs 
     
 
 Classes:
@@ -66,12 +66,12 @@ def main():
     
     # generates the main menu from the list of classes
     menu = adhtml.MainMenuHTML()
-    index_html = HTML.LeftRightPage(version+menu,"","RazorEnhanced API Documentation")
+    index_html = HTML.LeftRightPage(version+menu,"","UO-Copilot API Documentation")
     adhtml.WriteToFile("index.html".format(), index_html)
     
     # generates doc page for the Player class ( usefull for testing ) 
     # player_html = adhtml.ClassHTML("Player")
-    # player_html = HTML.BasePage(player_html,"Player - RazorEnhanced API")
+    # player_html = HTML.BasePage(player_html,"Player - UO-Copilot API")
     # adhtml.WriteToFile("Player.html", player_html)
     
     ## generates doc pages for All the classes.
@@ -79,7 +79,7 @@ def main():
         className = cls["itemClass"]
         filename = "{}.html".format(className)
         player_html = adhtml.ClassHTML(className)
-        player_html = HTML.LeftRightPage(version+menu,player_html,"{} - RazorEnhanced API".format(className))
+        player_html = HTML.LeftRightPage(version+menu,player_html,"{} - UO-Copilot API".format(className))
         adhtml.WriteToFile(filename, player_html, debug=debug)
      
 class HTML():
@@ -292,7 +292,7 @@ class HTML():
         if cssClass is None: cssClass = 'redoc-doc-version'
         cssId = '' if cssId is None else ' id="{}"'.format(cssId)
         cssClass = ' class="{}"'.format(cssClass)
-        return '<div{}{}><a href="./index.html">RE API v{}</a></div>'.format(cssId, cssClass, version)
+        return '<div{}{}><a href="./index.html">UO-Copilot API v{}</a></div>'.format(cssId, cssClass, version)
         
     @staticmethod
     def DocPermalink(url, content=None, cssClass=None):
@@ -356,7 +356,7 @@ class AutoDocHTML:
         
     def KeyToSlug(self, xmlkey, overload=True, shortname=True):
         if overload: xmlkey = re.sub("\(.*\)","",xmlkey)
-        if shortname: xmlkey = xmlkey.replace(":RazorEnhanced.",":") #TODO: remove all settings/basename
+        if shortname: xmlkey = xmlkey.replace(":Assistant.",":") #TODO: remove all settings/basename
         return re.sub("[^a-zA-Z]","-",xmlkey)
         
     def PermalinkHTML(self,xmlkey):

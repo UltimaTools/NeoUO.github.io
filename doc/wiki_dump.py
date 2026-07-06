@@ -20,7 +20,7 @@ class dokuwiki():
     self.path_wiki = None
 
   def url_src(self, page):
-    url = "https://razorenhanced.net/dokuwiki/doku.php?do=edit&id={}"
+    url = "https://github.com/UltimaTools/UO_CoPilot.github.io/wiki/{}"
     return url.format(page)
 
   def url_dump(self, page):
@@ -80,7 +80,7 @@ class dokuwiki():
 
 
 
-# links manually dumped from sitemap => https://razorenhanced.net/dokuwiki/doku.php?id=alchemy&do=index
+# links manually dumped from sitemap
 pages = [
 "alchemy",
 "animalpetscripts",
