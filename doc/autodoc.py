@@ -53,38 +53,10 @@ import sys
 def main():
     ## SETTINGS
     
-    debug=True
-
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Write to your Script/Docs/ folder
-    output_path = os.path.join(script_dir, "api") + os.sep
     api_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(script_dir, "Config", "AutoComplete.json")
     
-    ## RUN 
-    
-    # setup AutoDocHTML to a test path
-    adhtml=AutoDocHTML(output_path, api_path)
-    version = adhtml.DocVersionHTML()
-    
-    # generates the main menu from the list of classes
-    menu = adhtml.MainMenuHTML()
-    index_html = HTML.LeftRightPage(version+menu,"","UO-Copilot API Documentation")
-    adhtml.WriteToFile("index.html".format(), index_html)
-    
-    # generates doc page for the Player class ( usefull for testing ) 
-    # player_html = adhtml.ClassHTML("Player")
-    # player_html = HTML.BasePage(player_html,"Player - UO-Copilot API")
-    # adhtml.WriteToFile("Player.html", player_html)
-    
-    ## generates doc pages for All the classes.
-    for cls in adhtml.ad.GetClasses():
-        className = cls["itemClass"]
-        filename = "{}.html".format(className)
-        player_html = adhtml.ClassHTML(className)
-        player_html = HTML.LeftRightPage(version+menu,player_html,"{} - UO-Copilot API".format(className))
-        adhtml.WriteToFile(filename, player_html, debug=debug)
-
     ## generates wiki-style docs to ./doc/wiki/
     print("\nGenerating wiki-style docs...")
     wiki = WikiAutoDocHTML(output_path=None, api_path=api_path)
