@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UO-Copilot Downloads</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 40px;
+            background: black;
+            color: #fff;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+        }
+
+        .nav { 
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .nav a { 
+            display: block;
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.1);
+            text-decoration: none;
+            color: #0f0;
+            border-radius: 4px;
+            border: 1px solid #0f0;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .nav a:hover { 
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        h1, h2 {
+            color: #0f0;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .title-row h1 {
+            margin: 0;
+        }
+
+        .video-link {
+            color: rgba(0, 255, 0, 0.6);
+            text-decoration: none;
+            font-size: 0.7em;
+            transition: all 0.3s ease;
+        }
+
+        .video-link:hover {
+            color: #0f0;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+        }
+
+        a {
+            color: #0f0;
+        }
+
+        .download-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 5px;
+            border: 1px solid #0f0;
+        }
+
+        .primary-download {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgba(0, 255, 0, 0.2);
+            color: #0f0;
+            text-decoration: none;
+            border: 2px solid #0f0;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        .download-button:hover {
+            background: rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+        }
+
+        .download-button.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .alt-downloads {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 255, 0, 0.3);
+        }
+
+        .alt-downloads h3 {
+            color: #0f0;
+            margin-bottom: 10px;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .download-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .download-grid a {
+            padding: 10px;
+            text-align: center;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #0f0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .download-grid a:hover {
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .download-grid a.disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .download-grid a.disabled:hover {
+            background: rgba(0, 255, 0, 0.1);
+            box-shadow: none;
+        }
+
+        .version-info {
+            font-size: 0.9em;
+            color: rgba(0, 255, 0, 0.7);
+            margin-top: 5px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 255, 0, 0.2);
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        .discord-link {
+            color: #0f0;
+            text-decoration: none;
+            font-size: 0.85em;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .discord-link:hover {
+            opacity: 1;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                grid-template-columns: 1fr;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    <div class="content">
+        <div class="title-row">
+            <h1>UO-Copilot</h1>
+            <a href="downloads/TazUO_Install.mp4" class="video-link" target="_blank">TazUO Install Video</a>
+        </div>
+        <p>Welcome to the UO-Copilot download center.</p>
+
+        <div class="download-section">
+            <h2>Download UO-Copilot</h2>
+            <div class="primary-download" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div>
+                    <a id="primary-download" class="download-button">
+                        Download UO-Copilot
+                        <span id="os-name"></span>
+                    </a>
+                    <div class="version-info" id="primary-version">Latest Alpha Release</div>
+                </div>
+                <div>
+                    <a id="vscode-download" class="download-button" href="#">
+                        Download VSCode Extension
+                    </a>
+                    <div class="version-info">.vsix - Install manually</div>
+                </div>
+            </div>
+
+            <div class="alt-downloads">
+                <h3>All Platforms</h3>
+                <div class="download-grid" id="platform-grid">
+                    <div class="download-item">
+                        <a id="windows-net10-download" href="#">
+                            Windows (.NET 10)
+                            <div class="version-info">64-bit — Recommended</div>
+                        </a>
+                        <a id="windows-net472-download" href="#">
+                            Windows (.NET 4.7.2)
+                            <div class="version-info">64-bit — Legacy</div>
+                        </a>
+                    </div>
+                    <div class="download-item">
+                        <a id="linux-download" href="#">
+                            Linux Version
+                            <div class="version-info">x86_64 tar.gz</div>
+                        </a>
+                    </div>
+                    <div class="download-item">
+                        <a id="macos-download" href="#" class="disabled">
+                            macOS Version
+                            <div class="version-info">ARM64 tar.gz — Temporarily Unavailable</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	
+        <h2>Game Files</h2>
+        <div class="nav">
+            <a href="files/animal/">Animal/Pet Files</a>
+            <a href="files/bardic/">Bardic Files</a>
+            <a href="files/combat/">Combat Files</a>
+            <a href="files/crafting/">Crafting Files</a>
+            <a href="files/looting/">Looting Files</a>
+            <a href="files/resource/">Resource Gathering</a>
+        </div>
+
+        <div class="footer">
+            <a href="https://discord.gg/JftRhUS3xE" class="discord-link" target="_blank">
+                Join our Discord Community
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // ========== MATRIX BACKGROUND CONFIGURATION ==========
+        // Set to false to disable the matrix animation, true to enable
+        const MATRIX_ENABLED = false;
+        // ===================================================
+
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        if (MATRIX_ENABLED) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+            const fontSize = 14;
+            const columns = canvas.width/fontSize;
+            const drops = [];
+
+            // Initialize drops
+            for(let x = 0; x < columns; x++) {
+                drops[x] = 1;
+            }
+
+            let isAnimating = true;
+            let finalFrame = null;
+
+            function draw() {
+                if (!isAnimating) {
+                    if (finalFrame) {
+                        ctx.putImageData(finalFrame, 0, 0);
+                    }
+                    return;
+                }
+
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#0F0';
+                ctx.font = fontSize + 'px monospace';
+
+                for(let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+
+                    drops[i]++;
+                }
+            }
+
+            // Animation interval
+            const animationInterval = setInterval(draw, 33);
+
+            // Stop animation after 30 seconds
+            setTimeout(() => {
+                isAnimating = false;
+                clearInterval(animationInterval);
+                // Store the final frame
+                finalFrame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            }, 30000);
+        }
+
+        const MANIFEST_BASE = 'https://raw.githubusercontent.com/UltimaTools/UO_CoPilot.github.io/main';
+        const LEGACY_RELEASE_BASE = '/release_files';
+
+        async function fetchLatestVersion(packageId, channel) {
+            // Try github.io manifest first.
+            try {
+                const suffix = channel.replace('alpha-', 'alpha-');  // channel already includes TFM suffix
+                const resp = await fetch(`${MANIFEST_BASE}/update-feed-${channel}.json`);
+                if (resp.ok) {
+                    const m = await resp.json();
+                    if (m.version && m.baseUrl) return m;
+                }
+            } catch {}
+            // Fall back to legacy web server.
+            try {
+                const resp = await fetch(`${LEGACY_RELEASE_BASE}/${packageId}/releases.${channel}.json`);
+                if (!resp.ok) return null;
+                const feed = await resp.json();
+                const latest = feed.Assets
+                    .filter(a => a.Type === 'Full')
+                    .sort((a, b) => b.Version.localeCompare(a.Version, undefined, { numeric: true }))[0];
+                return latest ? { version: latest.Version } : null;
+            } catch {
+                return null;
+            }
+        }
+
+        function findLatestAsset(feed, type) {
+            if (!feed || !feed.Assets) return null;
+            return feed.Assets
+                .filter(a => a.Type === type)
+                .sort((a, b) => b.Version.localeCompare(a.Version, undefined, { numeric: true }))[0];
+        }
+
+        async function initDownloads() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isWindows = userAgent.includes('win');
+            const isMac = userAgent.includes('mac');
+            const isLinux = userAgent.includes('linux') && !userAgent.includes('android');
+
+            // Fetch manifests for version + baseUrl display
+            const [net10Manifest, net472Manifest, linuxManifest] = await Promise.all([
+                fetchLatestVersion('uo-copilot-net10', 'alpha-net10'),
+                fetchLatestVersion('uo-copilot-net472', 'alpha-net472'),
+                fetchLatestVersion('uo-copilot-net10-linux', 'alpha-net10-linux')
+            ]);
+
+            // Helper: build download URL from manifest
+            function setupUrl(manifest, pkgId, channel, ext) {
+                if (manifest && manifest.baseUrl)
+                    return `${manifest.baseUrl}${pkgId}-${channel}-${ext}`;
+                // Legacy fallback
+                return `${LEGACY_RELEASE_BASE}/${pkgId}/${pkgId}-${channel}-${ext}`;
+            }
+            function versionLabel(manifest, fallback) {
+                return manifest && manifest.version ? `v${manifest.version}` : fallback;
+            }
+
+            // Wire up Windows download links
+            const winNet10 = document.getElementById('windows-net10-download');
+            const winNet472 = document.getElementById('windows-net472-download');
+            winNet10.href = setupUrl(net10Manifest, 'uo-copilot-net10', 'alpha', 'Setup.exe');
+            winNet472.href = setupUrl(net472Manifest, 'uo-copilot-net472', 'alpha', 'Setup.exe');
+            winNet10.download = `UO-Copilot-net10-v${versionLabel(net10Manifest, 'latest')}.exe`;
+            winNet472.download = `UO-Copilot-net472-v${versionLabel(net472Manifest, 'latest')}.exe`;
+
+            if (net10Manifest) winNet10.querySelector('.version-info').textContent = `v${net10Manifest.version} — 64-bit`;
+            if (net472Manifest) winNet472.querySelector('.version-info').textContent = `v${net472Manifest.version} — 64-bit`;
+
+            // Wire up Linux download
+            const linuxLink = document.getElementById('linux-download');
+            if (linuxManifest && linuxManifest.baseUrl) {
+                linuxLink.href = `${linuxManifest.baseUrl}uo-copilot-net10-linux-${linuxManifest.version}-alpha.tar.gz`;
+            } else {
+                linuxLink.href = `${LEGACY_RELEASE_BASE}/uo-copilot-net10-linux/linux-latest.tar.gz`;
+            }
+            linuxLink.download = `UO-Copilot-linux-v${versionLabel(linuxManifest, 'latest')}.tar.gz`;
+
+            // macOS — still disabled
+            const macLink = document.getElementById('macos-download');
+            macLink.href = `${LEGACY_RELEASE_BASE}/uo-copilot-net10-macos/mac-latest.tar.gz`;
+
+            // Set primary download button based on OS
+            const primaryButton = document.getElementById('primary-download');
+            const osSpan = document.getElementById('os-name');
+            const versionInfo = document.getElementById('primary-version');
+
+            if (isWindows) {
+                osSpan.textContent = 'for Windows (.NET 10)';
+                primaryButton.href = winNet10.href;
+                primaryButton.download = winNet10.download;
+                versionInfo.textContent = net10Manifest ? `Latest Alpha v${net10Manifest.version}` : 'Latest Alpha Release';
+            } else if (isMac) {
+                osSpan.textContent = 'for macOS';
+                primaryButton.classList.add('disabled');
+                primaryButton.removeAttribute('href');
+                primaryButton.removeAttribute('download');
+                versionInfo.textContent = 'Temporarily Unavailable';
+            } else if (isLinux) {
+                osSpan.textContent = 'for Linux';
+                primaryButton.href = linuxLink.href;
+                primaryButton.download = linuxLink.download;
+                versionInfo.textContent = linuxManifest ? `Latest Alpha v${linuxManifest.version}` : 'Latest Alpha Release';
+            } else {
+                osSpan.textContent = '';
+                primaryButton.href = winNet10.href;
+                primaryButton.download = winNet10.download;
+                versionInfo.textContent = 'Latest Alpha Release';
+            }
+        }
+
+        initDownloads();
+
+        async function initExtensionDownload() {
+            const extLink = document.getElementById('vscode-download');
+            try {
+                const resp = await fetch(`${LEGACY_RELEASE_BASE}/uo-copilot-vscode-extension/latest.json`);
+                if (resp.ok) {
+                    const data = await resp.json();
+                    extLink.href = `${LEGACY_RELEASE_BASE}/uo-copilot-vscode-extension/${data.filename}`;
+                }
+            } catch {}
+        }
+
+        initExtensionDownload();
+    </script>
+</body>
+</html>

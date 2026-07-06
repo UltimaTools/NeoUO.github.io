@@ -1,2 +1,0 @@
-
-[[http://razorenhanced.net/download/scripts/lumberjacking.py|Lumberjacking - Searches for trees and chops them]]
