@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Spells - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Spells - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.0.3</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -52,7 +52,7 @@
 <h3 class="wiki-entry-name">Cast</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.Cast(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast spell using the spell name. See the skill-specific functions to get the full list of spell names.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Name of the spell to cast.</li>
 <li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
@@ -78,7 +78,7 @@ Momentum Strike</li>
 <h3 class="wiki-entry-name">CastChivalry</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastChivalry(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Chivalry spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Cleanse By Fire
 Close Wounds
@@ -99,7 +99,7 @@ Sacred Journey</li>
 <h3 class="wiki-entry-name">CastCleric</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastCleric(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Cleric spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Bark Skin : Turns the druid's skin to bark, increasing physical, poison and energy resistence while reducing fire resistence.
 Circle Of Thorns : Creates a ring of thorns preventing an enemy from moving.
@@ -130,7 +130,7 @@ Volcanic Eruption : A blast of molten lava bursts from the ground, hitting every
 <h3 class="wiki-entry-name">CastDruid</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastDruid(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Druid spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Angelic Faith : Turns you into an angel, boosting your stats. At 100 Spirit Speak you get +20 Str/Dex/Int. Every 5 points of SS = +1 point to each stat, at a max of +24. Will also boost your Anatomy, Mace Fighting and Healing, following the same formula.
 Banish Evil : Banishes Undead targets. Auto kills rotting corpses, lich lords, etc. Works well at Doom Champ. Does not produce a corpse however
@@ -168,7 +168,7 @@ Trial by Fire : Attackers receive damage when they strike you, sort of like a te
 <h3 class="wiki-entry-name">CastMagery</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMagery(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Magery spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Clumsy
 Create Food
@@ -243,7 +243,7 @@ Summon Water Elemental</li>
 <h3 class="wiki-entry-name">CastMastery</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMastery(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Mastery spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Inspire
 Invigorate
@@ -299,7 +299,7 @@ Boarding</li>
 <h3 class="wiki-entry-name">CastMysticism</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMysticism(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Mysticism spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Animated Weapon
 Healing Stone
@@ -325,7 +325,7 @@ Rising Colossus</li>
 <h3 class="wiki-entry-name">CastNecro</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNecro(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Necromany spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Curse Weapon
 Pain Spike
@@ -353,7 +353,7 @@ Vampiric Embrace</li>
 <h3 class="wiki-entry-name">CastNinjitsu</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNinjitsu(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Ninjitsu spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Animal Form
 Backstab
@@ -371,7 +371,7 @@ Ki Attack</li>
 <h3 class="wiki-entry-name">CastSpellweaving</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastSpellweaving(SpellName, target, wait, waitAfter)</code></div>
 <p class="wiki-desc">Cast a Spellweaving spell using the spell name.
-Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Arcane Circle
 Gift Of Renewal

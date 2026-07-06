@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Items - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Items - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.0.3</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -113,7 +113,7 @@ Currently corpse's root container can be found by using item filter.</p>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.DropItemGroundSelf(item, amount, direction)</code></div>
 <p class="wiki-desc">Drop an Item on the ground, at the current Player position.
 NOTE: On some server is not allowed to drop Items on tiles occupied by Mobiles and the Player.
-This function seldom works because the servers dont allow drop where your standing</p>
+This function seldom works because the servers don't allow drop where you're standing</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Item)</span>: Item object to drop.</li>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount to move. (default: 0, the whole stack)</li>
 <li><code class="wiki-param-name">direction</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
@@ -123,7 +123,7 @@ This function seldom works because the servers dont allow drop where your standi
 <h3 class="wiki-entry-name">FindAllByID</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.FindAllByID(itemids, color, container, range, considerIgnoreList)</code></div>
 <p class="wiki-desc">Find a List of Items matching specific list of ItemID, Color and Container. 
-Optionally can search in all subcontaners or to a maximum depth in subcontainers.
+Optionally can search in all subcontainers or to a maximum depth in subcontainers.
 Can use -1 on color for no chose color, can use -1 on container for search in all item in memory.
 The depth defaults to only the top but can search for # of sub containers.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemids</code> <span class="wiki-param-type">(PythonList)</span></li>
@@ -131,13 +131,13 @@ The depth defaults to only the top but can search for # of sub containers.</p>
 <li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Int32)</span>: Serial of the container to search. (-1: any Item)</li>
 <li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">considerIgnoreList</code> <span class="wiki-param-type">(Boolean)</span>: True: Ignore Items are excluded - False: any Item.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Item]</code>, <code>PythonList</code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>PythonList</code>, <code>List[Item]</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-FindByID">
 <h3 class="wiki-entry-name">FindByID</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.FindByID(itemid, color, container, recursive, considerIgnoreList)</code></div>
 <p class="wiki-desc">Find a single Item matching specific ItemID, Color and Container. 
-Optionally can search in all subcontaners or to a maximum depth in subcontainers.
+Optionally can search in all subcontainers or to a maximum depth in subcontainers.
 Can use -1 on color for no chose color, can use -1 on container for search in all item in memory. The depth defaults to only the top but can search for # of sub containers.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemid</code> <span class="wiki-param-type">(Int32)</span>: ItemID filter.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color filter. (-1: any, 0: natural )</li>
@@ -153,7 +153,7 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <h3 class="wiki-entry-name">FindByName</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.FindByName(itemName, color, container, range, considerIgnoreList)</code></div>
 <p class="wiki-desc">Find a single Item matching specific Name, Color and Container. 
-Optionally can search in all subcontaners or to a maximum depth in subcontainers.
+Optionally can search in all subcontainers or to a maximum depth in subcontainers.
 Can use -1 on color for no chose color, can use -1 on container for search in all item in memory. The depth defaults to only the top but can search for # of sub containers.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemName</code> <span class="wiki-param-type">(String)</span>: Item Name filter.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color filter. (-1: any, 0: natural )</li>
@@ -212,7 +212,7 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <div class="wiki-entry" id="M-Scripting-Items-GetProperties">
 <h3 class="wiki-entry-name">GetProperties</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.GetProperties(itemserial, delay)</code></div>
-<p class="wiki-desc">Request to get immediatly the Properties of an Item, and wait for a specified amount of time.
+<p class="wiki-desc">Request to get immediately the Properties of an Item, and wait for a specified amount of time.
 This only returns properties and does not attempt to update the object.
 Used in this way, properties for object not yet seen can be retrieved</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemserial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item read.</li>
@@ -239,7 +239,7 @@ for the supplied item ID.
 <div class="wiki-entry" id="M-Scripting-Items-IgnoreTypes">
 <h3 class="wiki-entry-name">IgnoreTypes</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.IgnoreTypes(itemIdList)</code></div>
-<p class="wiki-desc">Used to ignore specific types. Be careful as you wont see things you ignore, 
+<p class="wiki-desc">Used to ignore specific types. Be careful as you won't see things you ignore, 
 and could result in a mobile being able to kill you without you seeing it</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemIdList</code> <span class="wiki-param-type">(PythonList)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>

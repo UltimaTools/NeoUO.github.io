@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Mobile - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Mobile - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.0.3</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,7 +46,7 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Mobile</h1><p class="wiki-class-desc">The Mobile class represents an single alive entity. 
-While the Mobile.Serial is unique for each Mobile, Mobile.MobileID is the unique for the Mobile apparence, or image. Sometimes is also called Body or Body ID.
+While the Mobile.Serial is unique for each Mobile, Mobile.MobileID is the unique for the Mobile appearance, or image. Sometimes is also called Body or Body ID.
 Mobiles which dies and leave a corpse behind, they stop existing as Mobiles and instead leave a corpse as a Item object appears.</p>
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
 <li><a href="#methods">Methods</a></li></ul></div>
@@ -93,7 +93,7 @@ Might not match the items found using via Layer.</p>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Fame</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">Fame has to be reverse engineered from the title so it is just ranges:
-0: neutaral - 3 is highest fame</p>
+0: neutral - 3 is highest fame</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-Female">
 <h3 class="wiki-entry-name">Female</h3>
@@ -105,7 +105,7 @@ Might not match the items found using via Layer.</p>
 <h3 class="wiki-entry-name">Flying</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Flying</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
-<p class="wiki-desc">The mobile is Flying ( Gragoyle )</p>
+<p class="wiki-desc">The mobile is Flying ( Gargoyle )</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-Graphics">
 <h3 class="wiki-entry-name">Graphics</h3>
@@ -117,7 +117,7 @@ Might not match the items found using via Layer.</p>
 <h3 class="wiki-entry-name">Hits</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Hits</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
-<p class="wiki-desc">The current hit point of a Mobile. To be read as propotion over Mobile.HitsMax.</p>
+<p class="wiki-desc">The current hit point of a Mobile. To be read as proportion over Mobile.HitsMax.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-HitsMax">
 <h3 class="wiki-entry-name">HitsMax</h3>
@@ -168,7 +168,7 @@ Match any MobileID in the list:
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Karma</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">Karma has to be reverse engineered from the title so it is just ranges:
--5: most evil, 0: neutaral, 5 most good</p>
+-5: most evil, 0: neutral, 5 most good</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-KarmaTitle">
 <h3 class="wiki-entry-name">KarmaTitle</h3>
@@ -180,7 +180,7 @@ Match any MobileID in the list:
 <h3 class="wiki-entry-name">Mana</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Mana</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
-<p class="wiki-desc">The current mana of a Mobile. To be read as propotion over Mobile.ManaMax.</p>
+<p class="wiki-desc">The current mana of a Mobile. To be read as proportion over Mobile.ManaMax.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-ManaMax">
 <h3 class="wiki-entry-name">ManaMax</h3>
@@ -231,7 +231,7 @@ Notorieties:
 <h3 class="wiki-entry-name">Paralized</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Paralized</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
-<p class="wiki-desc">The mobile is Paralized.</p>
+<p class="wiki-desc">The mobile is Paralyzed.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-Poisoned">
 <h3 class="wiki-entry-name">Poisoned</h3>
@@ -255,7 +255,7 @@ Notorieties:
 <h3 class="wiki-entry-name">PropsUpdated</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.PropsUpdated</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
-<p class="wiki-desc">True: Mobile.Propertires are updated - False: otherwise.</p>
+<p class="wiki-desc">True: Mobile.Properties are updated - False: otherwise.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-Quiver">
 <h3 class="wiki-entry-name">Quiver</h3>
@@ -273,7 +273,7 @@ Notorieties:
 <h3 class="wiki-entry-name">Stam</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Stam</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
-<p class="wiki-desc">The current stamina of a Mobile. To be read as propotion over Mobile.StamMax.</p>
+<p class="wiki-desc">The current stamina of a Mobile. To be read as proportion over Mobile.StamMax.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-StamMax">
 <h3 class="wiki-entry-name">StamMax</h3>
@@ -285,7 +285,7 @@ Notorieties:
 <h3 class="wiki-entry-name">Visible</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Visible</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
-<p class="wiki-desc">True: The Mobile is visible - Flase: The mobile is hidden.</p>
+<p class="wiki-desc">True: The Mobile is visible - False: The mobile is hidden.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Mobile-WarMode">
 <h3 class="wiki-entry-name">WarMode</h3>
