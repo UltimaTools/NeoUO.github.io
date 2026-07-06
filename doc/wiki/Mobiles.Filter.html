@@ -1,0 +1,215 @@
+<!DOCTYPE html><html><head><title>Mobiles.Filter - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link active" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Mobiles.Filter</h1><p class="wiki-class-desc">The Mobiles.Filter class is used to store options to filter the global Mobile list.
+Often used in combination with Mobiles.ApplyFilter.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Blessed">
+<h3 class="wiki-entry-name">Blessed</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Blessed</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to only Blessed Mobiles.  (default: -1, any Mobile)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobiles-Filter-Bodies">
+<h3 class="wiki-entry-name">Bodies</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Bodies</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Object</code></div>
+
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-CheckIgnoreObject">
+<h3 class="wiki-entry-name">CheckIgnoreObject</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.CheckIgnoreObject</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Exclude from the search Mobiles which are currently on the global Ignore List. ( default: False, any Item )</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-CheckLineOfSight">
+<h3 class="wiki-entry-name">CheckLineOfSight</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.CheckLineOfSight</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Limit the search only to the Mobiles which are in line of sight. (default: false, any Mobile)</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Enabled">
+<h3 class="wiki-entry-name">Enabled</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Enabled</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Female">
+<h3 class="wiki-entry-name">Female</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Female</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to female Mobile.  (default: -1, any)</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Friend">
+<h3 class="wiki-entry-name">Friend</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Friend</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to friend Mobile. (default: -1, any)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobiles-Filter-Graphics">
+<h3 class="wiki-entry-name">Graphics</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Graphics</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Object</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobiles-Filter-Hues">
+<h3 class="wiki-entry-name">Hues</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Hues</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Object</code></div>
+
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-IgnorePets">
+<h3 class="wiki-entry-name">IgnorePets</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.IgnorePets</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Include the Mobiles which are currently on the Pet List. ( default: True, include Pets )</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-IsGhost">
+<h3 class="wiki-entry-name">IsGhost</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.IsGhost</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to Ghost only. (default: -1, any Mobile )
+Match any MobileID in the list:
+    402, 403, 607, 608, 694, 695, 970</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-IsHuman">
+<h3 class="wiki-entry-name">IsHuman</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.IsHuman</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to Humans only. (default: -1, any Mobile )
+Match any MobileID in the list:
+    183, 184, 185, 186, 400, 
+    401, 402, 403, 605, 606,
+    607, 608, 666, 667, 694, 
+    744, 745, 747, 748, 750,  
+    751, 970, 695</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Name">
+<h3 class="wiki-entry-name">Name</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Name</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobiles-Filter-Notorieties">
+<h3 class="wiki-entry-name">Notorieties</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Notorieties</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Object</code></div>
+
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Paralized">
+<h3 class="wiki-entry-name">Paralized</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Paralized</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to paralized Mobile. (default: -1, any)</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Poisoned">
+<h3 class="wiki-entry-name">Poisoned</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Poisoned</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to only Poisoned Mobiles.  (default: -1, any Mobile)</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-RangeMax">
+<h3 class="wiki-entry-name">RangeMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.RangeMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Limit the search by distance, to Mobiles which are at most RangeMax tiles away from the Player. ( default: -1, any Mobile )</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-RangeMin">
+<h3 class="wiki-entry-name">RangeMin</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.RangeMin</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Limit the search by distance, to Mobiles which are at least RangeMin tiles away from the Player. ( default: -1, any Mobile )</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobiles-Filter-Serials">
+<h3 class="wiki-entry-name">Serials</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Serials</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Object</code></div>
+
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-Warmode">
+<h3 class="wiki-entry-name">Warmode</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.Warmode</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Limit the search to Mobile War mode. (default: -1, any Mobile)
+    -1: any
+     0: peace
+     1: war</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-ZLevelMax">
+<h3 class="wiki-entry-name">ZLevelMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.ZLevelMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Limit the search by z-level, to Mobiles which are at most z-level specified. ( default: 4096, all z-levels )</p>
+</div>
+<div class="wiki-entry" id="F-Scripting-Mobiles-Filter-ZLevelMin">
+<h3 class="wiki-entry-name">ZLevelMin</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Filter.ZLevelMin</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Limit the search by z-level, to Mobiles which are at least z-level specified. ( default: -4096, all z-levels )</p>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#F-Scripting-Mobiles-Filter-Blessed">Blessed</a></li>
+<li><a href="#P-Scripting-Mobiles-Filter-Bodies">Bodies</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-CheckIgnoreObject">CheckIgnoreObject</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-CheckLineOfSight">CheckLineOfSight</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Enabled">Enabled</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Female">Female</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Friend">Friend</a></li>
+<li><a href="#P-Scripting-Mobiles-Filter-Graphics">Graphics</a></li>
+<li><a href="#P-Scripting-Mobiles-Filter-Hues">Hues</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-IgnorePets">IgnorePets</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-IsGhost">IsGhost</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-IsHuman">IsHuman</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Name">Name</a></li>
+<li><a href="#P-Scripting-Mobiles-Filter-Notorieties">Notorieties</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Paralized">Paralized</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Poisoned">Poisoned</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-RangeMax">RangeMax</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-RangeMin">RangeMin</a></li>
+<li><a href="#P-Scripting-Mobiles-Filter-Serials">Serials</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-Warmode">Warmode</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-ZLevelMax">ZLevelMax</a></li>
+<li><a href="#F-Scripting-Mobiles-Filter-ZLevelMin">ZLevelMin</a></li></ul></aside></div></body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head><title>Sound - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link active" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Sound</h1><p class="wiki-class-desc">The Sound class provides an api to manipulate Sounds. 
+For now it just turns logging for sounds on / off or waits for a list of sounds
+All the WeakRef stuff seems like overkill and a pia. 
+The problem was if you started the wait and then killed the python script, the entry in the waiters list just stayed forever
+The only way around this is to have a weakref stored in the list, then if the local var ManualResetEvent went out of scope, 
+the WeakRef will go to null.  At end of loop we clean up all null entries so the list stays clean.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Sound-AddFilter">
+<h3 class="wiki-entry-name">AddFilter</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.AddFilter(name, sounds)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">sounds</code> <span class="wiki-param-type">(List[Int32])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Sound-Log">
+<h3 class="wiki-entry-name">Log</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.Log(activateLogging)</code></div>
+<p class="wiki-desc">Enables/Disables logging of incoming sound requests</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">activateLogging</code> <span class="wiki-param-type">(Boolean)</span>: True= activate sound logging/ False Deactivate sound logging</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Sound-OnFilter">
+<h3 class="wiki-entry-name">OnFilter</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.OnFilter(p, args)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">p</code> <span class="wiki-param-type">(PacketReader)</span></li>
+<li><code class="wiki-param-name">args</code> <span class="wiki-param-type">(PacketHandlerEventArgs)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Sound-RemoveFilter">
+<h3 class="wiki-entry-name">RemoveFilter</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.RemoveFilter(name)</code></div>
+<p class="wiki-desc">Removes a filter of incoming sound requests</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: The name of the filter to be removed</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Sound-WaitForSound">
+<h3 class="wiki-entry-name">WaitForSound</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.WaitForSound(sounds, timeout)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">sounds</code> <span class="wiki-param-type">(List[Int32])</span></li>
+<li><code class="wiki-param-name">timeout</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Sound-AddFilter">AddFilter</a></li>
+<li><a href="#M-Scripting-Sound-Log">Log</a></li>
+<li><a href="#M-Scripting-Sound-OnFilter">OnFilter</a></li>
+<li><a href="#M-Scripting-Sound-RemoveFilter">RemoveFilter</a></li>
+<li><a href="#M-Scripting-Sound-WaitForSound">WaitForSound</a></li></ul></aside></div></body></html>

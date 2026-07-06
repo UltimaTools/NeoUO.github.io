@@ -1,0 +1,234 @@
+<!DOCTYPE html><html><head><title>CUO - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link active" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">CUO</h1><p class="wiki-class-desc">The CUO_Functions class contains invocation of CUO code using Harmony's
+AccessTools and Traverse instead of raw reflection.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-CUO-CloseGump">
+<h3 class="wiki-entry-name">CloseGump</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.CloseGump(serial)</code></div>
+<p class="wiki-desc">Close a container gump by serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-CloseMobileHealthBar">
+<h3 class="wiki-entry-name">CloseMobileHealthBar</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.CloseMobileHealthBar(mobileserial)</code></div>
+<p class="wiki-desc">Close a mobile's health bar gump.
+Close a mobile's health bar gump.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-CloseMyStatusBar">
+<h3 class="wiki-entry-name">CloseMyStatusBar</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.CloseMyStatusBar()</code></div>
+<p class="wiki-desc">Close the player's status bar gump.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-CloseTMap">
+<h3 class="wiki-entry-name">CloseTMap</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.CloseTMap()</code></div>
+<p class="wiki-desc">Closes a treasure map gump if open.
+Returns true if a map was closed.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-FollowMobile">
+<h3 class="wiki-entry-name">FollowMobile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.FollowMobile(mobileserial)</code></div>
+<p class="wiki-desc">Make the ClassicUO client follow a specific mobile.
+Same as alt + left-clicking.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(UInt32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-FollowOff">
+<h3 class="wiki-entry-name">FollowOff</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.FollowOff()</code></div>
+<p class="wiki-desc">Stop following the current mobile.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-Following">
+<h3 class="wiki-entry-name">Following</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.Following()</code></div>
+<p class="wiki-desc">Returns the status and target of the follow behavior.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>ValueTuple[Boolean, UInt32]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-FreeView">
+<h3 class="wiki-entry-name">FreeView</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.FreeView(free)</code></div>
+<p class="wiki-desc">Sets FreeView mode on the world map.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">free</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-GetSetting">
+<h3 class="wiki-entry-name">GetSetting</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.GetSetting(settingName)</code></div>
+<p class="wiki-desc">Retrieve a current CUO setting by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">settingName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-GoToMarker">
+<h3 class="wiki-entry-name">GoToMarker</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.GoToMarker(x, y)</code></div>
+<p class="wiki-desc">Invokes the GoToMarker function inside the CUO code.
+Map must be open for this to work.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-LoadMarkers">
+<h3 class="wiki-entry-name">LoadMarkers</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.LoadMarkers()</code></div>
+<p class="wiki-desc">Invokes the LoadMarkers function inside the CUO code.
+Map must be open for this to work.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-MoveGump">
+<h3 class="wiki-entry-name">MoveGump</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.MoveGump(serial, x, y)</code></div>
+<p class="wiki-desc">Move an open gump or container to a new position.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span></li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-OpenContainerAt">
+<h3 class="wiki-entry-name">OpenContainerAt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.OpenContainerAt(bag, x, y)</code></div>
+<p class="wiki-desc">Set a location that CUO will open the container at.
+Set a location that CUO will open the container at.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Item)</span></li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-OpenMobileHealthBar">
+<h3 class="wiki-entry-name">OpenMobileHealthBar</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.OpenMobileHealthBar(mobileserial, x, y, custom)</code></div>
+<p class="wiki-desc">Open a mobile's health bar at a position.
+Open a mobile's health bar at a position.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">custom</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-OpenMyStatusBar">
+<h3 class="wiki-entry-name">OpenMyStatusBar</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.OpenMyStatusBar(x, y)</code></div>
+<p class="wiki-desc">Open the player's status bar gump at a position.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-PlayMacro">
+<h3 class="wiki-entry-name">PlayMacro</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.PlayMacro(macroName)</code></div>
+<p class="wiki-desc">Play a CUO macro by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">macroName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-ProfilePropertySet">
+<h3 class="wiki-entry-name">ProfilePropertySet</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.ProfilePropertySet(propertyName, value)</code></div>
+<p class="wiki-desc">Set a bool property on the current CUO profile by name.
+Set an int property on the current CUO profile by name.
+Set a string property on the current CUO profile by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">propertyName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">value</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-SetAutoOpenDoors">
+<h3 class="wiki-entry-name">SetAutoOpenDoors</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.SetAutoOpenDoors(enabled)</code></div>
+<p class="wiki-desc">Push the "auto open doors" and "open doors while pathfinding" settings
+to the ClassicUO profile. Fail-safe — no-ops if reflection is disabled
+or the properties don't exist (standard CUO lacks TazUO sub-options).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">enabled</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-SetGumpOpenLocation">
+<h3 class="wiki-entry-name">SetGumpOpenLocation</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.SetGumpOpenLocation(gumpserial, x, y)</code></div>
+<p class="wiki-desc">Set a location that CUO will open the next gump or container at.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">gumpserial</code> <span class="wiki-param-type">(UInt32)</span></li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-TryGetGumpLocation">
+<h3 class="wiki-entry-name">TryGetGumpLocation</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.TryGetGumpLocation(serverSerial)</code></div>
+<p class="wiki-desc">Reads the current screen position of an open gump by its ServerSerial.
+Returns null if the gump isn't open or on OSI client.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serverSerial</code> <span class="wiki-param-type">(UInt32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Nullable[ValueTuple[Int32, Int32]]</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-CUO-CloseGump">CloseGump</a></li>
+<li><a href="#M-Scripting-CUO-CloseMobileHealthBar">CloseMobileHealthBar</a></li>
+<li><a href="#M-Scripting-CUO-CloseMyStatusBar">CloseMyStatusBar</a></li>
+<li><a href="#M-Scripting-CUO-CloseTMap">CloseTMap</a></li>
+<li><a href="#M-Scripting-CUO-Following">Following</a></li>
+<li><a href="#M-Scripting-CUO-FollowMobile">FollowMobile</a></li>
+<li><a href="#M-Scripting-CUO-FollowOff">FollowOff</a></li>
+<li><a href="#M-Scripting-CUO-FreeView">FreeView</a></li>
+<li><a href="#M-Scripting-CUO-GetSetting">GetSetting</a></li>
+<li><a href="#M-Scripting-CUO-GoToMarker">GoToMarker</a></li>
+<li><a href="#M-Scripting-CUO-LoadMarkers">LoadMarkers</a></li>
+<li><a href="#M-Scripting-CUO-MoveGump">MoveGump</a></li>
+<li><a href="#M-Scripting-CUO-OpenContainerAt">OpenContainerAt</a></li>
+<li><a href="#M-Scripting-CUO-OpenMobileHealthBar">OpenMobileHealthBar</a></li>
+<li><a href="#M-Scripting-CUO-OpenMyStatusBar">OpenMyStatusBar</a></li>
+<li><a href="#M-Scripting-CUO-PlayMacro">PlayMacro</a></li>
+<li><a href="#M-Scripting-CUO-ProfilePropertySet">ProfilePropertySet</a></li>
+<li><a href="#M-Scripting-CUO-SetAutoOpenDoors">SetAutoOpenDoors</a></li>
+<li><a href="#M-Scripting-CUO-SetGumpOpenLocation">SetGumpOpenLocation</a></li>
+<li><a href="#M-Scripting-CUO-TryGetGumpLocation">TryGetGumpLocation</a></li></ul></aside></div></body></html>

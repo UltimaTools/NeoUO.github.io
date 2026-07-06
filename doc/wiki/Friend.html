@@ -1,0 +1,234 @@
+<!DOCTYPE html><html><head><title>Friend - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link active" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Friend</h1>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Friend-AddFriendTarget">
+<h3 class="wiki-entry-name">AddFriendTarget</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.AddFriendTarget()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-AddPlayer">
+<h3 class="wiki-entry-name">AddPlayer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.AddPlayer(friendlist, name, serial)</code></div>
+<p class="wiki-desc">Add the player specified to the Friend list named in FriendListName parameter</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">friendlist</code> <span class="wiki-param-type">(String)</span>: Name of the the Friend List. (See Agent tab)</li>
+<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the Friend want to add.</li>
+<li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Friend you want to add.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-ChangeList">
+<h3 class="wiki-entry-name">ChangeList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.ChangeList(friendlist)</code></div>
+<p class="wiki-desc">Change friend list, List must be exist in friend list GUI configuration</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">friendlist</code> <span class="wiki-param-type">(String)</span>: Name of the list of friend.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-GetList">
+<h3 class="wiki-entry-name">GetList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.GetList(friendlist)</code></div>
+<p class="wiki-desc">Retrive list of serial in list, List must be exist in friend Agent tab.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">friendlist</code> <span class="wiki-param-type">(String)</span>: Name of the list of friend.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Int32]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-GuildExists">
+<h3 class="wiki-entry-name">GuildExists</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.GuildExists(list, guild)</code></div>
+<p class="wiki-desc">Check if a guild exists in a Friend list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">guild</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-GuildInsert">
+<h3 class="wiki-entry-name">GuildInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.GuildInsert(list, guild)</code></div>
+<p class="wiki-desc">Insert a guild into a Friend list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">guild</code> <span class="wiki-param-type">(Friend.FriendGuild)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-GuildRead">
+<h3 class="wiki-entry-name">GuildRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.GuildRead(list, guilds)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">guilds</code> <span class="wiki-param-type">(List`1&@)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-GuildReplace">
+<h3 class="wiki-entry-name">GuildReplace</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.GuildReplace(listName, index, newGuild)</code></div>
+<p class="wiki-desc">Replace a guild in a Friend list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">newGuild</code> <span class="wiki-param-type">(Friend.FriendGuild)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-GuildsRead">
+<h3 class="wiki-entry-name">GuildsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.GuildsRead(list, guilds)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">guilds</code> <span class="wiki-param-type">(List`1&@)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-IsFriend">
+<h3 class="wiki-entry-name">IsFriend</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.IsFriend(serial)</code></div>
+<p class="wiki-desc">Check if Player is in FriendList, returns a bool value.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial you want to check</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-ListDelete">
+<h3 class="wiki-entry-name">ListDelete</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.ListDelete(description)</code></div>
+<p class="wiki-desc">Delete a Friend list from persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-ListExists">
+<h3 class="wiki-entry-name">ListExists</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.ListExists(description)</code></div>
+<p class="wiki-desc">Check if a Friend list exists by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-ListInsert">
+<h3 class="wiki-entry-name">ListInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.ListInsert(description, includeparty, preventattack, autoacceptparty, slfriend, tbfriend, comfriend, minfriend)</code></div>
+<p class="wiki-desc">Insert a new Friend list into persistence (overload).
+Insert a new Friend list into persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">includeparty</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">preventattack</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">autoacceptparty</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">slfriend</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">tbfriend</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">comfriend</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">minfriend</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-ListsRead">
+<h3 class="wiki-entry-name">ListsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.ListsRead()</code></div>
+<p class="wiki-desc">Read all Friend lists from persistence.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Friend.FriendList]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-PlayerDelete">
+<h3 class="wiki-entry-name">PlayerDelete</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.PlayerDelete(list, player)</code></div>
+<p class="wiki-desc">Delete a player from a Friend list.
+Delete a player from a Friend list by serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">player</code> <span class="wiki-param-type">(Friend.FriendPlayer)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-PlayerExists">
+<h3 class="wiki-entry-name">PlayerExists</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.PlayerExists(list, player)</code></div>
+<p class="wiki-desc">Check if a player exists in a Friend list.
+Check if a player serial exists in a Friend list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">player</code> <span class="wiki-param-type">(Friend.FriendPlayer)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-PlayerInsert">
+<h3 class="wiki-entry-name">PlayerInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.PlayerInsert(list, player)</code></div>
+<p class="wiki-desc">Insert a player into a Friend list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">player</code> <span class="wiki-param-type">(Friend.FriendPlayer)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-PlayerReplace">
+<h3 class="wiki-entry-name">PlayerReplace</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.PlayerReplace(listName, index, newPlayer)</code></div>
+<p class="wiki-desc">Replace a player in a Friend list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">newPlayer</code> <span class="wiki-param-type">(Friend.FriendPlayer)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-PlayersRead">
+<h3 class="wiki-entry-name">PlayersRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.PlayersRead(list, players)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">players</code> <span class="wiki-param-type">(List`1&@)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-RemoveFriend">
+<h3 class="wiki-entry-name">RemoveFriend</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.RemoveFriend(friendlist, serial)</code></div>
+<p class="wiki-desc">Remove the player specified from the Friend list named in FriendListName parameter</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">friendlist</code> <span class="wiki-param-type">(String)</span>: Name of the the Friend List. (See Agent tab)</li>
+<li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Friend you want to remove.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Friend-AddFriendTarget">AddFriendTarget</a></li>
+<li><a href="#M-Scripting-Friend-AddPlayer">AddPlayer</a></li>
+<li><a href="#M-Scripting-Friend-ChangeList">ChangeList</a></li>
+<li><a href="#M-Scripting-Friend-GetList">GetList</a></li>
+<li><a href="#M-Scripting-Friend-GuildExists">GuildExists</a></li>
+<li><a href="#M-Scripting-Friend-GuildInsert">GuildInsert</a></li>
+<li><a href="#M-Scripting-Friend-GuildRead">GuildRead</a></li>
+<li><a href="#M-Scripting-Friend-GuildReplace">GuildReplace</a></li>
+<li><a href="#M-Scripting-Friend-GuildsRead">GuildsRead</a></li>
+<li><a href="#M-Scripting-Friend-IsFriend">IsFriend</a></li>
+<li><a href="#M-Scripting-Friend-ListDelete">ListDelete</a></li>
+<li><a href="#M-Scripting-Friend-ListExists">ListExists</a></li>
+<li><a href="#M-Scripting-Friend-ListInsert">ListInsert</a></li>
+<li><a href="#M-Scripting-Friend-ListsRead">ListsRead</a></li>
+<li><a href="#M-Scripting-Friend-PlayerDelete">PlayerDelete</a></li>
+<li><a href="#M-Scripting-Friend-PlayerExists">PlayerExists</a></li>
+<li><a href="#M-Scripting-Friend-PlayerInsert">PlayerInsert</a></li>
+<li><a href="#M-Scripting-Friend-PlayerReplace">PlayerReplace</a></li>
+<li><a href="#M-Scripting-Friend-PlayersRead">PlayersRead</a></li>
+<li><a href="#M-Scripting-Friend-RemoveFriend">RemoveFriend</a></li></ul></aside></div></body></html>

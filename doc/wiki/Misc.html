@@ -1,0 +1,695 @@
+<!DOCTYPE html><html><head><title>Misc - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link active" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Misc</h1><p class="wiki-class-desc">The Misc class contains general purpose functions of common use.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Misc-AllSharedValue">
+<h3 class="wiki-entry-name">AllSharedValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.AllSharedValue()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[String]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-AppendNotDupToFile">
+<h3 class="wiki-entry-name">AppendNotDupToFile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.AppendNotDupToFile(fileName, lineOfData)</code></div>
+<p class="wiki-desc">Allows creation and append of a file within RE ValidLocations.
+For OSI/RE this is only the RE directory / sub-directories
+For CUO/RE this is only CUO or RE directory / sub-directories
+The filename MUST end in a limited file suffix list
+Checks to see if an identical line is already in the file, and does not add if it exists</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">fileName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">lineOfData</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-AppendToFile">
+<h3 class="wiki-entry-name">AppendToFile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.AppendToFile(fileName, lineOfData)</code></div>
+<p class="wiki-desc">Allows creation and append of a file within RE ValidLocations.
+For OSI/RE this is only the RE directory / sub-directories
+For CUO/RE this is only CUO or RE directory / sub-directories
+The filename MUST end in a limited file suffix list</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">fileName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">lineOfData</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Beep">
+<h3 class="wiki-entry-name">Beep</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Beep()</code></div>
+<p class="wiki-desc">Play Beep system sound.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CancelPrompt">
+<h3 class="wiki-entry-name">CancelPrompt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CancelPrompt()</code></div>
+<p class="wiki-desc">Cancel a prompt request.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CaptureNow">
+<h3 class="wiki-entry-name">CaptureNow</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CaptureNow()</code></div>
+<p class="wiki-desc">Creates a snapshot of the current UO window.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ChangeProfile">
+<h3 class="wiki-entry-name">ChangeProfile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ChangeProfile(profileName)</code></div>
+<p class="wiki-desc">Allow the scripted loading of a profile</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">profileName</code> <span class="wiki-param-type">(String)</span>: Name of profile to load</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CheckIgnoreObject">
+<h3 class="wiki-entry-name">CheckIgnoreObject</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CheckIgnoreObject(serial)</code></div>
+<p class="wiki-desc">Check object from ignore list, return true if present. Can check Serial, Items or Mobiles</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial to check.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CheckSharedValue">
+<h3 class="wiki-entry-name">CheckSharedValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CheckSharedValue(name)</code></div>
+<p class="wiki-desc">Check if a shared value exixts.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ClearIgnore">
+<h3 class="wiki-entry-name">ClearIgnore</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ClearIgnore()</code></div>
+<p class="wiki-desc">Clear ignore list from all object</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CloseBackpack">
+<h3 class="wiki-entry-name">CloseBackpack</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CloseBackpack()</code></div>
+<p class="wiki-desc">Close the backpack. 
+(OSI client only, no ClassicUO)</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CloseMenu">
+<h3 class="wiki-entry-name">CloseMenu</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CloseMenu()</code></div>
+<p class="wiki-desc">Close opened Old Menu.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ConfigDirectory">
+<h3 class="wiki-entry-name">ConfigDirectory</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ConfigDirectory()</code></div>
+<p class="wiki-desc">Get the full path to the Persistence Directory.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ContextReply">
+<h3 class="wiki-entry-name">ContextReply</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ContextReply(serial, respone_num)</code></div>
+<p class="wiki-desc">Respond to a context menu on mobile or item. Menu ID is base zero, or can use string of menu text.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Entity</li>
+<li><code class="wiki-param-name">respone_num</code> <span class="wiki-param-type">(Int32)</span>: Poition of the option in the menu. Starts from 0.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-DataDirectory">
+<h3 class="wiki-entry-name">DataDirectory</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.DataDirectory()</code></div>
+<p class="wiki-desc">Get the full path to the Persistence Directory.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-DeleteFile">
+<h3 class="wiki-entry-name">DeleteFile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.DeleteFile(fileName)</code></div>
+<p class="wiki-desc">Allows deletion of a file within RE ValidLocations.
+For OSI/RE this is only the RE directory / sub-directories
+For CUO/RE this is only CUO or RE directory / sub-directories
+The filename MUST end in a limited file suffix list</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">fileName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Disconnect">
+<h3 class="wiki-entry-name">Disconnect</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Disconnect()</code></div>
+<p class="wiki-desc">Force client to disconnect.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Distance">
+<h3 class="wiki-entry-name">Distance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Distance(X1, Y1, X2, Y2)</code></div>
+<p class="wiki-desc">Returns the UO distance between the 2 sets of co-ordinates.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">X1</code> <span class="wiki-param-type">(Int32)</span>: X co-ordinate of first place.</li>
+<li><code class="wiki-param-name">Y1</code> <span class="wiki-param-type">(Int32)</span>: Y co-ordinate of first place.</li>
+<li><code class="wiki-param-name">X2</code> <span class="wiki-param-type">(Int32)</span>: X co-ordinate of second place.</li>
+<li><code class="wiki-param-name">Y2</code> <span class="wiki-param-type">(Int32)</span>: Y co-ordinate of second place.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-DistanceSqrt">
+<h3 class="wiki-entry-name">DistanceSqrt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.DistanceSqrt(point_a, point_b)</code></div>
+<p class="wiki-desc">Compute the distance between 2 Point3D using pythagorian.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">point_a</code> <span class="wiki-param-type">(Point3D)</span>: First coordinates.</li>
+<li><code class="wiki-param-name">point_b</code> <span class="wiki-param-type">(Point3D)</span>: Second coordinates.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ExportPythonAPI">
+<h3 class="wiki-entry-name">ExportPythonAPI</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ExportPythonAPI(path, pretty)</code></div>
+<p class="wiki-desc">Return a string containing list RE Python API list in JSON format.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">path</code> <span class="wiki-param-type">(String)</span>: Name of the output file. (default: Persistence/AutoComplete.json )</li>
+<li><code class="wiki-param-name">pretty</code> <span class="wiki-param-type">(Boolean)</span>: Print a readable JSON. (default: True )</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-FilterSeason">
+<h3 class="wiki-entry-name">FilterSeason</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.FilterSeason(enable, seasonFlag)</code></div>
+<p class="wiki-desc">Enable or disable the Seasons filter forcing a specific season
+Season filter state will be saved on logout but not the season flag that will be recovered.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">enable</code> <span class="wiki-param-type">(Boolean)</span>: True: enable seasons filter</li>
+<li><code class="wiki-param-name">seasonFlag</code> <span class="wiki-param-type">(UInt32)</span>: 0: Spring (default fallback)
+1: Summer
+2: Fall
+3: Winter
+4: Desolation</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-FocusUOWindow">
+<h3 class="wiki-entry-name">FocusUOWindow</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.FocusUOWindow()</code></div>
+<p class="wiki-desc">Set UoClient window in focus or restore if minimized.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-GetContPosition">
+<h3 class="wiki-entry-name">GetContPosition</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.GetContPosition()</code></div>
+<p class="wiki-desc">Get the position of the currently active Gump/Container.
+(OSI client only, no ClassicUO)</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Point</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-GetMapInfo">
+<h3 class="wiki-entry-name">GetMapInfo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.GetMapInfo(serial)</code></div>
+<p class="wiki-desc">Get MapInfo about a Mobile or Item using the serial</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span>: Serial of the object.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Misc.MapInfo</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-GetMenuTitle">
+<h3 class="wiki-entry-name">GetMenuTitle</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.GetMenuTitle()</code></div>
+<p class="wiki-desc">Get the title of title for open Old Menu.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-GetWindowSize">
+<h3 class="wiki-entry-name">GetWindowSize</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.GetWindowSize()</code></div>
+<p class="wiki-desc">Get a Rectangle representing the window size.
+See also: https://docs.microsoft.com/dotnet/api/system.drawing.rectangle</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Rectangle</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-HasMenu">
+<h3 class="wiki-entry-name">HasMenu</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.HasMenu()</code></div>
+<p class="wiki-desc">Check if an Old Menu is open.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-HasPrompt">
+<h3 class="wiki-entry-name">HasPrompt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.HasPrompt()</code></div>
+<p class="wiki-desc">Check if have a prompt request.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-HasQueryString">
+<h3 class="wiki-entry-name">HasQueryString</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.HasQueryString()</code></div>
+<p class="wiki-desc">Check if a have a query string menu opened, return true or false.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-IgnoreObject">
+<h3 class="wiki-entry-name">IgnoreObject</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.IgnoreObject(serial)</code></div>
+<p class="wiki-desc">Add an entiry to the ignore list. Can ignore Serial, Items or Mobiles.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial to ignore.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Inspect">
+<h3 class="wiki-entry-name">Inspect</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Inspect()</code></div>
+<p class="wiki-desc">Prompt the user with a Target. Open the inspector for the selected target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-IsItem">
+<h3 class="wiki-entry-name">IsItem</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.IsItem(serial)</code></div>
+<p class="wiki-desc">Determine if the serial is an item</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span>: Serial number of object to test is Item</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-IsMobile">
+<h3 class="wiki-entry-name">IsMobile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.IsMobile(serial)</code></div>
+<p class="wiki-desc">Determine if the serial is a mobile</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span>: Serial number of object to test is Mobile</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-LastHotKey">
+<h3 class="wiki-entry-name">LastHotKey</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.LastHotKey()</code></div>
+<p class="wiki-desc">Returns the latest HotKey recorded by razor as HotKeyEvent object.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>HotKeyEvent</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-LeftMouseClick">
+<h3 class="wiki-entry-name">LeftMouseClick</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.LeftMouseClick(xpos, ypos, clientCoords)</code></div>
+<p class="wiki-desc">Perform a phisical left click on the window using Windows API.
+Is possible to use abolute Screen Coordinates by setting clientCoords=False.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">xpos</code> <span class="wiki-param-type">(Int32)</span>: X click coordinate.</li>
+<li><code class="wiki-param-name">ypos</code> <span class="wiki-param-type">(Int32)</span>: Y click coordinate.</li>
+<li><code class="wiki-param-name">clientCoords</code> <span class="wiki-param-type">(Boolean)</span>: True: Client coordinates.- False:Screen coordinates (default: True, client).</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-MenuContain">
+<h3 class="wiki-entry-name">MenuContain</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.MenuContain(text)</code></div>
+<p class="wiki-desc">Search in open Old Menu if contains a specific text.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">text</code> <span class="wiki-param-type">(String)</span>: Text to search.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-MenuResponse">
+<h3 class="wiki-entry-name">MenuResponse</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.MenuResponse(text)</code></div>
+<p class="wiki-desc">Perform a menu response by subitem name. If item not exist close menu.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">text</code> <span class="wiki-param-type">(String)</span>: Name of subitem to respond.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-MouseLocation">
+<h3 class="wiki-entry-name">MouseLocation</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.MouseLocation()</code></div>
+<p class="wiki-desc">Returns a point with the X and Y coordinates of the mouse relative to the UO Window</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Point</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-MouseMove">
+<h3 class="wiki-entry-name">MouseMove</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.MouseMove(posX, posY)</code></div>
+<p class="wiki-desc">Moves the mouse pointer to the position X,Y relative to the UO window</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">posX</code> <span class="wiki-param-type">(Int32)</span>: X screen coordinate.</li>
+<li><code class="wiki-param-name">posY</code> <span class="wiki-param-type">(Int32)</span>: Y screen coordinate.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-NextContPosition">
+<h3 class="wiki-entry-name">NextContPosition</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.NextContPosition(x, y)</code></div>
+<p class="wiki-desc">Return the X,Y of the next container, relative to the game window.
+(OSI client only, no ClassicUO)</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: X coordinate.</li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Y coordinate.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-NoOperation">
+<h3 class="wiki-entry-name">NoOperation</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.NoOperation()</code></div>
+<p class="wiki-desc">Just do nothing and enjot the present moment.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-OpenPaperdoll">
+<h3 class="wiki-entry-name">OpenPaperdoll</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.OpenPaperdoll()</code></div>
+<p class="wiki-desc">Open the backpack. 
+(OSI client only, no ClassicUO)</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Pause">
+<h3 class="wiki-entry-name">Pause</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Pause(millisec)</code></div>
+<p class="wiki-desc">Pause the script for a given amount of time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">millisec</code> <span class="wiki-param-type">(Int32)</span>: Pause duration, in milliseconds.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-PetRename">
+<h3 class="wiki-entry-name">PetRename</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.PetRename(serial, name)</code></div>
+<p class="wiki-desc">Rename a specific pet.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the pet.</li>
+<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: New name to set.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-PlaySound">
+<h3 class="wiki-entry-name">PlaySound</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.PlaySound(sound, x, y, z)</code></div>
+<p class="wiki-desc">Send a sound to the client.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">sound</code> <span class="wiki-param-type">(Int32)</span>: The sound to play.</li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: The x point to send sound to.</li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: The y point to send sound to.</li>
+<li><code class="wiki-param-name">z</code> <span class="wiki-param-type">(Int32)</span>: The z point to send sound to.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-QueryStringResponse">
+<h3 class="wiki-entry-name">QueryStringResponse</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.QueryStringResponse(okcancel, response)</code></div>
+<p class="wiki-desc">Perform a query string response by ok or cancel button and specific response string.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">okcancel</code> <span class="wiki-param-type">(Boolean)</span>: OK Button</li>
+<li><code class="wiki-param-name">response</code> <span class="wiki-param-type">(String)</span>: Cancel Button</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-RazorDirectory">
+<h3 class="wiki-entry-name">RazorDirectory</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.RazorDirectory()</code></div>
+<p class="wiki-desc">Get the full path to the main Razor Enhanced folder.
+This path maybe be different from the Python starting folder when RE is loaded as plugin (ex: ClassicUO)</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ReadSharedValue">
+<h3 class="wiki-entry-name">ReadSharedValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ReadSharedValue(name)</code></div>
+<p class="wiki-desc">Get a Shared Value, if value not exist return null.
+Shared values are accessible by every script.
+Get a Shared Value, if value not exist return null.
+Shared values are accessible by every script.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
+<h3 class="wiki-entry-name">RemoveLineInFile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.RemoveLineInFile(fileName, lineOfData)</code></div>
+<p class="wiki-desc">Allows removal of a line in a file within RE ValidLocations.
+For OSI/RE this is only the RE directory / sub-directories
+For CUO/RE this is only CUO or RE directory / sub-directories
+The filename MUST end in a limited file suffix list
+Checks to see if an identical line is in the file, and if it exists, it is removed and file written</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">fileName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">lineOfData</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-RemoveSharedValue">
+<h3 class="wiki-entry-name">RemoveSharedValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.RemoveSharedValue(name)</code></div>
+<p class="wiki-desc">Remove a Shared Value.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ResetPrompt">
+<h3 class="wiki-entry-name">ResetPrompt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ResetPrompt()</code></div>
+<p class="wiki-desc">Reset a prompt response.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ResponsePrompt">
+<h3 class="wiki-entry-name">ResponsePrompt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ResponsePrompt(text)</code></div>
+<p class="wiki-desc">Response a prompt request. Often used to rename runes and similar.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">text</code> <span class="wiki-param-type">(String)</span>: Text of the response.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Resync">
+<h3 class="wiki-entry-name">Resync</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Resync()</code></div>
+<p class="wiki-desc">Trigger a client ReSync.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-RightMouseClick">
+<h3 class="wiki-entry-name">RightMouseClick</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.RightMouseClick(xpos, ypos, clientCoords)</code></div>
+<p class="wiki-desc">Perform a phisical Right click on the window.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">xpos</code> <span class="wiki-param-type">(Int32)</span>: X click coordinate.</li>
+<li><code class="wiki-param-name">ypos</code> <span class="wiki-param-type">(Int32)</span>: Y click coordinate.</li>
+<li><code class="wiki-param-name">clientCoords</code> <span class="wiki-param-type">(Boolean)</span>: True: Client coordinates - False: Screen coordinates (default: True, client).</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptCurrent">
+<h3 class="wiki-entry-name">ScriptCurrent</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptCurrent(fullpath)</code></div>
+<p class="wiki-desc">Returns the path of the current script.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">fullpath</code> <span class="wiki-param-type">(Boolean)</span>: True:Returns the full path. False: Returns the filename. (Dafault: true)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptDirectory">
+<h3 class="wiki-entry-name">ScriptDirectory</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptDirectory()</code></div>
+<p class="wiki-desc">Get the full path to the Scripts Directory.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptIsSuspended">
+<h3 class="wiki-entry-name">ScriptIsSuspended</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptIsSuspended(scriptfile)</code></div>
+<p class="wiki-desc">Get status of script if is suspended or not, Script must be present in script grid.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">scriptfile</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptResume">
+<h3 class="wiki-entry-name">ScriptResume</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptResume(scriptfile)</code></div>
+<p class="wiki-desc">Resume a script by file name, Script must be present in script grid.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">scriptfile</code> <span class="wiki-param-type">(String)</span>: Name of the script.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptRun">
+<h3 class="wiki-entry-name">ScriptRun</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptRun(scriptfile)</code></div>
+<p class="wiki-desc">Run a script by file name, Script must be present in script grid.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">scriptfile</code> <span class="wiki-param-type">(String)</span>: Name of the script.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptStatus">
+<h3 class="wiki-entry-name">ScriptStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptStatus(scriptfile)</code></div>
+<p class="wiki-desc">Get status of script if running or not, Script must be present in script grid.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">scriptfile</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptStop">
+<h3 class="wiki-entry-name">ScriptStop</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptStop(scriptfile)</code></div>
+<p class="wiki-desc">Stop a script by file name, Script must be present in script grid.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">scriptfile</code> <span class="wiki-param-type">(String)</span>: Name of the script.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptStopAll">
+<h3 class="wiki-entry-name">ScriptStopAll</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptStopAll(skipCurrent)</code></div>
+<p class="wiki-desc">Stop all script running.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skipCurrent</code> <span class="wiki-param-type">(Boolean)</span>: True: Stop all scripts, but the current one - False: stop all scripts. (Dafault: false)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ScriptSuspend">
+<h3 class="wiki-entry-name">ScriptSuspend</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptSuspend(scriptfile)</code></div>
+<p class="wiki-desc">Suspend a script by file name, Script must be present in script grid.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">scriptfile</code> <span class="wiki-param-type">(String)</span>: Name of the script.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-SendMessage">
+<h3 class="wiki-entry-name">SendMessage</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.SendMessage(msg, color, wait)</code></div>
+<p class="wiki-desc">Send a message to the client.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: The object to print.</li>
+<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the message.</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: True: Wait for confimation. - False: Returns instatnly.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-SendToClient">
+<h3 class="wiki-entry-name">SendToClient</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.SendToClient(keys)</code></div>
+<p class="wiki-desc">Send to the client a list of keystrokes. Can contain control characters: 
+- Send Control+Key: ctrl+u: ^u
+- Send ENTER: {Enter}
+Note: some keys don't work with ClassicUO (es: {Enter} )</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">keys</code> <span class="wiki-param-type">(String)</span>: List of keys.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-SetSharedValue">
+<h3 class="wiki-entry-name">SetSharedValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.SetSharedValue(name, value)</code></div>
+<p class="wiki-desc">Set a Shared Value by specific name, if value exist he repalce value.
+Shared values are accessible by every script.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li>
+<li><code class="wiki-param-name">value</code> <span class="wiki-param-type">(Object)</span>: Value to set.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-ShardName">
+<h3 class="wiki-entry-name">ShardName</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ShardName()</code></div>
+<p class="wiki-desc">Get the name of the shard.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-UnIgnoreObject">
+<h3 class="wiki-entry-name">UnIgnoreObject</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UnIgnoreObject(serial)</code></div>
+<p class="wiki-desc">Remove object from ignore list. Can remove serial, items or mobiles</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial to unignore.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-UseContextMenu">
+<h3 class="wiki-entry-name">UseContextMenu</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UseContextMenu(serial, choice, delay)</code></div>
+<p class="wiki-desc">Open and click the option of Context menu, given the serial of Mobile or Item, via packets.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Item or Mobile.</li>
+<li><code class="wiki-param-name">choice</code> <span class="wiki-param-type">(String)</span>: Option as Text or integer.</li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait for the action to complete.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-WaitForContext">
+<h3 class="wiki-entry-name">WaitForContext</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.WaitForContext(serial, delay, showContext)</code></div>
+<p class="wiki-desc">Return the List entry of a Context menu, of Mobile or Item objects.
+The function will ask the server for the List and wait for a maximum amount of time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the entity.</li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait.</li>
+<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span>: Show context menu in-game. (default: True)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Misc.Context]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-WaitForMenu">
+<h3 class="wiki-entry-name">WaitForMenu</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.WaitForMenu(delay)</code></div>
+<p class="wiki-desc">Pause script until server send an Old Menu, for a maximum amount of time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait, in milliseconds.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-WaitForPrompt">
+<h3 class="wiki-entry-name">WaitForPrompt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.WaitForPrompt(delay)</code></div>
+<p class="wiki-desc">Wait for a prompt for a maximum amount of time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait time.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-WaitForQueryString">
+<h3 class="wiki-entry-name">WaitForQueryString</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.WaitForQueryString(delay)</code></div>
+<p class="wiki-desc">Pause script until server send query string request, for a maximum amount of time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait, in milliseconds.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Misc-AllSharedValue">AllSharedValue</a></li>
+<li><a href="#M-Scripting-Misc-AppendNotDupToFile">AppendNotDupToFile</a></li>
+<li><a href="#M-Scripting-Misc-AppendToFile">AppendToFile</a></li>
+<li><a href="#M-Scripting-Misc-Beep">Beep</a></li>
+<li><a href="#M-Scripting-Misc-CancelPrompt">CancelPrompt</a></li>
+<li><a href="#M-Scripting-Misc-CaptureNow">CaptureNow</a></li>
+<li><a href="#M-Scripting-Misc-ChangeProfile">ChangeProfile</a></li>
+<li><a href="#M-Scripting-Misc-CheckIgnoreObject">CheckIgnoreObject</a></li>
+<li><a href="#M-Scripting-Misc-CheckSharedValue">CheckSharedValue</a></li>
+<li><a href="#M-Scripting-Misc-ClearIgnore">ClearIgnore</a></li>
+<li><a href="#M-Scripting-Misc-CloseBackpack">CloseBackpack</a></li>
+<li><a href="#M-Scripting-Misc-CloseMenu">CloseMenu</a></li>
+<li><a href="#M-Scripting-Misc-ConfigDirectory">ConfigDirectory</a></li>
+<li><a href="#M-Scripting-Misc-ContextReply">ContextReply</a></li>
+<li><a href="#M-Scripting-Misc-DataDirectory">DataDirectory</a></li>
+<li><a href="#M-Scripting-Misc-DeleteFile">DeleteFile</a></li>
+<li><a href="#M-Scripting-Misc-Disconnect">Disconnect</a></li>
+<li><a href="#M-Scripting-Misc-Distance">Distance</a></li>
+<li><a href="#M-Scripting-Misc-DistanceSqrt">DistanceSqrt</a></li>
+<li><a href="#M-Scripting-Misc-ExportPythonAPI">ExportPythonAPI</a></li>
+<li><a href="#M-Scripting-Misc-FilterSeason">FilterSeason</a></li>
+<li><a href="#M-Scripting-Misc-FocusUOWindow">FocusUOWindow</a></li>
+<li><a href="#M-Scripting-Misc-GetContPosition">GetContPosition</a></li>
+<li><a href="#M-Scripting-Misc-GetMapInfo">GetMapInfo</a></li>
+<li><a href="#M-Scripting-Misc-GetMenuTitle">GetMenuTitle</a></li>
+<li><a href="#M-Scripting-Misc-GetWindowSize">GetWindowSize</a></li>
+<li><a href="#M-Scripting-Misc-HasMenu">HasMenu</a></li>
+<li><a href="#M-Scripting-Misc-HasPrompt">HasPrompt</a></li>
+<li><a href="#M-Scripting-Misc-HasQueryString">HasQueryString</a></li>
+<li><a href="#M-Scripting-Misc-IgnoreObject">IgnoreObject</a></li>
+<li><a href="#M-Scripting-Misc-Inspect">Inspect</a></li>
+<li><a href="#M-Scripting-Misc-IsItem">IsItem</a></li>
+<li><a href="#M-Scripting-Misc-IsMobile">IsMobile</a></li>
+<li><a href="#M-Scripting-Misc-LastHotKey">LastHotKey</a></li>
+<li><a href="#M-Scripting-Misc-LeftMouseClick">LeftMouseClick</a></li>
+<li><a href="#M-Scripting-Misc-MenuContain">MenuContain</a></li>
+<li><a href="#M-Scripting-Misc-MenuResponse">MenuResponse</a></li>
+<li><a href="#M-Scripting-Misc-MouseLocation">MouseLocation</a></li>
+<li><a href="#M-Scripting-Misc-MouseMove">MouseMove</a></li>
+<li><a href="#M-Scripting-Misc-NextContPosition">NextContPosition</a></li>
+<li><a href="#M-Scripting-Misc-NoOperation">NoOperation</a></li>
+<li><a href="#M-Scripting-Misc-OpenPaperdoll">OpenPaperdoll</a></li>
+<li><a href="#M-Scripting-Misc-Pause">Pause</a></li>
+<li><a href="#M-Scripting-Misc-PetRename">PetRename</a></li>
+<li><a href="#M-Scripting-Misc-PlaySound">PlaySound</a></li>
+<li><a href="#M-Scripting-Misc-QueryStringResponse">QueryStringResponse</a></li>
+<li><a href="#M-Scripting-Misc-RazorDirectory">RazorDirectory</a></li>
+<li><a href="#M-Scripting-Misc-ReadSharedValue">ReadSharedValue</a></li>
+<li><a href="#M-Scripting-Misc-RemoveLineInFile">RemoveLineInFile</a></li>
+<li><a href="#M-Scripting-Misc-RemoveSharedValue">RemoveSharedValue</a></li>
+<li><a href="#M-Scripting-Misc-ResetPrompt">ResetPrompt</a></li>
+<li><a href="#M-Scripting-Misc-ResponsePrompt">ResponsePrompt</a></li>
+<li><a href="#M-Scripting-Misc-Resync">Resync</a></li>
+<li><a href="#M-Scripting-Misc-RightMouseClick">RightMouseClick</a></li>
+<li><a href="#M-Scripting-Misc-ScriptCurrent">ScriptCurrent</a></li>
+<li><a href="#M-Scripting-Misc-ScriptDirectory">ScriptDirectory</a></li>
+<li><a href="#M-Scripting-Misc-ScriptIsSuspended">ScriptIsSuspended</a></li>
+<li><a href="#M-Scripting-Misc-ScriptResume">ScriptResume</a></li>
+<li><a href="#M-Scripting-Misc-ScriptRun">ScriptRun</a></li>
+<li><a href="#M-Scripting-Misc-ScriptStatus">ScriptStatus</a></li>
+<li><a href="#M-Scripting-Misc-ScriptStop">ScriptStop</a></li>
+<li><a href="#M-Scripting-Misc-ScriptStopAll">ScriptStopAll</a></li>
+<li><a href="#M-Scripting-Misc-ScriptSuspend">ScriptSuspend</a></li>
+<li><a href="#M-Scripting-Misc-SendMessage">SendMessage</a></li>
+<li><a href="#M-Scripting-Misc-SendToClient">SendToClient</a></li>
+<li><a href="#M-Scripting-Misc-SetSharedValue">SetSharedValue</a></li>
+<li><a href="#M-Scripting-Misc-ShardName">ShardName</a></li>
+<li><a href="#M-Scripting-Misc-UnIgnoreObject">UnIgnoreObject</a></li>
+<li><a href="#M-Scripting-Misc-UseContextMenu">UseContextMenu</a></li>
+<li><a href="#M-Scripting-Misc-WaitForContext">WaitForContext</a></li>
+<li><a href="#M-Scripting-Misc-WaitForMenu">WaitForMenu</a></li>
+<li><a href="#M-Scripting-Misc-WaitForPrompt">WaitForPrompt</a></li>
+<li><a href="#M-Scripting-Misc-WaitForQueryString">WaitForQueryString</a></li></ul></aside></div></body></html>

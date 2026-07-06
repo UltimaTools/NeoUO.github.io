@@ -1,0 +1,280 @@
+<!DOCTYPE html><html><head><title>Target - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link active" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Target</h1><p class="wiki-class-desc">The Target class provides various methods for targeting Land, Items and Mobiles in game.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Target-AttackTargetFromList">
+<h3 class="wiki-entry-name">AttackTargetFromList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.AttackTargetFromList(target_name)</code></div>
+<p class="wiki-desc">Attack Target from gui filter selector, in Targetting tab.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target_name</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-Cancel">
+<h3 class="wiki-entry-name">Cancel</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.Cancel()</code></div>
+<p class="wiki-desc">Cancel the current target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-ClearLast">
+<h3 class="wiki-entry-name">ClearLast</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.ClearLast()</code></div>
+<p class="wiki-desc">Clear the last target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-ClearLastAttack">
+<h3 class="wiki-entry-name">ClearLastAttack</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.ClearLastAttack()</code></div>
+<p class="wiki-desc">Clear the last attacked target</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-ClearLastandQueue">
+<h3 class="wiki-entry-name">ClearLastandQueue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.ClearLastandQueue()</code></div>
+<p class="wiki-desc">Clear last target and target queue.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-ClearQueue">
+<h3 class="wiki-entry-name">ClearQueue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.ClearQueue()</code></div>
+<p class="wiki-desc">Clear Queue Target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-GetLast">
+<h3 class="wiki-entry-name">GetLast</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.GetLast()</code></div>
+<p class="wiki-desc">Get serial number of last target</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-GetLastAttack">
+<h3 class="wiki-entry-name">GetLastAttack</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.GetLastAttack()</code></div>
+<p class="wiki-desc">Get serial number of last attack target</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-GetTargetFromList">
+<h3 class="wiki-entry-name">GetTargetFromList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.GetTargetFromList(target_name)</code></div>
+<p class="wiki-desc">Get Mobile object from GUI filter selector, in Targetting tab.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target_name</code> <span class="wiki-param-type">(String)</span>: Name of the target filter.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobile</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-HasTarget">
+<h3 class="wiki-entry-name">HasTarget</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.HasTarget(targetFlag)</code></div>
+<p class="wiki-desc">Get the status of the in-game target cursor
+Optionally specify the target flag and check if the cursor is "Beneficial", "Harmful", or "Neutral".</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">targetFlag</code> <span class="wiki-param-type">(String)</span>: The target flag to check for can be "Any", "Beneficial", "Harmful", or "Neutral".</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-Last">
+<h3 class="wiki-entry-name">Last</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.Last()</code></div>
+<p class="wiki-desc">Execute the target on the last Item or Mobile targeted.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-LastQueued">
+<h3 class="wiki-entry-name">LastQueued</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.LastQueued()</code></div>
+<p class="wiki-desc">Enqueue the next target on the last Item or Mobile targeted.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-LastUsedObject">
+<h3 class="wiki-entry-name">LastUsedObject</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.LastUsedObject()</code></div>
+<p class="wiki-desc">Returns the serial of last object used by the player.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-PerformTargetFromList">
+<h3 class="wiki-entry-name">PerformTargetFromList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.PerformTargetFromList(target_name)</code></div>
+<p class="wiki-desc">Execute Target from GUI filter selector, in Targetting tab.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target_name</code> <span class="wiki-param-type">(String)</span>: Name of the target filter.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-PromptGroundTarget">
+<h3 class="wiki-entry-name">PromptGroundTarget</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.PromptGroundTarget(message, color)</code></div>
+<p class="wiki-desc">Prompt a target in-game, wait for the Player to select the ground. Can also specific a text message for prompt.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">message</code> <span class="wiki-param-type">(String)</span>: Hint on what to select.</li>
+<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the message. (default: 945, gray)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Point3D</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-PromptTarget">
+<h3 class="wiki-entry-name">PromptTarget</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.PromptTarget(message, color)</code></div>
+<p class="wiki-desc">Prompt a target in-game, wait for the Player to select an Item or a Mobile. Can also specific a text message for prompt.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">message</code> <span class="wiki-param-type">(String)</span>: Hint on what to select.</li>
+<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the message. (default: 945, gray)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-Self">
+<h3 class="wiki-entry-name">Self</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.Self()</code></div>
+<p class="wiki-desc">Execute the target on the Player.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-SelfQueued">
+<h3 class="wiki-entry-name">SelfQueued</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.SelfQueued()</code></div>
+<p class="wiki-desc">Enqueue the next target on the Player.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-SetLast">
+<h3 class="wiki-entry-name">SetLast</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.SetLast(serial, wait)</code></div>
+<p class="wiki-desc">Set the last target to specific mobile, using the serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Mobile.</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Wait confirmation from the server.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-SetLastTargetFromList">
+<h3 class="wiki-entry-name">SetLastTargetFromList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.SetLastTargetFromList(target_name)</code></div>
+<p class="wiki-desc">Set Last Target from GUI filter selector, in Targetting tab.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target_name</code> <span class="wiki-param-type">(String)</span>: Name of the target filter.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-TargetExecute">
+<h3 class="wiki-entry-name">TargetExecute</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetExecute(x, y, z, StaticID)</code></div>
+<p class="wiki-desc">Execute target on specific serial, item, mobile, X Y Z point.
+Targets the Mobil or Item specified</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: X coordinate.</li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Y coordinate.</li>
+<li><code class="wiki-param-name">z</code> <span class="wiki-param-type">(Int32)</span>: Z coordinate.</li>
+<li><code class="wiki-param-name">StaticID</code> <span class="wiki-param-type">(Int32)</span>: ID of Land/Tile</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-TargetExecuteRelative">
+<h3 class="wiki-entry-name">TargetExecuteRelative</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetExecuteRelative(mobile, offset)</code></div>
+<p class="wiki-desc">Execute target on specific land point with offset distance from Mobile. Distance is calculated by target Mobile.Direction.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span>: Mobile object to target.</li>
+<li><code class="wiki-param-name">offset</code> <span class="wiki-param-type">(Int32)</span>: Distance from the target.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-TargetResource">
+<h3 class="wiki-entry-name">TargetResource</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetResource(item_serial, resource_number)</code></div>
+<p class="wiki-desc">Find and target a resource using the specified item.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item_serial</code> <span class="wiki-param-type">(Int32)</span>: Item object to use.</li>
+<li><code class="wiki-param-name">resource_number</code> <span class="wiki-param-type">(Int32)</span>: Resource as standard name or custom number
+               0: ore
+               1: sand
+               2: wood
+               3: graves
+               4: red_mushrooms
+               n: custom</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-TargetType">
+<h3 class="wiki-entry-name">TargetType</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetType(graphic, color, range, selector, notoriety)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphic</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">selector</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">notoriety</code> <span class="wiki-param-type">(List[Byte])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-WaitForTarget">
+<h3 class="wiki-entry-name">WaitForTarget</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.WaitForTarget(delay, noshow)</code></div>
+<p class="wiki-desc">Wait for the cursor to show the target, pause the script for a maximum amount of time. and optional flag True or False. True Not show cursor, false show it</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum amount to wait, in milliseconds</li>
+<li><code class="wiki-param-name">noshow</code> <span class="wiki-param-type">(Boolean)</span>: Pevent the cursor to display the target.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Target-WaitForTargetOrFizzle">
+<h3 class="wiki-entry-name">WaitForTargetOrFizzle</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.WaitForTargetOrFizzle(delay, noshow)</code></div>
+<p class="wiki-desc">Wait for the cursor to show the target, or the sound for fizzle (0x5c) or pause the script for a maximum amount of time. 
+and an optional flag True or False. True Not show cursor, false show it</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum amount to wait, in milliseconds</li>
+<li><code class="wiki-param-name">noshow</code> <span class="wiki-param-type">(Boolean)</span>: Prevent the cursor to display the target.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Target-AttackTargetFromList">AttackTargetFromList</a></li>
+<li><a href="#M-Scripting-Target-Cancel">Cancel</a></li>
+<li><a href="#M-Scripting-Target-ClearLast">ClearLast</a></li>
+<li><a href="#M-Scripting-Target-ClearLastandQueue">ClearLastandQueue</a></li>
+<li><a href="#M-Scripting-Target-ClearLastAttack">ClearLastAttack</a></li>
+<li><a href="#M-Scripting-Target-ClearQueue">ClearQueue</a></li>
+<li><a href="#M-Scripting-Target-GetLast">GetLast</a></li>
+<li><a href="#M-Scripting-Target-GetLastAttack">GetLastAttack</a></li>
+<li><a href="#M-Scripting-Target-GetTargetFromList">GetTargetFromList</a></li>
+<li><a href="#M-Scripting-Target-HasTarget">HasTarget</a></li>
+<li><a href="#M-Scripting-Target-Last">Last</a></li>
+<li><a href="#M-Scripting-Target-LastQueued">LastQueued</a></li>
+<li><a href="#M-Scripting-Target-LastUsedObject">LastUsedObject</a></li>
+<li><a href="#M-Scripting-Target-PerformTargetFromList">PerformTargetFromList</a></li>
+<li><a href="#M-Scripting-Target-PromptGroundTarget">PromptGroundTarget</a></li>
+<li><a href="#M-Scripting-Target-PromptTarget">PromptTarget</a></li>
+<li><a href="#M-Scripting-Target-Self">Self</a></li>
+<li><a href="#M-Scripting-Target-SelfQueued">SelfQueued</a></li>
+<li><a href="#M-Scripting-Target-SetLast">SetLast</a></li>
+<li><a href="#M-Scripting-Target-SetLastTargetFromList">SetLastTargetFromList</a></li>
+<li><a href="#M-Scripting-Target-TargetExecute">TargetExecute</a></li>
+<li><a href="#M-Scripting-Target-TargetExecuteRelative">TargetExecuteRelative</a></li>
+<li><a href="#M-Scripting-Target-TargetResource">TargetResource</a></li>
+<li><a href="#M-Scripting-Target-TargetType">TargetType</a></li>
+<li><a href="#M-Scripting-Target-WaitForTarget">WaitForTarget</a></li>
+<li><a href="#M-Scripting-Target-WaitForTargetOrFizzle">WaitForTargetOrFizzle</a></li></ul></aside></div></body></html>

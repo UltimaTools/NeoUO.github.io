@@ -1,0 +1,405 @@
+<!DOCTYPE html><html><head><title>Item - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link active" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Item</h1><p class="wiki-class-desc">The Item class represent a single in-game Item object. Examples of Item are: Swords, bags, bandages, reagents, clothing.
+While the Item.Serial is unique for each Item, Item.ItemID is the unique for the Item apparence, or image. Sometimes is also called ID or Graphics ID.
+Item can also be house foriture as well as decorative items on the ground, like lamp post and banches.
+However, for Item on the ground that cannot be picked up, they might be part of the world map, see Statics class.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="P-Scripting-Item-Amount">
+<h3 class="wiki-entry-name">Amount</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Amount</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Read amount from item type object.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Color">
+<h3 class="wiki-entry-name">Color</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Color</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Container">
+<h3 class="wiki-entry-name">Container</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Container</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Serial of the container which contains the object.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-ContainerCurrentItems">
+<h3 class="wiki-entry-name">ContainerCurrentItems</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.ContainerCurrentItems</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-ContainerCurrentWeight">
+<h3 class="wiki-entry-name">ContainerCurrentWeight</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.ContainerCurrentWeight</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-ContainerOpened">
+<h3 class="wiki-entry-name">ContainerOpened</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.ContainerOpened</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True when the container was opened</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Contains">
+<h3 class="wiki-entry-name">Contains</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Contains</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[Item]</code></div>
+<p class="wiki-desc">Contains the list of Item inside a container.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-CorpseNumberItems">
+<h3 class="wiki-entry-name">CorpseNumberItems</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.CorpseNumberItems</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">-1 until corpse is checked, then # items in corpse. Used by looter to ignore empty corpses</p>
+</div>
+<div class="wiki-entry" id="P-UOEntity-Deleted">
+<h3 class="wiki-entry-name">Deleted</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Deleted</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Direction">
+<h3 class="wiki-entry-name">Direction</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Direction</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Item direction.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Durability">
+<h3 class="wiki-entry-name">Durability</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Durability</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get the current durability of an Item. (0: no durability)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Graphics">
+<h3 class="wiki-entry-name">Graphics</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Graphics</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-GridNum">
+<h3 class="wiki-entry-name">GridNum</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.GridNum</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Byte</code></div>
+<p class="wiki-desc">Returns the GridNum of the item. (need better documentation)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Hue">
+<h3 class="wiki-entry-name">Hue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Hue</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Image">
+<h3 class="wiki-entry-name">Image</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Image</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Bitmap</code></div>
+<p class="wiki-desc">Get the in-game image on an Item as Bitmap object.
+See MSDN: https://docs.microsoft.com/dotnet/api/system.drawing.bitmap</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsBagOfSending">
+<h3 class="wiki-entry-name">IsBagOfSending</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsBagOfSending</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a bag of sending - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsContainer">
+<h3 class="wiki-entry-name">IsContainer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsContainer</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a container - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsCorpse">
+<h3 class="wiki-entry-name">IsCorpse</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsCorpse</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a corpse - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsDoor">
+<h3 class="wiki-entry-name">IsDoor</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsDoor</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a door - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsInBank">
+<h3 class="wiki-entry-name">IsInBank</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsInBank</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is in the Player's bank - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsLootable">
+<h3 class="wiki-entry-name">IsLootable</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsLootable</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: For regualar items - False: for hair, beards, etc.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsPotion">
+<h3 class="wiki-entry-name">IsPotion</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsPotion</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a potion - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsResource">
+<h3 class="wiki-entry-name">IsResource</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsResource</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a resource (ore, sand, wood, stone, fish) - False: otherwise</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsSearchable">
+<h3 class="wiki-entry-name">IsSearchable</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsSearchable</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a pouch - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsTwoHanded">
+<h3 class="wiki-entry-name">IsTwoHanded</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsTwoHanded</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a 2-handed weapon - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsVirtueShield">
+<h3 class="wiki-entry-name">IsVirtueShield</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsVirtueShield</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a virtue shield - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-ItemID">
+<h3 class="wiki-entry-name">ItemID</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.ItemID</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Represents the type of Item, usually unique for the Item image.  Sometime called ID or Graphics ID.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Layer">
+<h3 class="wiki-entry-name">Layer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Layer</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Gets the Layer, for werable items only. (need better documentation)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Light">
+<h3 class="wiki-entry-name">Light</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Light</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Byte</code></div>
+<p class="wiki-desc">Item light's direction (e.g. will affect corpse's facing direction)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-MaxContainerWeight">
+<h3 class="wiki-entry-name">MaxContainerWeight</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.MaxContainerWeight</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-MaxDurability">
+<h3 class="wiki-entry-name">MaxDurability</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.MaxDurability</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get the maximum durability of an Item. (0: no durability)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-MaxItems">
+<h3 class="wiki-entry-name">MaxItems</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.MaxItems</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Movable">
+<h3 class="wiki-entry-name">Movable</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Movable</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Item is movable</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Name">
+<h3 class="wiki-entry-name">Name</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Name</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Item name</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-OnGround">
+<h3 class="wiki-entry-name">OnGround</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.OnGround</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is on the ground - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-UOEntity-Position">
+<h3 class="wiki-entry-name">Position</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Position</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Point3D</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Properties">
+<h3 class="wiki-entry-name">Properties</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Properties</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[Property]</code></div>
+<p class="wiki-desc">Get the list of Properties of an Item.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-PropsUpdated">
+<h3 class="wiki-entry-name">PropsUpdated</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.PropsUpdated</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if Properties are updated - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-RootContainer">
+<h3 class="wiki-entry-name">RootContainer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.RootContainer</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get serial of root container of item.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Serial">
+<h3 class="wiki-entry-name">Serial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Serial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Updated">
+<h3 class="wiki-entry-name">Updated</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Updated</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Check if the Item already have been updated with all the properties. (need better documentation)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Visible">
+<h3 class="wiki-entry-name">Visible</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Visible</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Item is Visible</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-Weight">
+<h3 class="wiki-entry-name">Weight</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Weight</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get the weight of a item. (0: no weight)</p>
+</div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Item-DistanceTo">
+<h3 class="wiki-entry-name">DistanceTo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.DistanceTo(mob)</code></div>
+<p class="wiki-desc">Return the distance in number of tiles, from Item to Mobile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mob</code> <span class="wiki-param-type">(Mobile)</span>: Target as Mobile</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-UOEntity-Equals">
+<h3 class="wiki-entry-name">Equals</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.Equals(obj)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">obj</code> <span class="wiki-param-type">(Object)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-UOEntity-GetHashCode">
+<h3 class="wiki-entry-name">GetHashCode</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.GetHashCode()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Item-GetWorldPosition">
+<h3 class="wiki-entry-name">GetWorldPosition</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.GetWorldPosition()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Point3D</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Item-IsChildOf">
+<h3 class="wiki-entry-name">IsChildOf</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsChildOf(container, maxDepth)</code></div>
+<p class="wiki-desc">Check if an Item is contained in a container. Can be a Item or a Mobile (wear by).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Item)</span>: Item as container.</li>
+<li><code class="wiki-param-name">maxDepth</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Item-ToString">
+<h3 class="wiki-entry-name">ToString</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.ToString()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#P-Scripting-Item-Amount">Amount</a></li>
+<li><a href="#P-Scripting-Item-Color">Color</a></li>
+<li><a href="#P-Scripting-Item-Container">Container</a></li>
+<li><a href="#P-Scripting-Item-ContainerCurrentItems">ContainerCurrentItems</a></li>
+<li><a href="#P-Scripting-Item-ContainerCurrentWeight">ContainerCurrentWeight</a></li>
+<li><a href="#P-Scripting-Item-ContainerOpened">ContainerOpened</a></li>
+<li><a href="#P-Scripting-Item-Contains">Contains</a></li>
+<li><a href="#P-Scripting-Item-CorpseNumberItems">CorpseNumberItems</a></li>
+<li><a href="#P-UOEntity-Deleted">Deleted</a></li>
+<li><a href="#P-Scripting-Item-Direction">Direction</a></li>
+<li><a href="#M-Scripting-Item-DistanceTo">DistanceTo</a></li>
+<li><a href="#P-Scripting-Item-Durability">Durability</a></li>
+<li><a href="#M-UOEntity-Equals">Equals</a></li>
+<li><a href="#M-UOEntity-GetHashCode">GetHashCode</a></li>
+<li><a href="#M-Scripting-Item-GetWorldPosition">GetWorldPosition</a></li>
+<li><a href="#P-Scripting-Item-Graphics">Graphics</a></li>
+<li><a href="#P-Scripting-Item-GridNum">GridNum</a></li>
+<li><a href="#P-Scripting-Item-Hue">Hue</a></li>
+<li><a href="#P-Scripting-Item-Image">Image</a></li>
+<li><a href="#P-Scripting-Item-IsBagOfSending">IsBagOfSending</a></li>
+<li><a href="#M-Scripting-Item-IsChildOf">IsChildOf</a></li>
+<li><a href="#P-Scripting-Item-IsContainer">IsContainer</a></li>
+<li><a href="#P-Scripting-Item-IsCorpse">IsCorpse</a></li>
+<li><a href="#P-Scripting-Item-IsDoor">IsDoor</a></li>
+<li><a href="#P-Scripting-Item-IsInBank">IsInBank</a></li>
+<li><a href="#P-Scripting-Item-IsLootable">IsLootable</a></li>
+<li><a href="#P-Scripting-Item-IsPotion">IsPotion</a></li>
+<li><a href="#P-Scripting-Item-IsResource">IsResource</a></li>
+<li><a href="#P-Scripting-Item-IsSearchable">IsSearchable</a></li>
+<li><a href="#P-Scripting-Item-IsTwoHanded">IsTwoHanded</a></li>
+<li><a href="#P-Scripting-Item-IsVirtueShield">IsVirtueShield</a></li>
+<li><a href="#P-Scripting-Item-ItemID">ItemID</a></li>
+<li><a href="#P-Scripting-Item-Layer">Layer</a></li>
+<li><a href="#P-Scripting-Item-Light">Light</a></li>
+<li><a href="#P-Scripting-Item-MaxContainerWeight">MaxContainerWeight</a></li>
+<li><a href="#P-Scripting-Item-MaxDurability">MaxDurability</a></li>
+<li><a href="#P-Scripting-Item-MaxItems">MaxItems</a></li>
+<li><a href="#P-Scripting-Item-Movable">Movable</a></li>
+<li><a href="#P-Scripting-Item-Name">Name</a></li>
+<li><a href="#P-Scripting-Item-OnGround">OnGround</a></li>
+<li><a href="#P-UOEntity-Position">Position</a></li>
+<li><a href="#P-Scripting-Item-Properties">Properties</a></li>
+<li><a href="#P-Scripting-Item-PropsUpdated">PropsUpdated</a></li>
+<li><a href="#P-Scripting-Item-RootContainer">RootContainer</a></li>
+<li><a href="#P-Scripting-Item-Serial">Serial</a></li>
+<li><a href="#M-Scripting-Item-ToString">ToString</a></li>
+<li><a href="#P-Scripting-Item-Updated">Updated</a></li>
+<li><a href="#P-Scripting-Item-Visible">Visible</a></li>
+<li><a href="#P-Scripting-Item-Weight">Weight</a></li></ul></aside></div></body></html>

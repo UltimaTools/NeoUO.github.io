@@ -46,6 +46,7 @@ Main:
 import os
 import json
 import re
+import sys
 
     
 
@@ -53,10 +54,12 @@ def main():
     ## SETTINGS
     
     debug=True
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     
     # Write to your Script/Docs/ folder
-    output_path = "./doc/api/"
-    api_path = "./Config/AutoComplete.json"
+    output_path = os.path.join(script_dir, "api") + os.sep
+    api_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(script_dir, "Config", "AutoComplete.json")
     
     ## RUN 
     
@@ -81,6 +84,11 @@ def main():
         player_html = adhtml.ClassHTML(className)
         player_html = HTML.LeftRightPage(version+menu,player_html,"{} - UO-Copilot API".format(className))
         adhtml.WriteToFile(filename, player_html, debug=debug)
+
+    ## generates wiki-style docs to ./doc/wiki/
+    print("\nGenerating wiki-style docs...")
+    wiki = WikiAutoDocHTML(output_path=None, api_path=api_path)
+    wiki.MakeWikiDocumentation()
      
 class HTML():
     
@@ -565,6 +573,304 @@ class AutoDocHTML:
         
     
     
+
+class WikiHTML:
+    """Wiki-style HTML theme (DokuWiki-inspired, dark theme)"""
+
+    @staticmethod
+    def Page(sidebar, content, title="", right_index=None):
+        title_html = "<title>{}</title>".format(title) if title else ""
+        css = '<link rel="stylesheet" type="text/css" href="./wiki.css">'
+        js = '<script src="./wiki.js"></script>'
+        header = "<head>{}{}{}</head>".format(title_html, css, js)
+
+        sidebar_html = '<nav class="wiki-sidebar">{}</nav>'.format(sidebar)
+        content_html = '<main class="wiki-content">{}</main>'.format(content)
+        right_html = ''
+        if right_index:
+            right_html = '<aside class="wiki-index">{}</aside>'.format(right_index)
+        body = '<body><div class="wiki-layout">{}{}{}</div></body>'.format(
+            sidebar_html, content_html, right_html
+        )
+
+        return "<!DOCTYPE html><html>{}{}</html>".format(header, body)
+
+    @staticmethod
+    def Sidebar(version, class_links):
+        version_html = '<div class="wiki-version"><a href="./index.html">UO-Copilot API v{}</a></div>'.format(
+            version
+        )
+        links_html = "\n".join(class_links)
+        nav = '<div class="wiki-nav">{}</div>'.format(links_html)
+        return version_html + nav
+
+    @staticmethod
+    def SidebarLink(name, url, active=False):
+        css_class = ' class="wiki-nav-link active"' if active else ' class="wiki-nav-link"'
+        return '<a{} href="{}">{}</a>'.format(css_class, url, name)
+
+    @staticmethod
+    def TOC(entries):
+        if not entries:
+            return ""
+        items = []
+        for anchor, label in entries:
+            items.append('<li><a href="#{}">{}</a></li>'.format(anchor, label))
+        return '<div class="wiki-toc"><h3>Table of Contents</h3><ul>{}</ul></div>'.format(
+            "\n".join(items)
+        )
+
+    @staticmethod
+    def RightIndex(entries):
+        if not entries:
+            return ""
+        items = []
+        for anchor, label in entries:
+            items.append('<li><a href="#{}">{}</a></li>'.format(anchor, label))
+        return '<div class="wiki-index-header">Index</div><ul class="wiki-index-list">{}</ul>'.format(
+            "\n".join(items)
+        )
+
+    @staticmethod
+    def ClassHeader(class_name, description=""):
+        desc_html = (
+            '<p class="wiki-class-desc">{}</p>'.format(description)
+            if description
+            else ""
+        )
+        return '<h1 class="wiki-class-name">{}</h1>{}'.format(class_name, desc_html)
+
+    @staticmethod
+    def SectionHeader(title, anchor):
+        return '<h2 id="{}" class="wiki-section-header">{}</h2>'.format(anchor, title)
+
+    @staticmethod
+    def PropertyEntry(class_name, prop_name, prop_type, description, anchor):
+        syntax = "{}.{}".format(class_name, prop_name)
+        desc_html = (
+            '<p class="wiki-desc">{}</p>'.format(description)
+            if description
+            else ""
+        )
+        return '<div class="wiki-entry" id="{}">\n<h3 class="wiki-entry-name">{}</h3>\n<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>{}</code></div>\n<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>{}</code></div>\n{}\n</div>'.format(
+            anchor, prop_name, syntax, prop_type, desc_html
+        )
+
+    @staticmethod
+    def MethodEntry(class_name, method_name, signature, description, params_html, returns_html, anchor):
+        syntax = "{}.{}({})".format(class_name, method_name, signature)
+        desc_html = (
+            '<p class="wiki-desc">{}</p>'.format(description)
+            if description
+            else ""
+        )
+        params_section = (
+            '<div class="wiki-params">{}</div>'.format(params_html)
+            if params_html
+            else ""
+        )
+        returns_section = (
+            '<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> {}</div>'.format(
+                returns_html
+            )
+            if returns_html
+            else ""
+        )
+        return '<div class="wiki-entry" id="{}">\n<h3 class="wiki-entry-name">{}</h3>\n<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>{}</code></div>\n{}\n{}\n{}\n</div>'.format(
+            anchor, method_name, syntax, desc_html, params_section, returns_section
+        )
+
+    @staticmethod
+    def ParamItem(name, param_type, description):
+        type_html = (
+            ' <span class="wiki-param-type">({})</span>'.format(param_type)
+            if param_type
+            else ""
+        )
+        desc_html = ": {}".format(description) if description else ""
+        return '<li><code class="wiki-param-name">{}</code>{}{}</li>'.format(
+            name, type_html, desc_html
+        )
+
+    @staticmethod
+    def ParamList(params_html):
+        return '<div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul>{}</ul></div>'.format(
+            params_html
+        )
+
+    @staticmethod
+    def ReturnType(type_html):
+        return '<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> {}</div>'.format(
+            type_html
+        )
+
+
+class WikiAutoDocHTML:
+    """Generates wiki-style documentation using WikiHTML and AutoDoc"""
+
+    def __init__(self, output_path=None, api_path=None):
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        default_wiki = os.path.join(script_dir, "wiki") + os.sep
+        self.doc_path = default_wiki if output_path is None else output_path
+        self.ad = AutoDoc(api_path)
+
+    def KeyToSlug(self, xmlkey):
+        xmlkey = re.sub(r"\(.*\)", "", xmlkey)
+        xmlkey = xmlkey.replace(":Assistant.", ":")
+        return re.sub(r"[^a-zA-Z]", "-", xmlkey)
+
+    def SidebarHTML(self, active_class=None):
+        version = self.ad.GetVersion()
+        class_list = self.ad.GetClasses()
+        links = []
+        for cls in class_list:
+            name = cls["itemClass"]
+            url = "./{}.html".format(name)
+            active = name == active_class
+            links.append(WikiHTML.SidebarLink(name, url, active))
+        return WikiHTML.Sidebar(version, links)
+
+    def ClassPageHTML(self, class_name):
+        class_list = self.ad.GetClasses(class_name)
+        if not class_list:
+            return "Class not found: {}".format(class_name)
+
+        doc_class = class_list[0]
+        description = doc_class.get("itemDescription", "")
+
+        parts = []
+        parts.append(WikiHTML.ClassHeader(class_name, description))
+
+        toc_entries = []
+        properties = self.ad.GetProperties(class_name)
+        methods = self.ad.GetMethods(class_name)
+
+        if properties:
+            toc_entries.append(("properties", "Properties"))
+        if methods:
+            toc_entries.append(("methods", "Methods"))
+
+        parts.append(WikiHTML.TOC(toc_entries))
+
+        if properties:
+            parts.append(WikiHTML.SectionHeader("Properties", "properties"))
+            for prop in properties:
+                anchor = self.KeyToSlug(prop["xmlKey"])
+                parts.append(
+                    WikiHTML.PropertyEntry(
+                        class_name,
+                        prop["itemName"],
+                        prop["propertyType"],
+                        prop.get("itemDescription", ""),
+                        anchor,
+                    )
+                )
+
+        if methods:
+            parts.append(WikiHTML.SectionHeader("Methods", "methods"))
+            method_names = sorted(set(m["itemName"] for m in methods))
+            for method_name in method_names:
+                method_list = self.ad.GetMethods(class_name, method_name)
+                parts.append(self.MethodWikiHTML(class_name, method_name, method_list))
+
+        return "\n".join(parts)
+
+    def RightIndexHTML(self, class_name):
+        properties = self.ad.GetProperties(class_name)
+        methods = self.ad.GetMethods(class_name)
+
+        entries = []
+        seen = set()
+        for prop in properties:
+            name = prop["itemName"]
+            if name not in seen:
+                seen.add(name)
+                anchor = self.KeyToSlug(prop["xmlKey"])
+                entries.append((anchor, name))
+        for method in methods:
+            name = method["itemName"]
+            if name not in seen:
+                seen.add(name)
+                anchor = self.KeyToSlug(method["xmlKey"])
+                entries.append((anchor, name))
+
+        entries.sort(key=lambda e: e[1].lower())
+        return WikiHTML.RightIndex(entries)
+
+    def MethodWikiHTML(self, class_name, method_name, method_list):
+        first = method_list[0]
+        anchor = self.KeyToSlug(first["xmlKey"])
+
+        descriptions = [m.get("itemDescription", "") for m in method_list]
+        description = "\n".join(d for d in descriptions if d).strip()
+
+        return_types = list(set(m["returnType"] for m in method_list))
+        returns_html = ", ".join(
+            '<code>{}</code>'.format(rt) for rt in return_types
+        )
+
+        param_names = []
+        param_items_html = []
+        if first.get("paramList"):
+            for param in first["paramList"]:
+                pname = param["itemName"]
+                ptype = param.get("itemType", "")
+                pdesc = param.get("itemDescription", "")
+                param_names.append(pname)
+                param_items_html.append(WikiHTML.ParamItem(pname, ptype, pdesc))
+
+        signature = ", ".join(param_names)
+        params_html = (
+            WikiHTML.ParamList("\n".join(param_items_html))
+            if param_items_html
+            else ""
+        )
+
+        return WikiHTML.MethodEntry(
+            class_name, method_name, signature, description, params_html, returns_html, anchor
+        )
+
+    def IndexPageHTML(self):
+        version = self.ad.GetVersion()
+        class_list = self.ad.GetClasses()
+
+        parts = []
+        parts.append('<h1>UO-Copilot API Documentation</h1>')
+        parts.append('<p class="wiki-version-text">Version: {}</p>'.format(version))
+        parts.append('<h2>Classes</h2>')
+        parts.append('<ul class="wiki-class-list">')
+        for cls in class_list:
+            name = cls["itemClass"]
+            parts.append('<li><a href="./{}.html">{}</a></li>'.format(name, name))
+        parts.append('</ul>')
+
+        return "\n".join(parts)
+
+    def WriteToFile(self, path, content):
+        fullpath = self.doc_path + path
+        print("Wiki: " + fullpath)
+        dirpath = os.path.dirname(fullpath)
+        if not os.path.exists(dirpath):
+            print("Make Dir: " + dirpath)
+            os.makedirs(dirpath)
+        with open(fullpath, "w+") as f:
+            f.write(content)
+
+    def MakeWikiDocumentation(self):
+        sidebar = self.SidebarHTML()
+
+        index_content = self.IndexPageHTML()
+        index_html = WikiHTML.Page(sidebar, index_content, "UO-Copilot API Documentation")
+        self.WriteToFile("index.html", index_html)
+
+        for cls in self.ad.GetClasses():
+            class_name = cls["itemClass"]
+            sidebar = self.SidebarHTML(active_class=class_name)
+            content = self.ClassPageHTML(class_name)
+            index = self.RightIndexHTML(class_name)
+            page_html = WikiHTML.Page(sidebar, content, "{} - UO-Copilot API".format(class_name), right_index=index)
+            self.WriteToFile("{}.html".format(class_name), page_html)
+
 
 class AutoDoc:
     # Load data from AutoComplete.json and provides several convenience methods to query the content.

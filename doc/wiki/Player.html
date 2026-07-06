@@ -1,0 +1,1737 @@
+<!DOCTYPE html><html><head><title>Player - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link active" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Player</h1><p class="wiki-class-desc">The Player class represent the currently logged in character.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="P-Scripting-Player-AR">
+<h3 class="wiki-entry-name">AR</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.AR</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Resistance to Phisical damage.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Backpack">
+<h3 class="wiki-entry-name">Backpack</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Backpack</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Player backpack, as Item object.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Bank">
+<h3 class="wiki-entry-name">Bank</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Bank</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Player bank chest, as Item object.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Body">
+<h3 class="wiki-entry-name">Body</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Body</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player Body or MobileID (see: Mobile.Body)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Buffs">
+<h3 class="wiki-entry-name">Buffs</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Buffs</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[String]</code></div>
+<p class="wiki-desc">List of Player active buffs:
+   Meditation
+   Agility
+   Animal Form
+   Arcane Enpowerment
+   Arcane Enpowerment (new)
+   Arch Protection
+   Armor Pierce
+   Attunement
+   Aura of Nausea
+   Bleed
+   Bless
+   Block
+   Bload Oath (caster)
+   Bload Oath (curse)
+   BloodWorm Anemia
+   City Trade Deal
+   Clumsy
+   Confidence
+   Corpse Skin
+   Counter Attack
+   Criminal
+   Cunning
+   Curse
+   Curse Weapon
+   Death Strike
+   Defense Mastery
+   Despair
+   Despair (target)
+   Disarm (new)
+   Disguised
+   Dismount Prevention
+   Divine Fury
+   Dragon Slasher Fear
+   Enchant
+   Enemy Of One
+   Enemy Of One (new)
+   Essence Of Wind
+   Ethereal Voyage
+   Evasion
+   Evil Omen
+   Faction Loss
+   Fan Dancer Fan Fire
+   Feeble Mind
+   Feint
+   Force Arrow
+   Berserk
+   Fly
+   Gaze Despair
+   Gift Of Life
+   Gift Of Renewal
+   Healing
+   Heat Of Battle
+   Hiding
+   Hiryu Physical Malus
+   Hit Dual Wield
+   Hit Lower Attack
+   Hit Lower Defense
+   Honorable Execution
+   Honored
+   Horrific Beast
+   Hawl Of Cacophony
+   Immolating Weapon
+   Incognito
+   Inspire
+   Invigorate
+   Invisibility
+   Lich Form
+   Lighting Strike
+   Magic Fish
+   Magic Reflection
+   Mana Phase
+   Mass Curse
+   Medusa Stone
+   Mind Rot
+   Momentum Strike
+   Mortal Strike
+   Night Sight
+   NoRearm
+   Orange Petals
+   Pain Spike
+   Paralyze
+   Perfection
+   Perseverance
+   Poison
+   Poison Resistance
+   Polymorph
+   Protection
+   Psychic Attack
+   Consecrate Weapon
+   Rage
+   Rage Focusing
+   Rage Focusing (target)
+   Reactive Armor
+   Reaper Form
+   Resilience
+   Rose Of Trinsic
+   Rotworm Blood Disease
+   Rune Beetle Corruption
+   Skill Use Delay
+   Sleep
+   Spell Focusing
+   Spell Focusing (target)
+   Spell Plague
+   Splintering Effect
+   Stone Form
+   Strangle
+   Strength
+   Surge
+   Swing Speed
+   Talon Strike
+   Vampiric Embrace
+   Weaken
+   Wraith Form</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-BuffsInfo">
+<h3 class="wiki-entry-name">BuffsInfo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.BuffsInfo</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[BuffInfo]</code></div>
+<p class="wiki-desc">Returns a list with every detailed active buff</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-ColdResistance">
+<h3 class="wiki-entry-name">ColdResistance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ColdResistance</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Resistance to Cold damage.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Connected">
+<h3 class="wiki-entry-name">Connected</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Connected</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Retrieves Connected State</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Corpses">
+<h3 class="wiki-entry-name">Corpses</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Corpses</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>HashSet[Item]</code></div>
+<p class="wiki-desc">Each Death Player corpse item is added here</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-DamageChanceIncrease">
+<h3 class="wiki-entry-name">DamageChanceIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.DamageChanceIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Damage Chance Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-DefenseChanceIncrease">
+<h3 class="wiki-entry-name">DefenseChanceIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.DefenseChanceIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Defense Chance Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Dex">
+<h3 class="wiki-entry-name">Dex</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Dex</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Stats value for Dexterity.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-DexterityIncrease">
+<h3 class="wiki-entry-name">DexterityIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.DexterityIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Dexterity Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Direction">
+<h3 class="wiki-entry-name">Direction</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Direction</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Player current direction, as text.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-EnergyResistance">
+<h3 class="wiki-entry-name">EnergyResistance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EnergyResistance</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Resistance to Energy damage.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-EnhancePotions">
+<h3 class="wiki-entry-name">EnhancePotions</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EnhancePotions</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Enhance Potions.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Fame">
+<h3 class="wiki-entry-name">Fame</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Fame</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Fame has to be reverse engineered from the title so it is just ranges:
+0: neutaral - 3 is highest fame</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-FasterCastRecovery">
+<h3 class="wiki-entry-name">FasterCastRecovery</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.FasterCastRecovery</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Faster Cast Recovery.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-FasterCasting">
+<h3 class="wiki-entry-name">FasterCasting</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.FasterCasting</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Faster Casting.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Female">
+<h3 class="wiki-entry-name">Female</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Female</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player is a female.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-FireResistance">
+<h3 class="wiki-entry-name">FireResistance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.FireResistance</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Resistance to Fire damage.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Followers">
+<h3 class="wiki-entry-name">Followers</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Followers</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player current amount of pet/followers.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-FollowersMax">
+<h3 class="wiki-entry-name">FollowersMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.FollowersMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player maximum amount of pet/followers.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Gold">
+<h3 class="wiki-entry-name">Gold</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Gold</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player total gold, in the backpack.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HasPrimarySpecial">
+<h3 class="wiki-entry-name">HasPrimarySpecial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HasPrimarySpecial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HasSecondarySpecial">
+<h3 class="wiki-entry-name">HasSecondarySpecial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HasSecondarySpecial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HasSpecial">
+<h3 class="wiki-entry-name">HasSpecial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HasSpecial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player have a special abilities active.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HitChanceIncrease">
+<h3 class="wiki-entry-name">HitChanceIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HitChanceIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Hit Chance Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HitPointsIncrease">
+<h3 class="wiki-entry-name">HitPointsIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HitPointsIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Hit Points Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HitPointsRegeneration">
+<h3 class="wiki-entry-name">HitPointsRegeneration</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HitPointsRegeneration</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Hit Points Regeneration.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Hits">
+<h3 class="wiki-entry-name">Hits</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Hits</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Current hit points.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-HitsMax">
+<h3 class="wiki-entry-name">HitsMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HitsMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Maximum hit points.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-InParty">
+<h3 class="wiki-entry-name">InParty</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InParty</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player is in praty.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Int">
+<h3 class="wiki-entry-name">Int</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Int</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Stats value for Intelligence.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-IntelligenceIncrease">
+<h3 class="wiki-entry-name">IntelligenceIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.IntelligenceIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Intelligence Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-IsGhost">
+<h3 class="wiki-entry-name">IsGhost</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.IsGhost</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player is a Ghost</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Karma">
+<h3 class="wiki-entry-name">Karma</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Karma</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Karma has to be reverse engineered from the title so it is just ranges:
+-5: most evil, 0: neutaral, 5 most good</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-KarmaTitle">
+<h3 class="wiki-entry-name">KarmaTitle</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.KarmaTitle</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">This is the title string returned from the server</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-LowerManaCost">
+<h3 class="wiki-entry-name">LowerManaCost</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LowerManaCost</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Lower Mana Cost.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-LowerReagentCost">
+<h3 class="wiki-entry-name">LowerReagentCost</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LowerReagentCost</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Lower Reagent Cost.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Luck">
+<h3 class="wiki-entry-name">Luck</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Luck</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player total luck.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Mana">
+<h3 class="wiki-entry-name">Mana</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Mana</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Current mana.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-ManaIncrease">
+<h3 class="wiki-entry-name">ManaIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ManaIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Mana Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-ManaMax">
+<h3 class="wiki-entry-name">ManaMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ManaMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Maximum mana.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-ManaRegeneration">
+<h3 class="wiki-entry-name">ManaRegeneration</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ManaRegeneration</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Mana Regeneration.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Map">
+<h3 class="wiki-entry-name">Map</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Map</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player current map, or facet.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-MaxWeight">
+<h3 class="wiki-entry-name">MaxWeight</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MaxWeight</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player maximum weight.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-MaximumHitPointsIncrease">
+<h3 class="wiki-entry-name">MaximumHitPointsIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MaximumHitPointsIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Maximum Hit Points Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-MaximumStaminaIncrease">
+<h3 class="wiki-entry-name">MaximumStaminaIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MaximumStaminaIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Maximum Stamina Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-MobileID">
+<h3 class="wiki-entry-name">MobileID</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MobileID</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player MobileID or Body (see: Mobile.MobileID)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Mount">
+<h3 class="wiki-entry-name">Mount</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Mount</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Player current Mount, as Item object.
+NOTE: On some server the Serial return by this function doesn't match the mount serial.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Name">
+<h3 class="wiki-entry-name">Name</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Name</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Player name.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Notoriety">
+<h3 class="wiki-entry-name">Notoriety</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Notoriety</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Byte</code></div>
+<p class="wiki-desc">Player notoriety
+    1: blue, innocent
+    2: green, friend
+    3: gray, neutral
+    4: gray, criminal
+    5: orange, enemy
+    6: red, hostile 
+    6: yellow, invulnerable</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Paralized">
+<h3 class="wiki-entry-name">Paralized</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Paralized</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player is Paralized. True also while frozen because of casting of spells.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Pets">
+<h3 class="wiki-entry-name">Pets</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Pets</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[Mobile]</code></div>
+<p class="wiki-desc">Finds all neutral pets in the area that can be renamed.
+This isn't the server information on your pets, but its good enough for most cases</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-PoisonResistance">
+<h3 class="wiki-entry-name">PoisonResistance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.PoisonResistance</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Resistance to Poison damage.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Poisoned">
+<h3 class="wiki-entry-name">Poisoned</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Poisoned</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player is Poisoned</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Position">
+<h3 class="wiki-entry-name">Position</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Position</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Point3D</code></div>
+<p class="wiki-desc">Current Player position as Point3D object.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-PrimarySpecial">
+<h3 class="wiki-entry-name">PrimarySpecial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.PrimarySpecial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Quiver">
+<h3 class="wiki-entry-name">Quiver</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Quiver</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Player quiver, as Item object.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-ReflectPhysicalDamage">
+<h3 class="wiki-entry-name">ReflectPhysicalDamage</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ReflectPhysicalDamage</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Reflect Physical Damage.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-SecondarySpecial">
+<h3 class="wiki-entry-name">SecondarySpecial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SecondarySpecial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Serial">
+<h3 class="wiki-entry-name">Serial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Serial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player unique Serial.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-SpellDamageIncrease">
+<h3 class="wiki-entry-name">SpellDamageIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SpellDamageIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Spell Damage Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Stam">
+<h3 class="wiki-entry-name">Stam</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Stam</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Current stamina.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StamMax">
+<h3 class="wiki-entry-name">StamMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StamMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Maximum stamina.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StaminaIncrease">
+<h3 class="wiki-entry-name">StaminaIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StaminaIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Stamina Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StaminaRegeneration">
+<h3 class="wiki-entry-name">StaminaRegeneration</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StaminaRegeneration</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Stamina Regeneration.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StatCap">
+<h3 class="wiki-entry-name">StatCap</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StatCap</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get the stats cap.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StaticMount">
+<h3 class="wiki-entry-name">StaticMount</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StaticMount</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Retrieves serial of mount set in Filter/Mount GUI.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Str">
+<h3 class="wiki-entry-name">Str</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Str</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Stats value for Strenght.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StrengthIncrease">
+<h3 class="wiki-entry-name">StrengthIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StrengthIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Strength Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-SwingSpeedIncrease">
+<h3 class="wiki-entry-name">SwingSpeedIncrease</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SwingSpeedIncrease</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get total Swing Speed Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Visible">
+<h3 class="wiki-entry-name">Visible</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Visible</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player is visible, false if hidden.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-WarMode">
+<h3 class="wiki-entry-name">WarMode</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.WarMode</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player has war mode active.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-Weight">
+<h3 class="wiki-entry-name">Weight</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Weight</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Player current weight.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-YellowHits">
+<h3 class="wiki-entry-name">YellowHits</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.YellowHits</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Player HP bar is not blue, but yellow.</p>
+</div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Player-Area">
+<h3 class="wiki-entry-name">Area</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Area()</code></div>
+<p class="wiki-desc">Get the name of the area in which the Player is currently in. (Ex: Britain, Destard, Vesper, Moongate, etc)
+Regions are defined inside by Persistence/regions.json.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-Attack">
+<h3 class="wiki-entry-name">Attack</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Attack(serial)</code></div>
+<p class="wiki-desc">Attack a Mobile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Mobile to attack.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-AttackLast">
+<h3 class="wiki-entry-name">AttackLast</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.AttackLast()</code></div>
+<p class="wiki-desc">Attack last target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-AttackType">
+<h3 class="wiki-entry-name">AttackType</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.AttackType(graphic, rangemax, selector, color, notoriety)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphic</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">rangemax</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">selector</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(List[Int32])</span></li>
+<li><code class="wiki-param-name">notoriety</code> <span class="wiki-param-type">(List[Byte])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-BuffTime">
+<h3 class="wiki-entry-name">BuffTime</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.BuffTime(buffname)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">buffname</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-BuffsExist">
+<h3 class="wiki-entry-name">BuffsExist</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.BuffsExist(buffname, okayToGuess)</code></div>
+<p class="wiki-desc">Check if a buff is active, by buff name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">buffname</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">okayToGuess</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatAlliance">
+<h3 class="wiki-entry-name">ChatAlliance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatAlliance(msg)</code></div>
+<p class="wiki-desc">Send message to the alliace chat.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatChannel">
+<h3 class="wiki-entry-name">ChatChannel</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatChannel(msg)</code></div>
+<p class="wiki-desc">Send an chat channel message.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatEmote">
+<h3 class="wiki-entry-name">ChatEmote</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatEmote(color, msg)</code></div>
+<p class="wiki-desc">Send an emote in game.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the text</li>
+<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatGuild">
+<h3 class="wiki-entry-name">ChatGuild</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatGuild(msg)</code></div>
+<p class="wiki-desc">Send message to the guild chat.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatParty">
+<h3 class="wiki-entry-name">ChatParty</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatParty(msg, recepient_serial)</code></div>
+<p class="wiki-desc">Send message in arty chat. If a recepient_serial is specified, the message is private.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Text to send.</li>
+<li><code class="wiki-param-name">recepient_serial</code> <span class="wiki-param-type">(Int32)</span>: Optional: Target of private message.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatSay">
+<h3 class="wiki-entry-name">ChatSay</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatSay(color, msg)</code></div>
+<p class="wiki-desc">Send message in game.
+Send message in game using 1153 for color.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the text</li>
+<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatWhisper">
+<h3 class="wiki-entry-name">ChatWhisper</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatWhisper(color, msg)</code></div>
+<p class="wiki-desc">Send an wishper message.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the text</li>
+<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ChatYell">
+<h3 class="wiki-entry-name">ChatYell</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatYell(color, msg)</code></div>
+<p class="wiki-desc">Send an yell message.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the text</li>
+<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-CheckLayer">
+<h3 class="wiki-entry-name">CheckLayer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.CheckLayer(layer)</code></div>
+<p class="wiki-desc">Check if a Layer is equipped by the Item.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">layer</code> <span class="wiki-param-type">(String)</span>: Layers:
+   RightHand
+   LeftHand
+   Shoes
+   Pants
+   Shirt
+   Head
+   Gloves
+   Ring
+   Neck
+   Hair
+   Waist
+   InnerTorso
+   Bracelet
+   FacialHair
+   MiddleTorso
+   Earrings
+   Arms
+   Cloak
+   OuterTorso
+   OuterLegs
+   InnerLegs
+   Talisman</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ClearCorpseList">
+<h3 class="wiki-entry-name">ClearCorpseList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ClearCorpseList()</code></div>
+<p class="wiki-desc">Clear the Player corpse item list</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-DistanceTo">
+<h3 class="wiki-entry-name">DistanceTo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.DistanceTo(target)</code></div>
+<p class="wiki-desc">Returns the distance between the Player and a Mobile or an Item.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UOEntity)</span>: The other Mobile or Item</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-EmoteAction">
+<h3 class="wiki-entry-name">EmoteAction</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EmoteAction(action)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">action</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-EquipItem">
+<h3 class="wiki-entry-name">EquipItem</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EquipItem(serial)</code></div>
+<p class="wiki-desc">Equip an Item</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to equip.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-EquipLastWeapon">
+<h3 class="wiki-entry-name">EquipLastWeapon</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EquipLastWeapon()</code></div>
+<p class="wiki-desc">Equip the last used weapon</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-EquipUO-D">
+<h3 class="wiki-entry-name">EquipUO3D</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EquipUO3D(serials)</code></div>
+<p class="wiki-desc">Equip a python list of item by using UO3D packet.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serials</code> <span class="wiki-param-type">(List[Int32])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-Fly">
+<h3 class="wiki-entry-name">Fly</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Fly(status)</code></div>
+<p class="wiki-desc">Enable or disable Gargoyle Flying.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">status</code> <span class="wiki-param-type">(Boolean)</span>: True: Gargoyle Fly ON - False: Gargoyle fly OFF</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetBuffInfo">
+<h3 class="wiki-entry-name">GetBuffInfo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetBuffInfo(buffName, okayToGuess)</code></div>
+<p class="wiki-desc">Check if buff information is active by buff name and returns it.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">buffName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">okayToGuess</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>BuffInfo</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetItemOnLayer">
+<h3 class="wiki-entry-name">GetItemOnLayer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetItemOnLayer(layer)</code></div>
+<p class="wiki-desc">Returns the Item associated with a Mobile Layer.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">layer</code> <span class="wiki-param-type">(String)</span>: Layers:
+   RightHand
+   LeftHand
+   Shoes
+   Pants
+   Shirt
+   Head
+   Gloves
+   Ring
+   Neck
+   Hair
+   Waist
+   InnerTorso
+   Bracelet
+   FacialHair
+   MiddleTorso
+   Earrings
+   Arms
+   Cloak
+   OuterTorso
+   OuterLegs
+   InnerLegs
+   Talisman</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetPropStringByIndex">
+<h3 class="wiki-entry-name">GetPropStringByIndex</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetPropStringByIndex(index)</code></div>
+<p class="wiki-desc">Get a single line of Properties of the Player, from the tooltip, as text.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span>: Line number, start from 0.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetPropStringList">
+<h3 class="wiki-entry-name">GetPropStringList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetPropStringList()</code></div>
+<p class="wiki-desc">Get the list of Properties of the Player, as list of lines of the tooltip.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[String]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetPropValue">
+<h3 class="wiki-entry-name">GetPropValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetPropValue(name)</code></div>
+<p class="wiki-desc">Get the numeric value of a specific Player property, from the tooltip.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the property.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetRealSkillValue">
+<h3 class="wiki-entry-name">GetRealSkillValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetRealSkillValue(skillname)</code></div>
+<p class="wiki-desc">Get the base/real value of the skill for the given the skill name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span>: Alchemy
+Anatomy
+Animal Lore
+Item ID
+Arms Lore
+Parry
+Begging
+Blacksmith
+Fletching
+Peacemaking
+Camping
+Carpentry
+Cartography
+Cooking
+Detect Hidden
+Discordance
+EvalInt
+Healing
+Fishing
+Forensics
+Herding
+Hiding
+Provocation
+Inscribe
+Lockpicking
+Magery
+Magic Resist
+Mysticism
+Tactics
+Snooping
+Musicianship
+Poisoning
+Archery
+Spirit Speak
+Stealing
+Tailoring
+Animal Taming
+Taste ID
+Tinkering
+Tracking
+Veterinary
+Swords
+Macing
+Fencing
+Wrestling
+Lumberjacking
+Mining
+Meditation
+Stealth
+Remove Trap
+Necromancy
+Focus
+Chivalry
+Bushido
+Ninjitsu
+Spell Weaving
+Imbuing</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetSkillCap">
+<h3 class="wiki-entry-name">GetSkillCap</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetSkillCap(skillname)</code></div>
+<p class="wiki-desc">Get the skill cap for the given the skill name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span>: Alchemy
+Anatomy
+Animal Lore
+Item ID
+Arms Lore
+Parry
+Begging
+Blacksmith
+Fletching
+Peacemaking
+Camping
+Carpentry
+Cartography
+Cooking
+Detect Hidden
+Discordance
+EvalInt
+Healing
+Fishing
+Forensics
+Herding
+Hiding
+Provocation
+Inscribe
+Lockpicking
+Magery
+Magic Resist
+Mysticism
+Tactics
+Snooping
+Musicianship
+Poisoning
+Archery
+Spirit Speak
+Stealing
+Tailoring
+Animal Taming
+Taste ID
+Tinkering
+Tracking
+Veterinary
+Swords
+Macing
+Fencing
+Wrestling
+Lumberjacking
+Mining
+Meditation
+Stealth
+Remove Trap
+Necromancy
+Focus
+Chivalry
+Bushido
+Ninjitsu
+Spell Weaving
+Imbuing</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetSkillStatus">
+<h3 class="wiki-entry-name">GetSkillStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetSkillStatus(skillname)</code></div>
+<p class="wiki-desc">Get lock status for a specific skill.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span>: Alchemy
+Anatomy
+Animal Lore
+Item ID
+Arms Lore
+Parry
+Begging
+Blacksmith
+Fletching
+Peacemaking
+Camping
+Carpentry
+Cartography
+Cooking
+Detect Hidden
+Discordance
+EvalInt
+Healing
+Fishing
+Forensics
+Herding
+Hiding
+Provocation
+Inscribe
+Lockpicking
+Magery
+Magic Resist
+Mysticism
+Tactics
+Snooping
+Musicianship
+Poisoning
+Archery
+Spirit Speak
+Stealing
+Tailoring
+Animal Taming
+Taste ID
+Tinkering
+Tracking
+Veterinary
+Swords
+Macing
+Fencing
+Wrestling
+Lumberjacking
+Mining
+Meditation
+Stealth
+Remove Trap
+Necromancy
+Focus
+Chivalry
+Bushido
+Ninjitsu
+Spell Weaving
+Imbuing</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetSkillValue">
+<h3 class="wiki-entry-name">GetSkillValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetSkillValue(skillname)</code></div>
+<p class="wiki-desc">Get the value of the skill, with modifiers, for the given the skill name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span>: Alchemy
+Anatomy
+Animal Lore
+Item ID
+Arms Lore
+Parry
+Begging
+Blacksmith
+Fletching
+Peacemaking
+Camping
+Carpentry
+Cartography
+Cooking
+Detect Hidden
+Discordance
+EvalInt
+Healing
+Fishing
+Forensics
+Herding
+Hiding
+Provocation
+Inscribe
+Lockpicking
+Magery
+Magic Resist
+Mysticism
+Tactics
+Snooping
+Musicianship
+Poisoning
+Archery
+Spirit Speak
+Stealing
+Tailoring
+Animal Taming
+Taste ID
+Tinkering
+Tracking
+Veterinary
+Swords
+Macing
+Fencing
+Wrestling
+Lumberjacking
+Mining
+Meditation
+Stealth
+Remove Trap
+Necromancy
+Focus
+Chivalry
+Bushido
+Ninjitsu
+Spell Weaving
+Imbuing</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GetStatStatus">
+<h3 class="wiki-entry-name">GetStatStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GetStatStatus(statname)</code></div>
+<p class="wiki-desc">Get lock status for a specific stats.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">statname</code> <span class="wiki-param-type">(String)</span>: Strength
+Dexterity
+Intelligence</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-GuildButton">
+<h3 class="wiki-entry-name">GuildButton</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.GuildButton()</code></div>
+<p class="wiki-desc">Press the Guild menu button in the paperdoll.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-HeadMessage">
+<h3 class="wiki-entry-name">HeadMessage</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.HeadMessage(color, msg)</code></div>
+<p class="wiki-desc">Display a message above the Player. Visible only by the Player.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the Text.</li>
+<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Text of the message.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-InRange">
+<h3 class="wiki-entry-name">InRange</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRange(entity, range)</code></div>
+<p class="wiki-desc">Check if the mobile or item is within a certain range (&lt;=).
+Check if the serial is within a certain range (&lt;=).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">entity</code> <span class="wiki-param-type">(UOEntity)</span></li>
+<li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Maximum distance in tiles.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-InRangeItem">
+<h3 class="wiki-entry-name">InRangeItem</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRangeItem(item, range)</code></div>
+<p class="wiki-desc">Check if the Item is within a certain range (&lt;=).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item object.</li>
+<li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Maximum distance in tiles.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-InRangeMobile">
+<h3 class="wiki-entry-name">InRangeMobile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRangeMobile(mobile, range)</code></div>
+<p class="wiki-desc">Check if the Mobile is within a certain range (&lt;=).
+Check if the mobile is within a certain range (&lt;=).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Int32)</span>: Serial or Mobile object.</li>
+<li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Maximum distance in tiles.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-InvokeVirtue">
+<h3 class="wiki-entry-name">InvokeVirtue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InvokeVirtue(virtue)</code></div>
+<p class="wiki-desc">Invoke a virtue by name.
+Invoke a virtue by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">virtue</code> <span class="wiki-param-type">(String)</span>: Honor
+Sacrifice
+Valor
+Compassion
+Honesty
+Humility
+Justice
+Spirituality</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-KickMember">
+<h3 class="wiki-entry-name">KickMember</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.KickMember(serial)</code></div>
+<p class="wiki-desc">Kick a member from party by serial. Only for party leader</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Mobile to remove.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-LeaveParty">
+<h3 class="wiki-entry-name">LeaveParty</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LeaveParty(force)</code></div>
+<p class="wiki-desc">Leaves a party.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">force</code> <span class="wiki-param-type">(Boolean)</span>: True: Leave the party invite even you notin any party.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-MapSay">
+<h3 class="wiki-entry-name">MapSay</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MapSay(msg)</code></div>
+<p class="wiki-desc">Send message in the Map chat.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-OpenPaperDoll">
+<h3 class="wiki-entry-name">OpenPaperDoll</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.OpenPaperDoll()</code></div>
+<p class="wiki-desc">Open Player's Paperdoll</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-PartyAccept">
+<h3 class="wiki-entry-name">PartyAccept</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.PartyAccept(from_serial, force)</code></div>
+<p class="wiki-desc">Accept an incoming party offer. In case of multiple party oebnding invitation, from_serial is specified,</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">from_serial</code> <span class="wiki-param-type">(Int32)</span>: Optional: Serial to accept party from.( in case of multiple offers )</li>
+<li><code class="wiki-param-name">force</code> <span class="wiki-param-type">(Boolean)</span>: True: Accept the party invite even you are already in a party.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-PartyCanLoot">
+<h3 class="wiki-entry-name">PartyCanLoot</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.PartyCanLoot(CanLoot)</code></div>
+<p class="wiki-desc">Set the Party loot permissions.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">CanLoot</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-PartyInvite">
+<h3 class="wiki-entry-name">PartyInvite</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.PartyInvite()</code></div>
+<p class="wiki-desc">Invite a person to a party. Prompt for a in-game Target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-PathFindTo">
+<h3 class="wiki-entry-name">PathFindTo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.PathFindTo(x, y, z)</code></div>
+<p class="wiki-desc">Go to the given coordinates using Client-provided pathfinding.
+Go to the position supplied using Client-provided pathfinding.
+Go to the position supplied using Client-provided pathfinding.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: X map coordinates or Point3D</li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Y map coordinates</li>
+<li><code class="wiki-param-name">z</code> <span class="wiki-param-type">(Int32)</span>: Z map coordinates</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-QuestButton">
+<h3 class="wiki-entry-name">QuestButton</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.QuestButton()</code></div>
+<p class="wiki-desc">Press the Quest menu button in the paperdoll.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-Run">
+<h3 class="wiki-entry-name">Run</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Run(direction)</code></div>
+<p class="wiki-desc">Run one step in the specified direction and wait for the confirmation of the new position by the server.
+If the character is not facing the direction, the first step only "turn" the Player in the required direction.
+
+Info:
+Walking:  5 tiles/sec (~200ms between each step)
+Running: 10 tiles/sec (~100ms between each step)</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">direction</code> <span class="wiki-param-type">(String)</span>: North
+South
+East
+West
+Up
+Down
+Left
+Right</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SetSkillStatus">
+<h3 class="wiki-entry-name">SetSkillStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SetSkillStatus(skillname, status)</code></div>
+<p class="wiki-desc">Set lock status for a specific skill.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span>: Alchemy
+Anatomy
+Animal Lore
+Item ID
+Arms Lore
+Parry
+Begging
+Blacksmith
+Fletching
+Peacemaking
+Camping
+Carpentry
+Cartography
+Cooking
+Detect Hidden
+Discordance
+EvalInt
+Healing
+Fishing
+Forensics
+Herding
+Hiding
+Provocation
+Inscribe
+Lockpicking
+Magery
+Magic Resist
+Mysticism
+Tactics
+Snooping
+Musicianship
+Poisoning
+Archery
+Spirit Speak
+Stealing
+Tailoring
+Animal Taming
+Taste ID
+Tinkering
+Tracking
+Veterinary
+Swords
+Macing
+Fencing
+Wrestling
+Lumberjacking
+Mining
+Meditation
+Stealth
+Remove Trap
+Necromancy
+Focus
+Chivalry
+Bushido
+Ninjitsu
+Spell Weaving
+Imbuing</li>
+<li><code class="wiki-param-name">status</code> <span class="wiki-param-type">(Int32)</span>: Lock status:
+     0: Up     
+     1: Down 
+     2: Locked</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SetStatStatus">
+<h3 class="wiki-entry-name">SetStatStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SetStatStatus(statname, status)</code></div>
+<p class="wiki-desc">Set lock status for a specific skill.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">statname</code> <span class="wiki-param-type">(String)</span>: Strength
+Dexterity
+Intelligence</li>
+<li><code class="wiki-param-name">status</code> <span class="wiki-param-type">(Int32)</span>: Lock status:
+     0: Up     
+     1: Down 
+     2: Locked</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SetStaticMount">
+<h3 class="wiki-entry-name">SetStaticMount</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SetStaticMount(serial)</code></div>
+<p class="wiki-desc">Sets serial of mount set in Filter/Mount GUI.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SetWarMode">
+<h3 class="wiki-entry-name">SetWarMode</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SetWarMode(warflag)</code></div>
+<p class="wiki-desc">Set war Mode on on/off.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">warflag</code> <span class="wiki-param-type">(Boolean)</span>: True: War - False: Peace</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SkillDelay">
+<h3 class="wiki-entry-name">SkillDelay</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SkillDelay()</code></div>
+<p class="wiki-desc">Returns the remaining milliseconds until the next skill use is allowed by the server.
+Returns 0 if no skill delay is active.
+Use with <see cref="M:Scripting.Misc.Pause(System.Int32)" /> to moderate script timing: Misc.Pause(Player.SkillDelay())</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SpellIsEnabled">
+<h3 class="wiki-entry-name">SpellIsEnabled</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SpellIsEnabled(spellname)</code></div>
+<p class="wiki-desc">Check if spell is active using the spell name (for spells that have this function).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">spellname</code> <span class="wiki-param-type">(String)</span>: Name of the spell.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-SumAttribute">
+<h3 class="wiki-entry-name">SumAttribute</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SumAttribute(attributename)</code></div>
+<p class="wiki-desc">Scan all the equipped Item, returns the total value of a specific property. (ex: Lower Reagent Cost )
+NOTE: This function is slow.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">attributename</code> <span class="wiki-param-type">(String)</span>: Name of the property.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Single</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-ToggleAlwaysRun">
+<h3 class="wiki-entry-name">ToggleAlwaysRun</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ToggleAlwaysRun()</code></div>
+<p class="wiki-desc">Toggle on/off the awlays run flag. 
+NOTE: Works only on OSI client.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-TrackingArrow">
+<h3 class="wiki-entry-name">TrackingArrow</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.TrackingArrow(x, y, display, target)</code></div>
+<p class="wiki-desc">Display a fake tracking arrow</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(UInt16)</span>: X coordinate.</li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(UInt16)</span>: Y coordinate.</li>
+<li><code class="wiki-param-name">display</code> <span class="wiki-param-type">(Boolean)</span>: True = On, False = off</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: object serial targeted</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-UnEquipItemByLayer">
+<h3 class="wiki-entry-name">UnEquipItemByLayer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UnEquipItemByLayer(layer, wait)</code></div>
+<p class="wiki-desc">Unequip the Item associated with a specific Layer.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">layer</code> <span class="wiki-param-type">(String)</span>: Layers:
+   RightHand
+   LeftHand
+   Shoes
+   Pants
+   Shirt
+   Head
+   Gloves
+   Ring
+   Neck
+   Hair
+   Waist
+   InnerTorso
+   Bracelet
+   FacialHair
+   MiddleTorso
+   Earrings
+   Arms
+   Cloak
+   OuterTorso
+   OuterLegs
+   InnerLegs
+   Talisman</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Wait for confirmation from the server.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-UnEquipUO-D">
+<h3 class="wiki-entry-name">UnEquipUO3D</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UnEquipUO3D(_layers)</code></div>
+<p class="wiki-desc">UnEquip a python list of layer names by using UO3D packet.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">_layers</code> <span class="wiki-param-type">(IEnumerable[String])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-UpdateKarma">
+<h3 class="wiki-entry-name">UpdateKarma</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UpdateKarma()</code></div>
+<p class="wiki-desc">Costly! 
+Updates the Fame and Karma of the Mobile, but it can take as long as 1 second to complete.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-UseSkill">
+<h3 class="wiki-entry-name">UseSkill</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UseSkill(skillname, target, wait)</code></div>
+<p class="wiki-desc">Use a specific skill, and optionally apply that skill to the target specified.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span>: Alchemy
+Anatomy
+Animal Lore
+Item ID
+Arms Lore
+Parry
+Begging
+Blacksmith
+Fletching
+Peacemaking
+Camping
+Carpentry
+Cartography
+Cooking
+Detect Hidden
+Discordance
+EvalInt
+Healing
+Fishing
+Forensics
+Herding
+Hiding
+Provocation
+Inscribe
+Lockpicking
+Magery
+Magic Resist
+Mysticism
+Tactics
+Snooping
+Musicianship
+Poisoning
+Archery
+Spirit Speak
+Stealing
+Tailoring
+Animal Taming
+Taste ID
+Tinkering
+Tracking
+Veterinary
+Swords
+Macing
+Fencing
+Wrestling
+Lumberjacking
+Mining
+Meditation
+Stealth
+Remove Trap
+Necromancy
+Focus
+Chivalry
+Bushido
+Ninjitsu
+Spell Weaving
+Imbuing</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Int32)</span>: Optional: Serial, Mobile or Item to target. (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: True: wait for confirmation from the server (default: False)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-UseSkillOnly">
+<h3 class="wiki-entry-name">UseSkillOnly</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UseSkillOnly(skillname, wait)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">skillname</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-Walk">
+<h3 class="wiki-entry-name">Walk</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Walk(direction)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">direction</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-WeaponClearSA">
+<h3 class="wiki-entry-name">WeaponClearSA</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.WeaponClearSA()</code></div>
+<p class="wiki-desc">Disable any active Special Ability of the weapon.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-WeaponDisarmSA">
+<h3 class="wiki-entry-name">WeaponDisarmSA</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.WeaponDisarmSA()</code></div>
+<p class="wiki-desc">Toggle Disarm Ability.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-WeaponPrimarySA">
+<h3 class="wiki-entry-name">WeaponPrimarySA</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.WeaponPrimarySA()</code></div>
+<p class="wiki-desc">Toggle on/off the primary Special Ability of the weapon.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-WeaponSecondarySA">
+<h3 class="wiki-entry-name">WeaponSecondarySA</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.WeaponSecondarySA()</code></div>
+<p class="wiki-desc">Toggle on/off the secondary Special Ability of the weapon.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-WeaponStunSA">
+<h3 class="wiki-entry-name">WeaponStunSA</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.WeaponStunSA()</code></div>
+<p class="wiki-desc">Toggle Stun Ability.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-Zone">
+<h3 class="wiki-entry-name">Zone</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Zone()</code></div>
+<p class="wiki-desc">Get the type of zone in which the Player is currently in.
+Regions are defined inside by Persistence/regions.json.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#P-Scripting-Player-AR">AR</a></li>
+<li><a href="#M-Scripting-Player-Area">Area</a></li>
+<li><a href="#M-Scripting-Player-Attack">Attack</a></li>
+<li><a href="#M-Scripting-Player-AttackLast">AttackLast</a></li>
+<li><a href="#M-Scripting-Player-AttackType">AttackType</a></li>
+<li><a href="#P-Scripting-Player-Backpack">Backpack</a></li>
+<li><a href="#P-Scripting-Player-Bank">Bank</a></li>
+<li><a href="#P-Scripting-Player-Body">Body</a></li>
+<li><a href="#P-Scripting-Player-Buffs">Buffs</a></li>
+<li><a href="#M-Scripting-Player-BuffsExist">BuffsExist</a></li>
+<li><a href="#P-Scripting-Player-BuffsInfo">BuffsInfo</a></li>
+<li><a href="#M-Scripting-Player-BuffTime">BuffTime</a></li>
+<li><a href="#M-Scripting-Player-ChatAlliance">ChatAlliance</a></li>
+<li><a href="#M-Scripting-Player-ChatChannel">ChatChannel</a></li>
+<li><a href="#M-Scripting-Player-ChatEmote">ChatEmote</a></li>
+<li><a href="#M-Scripting-Player-ChatGuild">ChatGuild</a></li>
+<li><a href="#M-Scripting-Player-ChatParty">ChatParty</a></li>
+<li><a href="#M-Scripting-Player-ChatSay">ChatSay</a></li>
+<li><a href="#M-Scripting-Player-ChatWhisper">ChatWhisper</a></li>
+<li><a href="#M-Scripting-Player-ChatYell">ChatYell</a></li>
+<li><a href="#M-Scripting-Player-CheckLayer">CheckLayer</a></li>
+<li><a href="#M-Scripting-Player-ClearCorpseList">ClearCorpseList</a></li>
+<li><a href="#P-Scripting-Player-ColdResistance">ColdResistance</a></li>
+<li><a href="#P-Scripting-Player-Connected">Connected</a></li>
+<li><a href="#P-Scripting-Player-Corpses">Corpses</a></li>
+<li><a href="#P-Scripting-Player-DamageChanceIncrease">DamageChanceIncrease</a></li>
+<li><a href="#P-Scripting-Player-DefenseChanceIncrease">DefenseChanceIncrease</a></li>
+<li><a href="#P-Scripting-Player-Dex">Dex</a></li>
+<li><a href="#P-Scripting-Player-DexterityIncrease">DexterityIncrease</a></li>
+<li><a href="#P-Scripting-Player-Direction">Direction</a></li>
+<li><a href="#M-Scripting-Player-DistanceTo">DistanceTo</a></li>
+<li><a href="#M-Scripting-Player-EmoteAction">EmoteAction</a></li>
+<li><a href="#P-Scripting-Player-EnergyResistance">EnergyResistance</a></li>
+<li><a href="#P-Scripting-Player-EnhancePotions">EnhancePotions</a></li>
+<li><a href="#M-Scripting-Player-EquipItem">EquipItem</a></li>
+<li><a href="#M-Scripting-Player-EquipLastWeapon">EquipLastWeapon</a></li>
+<li><a href="#M-Scripting-Player-EquipUO-D">EquipUO3D</a></li>
+<li><a href="#P-Scripting-Player-Fame">Fame</a></li>
+<li><a href="#P-Scripting-Player-FasterCasting">FasterCasting</a></li>
+<li><a href="#P-Scripting-Player-FasterCastRecovery">FasterCastRecovery</a></li>
+<li><a href="#P-Scripting-Player-Female">Female</a></li>
+<li><a href="#P-Scripting-Player-FireResistance">FireResistance</a></li>
+<li><a href="#M-Scripting-Player-Fly">Fly</a></li>
+<li><a href="#P-Scripting-Player-Followers">Followers</a></li>
+<li><a href="#P-Scripting-Player-FollowersMax">FollowersMax</a></li>
+<li><a href="#M-Scripting-Player-GetBuffInfo">GetBuffInfo</a></li>
+<li><a href="#M-Scripting-Player-GetItemOnLayer">GetItemOnLayer</a></li>
+<li><a href="#M-Scripting-Player-GetPropStringByIndex">GetPropStringByIndex</a></li>
+<li><a href="#M-Scripting-Player-GetPropStringList">GetPropStringList</a></li>
+<li><a href="#M-Scripting-Player-GetPropValue">GetPropValue</a></li>
+<li><a href="#M-Scripting-Player-GetRealSkillValue">GetRealSkillValue</a></li>
+<li><a href="#M-Scripting-Player-GetSkillCap">GetSkillCap</a></li>
+<li><a href="#M-Scripting-Player-GetSkillStatus">GetSkillStatus</a></li>
+<li><a href="#M-Scripting-Player-GetSkillValue">GetSkillValue</a></li>
+<li><a href="#M-Scripting-Player-GetStatStatus">GetStatStatus</a></li>
+<li><a href="#P-Scripting-Player-Gold">Gold</a></li>
+<li><a href="#M-Scripting-Player-GuildButton">GuildButton</a></li>
+<li><a href="#P-Scripting-Player-HasPrimarySpecial">HasPrimarySpecial</a></li>
+<li><a href="#P-Scripting-Player-HasSecondarySpecial">HasSecondarySpecial</a></li>
+<li><a href="#P-Scripting-Player-HasSpecial">HasSpecial</a></li>
+<li><a href="#M-Scripting-Player-HeadMessage">HeadMessage</a></li>
+<li><a href="#P-Scripting-Player-HitChanceIncrease">HitChanceIncrease</a></li>
+<li><a href="#P-Scripting-Player-HitPointsIncrease">HitPointsIncrease</a></li>
+<li><a href="#P-Scripting-Player-HitPointsRegeneration">HitPointsRegeneration</a></li>
+<li><a href="#P-Scripting-Player-Hits">Hits</a></li>
+<li><a href="#P-Scripting-Player-HitsMax">HitsMax</a></li>
+<li><a href="#P-Scripting-Player-InParty">InParty</a></li>
+<li><a href="#M-Scripting-Player-InRange">InRange</a></li>
+<li><a href="#M-Scripting-Player-InRangeItem">InRangeItem</a></li>
+<li><a href="#M-Scripting-Player-InRangeMobile">InRangeMobile</a></li>
+<li><a href="#P-Scripting-Player-Int">Int</a></li>
+<li><a href="#P-Scripting-Player-IntelligenceIncrease">IntelligenceIncrease</a></li>
+<li><a href="#M-Scripting-Player-InvokeVirtue">InvokeVirtue</a></li>
+<li><a href="#P-Scripting-Player-IsGhost">IsGhost</a></li>
+<li><a href="#P-Scripting-Player-Karma">Karma</a></li>
+<li><a href="#P-Scripting-Player-KarmaTitle">KarmaTitle</a></li>
+<li><a href="#M-Scripting-Player-KickMember">KickMember</a></li>
+<li><a href="#M-Scripting-Player-LeaveParty">LeaveParty</a></li>
+<li><a href="#P-Scripting-Player-LowerManaCost">LowerManaCost</a></li>
+<li><a href="#P-Scripting-Player-LowerReagentCost">LowerReagentCost</a></li>
+<li><a href="#P-Scripting-Player-Luck">Luck</a></li>
+<li><a href="#P-Scripting-Player-Mana">Mana</a></li>
+<li><a href="#P-Scripting-Player-ManaIncrease">ManaIncrease</a></li>
+<li><a href="#P-Scripting-Player-ManaMax">ManaMax</a></li>
+<li><a href="#P-Scripting-Player-ManaRegeneration">ManaRegeneration</a></li>
+<li><a href="#P-Scripting-Player-Map">Map</a></li>
+<li><a href="#M-Scripting-Player-MapSay">MapSay</a></li>
+<li><a href="#P-Scripting-Player-MaximumHitPointsIncrease">MaximumHitPointsIncrease</a></li>
+<li><a href="#P-Scripting-Player-MaximumStaminaIncrease">MaximumStaminaIncrease</a></li>
+<li><a href="#P-Scripting-Player-MaxWeight">MaxWeight</a></li>
+<li><a href="#P-Scripting-Player-MobileID">MobileID</a></li>
+<li><a href="#P-Scripting-Player-Mount">Mount</a></li>
+<li><a href="#P-Scripting-Player-Name">Name</a></li>
+<li><a href="#P-Scripting-Player-Notoriety">Notoriety</a></li>
+<li><a href="#M-Scripting-Player-OpenPaperDoll">OpenPaperDoll</a></li>
+<li><a href="#P-Scripting-Player-Paralized">Paralized</a></li>
+<li><a href="#M-Scripting-Player-PartyAccept">PartyAccept</a></li>
+<li><a href="#M-Scripting-Player-PartyCanLoot">PartyCanLoot</a></li>
+<li><a href="#M-Scripting-Player-PartyInvite">PartyInvite</a></li>
+<li><a href="#M-Scripting-Player-PathFindTo">PathFindTo</a></li>
+<li><a href="#P-Scripting-Player-Pets">Pets</a></li>
+<li><a href="#P-Scripting-Player-Poisoned">Poisoned</a></li>
+<li><a href="#P-Scripting-Player-PoisonResistance">PoisonResistance</a></li>
+<li><a href="#P-Scripting-Player-Position">Position</a></li>
+<li><a href="#P-Scripting-Player-PrimarySpecial">PrimarySpecial</a></li>
+<li><a href="#M-Scripting-Player-QuestButton">QuestButton</a></li>
+<li><a href="#P-Scripting-Player-Quiver">Quiver</a></li>
+<li><a href="#P-Scripting-Player-ReflectPhysicalDamage">ReflectPhysicalDamage</a></li>
+<li><a href="#M-Scripting-Player-Run">Run</a></li>
+<li><a href="#P-Scripting-Player-SecondarySpecial">SecondarySpecial</a></li>
+<li><a href="#P-Scripting-Player-Serial">Serial</a></li>
+<li><a href="#M-Scripting-Player-SetSkillStatus">SetSkillStatus</a></li>
+<li><a href="#M-Scripting-Player-SetStaticMount">SetStaticMount</a></li>
+<li><a href="#M-Scripting-Player-SetStatStatus">SetStatStatus</a></li>
+<li><a href="#M-Scripting-Player-SetWarMode">SetWarMode</a></li>
+<li><a href="#M-Scripting-Player-SkillDelay">SkillDelay</a></li>
+<li><a href="#P-Scripting-Player-SpellDamageIncrease">SpellDamageIncrease</a></li>
+<li><a href="#M-Scripting-Player-SpellIsEnabled">SpellIsEnabled</a></li>
+<li><a href="#P-Scripting-Player-Stam">Stam</a></li>
+<li><a href="#P-Scripting-Player-StaminaIncrease">StaminaIncrease</a></li>
+<li><a href="#P-Scripting-Player-StaminaRegeneration">StaminaRegeneration</a></li>
+<li><a href="#P-Scripting-Player-StamMax">StamMax</a></li>
+<li><a href="#P-Scripting-Player-StatCap">StatCap</a></li>
+<li><a href="#P-Scripting-Player-StaticMount">StaticMount</a></li>
+<li><a href="#P-Scripting-Player-Str">Str</a></li>
+<li><a href="#P-Scripting-Player-StrengthIncrease">StrengthIncrease</a></li>
+<li><a href="#M-Scripting-Player-SumAttribute">SumAttribute</a></li>
+<li><a href="#P-Scripting-Player-SwingSpeedIncrease">SwingSpeedIncrease</a></li>
+<li><a href="#M-Scripting-Player-ToggleAlwaysRun">ToggleAlwaysRun</a></li>
+<li><a href="#M-Scripting-Player-TrackingArrow">TrackingArrow</a></li>
+<li><a href="#M-Scripting-Player-UnEquipItemByLayer">UnEquipItemByLayer</a></li>
+<li><a href="#M-Scripting-Player-UnEquipUO-D">UnEquipUO3D</a></li>
+<li><a href="#M-Scripting-Player-UpdateKarma">UpdateKarma</a></li>
+<li><a href="#M-Scripting-Player-UseSkill">UseSkill</a></li>
+<li><a href="#M-Scripting-Player-UseSkillOnly">UseSkillOnly</a></li>
+<li><a href="#P-Scripting-Player-Visible">Visible</a></li>
+<li><a href="#M-Scripting-Player-Walk">Walk</a></li>
+<li><a href="#P-Scripting-Player-WarMode">WarMode</a></li>
+<li><a href="#M-Scripting-Player-WeaponClearSA">WeaponClearSA</a></li>
+<li><a href="#M-Scripting-Player-WeaponDisarmSA">WeaponDisarmSA</a></li>
+<li><a href="#M-Scripting-Player-WeaponPrimarySA">WeaponPrimarySA</a></li>
+<li><a href="#M-Scripting-Player-WeaponSecondarySA">WeaponSecondarySA</a></li>
+<li><a href="#M-Scripting-Player-WeaponStunSA">WeaponStunSA</a></li>
+<li><a href="#P-Scripting-Player-Weight">Weight</a></li>
+<li><a href="#P-Scripting-Player-YellowHits">YellowHits</a></li>
+<li><a href="#M-Scripting-Player-Zone">Zone</a></li></ul></aside></div></body></html>

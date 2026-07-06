@@ -1,0 +1,424 @@
+<!DOCTYPE html><html><head><title>Spells - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link active" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Spells</h1><p class="wiki-class-desc">The Spells class allow you to cast any spell and use abilities, via scripting.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Spells-Cast">
+<h3 class="wiki-entry-name">Cast</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.Cast(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast spell using the spell name. See the skill-specific functions to get the full list of spell names.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Name of the spell to cast.</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastBushido">
+<h3 class="wiki-entry-name">CastBushido</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastBushido(SpellName, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Bushido spell using the spell name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Honorable Execution
+Confidence
+Counter Attack
+Lightning Strike
+Evasion
+Momentum Strike</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastChivalry">
+<h3 class="wiki-entry-name">CastChivalry</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastChivalry(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Chivalry spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Cleanse By Fire
+Close Wounds
+Consecrate Weapon
+Dispel Evil
+Divine Fury
+Enemy Of One
+Holy Light
+Noble Sacrifice
+Remove Curse
+Sacred Journey</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastCleric">
+<h3 class="wiki-entry-name">CastCleric</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastCleric(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Cleric spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Bark Skin : Turns the druid's skin to bark, increasing physical, poison and energy resistence while reducing fire resistence.
+Circle Of Thorns : Creates a ring of thorns preventing an enemy from moving.
+Deadly Spores : The enemy is afflicted by poisonous spores.
+Enchanted Grove : Causes a grove of magical trees to grow, hiding the player for a short time.
+Firefly : Summons a tiny firefly to light the Druid's path. The Firefly is a weak creature with little or no combat skills.
+Forest Kin : Summons from a list of woodland spirits that will fight for the druid and assist him in different ways.
+Grasping Roots : Summons roots from the ground to entangle a single target.
+Hibernate : Causes the target to go to sleep.
+Hollow Reed : Increases both the strength and the intelligence of the Druid.
+Hurricane : Calls forth a violent hurricane that damages any enemies within range.
+Lure Stone : Creates a magical stone that calls all nearby animals to it.
+Mana Spring : Creates a magical spring that restores mana to the druid and any party members within range.
+Mushroom Gateway : A magical circle of mushrooms opens, allowing the Druid to step through it to another location.
+Pack Of Beasts : Summons a pack of beasts to fight for the Druid. Spell length increases with skill.
+Restorative Soil : Saturates a patch of land with power, causing healing mud to seep through . The mud can restore the dead to life.
+Shield Of Earth : A quick-growing wall of foliage springs up at the bidding of the Druid.
+Spring Of Life : Creates a magical spring that heals the Druid and their party.
+Swarm Of Insects : Summons a swarm of insects that bite and sting the Druid's enemies.
+Treefellow : Summons a powerful woodland spirit to fight for the Druid.
+Volcanic Eruption : A blast of molten lava bursts from the ground, hitting every enemy nearby.</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastDruid">
+<h3 class="wiki-entry-name">CastDruid</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastDruid(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Druid spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Angelic Faith : Turns you into an angel, boosting your stats. At 100 Spirit Speak you get +20 Str/Dex/Int. Every 5 points of SS = +1 point to each stat, at a max of +24. Will also boost your Anatomy, Mace Fighting and Healing, following the same formula.
+Banish Evil : Banishes Undead targets. Auto kills rotting corpses, lich lords, etc. Works well at Doom Champ. Does not produce a corpse however
+Dampen Spirit : Drains the stamina of your target, according to the description
+Divine Focus : Heal for more, but may be broken.
+Hammer of Faith : Summons a War Hammer with Undead Slayer on it for you
+Purge : Cleanses Poison. Better than Cure
+Restoration : Resurrection. Brings the target back with 100% HP/Mana
+Sacred Boon : A HoT, heal over time spell, that heals 10-15 every few seconds
+Sacrifice : Heals your party members when you take damage. Sort of like thorns, but it heals instead of hurts
+Smite : Causes energy damage
+Touch of Life : Heals even if Mortal Strike or poison are active on the target
+Trial by Fire : Attackers receive damage when they strike you, sort of like a temporary RPD buff</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: target to use the druid spell on</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastLastSpell">
+<h3 class="wiki-entry-name">CastLastSpell</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastLastSpell(target, wait)</code></div>
+<p class="wiki-desc">Cast again the last casted spell, on last target.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastLastSpellLastTarget">
+<h3 class="wiki-entry-name">CastLastSpellLastTarget</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastLastSpellLastTarget()</code></div>
+<p class="wiki-desc">Cast again the last casted spell, on last target.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastMagery">
+<h3 class="wiki-entry-name">CastMagery</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMagery(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Magery spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Clumsy
+Create Food
+Feeblemind
+Heal
+Magic Arrow
+Night Sight
+Reactive Armor
+Weaken
+Agility
+Cunning
+Cure
+Harm
+Magic Trap
+Magic Untrap
+Protection
+Strength
+Bless
+Fireball
+Magic Lock
+Poison
+Telekinesis
+Teleport
+Unlock
+Wall of Stone
+Arch Cure
+Arch Protection
+Curse
+Fire Field
+Greater Heal
+Lightning
+Mana Drain
+Recall
+Blade Spirits
+Dispel Field
+Incognito
+Magic Reflection
+Mind Blast
+Paralyze
+Poison Field
+Summon Creature
+Dispel
+Energy Bolt
+Explosion
+Invisibility
+Mark
+Mass Curse
+Paralyze Field
+Reveal
+Chain Lightning
+Energy Field
+Flamestrike
+Gate Travel
+Mana Vampire
+Mass Dispel
+Meteor Swarm
+Polymorph
+Earthquake
+Energy Vortex
+Resurrection
+Summon Air Elemental
+Summon Daemon
+Summon Earth Elemental
+Summon Fire Elemental
+Summon Water Elemental</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastMastery">
+<h3 class="wiki-entry-name">CastMastery</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMastery(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Mastery spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Inspire
+Invigorate
+Resilience
+Perseverance
+Tribulation
+Despair
+Death Ray
+Ethereal Blast
+Nether Blast
+Mystic Weapon
+Command Undead
+Conduit
+Mana Shield
+Summon Reaper
+Enchanted Summoning
+Anticipate Hit
+Warcry
+Intuition
+Rejuvenate
+Holy Fist
+Shadow
+White Tiger Form
+Flaming Shot
+Playing The Odds
+Thrust
+Pierce
+Stagger
+Toughness
+Onslaught
+Focused Eye
+Elemental Fury
+Called Shot
+Saving Throw
+Shield Bash
+Bodyguard
+Heighten Senses
+Tolerance
+Injected Strike
+Potency
+Rampage
+Fists Of Fury
+Knockout
+Whispering
+Combat Training
+Boarding</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastMysticism">
+<h3 class="wiki-entry-name">CastMysticism</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMysticism(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Mysticism spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Animated Weapon
+Healing Stone
+Purge
+Enchant
+Sleep
+Eagle Strike
+Stone Form
+SpellTrigger
+Mass Sleep
+Cleansing Winds
+Bombard
+Spell Plague
+Hail Storm
+Nether Cyclone
+Rising Colossus</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastNecro">
+<h3 class="wiki-entry-name">CastNecro</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNecro(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Necromany spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Curse Weapon
+Pain Spike
+Corpse Skin
+Evil Omen
+Blood Oath
+Wraith Form
+Mind Rot
+Summon Familiar
+Horrific Beast
+Animate Dead
+Poison Strike
+Wither
+Strangle
+Lich Form
+Exorcism
+Vengeful Spirit
+Vampiric Embrace</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastNinjitsu">
+<h3 class="wiki-entry-name">CastNinjitsu</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNinjitsu(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Ninjitsu spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Animal Form
+Backstab
+Surprise Attack
+Mirror Image
+Shadow jump
+Focus Attack
+Ki Attack</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-CastSpellweaving">
+<h3 class="wiki-entry-name">CastSpellweaving</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastSpellweaving(SpellName, target, wait, waitAfter)</code></div>
+<p class="wiki-desc">Cast a Spellweaving spell using the spell name.
+Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatiaclly by the server.
+NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Arcane Circle
+Gift Of Renewal
+Immolating Weapon
+Attune Weapon
+Thunderstorm
+Natures Fury
+Summon Fey
+Summoniend
+Reaper Form
+Wildfire
+Essence Of Wind
+Dryad Allure
+Ethereal Voyage
+Word Of Death
+Gift Of Life
+Arcane Empowerment</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
+<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-ExportSpellsToJson">
+<h3 class="wiki-entry-name">ExportSpellsToJson</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.ExportSpellsToJson()</code></div>
+<p class="wiki-desc">Exports current spell list to CustomSpells.json for customization</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-Interrupt">
+<h3 class="wiki-entry-name">Interrupt</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.Interrupt()</code></div>
+<p class="wiki-desc">Interrupt the casting of a spell by performing an equip/unequip.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Spells-Cast">Cast</a></li>
+<li><a href="#M-Scripting-Spells-CastBushido">CastBushido</a></li>
+<li><a href="#M-Scripting-Spells-CastChivalry">CastChivalry</a></li>
+<li><a href="#M-Scripting-Spells-CastCleric">CastCleric</a></li>
+<li><a href="#M-Scripting-Spells-CastDruid">CastDruid</a></li>
+<li><a href="#M-Scripting-Spells-CastLastSpell">CastLastSpell</a></li>
+<li><a href="#M-Scripting-Spells-CastLastSpellLastTarget">CastLastSpellLastTarget</a></li>
+<li><a href="#M-Scripting-Spells-CastMagery">CastMagery</a></li>
+<li><a href="#M-Scripting-Spells-CastMastery">CastMastery</a></li>
+<li><a href="#M-Scripting-Spells-CastMysticism">CastMysticism</a></li>
+<li><a href="#M-Scripting-Spells-CastNecro">CastNecro</a></li>
+<li><a href="#M-Scripting-Spells-CastNinjitsu">CastNinjitsu</a></li>
+<li><a href="#M-Scripting-Spells-CastSpellweaving">CastSpellweaving</a></li>
+<li><a href="#M-Scripting-Spells-ExportSpellsToJson">ExportSpellsToJson</a></li>
+<li><a href="#M-Scripting-Spells-Interrupt">Interrupt</a></li></ul></aside></div></body></html>

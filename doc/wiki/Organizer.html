@@ -1,0 +1,185 @@
+<!DOCTYPE html><html><head><title>Organizer - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link active" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Organizer</h1><p class="wiki-class-desc">The Organizer class allow you to interect with the Scavenger Agent, via scripting.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Organizer-AddItem">
+<h3 class="wiki-entry-name">AddItem</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.AddItem()</code></div>
+<p class="wiki-desc">Initiate targeting to add an item to the active list.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ChangeList">
+<h3 class="wiki-entry-name">ChangeList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ChangeList(listName)</code></div>
+<p class="wiki-desc">Change the Organizer's active list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span>: Name of an existing organizer list.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ClearList">
+<h3 class="wiki-entry-name">ClearList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ClearList(listName)</code></div>
+<p class="wiki-desc">Clear all items from an Organizer list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-FStart">
+<h3 class="wiki-entry-name">FStart</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.FStart()</code></div>
+<p class="wiki-desc">Start the Organizer Agent on the currently active list.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-FStop">
+<h3 class="wiki-entry-name">FStop</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.FStop()</code></div>
+<p class="wiki-desc">Stop the Organizer Agent.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ItemInsert">
+<h3 class="wiki-entry-name">ItemInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ItemInsert(listName, item)</code></div>
+<p class="wiki-desc">Insert an item into an Organizer list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Organizer.OrganizerItem)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ItemsRead">
+<h3 class="wiki-entry-name">ItemsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ItemsRead(listName)</code></div>
+<p class="wiki-desc">Read items from an Organizer list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Organizer.OrganizerItem]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ListDelete">
+<h3 class="wiki-entry-name">ListDelete</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ListDelete(description)</code></div>
+<p class="wiki-desc">Delete an Organizer list from persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ListDetailsRead">
+<h3 class="wiki-entry-name">ListDetailsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ListDetailsRead(listName, bags, bagd)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">bags</code> <span class="wiki-param-type">(Int32&@)</span></li>
+<li><code class="wiki-param-name">bagd</code> <span class="wiki-param-type">(Int32&@)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ListExists">
+<h3 class="wiki-entry-name">ListExists</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ListExists(description)</code></div>
+<p class="wiki-desc">Check if an Organizer list exists by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ListInsert">
+<h3 class="wiki-entry-name">ListInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ListInsert(description, source, destination)</code></div>
+<p class="wiki-desc">Insert a new Organizer list into persistence.
+Insert a new Organizer list into persistence (overload).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">destination</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-ListsRead">
+<h3 class="wiki-entry-name">ListsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.ListsRead()</code></div>
+<p class="wiki-desc">Read all Organizer lists from persistence.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Organizer.OrganizerList]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-RunOnce">
+<h3 class="wiki-entry-name">RunOnce</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.RunOnce(organizerName, sourceBag, destBag)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">organizerName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">sourceBag</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">destBag</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-SetDestination">
+<h3 class="wiki-entry-name">SetDestination</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.SetDestination()</code></div>
+<p class="wiki-desc">Initiate targeting to set the destination bag for the active list.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-SetSource">
+<h3 class="wiki-entry-name">SetSource</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.SetSource()</code></div>
+<p class="wiki-desc">Initiate targeting to set the source bag for the active list.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Organizer-Status">
+<h3 class="wiki-entry-name">Status</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Organizer.Status()</code></div>
+<p class="wiki-desc">Check Organizer Agent status</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Organizer-AddItem">AddItem</a></li>
+<li><a href="#M-Scripting-Organizer-ChangeList">ChangeList</a></li>
+<li><a href="#M-Scripting-Organizer-ClearList">ClearList</a></li>
+<li><a href="#M-Scripting-Organizer-FStart">FStart</a></li>
+<li><a href="#M-Scripting-Organizer-FStop">FStop</a></li>
+<li><a href="#M-Scripting-Organizer-ItemInsert">ItemInsert</a></li>
+<li><a href="#M-Scripting-Organizer-ItemsRead">ItemsRead</a></li>
+<li><a href="#M-Scripting-Organizer-ListDelete">ListDelete</a></li>
+<li><a href="#M-Scripting-Organizer-ListDetailsRead">ListDetailsRead</a></li>
+<li><a href="#M-Scripting-Organizer-ListExists">ListExists</a></li>
+<li><a href="#M-Scripting-Organizer-ListInsert">ListInsert</a></li>
+<li><a href="#M-Scripting-Organizer-ListsRead">ListsRead</a></li>
+<li><a href="#M-Scripting-Organizer-RunOnce">RunOnce</a></li>
+<li><a href="#M-Scripting-Organizer-SetDestination">SetDestination</a></li>
+<li><a href="#M-Scripting-Organizer-SetSource">SetSource</a></li>
+<li><a href="#M-Scripting-Organizer-Status">Status</a></li></ul></aside></div></body></html>

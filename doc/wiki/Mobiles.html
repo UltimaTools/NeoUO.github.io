@@ -1,0 +1,183 @@
+<!DOCTYPE html><html><head><title>Mobiles - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link active" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Mobiles</h1><p class="wiki-class-desc">The Mobiles class provides a wide range of functions to search and interact with Mobile.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Mobiles-ApplyFilter">
+<h3 class="wiki-entry-name">ApplyFilter</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.ApplyFilter(filter)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">filter</code> <span class="wiki-param-type">(Mobiles.Filter)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Mobile]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-ContextExist">
+<h3 class="wiki-entry-name">ContextExist</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.ContextExist(mob, name, showContext)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mob</code> <span class="wiki-param-type">(Mobile)</span></li>
+<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-FindBySerial">
+<h3 class="wiki-entry-name">FindBySerial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.FindBySerial(serial)</code></div>
+<p class="wiki-desc">Find the Mobile with a specific Serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Mobile.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobile</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-FindMobile">
+<h3 class="wiki-entry-name">FindMobile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.FindMobile(graphic, notoriety, rangemax, selector, highlight)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphic</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">notoriety</code> <span class="wiki-param-type">(List[Byte])</span></li>
+<li><code class="wiki-param-name">rangemax</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">selector</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">highlight</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobile</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-GetPropStringByIndex">
+<h3 class="wiki-entry-name">GetPropStringByIndex</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetPropStringByIndex(serial, index)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-GetPropStringList">
+<h3 class="wiki-entry-name">GetPropStringList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetPropStringList(serial)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[String]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-GetPropValue">
+<h3 class="wiki-entry-name">GetPropValue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetPropValue(serial, name)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Single</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-GetTargetingFilter">
+<h3 class="wiki-entry-name">GetTargetingFilter</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetTargetingFilter(target_name)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target_name</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobiles.Filter</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-GetTrackingInfo">
+<h3 class="wiki-entry-name">GetTrackingInfo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetTrackingInfo()</code></div>
+<p class="wiki-desc">Get the most updated information about tracking.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobiles.TrackingInfo</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-Message">
+<h3 class="wiki-entry-name">Message</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Message(mobile, hue, message, wait)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span></li>
+<li><code class="wiki-param-name">hue</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">message</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-Select">
+<h3 class="wiki-entry-name">Select</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Select(mobiles, selector)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobiles</code> <span class="wiki-param-type">(List[Mobile])</span></li>
+<li><code class="wiki-param-name">selector</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobile</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-SingleClick">
+<h3 class="wiki-entry-name">SingleClick</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.SingleClick(mobile)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-UseMobile">
+<h3 class="wiki-entry-name">UseMobile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.UseMobile(mobile)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-WaitForProps">
+<h3 class="wiki-entry-name">WaitForProps</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.WaitForProps(m, delay)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">m</code> <span class="wiki-param-type">(Mobile)</span></li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobiles-WaitForStats">
+<h3 class="wiki-entry-name">WaitForStats</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.WaitForStats(m, delay)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">m</code> <span class="wiki-param-type">(Mobile)</span></li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Mobiles-ApplyFilter">ApplyFilter</a></li>
+<li><a href="#M-Scripting-Mobiles-ContextExist">ContextExist</a></li>
+<li><a href="#M-Scripting-Mobiles-FindBySerial">FindBySerial</a></li>
+<li><a href="#M-Scripting-Mobiles-FindMobile">FindMobile</a></li>
+<li><a href="#M-Scripting-Mobiles-GetPropStringByIndex">GetPropStringByIndex</a></li>
+<li><a href="#M-Scripting-Mobiles-GetPropStringList">GetPropStringList</a></li>
+<li><a href="#M-Scripting-Mobiles-GetPropValue">GetPropValue</a></li>
+<li><a href="#M-Scripting-Mobiles-GetTargetingFilter">GetTargetingFilter</a></li>
+<li><a href="#M-Scripting-Mobiles-GetTrackingInfo">GetTrackingInfo</a></li>
+<li><a href="#M-Scripting-Mobiles-Message">Message</a></li>
+<li><a href="#M-Scripting-Mobiles-Select">Select</a></li>
+<li><a href="#M-Scripting-Mobiles-SingleClick">SingleClick</a></li>
+<li><a href="#M-Scripting-Mobiles-UseMobile">UseMobile</a></li>
+<li><a href="#M-Scripting-Mobiles-WaitForProps">WaitForProps</a></li>
+<li><a href="#M-Scripting-Mobiles-WaitForStats">WaitForStats</a></li></ul></aside></div></body></html>

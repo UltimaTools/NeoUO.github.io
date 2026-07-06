@@ -1,0 +1,173 @@
+<!DOCTYPE html><html><head><title>BuyAgent - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link active" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">BuyAgent</h1><p class="wiki-class-desc">The BuyAgent class allow you to interect with; BuyAgent, via scripting.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ChangeList">
+<h3 class="wiki-entry-name">ChangeList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ChangeList(listName)</code></div>
+<p class="wiki-desc">Change; BuyAgent's active list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span>: Name of; an existing buy list.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ClearList">
+<h3 class="wiki-entry-name">ClearList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ClearList(listName)</code></div>
+<p class="wiki-desc">Clear all items from a BuyAgent list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-CompareNameRead">
+<h3 class="wiki-entry-name">CompareNameRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.CompareNameRead(listName)</code></div>
+<p class="wiki-desc">Read; compare name setting for; a specific BuyAgent list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-Disable">
+<h3 class="wiki-entry-name">Disable</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.Disable()</code></div>
+<p class="wiki-desc">Disable BuyAgent Agent.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-DisplayBuy">
+<h3 class="wiki-entry-name">DisplayBuy</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.DisplayBuy(p, args)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">p</code> <span class="wiki-param-type">(PacketReader)</span></li>
+<li><code class="wiki-param-name">args</code> <span class="wiki-param-type">(PacketHandlerEventArgs)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-Enable">
+<h3 class="wiki-entry-name">Enable</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.Enable()</code></div>
+<p class="wiki-desc">Enable BuyAgent on; currently active list.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ItemInsert">
+<h3 class="wiki-entry-name">ItemInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ItemInsert(listName, item)</code></div>
+<p class="wiki-desc">Insert an item into a BuyAgent list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(BuyAgent.BuyAgentItem)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ItemInsertFromImport">
+<h3 class="wiki-entry-name">ItemInsertFromImport</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ItemInsertFromImport(listName, itemlist)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">itemlist</code> <span class="wiki-param-type">(List[BuyAgent.BuyAgentItem])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ItemsRead">
+<h3 class="wiki-entry-name">ItemsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ItemsRead(listName)</code></div>
+<p class="wiki-desc">Read items from a BuyAgent list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[BuyAgent.BuyAgentItem]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ListDelete">
+<h3 class="wiki-entry-name">ListDelete</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ListDelete(description)</code></div>
+<p class="wiki-desc">Delete a BuyAgent list from persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ListExists">
+<h3 class="wiki-entry-name">ListExists</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ListExists(description)</code></div>
+<p class="wiki-desc">Check if a BuyAgent list exists by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ListInsert">
+<h3 class="wiki-entry-name">ListInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ListInsert(description)</code></div>
+<p class="wiki-desc">Insert a new BuyAgent list into persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ListsRead">
+<h3 class="wiki-entry-name">ListsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ListsRead()</code></div>
+<p class="wiki-desc">Read all BuyAgent lists from persistence.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[BuyAgent.BuyAgentList]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-ShopList">
+<h3 class="wiki-entry-name">ShopList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.ShopList(p, args)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">p</code> <span class="wiki-param-type">(PacketReader)</span></li>
+<li><code class="wiki-param-name">args</code> <span class="wiki-param-type">(PacketHandlerEventArgs)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-BuyAgent-Status">
+<h3 class="wiki-entry-name">Status</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>BuyAgent.Status()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-BuyAgent-ChangeList">ChangeList</a></li>
+<li><a href="#M-Scripting-BuyAgent-ClearList">ClearList</a></li>
+<li><a href="#M-Scripting-BuyAgent-CompareNameRead">CompareNameRead</a></li>
+<li><a href="#M-Scripting-BuyAgent-Disable">Disable</a></li>
+<li><a href="#M-Scripting-BuyAgent-DisplayBuy">DisplayBuy</a></li>
+<li><a href="#M-Scripting-BuyAgent-Enable">Enable</a></li>
+<li><a href="#M-Scripting-BuyAgent-ItemInsert">ItemInsert</a></li>
+<li><a href="#M-Scripting-BuyAgent-ItemInsertFromImport">ItemInsertFromImport</a></li>
+<li><a href="#M-Scripting-BuyAgent-ItemsRead">ItemsRead</a></li>
+<li><a href="#M-Scripting-BuyAgent-ListDelete">ListDelete</a></li>
+<li><a href="#M-Scripting-BuyAgent-ListExists">ListExists</a></li>
+<li><a href="#M-Scripting-BuyAgent-ListInsert">ListInsert</a></li>
+<li><a href="#M-Scripting-BuyAgent-ListsRead">ListsRead</a></li>
+<li><a href="#M-Scripting-BuyAgent-ShopList">ShopList</a></li>
+<li><a href="#M-Scripting-BuyAgent-Status">Status</a></li></ul></aside></div></body></html>

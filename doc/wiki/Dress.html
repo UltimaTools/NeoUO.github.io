@@ -1,0 +1,241 @@
+<!DOCTYPE html><html><head><title>Dress - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link active" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Dress</h1>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Dress-ChangeList">
+<h3 class="wiki-entry-name">ChangeList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ChangeList(dresslist)</code></div>
+<p class="wiki-desc">Change dress list, List must be exist in dress/undress Agent tab.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">dresslist</code> <span class="wiki-param-type">(String)</span>: Name of the list of friend.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ClearList">
+<h3 class="wiki-entry-name">ClearList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ClearList(listName)</code></div>
+<p class="wiki-desc">Clear all items from a Dress list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-DressByProfile">
+<h3 class="wiki-entry-name">DressByProfile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.DressByProfile(profileName)</code></div>
+<p class="wiki-desc">Execute a dress profile by name without changing the selected profile.
+This is used by hotkeys - the profile name is only for the hotkey action.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">profileName</code> <span class="wiki-param-type">(String)</span>: The name of the dress profile to execute</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-DressFStart">
+<h3 class="wiki-entry-name">DressFStart</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.DressFStart()</code></div>
+<p class="wiki-desc">Start Dress engine.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-DressFStop">
+<h3 class="wiki-entry-name">DressFStop</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.DressFStop()</code></div>
+<p class="wiki-desc">Stop Dress engine.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-DressStatus">
+<h3 class="wiki-entry-name">DressStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.DressStatus()</code></div>
+<p class="wiki-desc">Check Dress Agent status, returns a bool value.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ItemClear">
+<h3 class="wiki-entry-name">ItemClear</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ItemClear(list)</code></div>
+<p class="wiki-desc">Clear all items from a Dress list (alias for ClearList).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ItemInsert">
+<h3 class="wiki-entry-name">ItemInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ItemInsert(listName, item)</code></div>
+<p class="wiki-desc">Insert an item into a Dress list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Dress.DressItemNew)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ItemInsertByLayer">
+<h3 class="wiki-entry-name">ItemInsertByLayer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ItemInsertByLayer(listName, item)</code></div>
+<p class="wiki-desc">Insert a dress item by layer.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Dress.DressItemNew)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ItemReplace">
+<h3 class="wiki-entry-name">ItemReplace</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ItemReplace(listName, index, newItem)</code></div>
+<p class="wiki-desc">Replace a dress item in a Dress list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listName</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">newItem</code> <span class="wiki-param-type">(Dress.DressItemNew)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ItemsRead">
+<h3 class="wiki-entry-name">ItemsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ItemsRead(list)</code></div>
+<p class="wiki-desc">Read items from a Dress list.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Dress.DressItemNew]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ListDelete">
+<h3 class="wiki-entry-name">ListDelete</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ListDelete(description)</code></div>
+<p class="wiki-desc">Delete a Dress list from persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ListDetailsRead">
+<h3 class="wiki-entry-name">ListDetailsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ListDetailsRead(listname, bag, conflict, useUo3D)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">listname</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Int32&@)</span></li>
+<li><code class="wiki-param-name">conflict</code> <span class="wiki-param-type">(Boolean&@)</span></li>
+<li><code class="wiki-param-name">useUo3D</code> <span class="wiki-param-type">(Boolean&@)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ListExists">
+<h3 class="wiki-entry-name">ListExists</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ListExists(description)</code></div>
+<p class="wiki-desc">Check if a Dress list exists by name.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ListInsert">
+<h3 class="wiki-entry-name">ListInsert</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ListInsert(description, bag, conflict, useUo3D)</code></div>
+<p class="wiki-desc">Insert a new Dress list into persistence (overload).
+Insert a new Dress list into persistence.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">description</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">conflict</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">useUo3D</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-ListsRead">
+<h3 class="wiki-entry-name">ListsRead</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.ListsRead()</code></div>
+<p class="wiki-desc">Read all Dress lists from persistence.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Dress.DressList]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-RunMoveBenchmark">
+<h3 class="wiki-entry-name">RunMoveBenchmark</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.RunMoveBenchmark(iterationsPerTest, maxDelayToTest)</code></div>
+<p class="wiki-desc">Run a benchmark to analyze server move queue behavior.
+Tests different delays to find the optimal rate before getting "you must wait" messages.
+Usage from script: Dress.RunMoveBenchmark(iterationsPerTest, maxDelayToTest)
+Example: Dress.RunMoveBenchmark(50, 500) - tests up to 500ms delay</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">iterationsPerTest</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">maxDelayToTest</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-StopBenchmark">
+<h3 class="wiki-entry-name">StopBenchmark</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.StopBenchmark()</code></div>
+<p class="wiki-desc">Stop the currently running benchmark test.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-UnDressFStart">
+<h3 class="wiki-entry-name">UnDressFStart</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.UnDressFStart()</code></div>
+<p class="wiki-desc">Start UnDress engine.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-UnDressFStop">
+<h3 class="wiki-entry-name">UnDressFStop</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.UnDressFStop()</code></div>
+<p class="wiki-desc">Stop UnDress engine.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-UnDressStatus">
+<h3 class="wiki-entry-name">UnDressStatus</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.UnDressStatus()</code></div>
+<p class="wiki-desc">Check UnDress Agent status, returns a bool value.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Dress-UndressByProfile">
+<h3 class="wiki-entry-name">UndressByProfile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Dress.UndressByProfile(profileName)</code></div>
+<p class="wiki-desc">Execute an undress for a specific profile by name without changing the selected profile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">profileName</code> <span class="wiki-param-type">(String)</span>: The name of the dress profile to undress</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Dress-ChangeList">ChangeList</a></li>
+<li><a href="#M-Scripting-Dress-ClearList">ClearList</a></li>
+<li><a href="#M-Scripting-Dress-DressByProfile">DressByProfile</a></li>
+<li><a href="#M-Scripting-Dress-DressFStart">DressFStart</a></li>
+<li><a href="#M-Scripting-Dress-DressFStop">DressFStop</a></li>
+<li><a href="#M-Scripting-Dress-DressStatus">DressStatus</a></li>
+<li><a href="#M-Scripting-Dress-ItemClear">ItemClear</a></li>
+<li><a href="#M-Scripting-Dress-ItemInsert">ItemInsert</a></li>
+<li><a href="#M-Scripting-Dress-ItemInsertByLayer">ItemInsertByLayer</a></li>
+<li><a href="#M-Scripting-Dress-ItemReplace">ItemReplace</a></li>
+<li><a href="#M-Scripting-Dress-ItemsRead">ItemsRead</a></li>
+<li><a href="#M-Scripting-Dress-ListDelete">ListDelete</a></li>
+<li><a href="#M-Scripting-Dress-ListDetailsRead">ListDetailsRead</a></li>
+<li><a href="#M-Scripting-Dress-ListExists">ListExists</a></li>
+<li><a href="#M-Scripting-Dress-ListInsert">ListInsert</a></li>
+<li><a href="#M-Scripting-Dress-ListsRead">ListsRead</a></li>
+<li><a href="#M-Scripting-Dress-RunMoveBenchmark">RunMoveBenchmark</a></li>
+<li><a href="#M-Scripting-Dress-StopBenchmark">StopBenchmark</a></li>
+<li><a href="#M-Scripting-Dress-UndressByProfile">UndressByProfile</a></li>
+<li><a href="#M-Scripting-Dress-UnDressFStart">UnDressFStart</a></li>
+<li><a href="#M-Scripting-Dress-UnDressFStop">UnDressFStop</a></li>
+<li><a href="#M-Scripting-Dress-UnDressStatus">UnDressStatus</a></li></ul></aside></div></body></html>

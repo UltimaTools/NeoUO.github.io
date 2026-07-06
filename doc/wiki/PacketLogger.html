@@ -1,0 +1,188 @@
+<!DOCTYPE html><html><head><title>PacketLogger - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link active" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">PacketLogger</h1><p class="wiki-class-desc">packet logger.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="F-Scripting-PacketLogger-PathToString">
+<h3 class="wiki-entry-name">PathToString</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.PathToString</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Dictionary[PacketPath, String]</code></div>
+
+</div>
+<div class="wiki-entry" id="F-Scripting-PacketLogger-StringToPath">
+<h3 class="wiki-entry-name">StringToPath</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.StringToPath</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Dictionary[String, PacketPath]</code></div>
+
+</div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-AddBlacklist">
+<h3 class="wiki-entry-name">AddBlacklist</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.AddBlacklist(packetID)</code></div>
+<p class="wiki-desc">Add the packetID to the blacklist. Packets in the backlist will not be logged. (See PacketLogger.DiscardAll() )</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetID</code> <span class="wiki-param-type">(Int32)</span>: PacketID to blacklist</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-AddTemplate">
+<h3 class="wiki-entry-name">AddTemplate</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.AddTemplate(packetTemplate)</code></div>
+<p class="wiki-desc">Add a custom template for packet logger.
+Example of "Damage" (0x0B) packet:
+{
+ 'packetID': 0x0B,
+ 'name': 'Damage 0x0B',
+ 'showHexDump': true,
+ 'fields':[
+   { 'name':'packetID', 'length':1, 'type':'packetID'},
+   { 'name':'Serial', 'length':4, 'type':'serial'},
+   { 'name':'Damage', 'length': 2, 'type':'int'},
+ ]
+}</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetTemplate</code> <span class="wiki-param-type">(String)</span>: Add a PacketTemplate, check ./Persistence/packets/ folder.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-AddWhitelist">
+<h3 class="wiki-entry-name">AddWhitelist</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.AddWhitelist(packetID)</code></div>
+<p class="wiki-desc">Add the packetID to the whitelist. Packets in the whitelist are always. (See PacketLogger.DiscardAll() )</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetID</code> <span class="wiki-param-type">(Int32)</span>: PacketID to whitelist</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-DiscardAll">
+<h3 class="wiki-entry-name">DiscardAll</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.DiscardAll(discardAll)</code></div>
+<p class="wiki-desc">Packet logger will discard all packets, except the one in the whitelist.  (See PacketLogger.AddWhitelist() )</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">discardAll</code> <span class="wiki-param-type">(Boolean)</span>: True: Log only the packet in the whitelist - False: Log everything, but the packets in the blacklist</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-DiscardShowHeader">
+<h3 class="wiki-entry-name">DiscardShowHeader</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.DiscardShowHeader(showHeader)</code></div>
+<p class="wiki-desc">Packet logger will show the headers of discarded packets.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">showHeader</code> <span class="wiki-param-type">(Boolean)</span>: True: Always show headers - False: Hide everything.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-ListenPacketPath">
+<h3 class="wiki-entry-name">ListenPacketPath</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.ListenPacketPath(packetPath, active)</code></div>
+<p class="wiki-desc">Packet logger will discard all packets, except the one in the whitelist.  (See PacketLogger.AddWhitelist() ) 
+If the packetPath is not set or not resognized, the function simply returns the current active paths.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetPath</code> <span class="wiki-param-type">(String)</span>: Possible values:
+   ClientToServer
+   ServerToClient
+   RazorToServer (TODO)
+   RazorToClient (TODO)
+   PacketVideo   (TODO)</li>
+<li><code class="wiki-param-name">active</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String[]</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-RemoveTemplate">
+<h3 class="wiki-entry-name">RemoveTemplate</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.RemoveTemplate(packetID)</code></div>
+<p class="wiki-desc">Remove a PacketTemplate for packet logger.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetID</code> <span class="wiki-param-type">(Int32)</span>: Remove a spacific packetID. (Default: -1 Remove All)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-Reset">
+<h3 class="wiki-entry-name">Reset</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.Reset()</code></div>
+<p class="wiki-desc">Reset the packet logger to defaults.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-SendToClient">
+<h3 class="wiki-entry-name">SendToClient</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.SendToClient(packetData)</code></div>
+<p class="wiki-desc">Send a packet to the client.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetData</code> <span class="wiki-param-type">(Byte[])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-SendToServer">
+<h3 class="wiki-entry-name">SendToServer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.SendToServer(packetData)</code></div>
+<p class="wiki-desc">Send a packet to the server.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">packetData</code> <span class="wiki-param-type">(Byte[])</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-SetOutputPath">
+<h3 class="wiki-entry-name">SetOutputPath</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.SetOutputPath(outputpath)</code></div>
+<p class="wiki-desc">Set the packet logger. Calling it without a path it rester it to the default path.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">outputpath</code> <span class="wiki-param-type">(String)</span>: (Optional) Custom output path (Default: reset to ./Desktop/Razor_Packets.log)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-Start">
+<h3 class="wiki-entry-name">Start</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.Start(outputpath, appendLogs)</code></div>
+<p class="wiki-desc">Start the packet logger.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">outputpath</code> <span class="wiki-param-type">(String)</span>: Custom output path (Default: ./Desktop/Razor_Packets.log)</li>
+<li><code class="wiki-param-name">appendLogs</code> <span class="wiki-param-type">(Boolean)</span>: True: Append - False: Overwrite (Default: False)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PacketLogger-Stop">
+<h3 class="wiki-entry-name">Stop</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.Stop()</code></div>
+<p class="wiki-desc">Stop the packet logger.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-PacketLogger-AddBlacklist">AddBlacklist</a></li>
+<li><a href="#M-Scripting-PacketLogger-AddTemplate">AddTemplate</a></li>
+<li><a href="#M-Scripting-PacketLogger-AddWhitelist">AddWhitelist</a></li>
+<li><a href="#M-Scripting-PacketLogger-DiscardAll">DiscardAll</a></li>
+<li><a href="#M-Scripting-PacketLogger-DiscardShowHeader">DiscardShowHeader</a></li>
+<li><a href="#M-Scripting-PacketLogger-ListenPacketPath">ListenPacketPath</a></li>
+<li><a href="#F-Scripting-PacketLogger-PathToString">PathToString</a></li>
+<li><a href="#M-Scripting-PacketLogger-RemoveTemplate">RemoveTemplate</a></li>
+<li><a href="#M-Scripting-PacketLogger-Reset">Reset</a></li>
+<li><a href="#M-Scripting-PacketLogger-SendToClient">SendToClient</a></li>
+<li><a href="#M-Scripting-PacketLogger-SendToServer">SendToServer</a></li>
+<li><a href="#M-Scripting-PacketLogger-SetOutputPath">SetOutputPath</a></li>
+<li><a href="#M-Scripting-PacketLogger-Start">Start</a></li>
+<li><a href="#M-Scripting-PacketLogger-Stop">Stop</a></li>
+<li><a href="#F-Scripting-PacketLogger-StringToPath">StringToPath</a></li></ul></aside></div></body></html>

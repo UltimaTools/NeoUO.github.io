@@ -1,0 +1,400 @@
+<!DOCTYPE html><html><head><title>Mobile - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.129</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
+<a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
+<a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
+<a class="wiki-nav-link" href="./CUO.html">CUO</a>
+<a class="wiki-nav-link" href="./DPSMeter.html">DPSMeter</a>
+<a class="wiki-nav-link" href="./Dress.html">Dress</a>
+<a class="wiki-nav-link" href="./Friend.html">Friend</a>
+<a class="wiki-nav-link" href="./Gumps.html">Gumps</a>
+<a class="wiki-nav-link" href="./Gumps.GumpData.html">Gumps.GumpData</a>
+<a class="wiki-nav-link" href="./HotKeyEvent.html">HotKeyEvent</a>
+<a class="wiki-nav-link" href="./Item.html">Item</a>
+<a class="wiki-nav-link" href="./Items.html">Items</a>
+<a class="wiki-nav-link" href="./Items.Filter.html">Items.Filter</a>
+<a class="wiki-nav-link" href="./Journal.html">Journal</a>
+<a class="wiki-nav-link" href="./Journal.JournalEntry.html">Journal.JournalEntry</a>
+<a class="wiki-nav-link" href="./Misc.html">Misc</a>
+<a class="wiki-nav-link" href="./Misc.Context.html">Misc.Context</a>
+<a class="wiki-nav-link" href="./Misc.MapInfo.html">Misc.MapInfo</a>
+<a class="wiki-nav-link active" href="./Mobile.html">Mobile</a>
+<a class="wiki-nav-link" href="./Mobiles.html">Mobiles</a>
+<a class="wiki-nav-link" href="./Mobiles.Filter.html">Mobiles.Filter</a>
+<a class="wiki-nav-link" href="./Mobiles.TrackingInfo.html">Mobiles.TrackingInfo</a>
+<a class="wiki-nav-link" href="./Organizer.html">Organizer</a>
+<a class="wiki-nav-link" href="./PacketLogger.html">PacketLogger</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldTemplate.html">PacketLogger.FieldTemplate</a>
+<a class="wiki-nav-link" href="./PacketLogger.FieldType.html">PacketLogger.FieldType</a>
+<a class="wiki-nav-link" href="./PacketLogger.PacketTemplate.html">PacketLogger.PacketTemplate</a>
+<a class="wiki-nav-link" href="./PathFinding.html">PathFinding</a>
+<a class="wiki-nav-link" href="./PathFinding.Route.html">PathFinding.Route</a>
+<a class="wiki-nav-link" href="./Player.html">Player</a>
+<a class="wiki-nav-link" href="./Point2D.html">Point2D</a>
+<a class="wiki-nav-link" href="./Point3D.html">Point3D</a>
+<a class="wiki-nav-link" href="./Property.html">Property</a>
+<a class="wiki-nav-link" href="./Restock.html">Restock</a>
+<a class="wiki-nav-link" href="./Scavenger.html">Scavenger</a>
+<a class="wiki-nav-link" href="./SellAgent.html">SellAgent</a>
+<a class="wiki-nav-link" href="./Sound.html">Sound</a>
+<a class="wiki-nav-link" href="./Spells.html">Spells</a>
+<a class="wiki-nav-link" href="./Statics.html">Statics</a>
+<a class="wiki-nav-link" href="./Statics.TileInfo.html">Statics.TileInfo</a>
+<a class="wiki-nav-link" href="./Target.html">Target</a>
+<a class="wiki-nav-link" href="./Tile.html">Tile</a>
+<a class="wiki-nav-link" href="./Timer.html">Timer</a>
+<a class="wiki-nav-link" href="./Trade.html">Trade</a>
+<a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
+<a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Mobile</h1><p class="wiki-class-desc">The Mobile class represents an single alive entity. 
+While the Mobile.Serial is unique for each Mobile, Mobile.MobileID is the unique for the Mobile apparence, or image. Sometimes is also called Body or Body ID.
+Mobiles which dies and leave a corpse behind, they stop existing as Mobiles and instead leave a corpse as a Item object appears.</p>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="P-Scripting-Mobile-Backpack">
+<h3 class="wiki-entry-name">Backpack</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Backpack</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Get the Item representing the backpack of a Mobile. Return null if it doesn't have one.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-CanRename">
+<h3 class="wiki-entry-name">CanRename</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.CanRename</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Determine if a mobile can be renamed. (Ex: pets, summons, etc )</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Color">
+<h3 class="wiki-entry-name">Color</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Color</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+<p class="wiki-desc">Color of the mobile.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Contains">
+<h3 class="wiki-entry-name">Contains</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Contains</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[Item]</code></div>
+<p class="wiki-desc">Returns the list of items present in the Paperdoll (or equivalent) of the Mobile.
+Might not match the items found using via Layer.</p>
+</div>
+<div class="wiki-entry" id="P-UOEntity-Deleted">
+<h3 class="wiki-entry-name">Deleted</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Deleted</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Direction">
+<h3 class="wiki-entry-name">Direction</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Direction</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Returns the direction of the Mobile.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Fame">
+<h3 class="wiki-entry-name">Fame</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Fame</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Fame has to be reverse engineered from the title so it is just ranges:
+0: neutaral - 3 is highest fame</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Female">
+<h3 class="wiki-entry-name">Female</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Female</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">The Mobile is a female.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Flying">
+<h3 class="wiki-entry-name">Flying</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Flying</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">The mobile is Flying ( Gragoyle )</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Graphics">
+<h3 class="wiki-entry-name">Graphics</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Graphics</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Hits">
+<h3 class="wiki-entry-name">Hits</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Hits</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">The current hit point of a Mobile. To be read as propotion over Mobile.HitsMax.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-HitsMax">
+<h3 class="wiki-entry-name">HitsMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.HitsMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Maximum hitpoint of a Mobile.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Hue">
+<h3 class="wiki-entry-name">Hue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Hue</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-InParty">
+<h3 class="wiki-entry-name">InParty</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.InParty</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the Mobile is in your party. - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-IsGhost">
+<h3 class="wiki-entry-name">IsGhost</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.IsGhost</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">If is a Ghost
+Match any MobileID  in the list:
+    402, 403, 607, 608, 694, 695, 970</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-IsHuman">
+<h3 class="wiki-entry-name">IsHuman</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.IsHuman</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Check is the Mobile has a human body.
+Match any MobileID in the list:
+    183, 184, 185, 186, 400, 
+    401, 402, 403, 605, 606,
+    607, 608, 666, 667, 694, 
+    744, 745, 747, 748, 750,  
+    751, 970, 695</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-ItemID">
+<h3 class="wiki-entry-name">ItemID</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.ItemID</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Karma">
+<h3 class="wiki-entry-name">Karma</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Karma</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Karma has to be reverse engineered from the title so it is just ranges:
+-5: most evil, 0: neutaral, 5 most good</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-KarmaTitle">
+<h3 class="wiki-entry-name">KarmaTitle</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.KarmaTitle</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">This is the title string returned from the server</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Mana">
+<h3 class="wiki-entry-name">Mana</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Mana</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">The current mana of a Mobile. To be read as propotion over Mobile.ManaMax.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-ManaMax">
+<h3 class="wiki-entry-name">ManaMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.ManaMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Maximum mana of a Mobile.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Map">
+<h3 class="wiki-entry-name">Map</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Map</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Current map or facet.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-MobileID">
+<h3 class="wiki-entry-name">MobileID</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.MobileID</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Represents the type of Mobile, usually unique for the Mobile image. ( Alias: Mobile.Body )</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Mount">
+<h3 class="wiki-entry-name">Mount</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Mount</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Returns the Item assigned to the "Mount" Layer.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Name">
+<h3 class="wiki-entry-name">Name</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Name</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Name of the Mobile.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Notoriety">
+<h3 class="wiki-entry-name">Notoriety</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Notoriety</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Get the notoriety of the Mobile.
+
+Notorieties:
+    1: blue, innocent
+    2: green, friend
+    3: gray, neutral
+    4: gray, criminal
+    5: orange, enemy
+    6: red, hostile 
+    6: yellow, invulnerable</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Paralized">
+<h3 class="wiki-entry-name">Paralized</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Paralized</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">The mobile is Paralized.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Poisoned">
+<h3 class="wiki-entry-name">Poisoned</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Poisoned</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">The mobile is Poisoned.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Position">
+<h3 class="wiki-entry-name">Position</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Position</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Point3D</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Properties">
+<h3 class="wiki-entry-name">Properties</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Properties</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>List[Property]</code></div>
+<p class="wiki-desc">Get all properties of a Mobile as list of lines of the tooltip.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-PropsUpdated">
+<h3 class="wiki-entry-name">PropsUpdated</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.PropsUpdated</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: Mobile.Propertires are updated - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Quiver">
+<h3 class="wiki-entry-name">Quiver</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Quiver</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+<p class="wiki-desc">Get the Item representing the quiver of a Mobile. Return null if it doesn't have one.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Serial">
+<h3 class="wiki-entry-name">Serial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Serial</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Stam">
+<h3 class="wiki-entry-name">Stam</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Stam</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">The current stamina of a Mobile. To be read as propotion over Mobile.StamMax.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-StamMax">
+<h3 class="wiki-entry-name">StamMax</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.StamMax</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">Maximum stamina of a Mobile.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-Visible">
+<h3 class="wiki-entry-name">Visible</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Visible</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: The Mobile is visible - Flase: The mobile is hidden.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-WarMode">
+<h3 class="wiki-entry-name">WarMode</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.WarMode</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">Mobile is in War mode.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Mobile-YellowHits">
+<h3 class="wiki-entry-name">YellowHits</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.YellowHits</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">The mobile healthbar is not blue, but yellow.</p>
+</div>
+<h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-Mobile-DistanceTo">
+<h3 class="wiki-entry-name">DistanceTo</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.DistanceTo(other_mobile)</code></div>
+<p class="wiki-desc">Returns the UO distance between the current Mobile and another one.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">other_mobile</code> <span class="wiki-param-type">(Mobile)</span>: The other mobile.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-UOEntity-Equals">
+<h3 class="wiki-entry-name">Equals</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.Equals(obj)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">obj</code> <span class="wiki-param-type">(Object)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-UOEntity-GetHashCode">
+<h3 class="wiki-entry-name">GetHashCode</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.GetHashCode()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobile-GetItemOnLayer">
+<h3 class="wiki-entry-name">GetItemOnLayer</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.GetItemOnLayer(layer)</code></div>
+<p class="wiki-desc">Returns the Item associated with a Mobile Layer.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">layer</code> <span class="wiki-param-type">(String)</span>: Layers:
+   Layername
+   RightHand
+   LeftHand
+   Shoes
+   Pants
+   Shirt
+   Head
+   Gloves
+   Ring
+   Neck
+   Waist
+   InnerTorso
+   Bracelet
+   MiddleTorso
+   Earrings
+   Arms
+   Cloak
+   OuterTorso
+   OuterLegs
+   InnerLegs</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Item</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Mobile-UpdateKarma">
+<h3 class="wiki-entry-name">UpdateKarma</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobile.UpdateKarma()</code></div>
+<p class="wiki-desc">Costly! 
+Updates the Fame and Karma of the Mobile, but it can take as long as 1 second to complete.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#P-Scripting-Mobile-Backpack">Backpack</a></li>
+<li><a href="#P-Scripting-Mobile-CanRename">CanRename</a></li>
+<li><a href="#P-Scripting-Mobile-Color">Color</a></li>
+<li><a href="#P-Scripting-Mobile-Contains">Contains</a></li>
+<li><a href="#P-UOEntity-Deleted">Deleted</a></li>
+<li><a href="#P-Scripting-Mobile-Direction">Direction</a></li>
+<li><a href="#M-Scripting-Mobile-DistanceTo">DistanceTo</a></li>
+<li><a href="#M-UOEntity-Equals">Equals</a></li>
+<li><a href="#P-Scripting-Mobile-Fame">Fame</a></li>
+<li><a href="#P-Scripting-Mobile-Female">Female</a></li>
+<li><a href="#P-Scripting-Mobile-Flying">Flying</a></li>
+<li><a href="#M-UOEntity-GetHashCode">GetHashCode</a></li>
+<li><a href="#M-Scripting-Mobile-GetItemOnLayer">GetItemOnLayer</a></li>
+<li><a href="#P-Scripting-Mobile-Graphics">Graphics</a></li>
+<li><a href="#P-Scripting-Mobile-Hits">Hits</a></li>
+<li><a href="#P-Scripting-Mobile-HitsMax">HitsMax</a></li>
+<li><a href="#P-Scripting-Mobile-Hue">Hue</a></li>
+<li><a href="#P-Scripting-Mobile-InParty">InParty</a></li>
+<li><a href="#P-Scripting-Mobile-IsGhost">IsGhost</a></li>
+<li><a href="#P-Scripting-Mobile-IsHuman">IsHuman</a></li>
+<li><a href="#P-Scripting-Mobile-ItemID">ItemID</a></li>
+<li><a href="#P-Scripting-Mobile-Karma">Karma</a></li>
+<li><a href="#P-Scripting-Mobile-KarmaTitle">KarmaTitle</a></li>
+<li><a href="#P-Scripting-Mobile-Mana">Mana</a></li>
+<li><a href="#P-Scripting-Mobile-ManaMax">ManaMax</a></li>
+<li><a href="#P-Scripting-Mobile-Map">Map</a></li>
+<li><a href="#P-Scripting-Mobile-MobileID">MobileID</a></li>
+<li><a href="#P-Scripting-Mobile-Mount">Mount</a></li>
+<li><a href="#P-Scripting-Mobile-Name">Name</a></li>
+<li><a href="#P-Scripting-Mobile-Notoriety">Notoriety</a></li>
+<li><a href="#P-Scripting-Mobile-Paralized">Paralized</a></li>
+<li><a href="#P-Scripting-Mobile-Poisoned">Poisoned</a></li>
+<li><a href="#P-Scripting-Mobile-Position">Position</a></li>
+<li><a href="#P-Scripting-Mobile-Properties">Properties</a></li>
+<li><a href="#P-Scripting-Mobile-PropsUpdated">PropsUpdated</a></li>
+<li><a href="#P-Scripting-Mobile-Quiver">Quiver</a></li>
+<li><a href="#P-Scripting-Mobile-Serial">Serial</a></li>
+<li><a href="#P-Scripting-Mobile-Stam">Stam</a></li>
+<li><a href="#P-Scripting-Mobile-StamMax">StamMax</a></li>
+<li><a href="#M-Scripting-Mobile-UpdateKarma">UpdateKarma</a></li>
+<li><a href="#P-Scripting-Mobile-Visible">Visible</a></li>
+<li><a href="#P-Scripting-Mobile-WarMode">WarMode</a></li>
+<li><a href="#P-Scripting-Mobile-YellowHits">YellowHits</a></li></ul></aside></div></body></html>
