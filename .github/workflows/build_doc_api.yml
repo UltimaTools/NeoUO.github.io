@@ -85,10 +85,11 @@ jobs:
         python autodoc.py
       shell: pwsh
 
-    # Copy generated docs back to the repository
+    # Copy generated wiki docs back to the repository
+    # autodoc.py writes to <script_dir>/wiki/ (WikiAutoDocHTML)
     - name: Update repo documentation
       run: |
-        Copy-Item -Path "extracted/current/doc/*" -Destination "website_repo/doc/" -Recurse -Force -Verbose
+        Copy-Item -Path "extracted/current/wiki/*" -Destination "website_repo/doc/wiki/" -Recurse -Force -Verbose
       shell: pwsh
 
     # Commit changes
