@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Item - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.133</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Item - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.134</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -99,6 +99,13 @@ However, for Item on the ground that cannot be picked up, they might be part of 
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.CorpseNumberItems</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">-1 until corpse is checked, then # items in corpse. Used by looter to ignore empty corpses</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-CreatureBody">
+<h3 class="wiki-entry-name">CreatureBody</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.CreatureBody</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>UInt16</code></div>
+<p class="wiki-desc">For corpses, returns the creature's original body type (same as Mobile.Body / Mobile.MobileID).
+For non-corpses, returns the item's TypeID.</p>
 </div>
 <div class="wiki-entry" id="P-UOEntity-Deleted">
 <h3 class="wiki-entry-name">Deleted</h3>
@@ -362,6 +369,7 @@ See MSDN: https://docs.microsoft.com/dotnet/api/system.drawing.bitmap</p>
 <li><a href="#P-Scripting-Item-ContainerOpened">ContainerOpened</a></li>
 <li><a href="#P-Scripting-Item-Contains">Contains</a></li>
 <li><a href="#P-Scripting-Item-CorpseNumberItems">CorpseNumberItems</a></li>
+<li><a href="#P-Scripting-Item-CreatureBody">CreatureBody</a></li>
 <li><a href="#P-UOEntity-Deleted">Deleted</a></li>
 <li><a href="#P-Scripting-Item-Direction">Direction</a></li>
 <li><a href="#M-Scripting-Item-DistanceTo">DistanceTo</a></li>

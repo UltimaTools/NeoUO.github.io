@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>DPSMeter - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.133</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>DPSMeter - UO-Copilot API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">UO-Copilot API v0.0.134</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -48,6 +48,28 @@
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">DPSMeter</h1><p class="wiki-class-desc">The DPSMeter class implements a Damage Per Second meter which can be useful to tune meta-builds.(???)</p>
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-DPSMeter-ClearDamage">
+<h3 class="wiki-entry-name">ClearDamage</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>DPSMeter.ClearDamage()</code></div>
+
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-DPSMeter-GetDamage">
+<h3 class="wiki-entry-name">GetDamage</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>DPSMeter.GetDamage(serial)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-DPSMeter-GetOriginalSerial">
+<h3 class="wiki-entry-name">GetOriginalSerial</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>DPSMeter.GetOriginalSerial(serial)</code></div>
+<p class="wiki-desc">Returns the original mobile serial that produced the given corpse serial,
+or 0 if no damage data exists for the serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(UInt32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>UInt32</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-DPSMeter-Pause">
 <h3 class="wiki-entry-name">Pause</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>DPSMeter.Pause()</code></div>
@@ -68,6 +90,9 @@
 <p class="wiki-desc">Stop DPSMeter engine.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
-</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-DPSMeter-Pause">Pause</a></li>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-DPSMeter-ClearDamage">ClearDamage</a></li>
+<li><a href="#M-Scripting-DPSMeter-GetDamage">GetDamage</a></li>
+<li><a href="#M-Scripting-DPSMeter-GetOriginalSerial">GetOriginalSerial</a></li>
+<li><a href="#M-Scripting-DPSMeter-Pause">Pause</a></li>
 <li><a href="#M-Scripting-DPSMeter-Start">Start</a></li>
 <li><a href="#M-Scripting-DPSMeter-Stop">Stop</a></li></ul></aside></div></body></html>
