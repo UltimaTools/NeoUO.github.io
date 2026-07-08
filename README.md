@@ -1,10 +1,10 @@
-# UO_Copilot.github.io
+# NeoUO.github.io
 
 This is a derivative of Razor (https://github.com/markdwags/Razor) and RazorEnhanced (https://github.com/RazorEnhanced/RazorEnhanced)
 
-RazorEnhanced is an awesome project originally developed by AlexDan. UO-Copilot builds on those ideas with modern .NET and a GTK3 UI.
+RazorEnhanced is an awesome project originally developed by AlexDan. NeoUO builds on those ideas with modern .NET and a GTK3 UI.
 
-Currently uo_copilot is under development and is working, but not complete. 
+Currently neouo is under development and is working, but not complete. 
 
 The key improvements:
 

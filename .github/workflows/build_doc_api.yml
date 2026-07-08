@@ -37,7 +37,7 @@ jobs:
         $version = $feed.version
         $tag = $feed.tag
         $baseUrl = $feed.baseUrl
-        $portableUrl = "$baseUrl" + "uo-copilot-net472-alpha-Portable.zip"
+        $portableUrl = "$baseUrl" + "neouo-net472-alpha-Portable.zip"
         Write-Host "Latest version: $version"
         Write-Host "Tag: $tag"
         Write-Host "Portable URL: $portableUrl"
@@ -50,7 +50,7 @@ jobs:
     - name: Download Portable ZIP
       run: |
         $portableUrl = "${{ steps.get_version.outputs.portable_url }}"
-        $outputFile = "uo-copilot-portable.zip"
+        $outputFile = "neouo-portable.zip"
         Write-Host "Downloading $portableUrl to $outputFile"
         Invoke-WebRequest -Uri $portableUrl -OutFile $outputFile
       shell: pwsh
@@ -59,7 +59,7 @@ jobs:
     - name: Extract ZIP file
       run: |
         New-Item -ItemType Directory -Path "extracted" -Force
-        $outputFile = "uo-copilot-portable.zip"
+        $outputFile = "neouo-portable.zip"
         Write-Host "Extracting ZIP: $outputFile"
         7z x $outputFile -o"./extracted"
       shell: pwsh
@@ -72,7 +72,7 @@ jobs:
     - name: Run UO-CoPilot --autoDocsOnly
       run: |
         cd extracted\current
-        .\uo-copilot-net472.exe --autoDocsOnly
+        .\neouo-net472.exe --autoDocsOnly
         dir Config\AutoComplete.json
       shell: cmd
 

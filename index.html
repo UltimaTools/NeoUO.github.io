@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UO-Copilot Downloads</title>
+    <title>NeoUO Downloads</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
         body { 
@@ -213,18 +213,18 @@
     <canvas id="matrix-bg"></canvas>
     <div class="content">
         <div class="title-row">
-            <h1>UO-Copilot</h1>
-            <a href="https://ultimatools.github.io/UO_CoPilot.github.io/doc/wiki/" class="video-link" target="_blank">Generated API</a>
+            <h1>NeoUO</h1>
+            <a href="https://ultimatools.github.io/NeoUO.github.io/doc/wiki/" class="video-link" target="_blank">Generated API</a>
             <a href="downloads/TazUO_Install.mp4" class="video-link" target="_blank">TazUO Install Video</a>
         </div>
-        <p>Welcome to the UO-Copilot download center.</p>
+        <p>Welcome to the NeoUO download center.</p>
 
         <div class="download-section">
-            <h2>Download UO-Copilot</h2>
+            <h2>Download NeoUO</h2>
             <div class="primary-download" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <div>
                     <a id="primary-download" class="download-button">
-                        Download UO-Copilot
+                        Download NeoUO
                         <span id="os-name"></span>
                     </a>
                     <div class="version-info" id="primary-version">Latest Alpha Release</div>
@@ -351,7 +351,7 @@
             }, 30000);
         }
 
-        const MANIFEST_BASE = 'https://raw.githubusercontent.com/UltimaTools/UO_CoPilot.github.io/main';
+        const MANIFEST_BASE = 'https://raw.githubusercontent.com/UltimaTools/NeoUO.github.io/main';
         const LEGACY_RELEASE_BASE = '/release_files';
 
         async function fetchLatestVersion(packageId, channel) {
@@ -393,9 +393,9 @@
 
             // Fetch manifests for version + baseUrl display
             const [net10Manifest, net472Manifest, linuxManifest] = await Promise.all([
-                fetchLatestVersion('uo-copilot-net10', 'alpha-net10'),
-                fetchLatestVersion('uo-copilot-net472', 'alpha-net472'),
-                fetchLatestVersion('uo-copilot-net10-linux', 'alpha-net10-linux')
+                fetchLatestVersion('neouo-net10', 'alpha-net10'),
+                fetchLatestVersion('neouo-net472', 'alpha-net472'),
+                fetchLatestVersion('neouo-net10-linux', 'alpha-net10-linux')
             ]);
 
             // Helper: build download URL from manifest
@@ -412,10 +412,10 @@
             // Wire up Windows download links
             const winNet10 = document.getElementById('windows-net10-download');
             const winNet472 = document.getElementById('windows-net472-download');
-            winNet10.href = setupUrl(net10Manifest, 'uo-copilot-net10', 'alpha', 'Setup.exe');
-            winNet472.href = setupUrl(net472Manifest, 'uo-copilot-net472', 'alpha', 'Setup.exe');
-            winNet10.download = `UO-Copilot-net10-v${versionLabel(net10Manifest, 'latest')}.exe`;
-            winNet472.download = `UO-Copilot-net472-v${versionLabel(net472Manifest, 'latest')}.exe`;
+            winNet10.href = setupUrl(net10Manifest, 'neouo-net10', 'alpha', 'Setup.exe');
+            winNet472.href = setupUrl(net472Manifest, 'neouo-net472', 'alpha', 'Setup.exe');
+            winNet10.download = `NeoUO-net10-v${versionLabel(net10Manifest, 'latest')}.exe`;
+            winNet472.download = `NeoUO-net472-v${versionLabel(net472Manifest, 'latest')}.exe`;
 
             if (net10Manifest) winNet10.querySelector('.version-info').textContent = `v${net10Manifest.version} — 64-bit`;
             if (net472Manifest) winNet472.querySelector('.version-info').textContent = `v${net472Manifest.version} — 64-bit`;
@@ -423,15 +423,15 @@
             // Wire up Linux download
             const linuxLink = document.getElementById('linux-download');
             if (linuxManifest && linuxManifest.baseUrl) {
-                linuxLink.href = `${linuxManifest.baseUrl}uo-copilot-net10-linux-${linuxManifest.version}-alpha.tar.gz`;
+                linuxLink.href = `${linuxManifest.baseUrl}neouo-net10-linux-${linuxManifest.version}-alpha.tar.gz`;
             } else {
-                linuxLink.href = `${LEGACY_RELEASE_BASE}/uo-copilot-net10-linux/linux-latest.tar.gz`;
+                linuxLink.href = `${LEGACY_RELEASE_BASE}/neouo-net10-linux/linux-latest.tar.gz`;
             }
-            linuxLink.download = `UO-Copilot-linux-v${versionLabel(linuxManifest, 'latest')}.tar.gz`;
+            linuxLink.download = `NeoUO-linux-v${versionLabel(linuxManifest, 'latest')}.tar.gz`;
 
             // macOS — still disabled
             const macLink = document.getElementById('macos-download');
-            macLink.href = `${LEGACY_RELEASE_BASE}/uo-copilot-net10-macos/mac-latest.tar.gz`;
+            macLink.href = `${LEGACY_RELEASE_BASE}/neouo-net10-macos/mac-latest.tar.gz`;
 
             // Set primary download button based on OS
             const primaryButton = document.getElementById('primary-download');
@@ -467,10 +467,10 @@
         async function initExtensionDownload() {
             const extLink = document.getElementById('vscode-download');
             try {
-                const resp = await fetch(`${LEGACY_RELEASE_BASE}/uo-copilot-vscode-extension/latest.json`);
+                const resp = await fetch(`${LEGACY_RELEASE_BASE}/neouo-vscode-extension/latest.json`);
                 if (resp.ok) {
                     const data = await resp.json();
-                    extLink.href = `${LEGACY_RELEASE_BASE}/uo-copilot-vscode-extension/${data.filename}`;
+                    extLink.href = `${LEGACY_RELEASE_BASE}/neouo-vscode-extension/${data.filename}`;
                 }
             } catch {}
         }
