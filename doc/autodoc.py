@@ -2,7 +2,7 @@
 Script: AutoDoc.py
 Version: 0.1
 Author: Dalamar Kanan
-    Project: UO-Copilot - AutoDoc
+    Project: NeoUO - AutoDoc
     
 Contact: 
     https://discord.gg/2NmXqQ5QAk (@RE Dev)
@@ -10,9 +10,9 @@ Contact:
     cesare.montresor@gmail.com 
     
 Abstract:
-    This script produce UO-Copilot API documentation (only HTML atm) by reading the *Scripting API Data* contained in Config/AutoComplete.json
-    The AutoComplete.json file it produced by the counterpart of this script inside UO-Copilot engine:
-    https://github.com/UltimaTools/UO_Copilot/blob/GTK-64bit/uo_copilot/AutoDoc.cs 
+    This script produce NeoUO API documentation (only HTML atm) by reading the *Scripting API Data* contained in Config/AutoComplete.json
+    The AutoComplete.json file it produced by the counterpart of this script inside NeoUO engine:
+    https://github.com/UltimaTools/NeoUO/blob/GTK-64bit/NeoUO/Scripting/AutoDoc.cs 
     
 
 Classes:
@@ -272,7 +272,7 @@ class HTML():
         if cssClass is None: cssClass = 'redoc-doc-version'
         cssId = '' if cssId is None else ' id="{}"'.format(cssId)
         cssClass = ' class="{}"'.format(cssClass)
-        return '<div{}{}><a href="./index.html">UO-Copilot API v{}</a></div>'.format(cssId, cssClass, version)
+        return '<div{}{}><a href="./index.html">NeoUO API v{}</a></div>'.format(cssId, cssClass, version)
         
     @staticmethod
     def DocPermalink(url, content=None, cssClass=None):
@@ -569,7 +569,7 @@ class WikiHTML:
 
     @staticmethod
     def Sidebar(version, class_links):
-        version_html = '<div class="wiki-version"><a href="./index.html">UO-Copilot API v{}</a></div>'.format(
+        version_html = '<div class="wiki-version"><a href="./index.html">NeoUO API v{}</a></div>'.format(
             version
         )
         links_html = "\n".join(class_links)
@@ -807,7 +807,7 @@ class WikiAutoDocHTML:
         class_list = self.ad.GetClasses()
 
         parts = []
-        parts.append('<h1>UO-Copilot API Documentation</h1>')
+        parts.append('<h1>NeoUO API Documentation</h1>')
         parts.append('<p class="wiki-version-text">Version: {}</p>'.format(version))
         parts.append('<h2>Classes</h2>')
         parts.append('<ul class="wiki-class-list">')
@@ -832,7 +832,7 @@ class WikiAutoDocHTML:
         sidebar = self.SidebarHTML()
 
         index_content = self.IndexPageHTML()
-        index_html = WikiHTML.Page(sidebar, index_content, "UO-Copilot API Documentation")
+        index_html = WikiHTML.Page(sidebar, index_content, "NeoUO API Documentation")
         self.WriteToFile("index.html", index_html)
 
         for cls in self.ad.GetClasses():
@@ -840,7 +840,7 @@ class WikiAutoDocHTML:
             sidebar = self.SidebarHTML(active_class=class_name)
             content = self.ClassPageHTML(class_name)
             index = self.RightIndexHTML(class_name)
-            page_html = WikiHTML.Page(sidebar, content, "{} - UO-Copilot API".format(class_name), right_index=index)
+            page_html = WikiHTML.Page(sidebar, content, "{} - NeoUO API".format(class_name), right_index=index)
             self.WriteToFile("{}.html".format(class_name), page_html)
 
 
