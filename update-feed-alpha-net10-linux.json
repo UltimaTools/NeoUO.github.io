@@ -1,7 +1,7 @@
 {
-  "version": "0.0.141",
-  "tag": "v0.0.141-alpha-net10-linux",
-  "baseUrl": "https://github.com/UltimaTools/NeoUO.github.io/releases/download/v0.0.141-alpha-net10-linux/",
-  "publishedAt": "2026-07-10T23:29:36Z",
-  "downloadUrl": "https://github.com/UltimaTools/NeoUO.github.io/releases/download/v0.0.141-alpha-net10-linux/neouo-net10-linux-0.0.141-alpha.tar.gz"
+  "version": "0.0.142",
+  "tag": "v0.0.142-alpha-net10-linux",
+  "baseUrl": "https://github.com/UltimaTools/NeoUO.github.io/releases/download/v0.0.142-alpha-net10-linux/",
+  "publishedAt": "2026-07-10T23:39:34Z",
+  "downloadUrl": "https://github.com/UltimaTools/NeoUO.github.io/releases/download/v0.0.142-alpha-net10-linux/neouo-net10-linux-0.0.142-alpha.tar.gz"
 }
