@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>NeoUO Downloads</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <style>
         body { 
@@ -243,11 +244,11 @@
                     <div class="download-item">
                         <a id="windows-net10-download" href="#">
                             Windows (.NET 10)
-                            <div class="version-info">64-bit — Recommended</div>
+                            <div class="version-info">64-bit - Recommended</div>
                         </a>
                         <a id="windows-net472-download" href="#">
                             Windows (.NET 4.7.2)
-                            <div class="version-info">64-bit — Legacy</div>
+                            <div class="version-info">64-bit - Legacy</div>
                         </a>
                     </div>
                     <div class="download-item">
@@ -257,9 +258,9 @@
                         </a>
                     </div>
                     <div class="download-item">
-                        <a id="macos-download" href="#" class="disabled">
+                        <a id="macos-download" href="#">
                             macOS Version
-                            <div class="version-info">ARM64 tar.gz — Temporarily Unavailable</div>
+                            <div class="version-info">ARM64 tar.gz</div>
                         </a>
                     </div>
                 </div>
@@ -392,10 +393,11 @@
             const isLinux = userAgent.includes('linux') && !userAgent.includes('android');
 
             // Fetch manifests for version + baseUrl display
-            const [net10Manifest, net472Manifest, linuxManifest] = await Promise.all([
+            const [net10Manifest, net472Manifest, linuxManifest, macosManifest] = await Promise.all([
                 fetchLatestVersion('neouo-net10', 'alpha-net10'),
                 fetchLatestVersion('neouo-net472', 'alpha-net472'),
-                fetchLatestVersion('neouo-net10-linux', 'alpha-net10-linux')
+                fetchLatestVersion('neouo-net10-linux', 'alpha-net10-linux'),
+                fetchLatestVersion('neouo-net10-macos', 'alpha-net10-macos')
             ]);
 
             // Helper: build download URL from manifest
@@ -417,8 +419,8 @@
             winNet10.download = `NeoUO-net10-v${versionLabel(net10Manifest, 'latest')}.exe`;
             winNet472.download = `NeoUO-net472-v${versionLabel(net472Manifest, 'latest')}.exe`;
 
-            if (net10Manifest) winNet10.querySelector('.version-info').textContent = `v${net10Manifest.version} — 64-bit`;
-            if (net472Manifest) winNet472.querySelector('.version-info').textContent = `v${net472Manifest.version} — 64-bit`;
+            if (net10Manifest) winNet10.querySelector('.version-info').textContent = `v${net10Manifest.version} - 64-bit`;
+            if (net472Manifest) winNet472.querySelector('.version-info').textContent = `v${net472Manifest.version} - 64-bit`;
 
             // Wire up Linux download
             const linuxLink = document.getElementById('linux-download');
@@ -429,9 +431,15 @@
             }
             linuxLink.download = `NeoUO-linux-v${versionLabel(linuxManifest, 'latest')}.tar.gz`;
 
-            // macOS — still disabled
+            // Wire up macOS download
             const macLink = document.getElementById('macos-download');
-            macLink.href = `${LEGACY_RELEASE_BASE}/neouo-net10-macos/mac-latest.tar.gz`;
+            if (macosManifest && macosManifest.baseUrl) {
+                macLink.href = `${macosManifest.baseUrl}neouo-net10-macos-${macosManifest.version}-alpha.tar.gz`;
+            } else {
+                macLink.href = `${LEGACY_RELEASE_BASE}/neouo-net10-macos/mac-latest.tar.gz`;
+            }
+            macLink.download = `NeoUO-macos-v${versionLabel(macosManifest, 'latest')}.tar.gz`;
+            if (macosManifest) macLink.querySelector('.version-info').textContent = `v${macosManifest.version} - ARM64 tar.gz`;
 
             // Set primary download button based on OS
             const primaryButton = document.getElementById('primary-download');
@@ -439,16 +447,15 @@
             const versionInfo = document.getElementById('primary-version');
 
             if (isWindows) {
-                osSpan.textContent = 'for Windows (.NET 10)';
-                primaryButton.href = winNet10.href;
-                primaryButton.download = winNet10.download;
-                versionInfo.textContent = net10Manifest ? `Latest Alpha v${net10Manifest.version}` : 'Latest Alpha Release';
+                osSpan.textContent = 'for Windows (.NET 4.7.2)';
+                primaryButton.href = winNet472.href;
+                primaryButton.download = winNet472.download;
+                versionInfo.textContent = net472Manifest ? `Latest Alpha v${net472Manifest.version}` : 'Latest Alpha Release';
             } else if (isMac) {
                 osSpan.textContent = 'for macOS';
-                primaryButton.classList.add('disabled');
-                primaryButton.removeAttribute('href');
-                primaryButton.removeAttribute('download');
-                versionInfo.textContent = 'Temporarily Unavailable';
+                primaryButton.href = macLink.href;
+                primaryButton.download = macLink.download;
+                versionInfo.textContent = macosManifest ? `Latest Alpha v${macosManifest.version}` : 'Latest Alpha Release';
             } else if (isLinux) {
                 osSpan.textContent = 'for Linux';
                 primaryButton.href = linuxLink.href;
