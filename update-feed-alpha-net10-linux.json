@@ -1,7 +1,7 @@
 {
-  "version": "0.0.145",
-  "tag": "v0.0.145-alpha-net10-linux",
+  "version": "0.0.146",
+  "tag": "v0.0.146-alpha-net10-linux",
   "baseUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/",
-  "publishedAt": "2026-07-12T05:35:14Z",
-  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.145-alpha.tar.gz"
+  "publishedAt": "2026-07-13T03:15:29Z",
+  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.146-alpha.tar.gz"
 }
