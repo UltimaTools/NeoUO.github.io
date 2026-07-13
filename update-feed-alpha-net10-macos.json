@@ -1,7 +1,7 @@
 {
-  "version": "0.0.145",
-  "tag": "v0.0.145-alpha-net10-macos",
+  "version": "0.0.146",
+  "tag": "v0.0.146-alpha-net10-macos",
   "baseUrl": "https://releases.neouo.net/alpha/neouo-net10-macos/",
-  "publishedAt": "2026-07-12T05:34:49Z",
-  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-macos/neouo-net10-macos-0.0.145-alpha.tar.gz"
+  "publishedAt": "2026-07-13T03:14:39Z",
+  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-macos/neouo-net10-macos-0.0.146-alpha.tar.gz"
 }
