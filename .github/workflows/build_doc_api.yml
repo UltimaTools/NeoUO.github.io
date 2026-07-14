@@ -107,5 +107,10 @@ jobs:
       run: |
         cd website_repo
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-        git push origin main
+        for ($i = 1; $i -le 3; $i++) {
+          git pull --rebase origin main
+          if (git push origin main) { break }
+          Write-Host "Push failed, retrying ($i/3)..."
+          Start-Sleep -Seconds 5
+        }
       shell: pwsh
