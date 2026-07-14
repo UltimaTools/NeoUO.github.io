@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Friend - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.148</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Friend - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.150</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -51,8 +51,15 @@
 <div class="wiki-entry" id="M-Scripting-Friend-AddFriendTarget">
 <h3 class="wiki-entry-name">AddFriendTarget</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.AddFriendTarget()</code></div>
+<p class="wiki-desc">Starts a one-time target to add a friend by clicking on a mobile</p>
 
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-AddList">
+<h3 class="wiki-entry-name">AddList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.AddList(newList)</code></div>
 
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">newList</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Friend-AddPlayer">
@@ -212,7 +219,15 @@ Check if a player serial exists in a Friend list.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">friendlist</code> <span class="wiki-param-type">(String)</span>: Name of the the Friend List. (See Agent tab)</li>
 <li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Friend you want to remove.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Friend-RemoveList">
+<h3 class="wiki-entry-name">RemoveList</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Friend.RemoveList(list)</code></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Friend-AddFriendTarget">AddFriendTarget</a></li>
+<li><a href="#M-Scripting-Friend-AddList">AddList</a></li>
 <li><a href="#M-Scripting-Friend-AddPlayer">AddPlayer</a></li>
 <li><a href="#M-Scripting-Friend-ChangeList">ChangeList</a></li>
 <li><a href="#M-Scripting-Friend-GetList">GetList</a></li>
@@ -231,4 +246,5 @@ Check if a player serial exists in a Friend list.</p>
 <li><a href="#M-Scripting-Friend-PlayerInsert">PlayerInsert</a></li>
 <li><a href="#M-Scripting-Friend-PlayerReplace">PlayerReplace</a></li>
 <li><a href="#M-Scripting-Friend-PlayersRead">PlayersRead</a></li>
-<li><a href="#M-Scripting-Friend-RemoveFriend">RemoveFriend</a></li></ul></aside></div></body></html>
+<li><a href="#M-Scripting-Friend-RemoveFriend">RemoveFriend</a></li>
+<li><a href="#M-Scripting-Friend-RemoveList">RemoveList</a></li></ul></aside></div></body></html>
