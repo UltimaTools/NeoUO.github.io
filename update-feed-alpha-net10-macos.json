@@ -1,7 +1,7 @@
 {
-  "version": "0.0.149",
-  "tag": "v0.0.149-alpha-net10-macos",
+  "version": "0.0.150",
+  "tag": "v0.0.150-alpha-net10-macos",
   "baseUrl": "https://releases.neouo.net/alpha/neouo-net10-macos/",
-  "publishedAt": "2026-07-14T02:58:06Z",
-  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-macos/neouo-net10-macos-0.0.149-alpha.tar.gz"
+  "publishedAt": "2026-07-14T08:44:34Z",
+  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-macos/neouo-net10-macos-0.0.150-alpha.tar.gz"
 }
