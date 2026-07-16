@@ -1,7 +1,7 @@
 {
-  "version": "0.0.152",
-  "tag": "v0.0.152-alpha-net10-linux",
+  "version": "0.0.153",
+  "tag": "v0.0.153-alpha-net10-linux",
   "baseUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/",
-  "publishedAt": "2026-07-16T07:42:11Z",
-  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.152-alpha.tar.gz"
+  "publishedAt": "2026-07-16T23:44:46Z",
+  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.153-alpha.tar.gz"
 }
