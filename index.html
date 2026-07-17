@@ -199,6 +199,59 @@
             text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
         }
 
+        .win-dropdown {
+            position: relative;
+        }
+
+        .win-dropdown > a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #0f0;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #0f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .win-dropdown > a:hover {
+            background: rgba(0, 255, 0, 0.2);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .win-dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 20, 0, 0.95);
+            border: 1px solid #0f0;
+            border-radius: 4px;
+            z-index: 10;
+            margin-top: 4px;
+            white-space: nowrap;
+        }
+
+        .win-dropdown.open .dropdown-menu {
+            display: flex;
+        }
+
+        .win-dropdown .dropdown-menu a {
+            display: block;
+            padding: 6px 14px;
+            font-size: 0.8em;
+            color: #0f0;
+            text-decoration: none;
+        }
+
+        .win-dropdown .dropdown-menu a:hover {
+            background: rgba(0, 255, 0, 0.2);
+        }
+
         @media (max-width: 600px) {
             .nav {
                 grid-template-columns: 1fr;
@@ -242,14 +295,20 @@
                 <h3>All Platforms</h3>
                 <div class="download-grid" id="platform-grid">
                     <div class="download-item">
-                        <a id="windows-net10-download" href="#">
-                            Windows (.NET 10)
-                            <div class="version-info">64-bit - Recommended</div>
-                        </a>
-                        <a id="windows-net472-download" href="#">
-                            Windows (.NET 4.7.2)
-                            <div class="version-info">64-bit - Legacy</div>
-                        </a>
+                        <div class="win-dropdown" id="win-net10-dd">
+                            <a id="windows-net10-download" href="#">Windows (.NET 10)<div class="version-info">64-bit - Recommended</div></a>
+                            <div class="dropdown-menu">
+                                <a id="win-net10-setup" href="#">Setup</a>
+                                <a id="win-net10-portable" href="#">Portable</a>
+                            </div>
+                        </div>
+                        <div class="win-dropdown" id="win-net472-dd">
+                            <a id="windows-net472-download" href="#">Windows (.NET 4.7.2)<div class="version-info">64-bit - Legacy</div></a>
+                            <div class="dropdown-menu">
+                                <a id="win-net472-setup" href="#">Setup</a>
+                                <a id="win-net472-portable" href="#">Portable</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="download-item">
                         <a id="linux-download" href="#">
@@ -412,10 +471,25 @@
             // Wire up Windows download links
             const winNet10 = document.getElementById('windows-net10-download');
             const winNet472 = document.getElementById('windows-net472-download');
-            winNet10.href = setupUrl(net10Manifest, 'neouo-net10', 'alpha', 'Setup.exe');
-            winNet472.href = setupUrl(net472Manifest, 'neouo-net472', 'alpha', 'Setup.exe');
-            winNet10.download = `NeoUO-net10-v${versionLabel(net10Manifest, 'latest')}.exe`;
-            winNet472.download = `NeoUO-net472-v${versionLabel(net472Manifest, 'latest')}.exe`;
+            const winNet10Setup = document.getElementById('win-net10-setup');
+            const winNet10Portable = document.getElementById('win-net10-portable');
+            const winNet472Setup = document.getElementById('win-net472-setup');
+            const winNet472Portable = document.getElementById('win-net472-portable');
+
+            const net10SetupUrl = setupUrl(net10Manifest, 'neouo-net10', 'alpha', 'Setup.exe');
+            const net472SetupUrl = setupUrl(net472Manifest, 'neouo-net472', 'alpha', 'Setup.exe');
+            const net10PortableUrl = setupUrl(net10Manifest, 'neouo-net10', 'alpha', 'Portable.zip');
+            const net472PortableUrl = setupUrl(net472Manifest, 'neouo-net472', 'alpha', 'Portable.zip');
+
+            winNet10Setup.href = net10SetupUrl;
+            winNet10Portable.href = net10PortableUrl;
+            winNet472Setup.href = net472SetupUrl;
+            winNet472Portable.href = net472PortableUrl;
+
+            winNet10Setup.download = `NeoUO-net10-v${versionLabel(net10Manifest, 'latest')}.exe`;
+            winNet10Portable.download = `NeoUO-net10-v${versionLabel(net10Manifest, 'latest')}-portable.zip`;
+            winNet472Setup.download = `NeoUO-net472-v${versionLabel(net472Manifest, 'latest')}.exe`;
+            winNet472Portable.download = `NeoUO-net472-v${versionLabel(net472Manifest, 'latest')}-portable.zip`;
 
             if (net10Manifest) winNet10.querySelector('.version-info').textContent = `v${net10Manifest.version} - 64-bit`;
             if (net472Manifest) winNet472.querySelector('.version-info').textContent = `v${net472Manifest.version} - 64-bit`;
@@ -481,6 +555,18 @@
         }
 
         initExtensionDownload();
+
+        document.querySelectorAll('.win-dropdown').forEach(dd => {
+            dd.querySelector('a').addEventListener('click', e => {
+                e.preventDefault();
+                dd.classList.toggle('open');
+            });
+        });
+        document.addEventListener('click', e => {
+            document.querySelectorAll('.win-dropdown.open').forEach(dd => {
+                if (!dd.contains(e.target)) dd.classList.remove('open');
+            });
+        });
     </script>
 </body>
 </html>
