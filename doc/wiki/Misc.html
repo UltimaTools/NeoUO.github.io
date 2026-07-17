@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.158</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.161</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -156,6 +156,14 @@ The filename MUST end in a limited file suffix list</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Entity</li>
 <li><code class="wiki-param-name">response_num</code> <span class="wiki-param-type">(Int32)</span>: Position of the option in the menu. Starts from 0.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-CurrentScriptDirectory">
+<h3 class="wiki-entry-name">CurrentScriptDirectory</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CurrentScriptDirectory()</code></div>
+<p class="wiki-desc">Alias for Misc.ScriptDirectory() — returns the scripts directory path.
+Kept for backward compatibility with existing user scripts.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-DataDirectory">
 <h3 class="wiki-entry-name">DataDirectory</h3>
@@ -409,14 +417,6 @@ Is possible to use absolute Screen Coordinates by setting clientCoords=False.</p
 <li><code class="wiki-param-name">response</code> <span class="wiki-param-type">(String)</span>: Cancel Button</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
-<div class="wiki-entry" id="M-Scripting-Misc-RazorDirectory">
-<h3 class="wiki-entry-name">RazorDirectory</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.RazorDirectory()</code></div>
-<p class="wiki-desc">Get the full path to the main Razor Enhanced folder.
-This path maybe be different from the Python starting folder when RE is loaded as plugin (ex: ClassicUO)</p>
-
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
-</div>
 <div class="wiki-entry" id="M-Scripting-Misc-ReadSharedValue">
 <h3 class="wiki-entry-name">ReadSharedValue</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ReadSharedValue(name)</code></div>
@@ -425,7 +425,7 @@ Shared values are accessible by every script.
 Get a Shared Value, if value not exist return null.
 Shared values are accessible by every script.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>T<T></code>, <code>Object</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
 <h3 class="wiki-entry-name">RemoveLineInFile</h3>
@@ -486,7 +486,8 @@ Checks to see if an identical line is in the file, and if it exists, it is remov
 <div class="wiki-entry" id="M-Scripting-Misc-ScriptDirectory">
 <h3 class="wiki-entry-name">ScriptDirectory</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptDirectory()</code></div>
-<p class="wiki-desc">Get the full path to the Scripts Directory.</p>
+<p class="wiki-desc">Get the full path to the main Razor Enhanced folder.
+This path maybe be different from the Python starting folder when RE is loaded as plugin (ex: ClassicUO)</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
@@ -634,6 +635,7 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-CloseMenu">CloseMenu</a></li>
 <li><a href="#M-Scripting-Misc-ConfigDirectory">ConfigDirectory</a></li>
 <li><a href="#M-Scripting-Misc-ContextReply">ContextReply</a></li>
+<li><a href="#M-Scripting-Misc-CurrentScriptDirectory">CurrentScriptDirectory</a></li>
 <li><a href="#M-Scripting-Misc-DataDirectory">DataDirectory</a></li>
 <li><a href="#M-Scripting-Misc-DeleteFile">DeleteFile</a></li>
 <li><a href="#M-Scripting-Misc-Disconnect">Disconnect</a></li>
@@ -666,7 +668,6 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-PetRename">PetRename</a></li>
 <li><a href="#M-Scripting-Misc-PlaySound">PlaySound</a></li>
 <li><a href="#M-Scripting-Misc-QueryStringResponse">QueryStringResponse</a></li>
-<li><a href="#M-Scripting-Misc-RazorDirectory">RazorDirectory</a></li>
 <li><a href="#M-Scripting-Misc-ReadSharedValue">ReadSharedValue</a></li>
 <li><a href="#M-Scripting-Misc-RemoveLineInFile">RemoveLineInFile</a></li>
 <li><a href="#M-Scripting-Misc-RemoveSharedValue">RemoveSharedValue</a></li>
