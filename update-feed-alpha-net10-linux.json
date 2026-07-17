@@ -1,7 +1,7 @@
 {
-  "version": "0.0.160",
-  "tag": "v0.0.160-alpha-net10-linux",
+  "version": "0.0.161",
+  "tag": "v0.0.161-alpha-net10-linux",
   "baseUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/",
-  "publishedAt": "2026-07-17T03:25:30Z",
-  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.160-alpha.tar.gz"
+  "publishedAt": "2026-07-17T03:47:49Z",
+  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.161-alpha.tar.gz"
 }
