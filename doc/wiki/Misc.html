@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.164</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.165</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -127,14 +127,6 @@ The filename MUST end in a limited file suffix list</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
-<div class="wiki-entry" id="M-Scripting-Misc-CloseBackpack">
-<h3 class="wiki-entry-name">CloseBackpack</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CloseBackpack()</code></div>
-<p class="wiki-desc">Close the backpack. 
-(OSI client only, no ClassicUO)</p>
-
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
-</div>
 <div class="wiki-entry" id="M-Scripting-Misc-CloseMenu">
 <h3 class="wiki-entry-name">CloseMenu</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CloseMenu()</code></div>
@@ -234,14 +226,6 @@ Season filter state will be saved on logout but not the season flag that will be
 <p class="wiki-desc">Set UoClient window in focus or restore if minimized.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
-</div>
-<div class="wiki-entry" id="M-Scripting-Misc-GetContPosition">
-<h3 class="wiki-entry-name">GetContPosition</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.GetContPosition()</code></div>
-<p class="wiki-desc">Get the position of the currently active Gump/Container.
-(OSI client only, no ClassicUO)</p>
-
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Point</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-GetMapInfo">
 <h3 class="wiki-entry-name">GetMapInfo</h3>
@@ -360,27 +344,10 @@ Is possible to use absolute Screen Coordinates by setting clientCoords=False.</p
 <li><code class="wiki-param-name">posY</code> <span class="wiki-param-type">(Int32)</span>: Y screen coordinate.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
-<div class="wiki-entry" id="M-Scripting-Misc-NextContPosition">
-<h3 class="wiki-entry-name">NextContPosition</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.NextContPosition(x, y)</code></div>
-<p class="wiki-desc">Return the X,Y of the next container, relative to the game window.
-(OSI client only, no ClassicUO)</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: X coordinate.</li>
-<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Y coordinate.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
-</div>
 <div class="wiki-entry" id="M-Scripting-Misc-NoOperation">
 <h3 class="wiki-entry-name">NoOperation</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.NoOperation()</code></div>
 <p class="wiki-desc">Just do nothing and enjoy the present moment.</p>
-
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
-</div>
-<div class="wiki-entry" id="M-Scripting-Misc-OpenPaperdoll">
-<h3 class="wiki-entry-name">OpenPaperdoll</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.OpenPaperdoll()</code></div>
-<p class="wiki-desc">Open the backpack. 
-(OSI client only, no ClassicUO)</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -425,7 +392,7 @@ Shared values are accessible by every script.
 Get a Shared Value, if value not exist return null.
 Shared values are accessible by every script.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>T<T></code>, <code>Object</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
 <h3 class="wiki-entry-name">RemoveLineInFile</h3>
@@ -631,7 +598,6 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-CheckIgnoreObject">CheckIgnoreObject</a></li>
 <li><a href="#M-Scripting-Misc-CheckSharedValue">CheckSharedValue</a></li>
 <li><a href="#M-Scripting-Misc-ClearIgnore">ClearIgnore</a></li>
-<li><a href="#M-Scripting-Misc-CloseBackpack">CloseBackpack</a></li>
 <li><a href="#M-Scripting-Misc-CloseMenu">CloseMenu</a></li>
 <li><a href="#M-Scripting-Misc-ConfigDirectory">ConfigDirectory</a></li>
 <li><a href="#M-Scripting-Misc-ContextReply">ContextReply</a></li>
@@ -644,7 +610,6 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-ExportPythonAPI">ExportPythonAPI</a></li>
 <li><a href="#M-Scripting-Misc-FilterSeason">FilterSeason</a></li>
 <li><a href="#M-Scripting-Misc-FocusUOWindow">FocusUOWindow</a></li>
-<li><a href="#M-Scripting-Misc-GetContPosition">GetContPosition</a></li>
 <li><a href="#M-Scripting-Misc-GetMapInfo">GetMapInfo</a></li>
 <li><a href="#M-Scripting-Misc-GetMenuTitle">GetMenuTitle</a></li>
 <li><a href="#M-Scripting-Misc-GetWindowSize">GetWindowSize</a></li>
@@ -661,9 +626,7 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-MenuResponse">MenuResponse</a></li>
 <li><a href="#M-Scripting-Misc-MouseLocation">MouseLocation</a></li>
 <li><a href="#M-Scripting-Misc-MouseMove">MouseMove</a></li>
-<li><a href="#M-Scripting-Misc-NextContPosition">NextContPosition</a></li>
 <li><a href="#M-Scripting-Misc-NoOperation">NoOperation</a></li>
-<li><a href="#M-Scripting-Misc-OpenPaperdoll">OpenPaperdoll</a></li>
 <li><a href="#M-Scripting-Misc-Pause">Pause</a></li>
 <li><a href="#M-Scripting-Misc-PetRename">PetRename</a></li>
 <li><a href="#M-Scripting-Misc-PlaySound">PlaySound</a></li>

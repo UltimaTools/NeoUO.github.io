@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.164</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.165</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -688,7 +688,7 @@ Regions are defined inside by Persistence/regions.json.</p>
 <h3 class="wiki-entry-name">ChatAlliance</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatAlliance(msg)</code></div>
 <p class="wiki-desc">Send message to the alliace chat.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-ChatChannel">
@@ -1404,14 +1404,6 @@ NOTE: This function is slow.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">attributename</code> <span class="wiki-param-type">(String)</span>: Name of the property.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Single</code></div>
 </div>
-<div class="wiki-entry" id="M-Scripting-Player-ToggleAlwaysRun">
-<h3 class="wiki-entry-name">ToggleAlwaysRun</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ToggleAlwaysRun()</code></div>
-<p class="wiki-desc">Toggle on/off the awlays run flag. 
-NOTE: Works only on OSI client.</p>
-
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
-</div>
 <div class="wiki-entry" id="M-Scripting-Player-TrackingArrow">
 <h3 class="wiki-entry-name">TrackingArrow</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.TrackingArrow(x, y, display, target)</code></div>
@@ -1717,7 +1709,6 @@ Regions are defined inside by Persistence/regions.json.</p>
 <li><a href="#P-Scripting-Player-StrengthIncrease">StrengthIncrease</a></li>
 <li><a href="#M-Scripting-Player-SumAttribute">SumAttribute</a></li>
 <li><a href="#P-Scripting-Player-SwingSpeedIncrease">SwingSpeedIncrease</a></li>
-<li><a href="#M-Scripting-Player-ToggleAlwaysRun">ToggleAlwaysRun</a></li>
 <li><a href="#M-Scripting-Player-TrackingArrow">TrackingArrow</a></li>
 <li><a href="#M-Scripting-Player-UnEquipItemByLayer">UnEquipItemByLayer</a></li>
 <li><a href="#M-Scripting-Player-UnEquipUO-D">UnEquipUO3D</a></li>
