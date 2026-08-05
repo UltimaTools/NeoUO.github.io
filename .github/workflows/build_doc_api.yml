@@ -30,46 +30,36 @@ jobs:
         $feedPath = "website_repo/update-feed-alpha-net472.json"
         $feed = Get-Content -Path $feedPath | ConvertFrom-Json
         $version = $feed.version
-        $tag = $feed.tag
         $baseUrl = $feed.baseUrl
-        $portableUrl = "$baseUrl" + "neouo-net472-alpha-Portable.zip"
         Write-Host "Latest version: $version"
-        Write-Host "Portable URL: $portableUrl"
-        echo "version=$version" >> $env:GITHUB_OUTPUT
-        echo "portable_url=$portableUrl" >> $env:GITHUB_OUTPUT
+        $jsonUrl = "$baseUrl" + "AutoComplete.json"
+        Write-Host "JSON URL: $jsonUrl"
+        echo "json_url=$jsonUrl" >> $env:GITHUB_OUTPUT
       shell: pwsh
 
-    - name: Download portable zip
+    - name: Download AutoComplete.json
       run: |
-        Invoke-WebRequest -Uri "${{ steps.get_version.outputs.portable_url }}" -OutFile "neouo-portable.zip"
-      shell: pwsh
-
-    - name: Extract portable zip
-      run: |
-        New-Item -ItemType Directory -Path "extracted" -Force
-        7z x neouo-portable.zip -o"./extracted"
-        Write-Host "Extracted contents:"
-        Get-ChildItem extracted -Recurse -Depth 2 -Name
-      shell: pwsh
-
-    - name: Run --autoDocsOnly
-      run: |
-        cd extracted\current
-        Write-Host "Running from: $(Get-Location)"
-        .\neouo-net472.exe --autoDocsOnly
-        Get-ChildItem Config\AutoComplete.json -ErrorAction Stop
+        New-Item -ItemType Directory -Path "work" -Force
+        Invoke-WebRequest -Uri "${{ steps.get_version.outputs.json_url }}" -OutFile "work\AutoComplete.json"
+        Get-ChildItem work\AutoComplete.json
       shell: pwsh
 
     - name: Run autodoc.py
       run: |
-        cd extracted\current
+        cd work
         Copy-Item "${{ github.workspace }}\website_repo\doc\autodoc.py" -Destination "." -Force
-        python autodoc.py .\Config\AutoComplete.json
+        python autodoc.py .\AutoComplete.json
       shell: pwsh
 
     - name: Update repo documentation
       run: |
-        Copy-Item -Path "extracted\current\wiki\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
+        if (Test-Path "work\wiki") {
+          Copy-Item -Path "work\wiki\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
+        } else {
+          Get-ChildItem work -Recurse -Name
+          Write-Error "Wiki output not found in work\wiki"
+          exit 1
+        }
       shell: pwsh
 
     - name: Commit
