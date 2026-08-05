@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.169</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.0.3</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -132,6 +132,17 @@ Map must be open for this to work.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-CUO-MarkTile">
+<h3 class="wiki-entry-name">MarkTile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.MarkTile(x, y, hue, map, label)</code></div>
+<p class="wiki-desc">Mark a world tile with the specified hue and optional label.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">hue</code> <span class="wiki-param-type">(UInt16)</span></li>
+<li><code class="wiki-param-name">map</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">label</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-CUO-MoveGump">
 <h3 class="wiki-entry-name">MoveGump</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.MoveGump(serial, x, y)</code></div>
@@ -187,6 +198,22 @@ Set a string property on the current CUO profile by name.</p>
 <li><code class="wiki-param-name">value</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-CUO-RemoveMarkedTile">
+<h3 class="wiki-entry-name">RemoveMarkedTile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.RemoveMarkedTile(x, y, map)</code></div>
+<p class="wiki-desc">Remove a marked world tile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">map</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-ServerName">
+<h3 class="wiki-entry-name">ServerName</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.ServerName()</code></div>
+<p class="wiki-desc">Get the server name from ClassicUO's World.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-CUO-SetAutoOpenDoors">
 <h3 class="wiki-entry-name">SetAutoOpenDoors</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.SetAutoOpenDoors(enabled)</code></div>
@@ -223,12 +250,15 @@ Returns null if the gump isn't open or on OSI client.</p>
 <li><a href="#M-Scripting-CUO-GetSetting">GetSetting</a></li>
 <li><a href="#M-Scripting-CUO-GoToMarker">GoToMarker</a></li>
 <li><a href="#M-Scripting-CUO-LoadMarkers">LoadMarkers</a></li>
+<li><a href="#M-Scripting-CUO-MarkTile">MarkTile</a></li>
 <li><a href="#M-Scripting-CUO-MoveGump">MoveGump</a></li>
 <li><a href="#M-Scripting-CUO-OpenContainerAt">OpenContainerAt</a></li>
 <li><a href="#M-Scripting-CUO-OpenMobileHealthBar">OpenMobileHealthBar</a></li>
 <li><a href="#M-Scripting-CUO-OpenMyStatusBar">OpenMyStatusBar</a></li>
 <li><a href="#M-Scripting-CUO-PlayMacro">PlayMacro</a></li>
 <li><a href="#M-Scripting-CUO-ProfilePropertySet">ProfilePropertySet</a></li>
+<li><a href="#M-Scripting-CUO-RemoveMarkedTile">RemoveMarkedTile</a></li>
+<li><a href="#M-Scripting-CUO-ServerName">ServerName</a></li>
 <li><a href="#M-Scripting-CUO-SetAutoOpenDoors">SetAutoOpenDoors</a></li>
 <li><a href="#M-Scripting-CUO-SetGumpOpenLocation">SetGumpOpenLocation</a></li>
 <li><a href="#M-Scripting-CUO-TryGetGumpLocation">TryGetGumpLocation</a></li></ul></aside></div></body></html>
