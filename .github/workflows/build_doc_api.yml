@@ -54,29 +54,22 @@ jobs:
 
     - name: Run --autoDocsOnly
       run: |
-        cd extracted
-        $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
-        Write-Host "Exe found at: $exeDir"
-        cd $exeDir
+        cd extracted\current
+        Write-Host "Running from: $(Get-Location)"
         .\neouo-net472.exe --autoDocsOnly
         Get-ChildItem Config\AutoComplete.json -ErrorAction Stop
       shell: pwsh
 
     - name: Run autodoc.py
       run: |
-        cd extracted
-        $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
-        cd $exeDir
+        cd extracted\current
         Copy-Item "${{ github.workspace }}\website_repo\doc\autodoc.py" -Destination "." -Force
         python autodoc.py .\Config\AutoComplete.json
       shell: pwsh
 
     - name: Update repo documentation
       run: |
-        cd extracted
-        $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
-        $wikiPath = Join-Path $exeDir "wiki"
-        Copy-Item -Path "$wikiPath\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
+        Copy-Item -Path "extracted\current\wiki\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
       shell: pwsh
 
     - name: Commit
