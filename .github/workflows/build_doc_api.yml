@@ -30,34 +30,25 @@ jobs:
         $feedPath = "website_repo/update-feed-alpha-net472.json"
         $feed = Get-Content -Path $feedPath | ConvertFrom-Json
         $version = $feed.version
-        $baseUrl = $feed.baseUrl
         Write-Host "Latest version: $version"
-        $jsonUrl = "$baseUrl" + "AutoComplete.json"
-        Write-Host "JSON URL: $jsonUrl"
-        echo "json_url=$jsonUrl" >> $env:GITHUB_OUTPUT
-      shell: pwsh
-
-    - name: Download AutoComplete.json
-      run: |
-        New-Item -ItemType Directory -Path "work" -Force
-        Invoke-WebRequest -Uri "${{ steps.get_version.outputs.json_url }}" -OutFile "work\AutoComplete.json"
-        Get-ChildItem work\AutoComplete.json
       shell: pwsh
 
     - name: Run autodoc.py
       run: |
-        cd work
-        Copy-Item "${{ github.workspace }}\website_repo\doc\autodoc.py" -Destination "." -Force
-        python autodoc.py .\AutoComplete.json
+        cd website_repo
+        $jsonPath = Join-Path (Get-Location) "AutoComplete.json"
+        Write-Host "JSON path: $jsonPath"
+        Get-ChildItem $jsonPath -ErrorAction Stop
+        Copy-Item "doc\autodoc.py" -Destination "." -Force
+        python autodoc.py $jsonPath
       shell: pwsh
 
     - name: Update repo documentation
       run: |
-        if (Test-Path "work\wiki") {
-          Copy-Item -Path "work\wiki\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
+        if (Test-Path "website_repo\wiki") {
+          Copy-Item -Path "website_repo\wiki\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
         } else {
-          Get-ChildItem work -Recurse -Name
-          Write-Error "Wiki output not found in work\wiki"
+          Write-Error "Wiki output not found"
           exit 1
         }
       shell: pwsh
