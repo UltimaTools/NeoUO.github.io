@@ -37,30 +37,31 @@ jobs:
         $version = $feed.version
         $tag = $feed.tag
         $baseUrl = $feed.baseUrl
-        $portableUrl = "$baseUrl" + "neouo-net472-$version-alpha-Portable.zip"
+        $channelSuffix = $tag -replace "v$version-", ""
+        $packageUrl = "$baseUrl" + "neouo-net472-$version-$channelSuffix-full.nupkg"
         Write-Host "Latest version: $version"
         Write-Host "Tag: $tag"
-        Write-Host "Portable URL: $portableUrl"
+        Write-Host "Package URL: $packageUrl"
         echo "version=$version" >> $env:GITHUB_OUTPUT
         echo "tag=$tag" >> $env:GITHUB_OUTPUT
-        echo "portable_url=$portableUrl" >> $env:GITHUB_OUTPUT
+        echo "package_url=$packageUrl" >> $env:GITHUB_OUTPUT
       shell: pwsh
 
-    # Download the Portable zip from the GitHub release
-    - name: Download Portable ZIP
+    # Download the full nupkg (zip) from R2
+    - name: Download package
       run: |
-        $portableUrl = "${{ steps.get_version.outputs.portable_url }}"
-        $outputFile = "neouo-portable.zip"
-        Write-Host "Downloading $portableUrl to $outputFile"
-        Invoke-WebRequest -Uri $portableUrl -OutFile $outputFile
+        $packageUrl = "${{ steps.get_version.outputs.package_url }}"
+        $outputFile = "neouo-package.nupkg"
+        Write-Host "Downloading $packageUrl to $outputFile"
+        Invoke-WebRequest -Uri $packageUrl -OutFile $outputFile
       shell: pwsh
 
-    # Extract the Portable zip
-    - name: Extract ZIP file
+    # Extract the package
+    - name: Extract package
       run: |
         New-Item -ItemType Directory -Path "extracted" -Force
-        $outputFile = "neouo-portable.zip"
-        Write-Host "Extracting ZIP: $outputFile"
+        $outputFile = "neouo-package.nupkg"
+        Write-Host "Extracting: $outputFile"
         7z x $outputFile -o"./extracted"
       shell: pwsh
 
@@ -69,19 +70,24 @@ jobs:
 
     # Run the UO-CoPilot portable exe to generate AutoComplete.json
     # --autoDocsOnly writes to ExeDirectory/Config/AutoComplete.json
-    - name: Run UO-CoPilot --autoDocsOnly
+    - name: Run UO-Copilot --autoDocsOnly
       run: |
-        cd extracted\current
+        cd extracted
+        $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
+        cd $exeDir
+        Write-Host "Running from: $(Get-Location)"
         .\neouo-net472.exe --autoDocsOnly
         dir Config\AutoComplete.json
-      shell: cmd
+      shell: pwsh
 
-    # Generate HTML docs from AutoComplete.json using autodoc.py from the repo
-    # autodoc.py reads ./Config/AutoComplete.json and writes to ./doc/api/
+    # Run autodoc.py from the same directory as the exe
+    # autodoc.py reads ./Config/AutoComplete.json and writes to ./wiki/
     - name: Run autodoc.py
       run: |
-        cd extracted\current
-        Copy-Item "..\..\website_repo\doc\autodoc.py" -Destination "." -Force
+        cd extracted
+        $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
+        cd $exeDir
+        Copy-Item "${{ github.workspace }}\website_repo\doc\autodoc.py" -Destination "." -Force
         python autodoc.py
       shell: pwsh
 
@@ -89,7 +95,10 @@ jobs:
     # autodoc.py writes to <script_dir>/wiki/ (WikiAutoDocHTML)
     - name: Update repo documentation
       run: |
-        Copy-Item -Path "extracted/current/wiki/*" -Destination "website_repo/doc/wiki/" -Recurse -Force -Verbose
+        cd extracted
+        $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
+        $wikiPath = Join-Path $exeDir "wiki"
+        Copy-Item -Path "$wikiPath\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
       shell: pwsh
 
     # Commit changes
