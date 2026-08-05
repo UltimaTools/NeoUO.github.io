@@ -1,8 +1,5 @@
-# This is a basic workflow that is manually triggered
-
 name: AutoDoc API
 
-# Controls when the action will run.
 on:
   workflow_dispatch:
   push:
@@ -22,13 +19,11 @@ jobs:
     runs-on: windows-latest
     
     steps:
-    # Checkout the repository (without LFS)
     - name: Checkout website repo
       uses: actions/checkout@v4
       with:
         path: website_repo
     
-    # Get latest version information from the net472 update feed
     - name: Get latest version information
       id: get_version
       run: |
@@ -37,77 +32,53 @@ jobs:
         $version = $feed.version
         $tag = $feed.tag
         $baseUrl = $feed.baseUrl
-        $channelSuffix = $tag -replace "v$version-", ""
-        $packageUrl = "$baseUrl" + "neouo-net472-$version-$channelSuffix-full.nupkg"
+        $portableUrl = "$baseUrl" + "neouo-net472-alpha-Portable.zip"
         Write-Host "Latest version: $version"
-        Write-Host "Tag: $tag"
-        Write-Host "Package URL: $packageUrl"
+        Write-Host "Portable URL: $portableUrl"
         echo "version=$version" >> $env:GITHUB_OUTPUT
-        echo "tag=$tag" >> $env:GITHUB_OUTPUT
-        echo "package_url=$packageUrl" >> $env:GITHUB_OUTPUT
+        echo "portable_url=$portableUrl" >> $env:GITHUB_OUTPUT
       shell: pwsh
 
-    # Download the full nupkg (zip) from R2
-    - name: Download package
+    - name: Download portable zip
       run: |
-        $packageUrl = "${{ steps.get_version.outputs.package_url }}"
-        $outputFile = "neouo-package.nupkg"
-        Write-Host "Downloading $packageUrl to $outputFile"
-        Invoke-WebRequest -Uri $packageUrl -OutFile $outputFile
+        Invoke-WebRequest -Uri "${{ steps.get_version.outputs.portable_url }}" -OutFile "neouo-portable.zip"
       shell: pwsh
 
-    # Extract the package
-    - name: Extract package
+    - name: Extract portable zip
       run: |
         New-Item -ItemType Directory -Path "extracted" -Force
-        $outputFile = "neouo-package.nupkg"
-        Write-Host "Extracting: $outputFile"
-        7z x $outputFile -o"./extracted"
+        7z x neouo-portable.zip -o"./extracted"
+        Write-Host "Extracted contents:"
+        Get-ChildItem extracted -Recurse -Depth 2 -Name
       shell: pwsh
 
-    - name: Display extracted files
-      run: dir extracted
-
-    # Run the exe to generate AutoComplete.json (written to user data dir)
-    - name: Run UO-Copilot --autoDocsOnly
+    - name: Run --autoDocsOnly
       run: |
         cd extracted
         $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
+        Write-Host "Exe found at: $exeDir"
         cd $exeDir
-        Write-Host "Running from: $(Get-Location)"
         .\neouo-net472.exe --autoDocsOnly
-        $dataDir = "$env:LOCALAPPDATA\NeoUO"
-        Write-Host "Data directory: $dataDir"
-        dir "$dataDir\Config\AutoComplete.json"
+        Get-ChildItem Config\AutoComplete.json -ErrorAction Stop
       shell: pwsh
 
-    # Run autodoc.py using AutoComplete.json from the user data directory
     - name: Run autodoc.py
       run: |
         cd extracted
         $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
         cd $exeDir
         Copy-Item "${{ github.workspace }}\website_repo\doc\autodoc.py" -Destination "." -Force
-        $dataApiPath = "$env:LOCALAPPDATA\NeoUO\Config\AutoComplete.json"
-        Write-Host "API path: $dataApiPath"
-        python autodoc.py "$dataApiPath"
+        python autodoc.py .\Config\AutoComplete.json
       shell: pwsh
 
-    # Copy generated wiki docs back to the repository
     - name: Update repo documentation
       run: |
         cd extracted
         $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
         $wikiPath = Join-Path $exeDir "wiki"
-        if (Test-Path $wikiPath) {
-          Copy-Item -Path "$wikiPath\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
-        } else {
-          Write-Error "Wiki output not found at $wikiPath"
-          exit 1
-        }
+        Copy-Item -Path "$wikiPath\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
       shell: pwsh
 
-    # Commit changes
     - name: Commit
       run: |
         cd website_repo
@@ -117,7 +88,6 @@ jobs:
         git commit -m "GitHub Actions build_docs" || echo "No changes to commit"
       shell: pwsh
 
-    # Push changes using git directly
     - name: Push changes
       run: |
         cd website_repo
