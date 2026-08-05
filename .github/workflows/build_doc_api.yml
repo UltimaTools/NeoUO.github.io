@@ -37,7 +37,7 @@ jobs:
         $version = $feed.version
         $tag = $feed.tag
         $baseUrl = $feed.baseUrl
-        $portableUrl = "$baseUrl" + "neouo-net472-alpha-Portable.zip"
+        $portableUrl = "$baseUrl" + "neouo-net472-$version-alpha-Portable.zip"
         Write-Host "Latest version: $version"
         Write-Host "Tag: $tag"
         Write-Host "Portable URL: $portableUrl"
