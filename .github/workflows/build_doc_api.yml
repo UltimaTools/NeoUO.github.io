@@ -68,8 +68,7 @@ jobs:
     - name: Display extracted files
       run: dir extracted
 
-    # Run the UO-CoPilot portable exe to generate AutoComplete.json
-    # --autoDocsOnly writes to ExeDirectory/Config/AutoComplete.json
+    # Run the exe to generate AutoComplete.json (written to user data dir)
     - name: Run UO-Copilot --autoDocsOnly
       run: |
         cd extracted
@@ -77,28 +76,35 @@ jobs:
         cd $exeDir
         Write-Host "Running from: $(Get-Location)"
         .\neouo-net472.exe --autoDocsOnly
-        dir Config\AutoComplete.json
+        $dataDir = "$env:LOCALAPPDATA\NeoUO"
+        Write-Host "Data directory: $dataDir"
+        dir "$dataDir\Config\AutoComplete.json"
       shell: pwsh
 
-    # Run autodoc.py from the same directory as the exe
-    # autodoc.py reads ./Config/AutoComplete.json and writes to ./wiki/
+    # Run autodoc.py using AutoComplete.json from the user data directory
     - name: Run autodoc.py
       run: |
         cd extracted
         $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
         cd $exeDir
         Copy-Item "${{ github.workspace }}\website_repo\doc\autodoc.py" -Destination "." -Force
-        python autodoc.py
+        $dataApiPath = "$env:LOCALAPPDATA\NeoUO\Config\AutoComplete.json"
+        Write-Host "API path: $dataApiPath"
+        python autodoc.py "$dataApiPath"
       shell: pwsh
 
     # Copy generated wiki docs back to the repository
-    # autodoc.py writes to <script_dir>/wiki/ (WikiAutoDocHTML)
     - name: Update repo documentation
       run: |
         cd extracted
         $exeDir = (Get-ChildItem -Recurse -Filter "neouo-net472.exe" | Select-Object -First 1).DirectoryName
         $wikiPath = Join-Path $exeDir "wiki"
-        Copy-Item -Path "$wikiPath\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
+        if (Test-Path $wikiPath) {
+          Copy-Item -Path "$wikiPath\*" -Destination "website_repo\doc\wiki\" -Recurse -Force -Verbose
+        } else {
+          Write-Error "Wiki output not found at $wikiPath"
+          exit 1
+        }
       shell: pwsh
 
     # Commit changes
