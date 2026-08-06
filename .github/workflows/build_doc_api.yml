@@ -33,6 +33,7 @@ jobs:
         $feed = Get-Content -Path $feedPath | ConvertFrom-Json
         $version = $feed.version
         Write-Host "Latest version: $version"
+        "version=$version" >> $env:GITHUB_OUTPUT
       shell: pwsh
 
     - name: Run autodoc.py
@@ -42,7 +43,7 @@ jobs:
         Write-Host "JSON path: $jsonPath"
         Get-ChildItem $jsonPath -ErrorAction Stop
         Copy-Item "doc\autodoc.py" -Destination "." -Force
-        python autodoc.py $jsonPath
+        python autodoc.py $jsonPath --version ${{ steps.get_version.outputs.version }}
       shell: pwsh
 
     - name: Update repo documentation

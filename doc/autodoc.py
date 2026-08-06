@@ -56,10 +56,19 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     
     api_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(script_dir, "Config", "AutoComplete.json")
+    version_override = None
+    
+    i = 1
+    while i < len(sys.argv):
+        if sys.argv[i] == "--version" and i + 1 < len(sys.argv):
+            version_override = sys.argv[i + 1]
+            i += 2
+        else:
+            i += 1
     
     ## generates wiki-style docs to ./doc/wiki/
     print("\nGenerating wiki-style docs...")
-    wiki = WikiAutoDocHTML(output_path=None, api_path=api_path)
+    wiki = WikiAutoDocHTML(output_path=None, api_path=api_path, version_override=version_override)
     wiki.MakeWikiDocumentation()
      
 class HTML():
@@ -680,10 +689,11 @@ class WikiHTML:
 class WikiAutoDocHTML:
     """Generates wiki-style documentation using WikiHTML and AutoDoc"""
 
-    def __init__(self, output_path=None, api_path=None):
+    def __init__(self, output_path=None, api_path=None, version_override=None):
         script_dir = os.path.dirname(os.path.abspath(__file__))
         default_wiki = os.path.join(script_dir, "wiki") + os.sep
         self.doc_path = default_wiki if output_path is None else output_path
+        self.version_override = version_override
         self.ad = AutoDoc(api_path)
 
     def KeyToSlug(self, xmlkey):
@@ -692,7 +702,7 @@ class WikiAutoDocHTML:
         return re.sub(r"[^a-zA-Z]", "-", xmlkey)
 
     def SidebarHTML(self, active_class=None):
-        version = self.ad.GetVersion()
+        version = self.version_override if self.version_override else self.ad.GetVersion()
         class_list = self.ad.GetClasses()
         links = []
         for cls in class_list:
@@ -803,7 +813,7 @@ class WikiAutoDocHTML:
         )
 
     def IndexPageHTML(self):
-        version = self.ad.GetVersion()
+        version = self.version_override if self.version_override else self.ad.GetVersion()
         class_list = self.ad.GetClasses()
 
         parts = []
