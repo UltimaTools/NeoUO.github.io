@@ -17017,6 +17017,18 @@
       "flagAutocomplete": false
     },
     {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.CUO.Exit",
+      "itemKind": "method",
+      "itemClass": "CUO",
+      "itemName": "Exit",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
       "returnType": "String",
       "returnDesc": "The path to the saved file.",
       "paramList": [
