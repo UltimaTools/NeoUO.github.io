@@ -16504,6 +16504,18 @@
     {
       "returnType": "Void",
       "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.CUO.DisableNativeAutoOpenCorpses",
+      "itemKind": "method",
+      "itemClass": "CUO",
+      "itemName": "DisableNativeAutoOpenCorpses",
+      "itemDescription": "Disable CUO's native AutoOpenCorpses so NeoUO's autoloot fully owns\ncorpse opening (it must control which opens are hidden). Idempotent —\npushes once until <see cref=\"M:Scripting.CUO.InvalidateAutoOpenCorpsesCache\" /> runs.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
       "paramList": [
         {
           "itemName": "bag",
