@@ -45,7 +45,17 @@
 <a class="wiki-nav-link" href="./Trade.html">Trade</a>
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
-<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">AutoLoot</h1><p class="wiki-class-desc">The Autoloot class allow to interact with the Autoloot Agent, via scripting.</p>
+<a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">AutoLoot</h1>
+<div class="wiki-class-desc">The Autoloot class allow to interact with the Autoloot Agent, via scripting.
+<p>The item row <b>Name</b> column can carry a match pattern (all compares case-insensitive):</p>
+<table>
+<tr><th>Enter this...</th><th>Mode</th><th>Matches</th></tr>
+<tr><td><code>"exact name"</code></td><td>Exact</td><td>Only items with exactly that name (leading quantity digits ignored)</td></tr>
+<tr><td><code>*glob*</code></td><td>Contains</td><td>Any item whose name contains the pattern (<code>*</code> = any run, <code>?</code> = one char)</td></tr>
+<tr><td><code>/regex/</code></td><td>Regex</td><td>Items matching the .NET regex, case-insensitive</td></tr>
+</table>
+<p>A bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.</p></div>
+
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
 <div class="wiki-entry" id="M-Scripting-AutoLoot-AddItemByTarget">

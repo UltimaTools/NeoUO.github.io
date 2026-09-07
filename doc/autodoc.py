@@ -615,11 +615,11 @@ class WikiHTML:
     @staticmethod
     def ClassHeader(class_name, description=""):
         desc_html = (
-            '<p class="wiki-class-desc">{}</p>'.format(description)
+            '<div class="wiki-class-desc">{}</div>\n'.format(description)
             if description
             else ""
         )
-        return '<h1 class="wiki-class-name">{}</h1>{}'.format(class_name, desc_html)
+        return '<h1 class="wiki-class-name">{}</h1>\n{}'.format(class_name, desc_html)
 
     @staticmethod
     def SectionHeader(title, anchor):
