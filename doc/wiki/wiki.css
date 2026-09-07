@@ -103,6 +103,37 @@ code {
     font-size: 1.05em;
 }
 
+.wiki-class-desc table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.95em;
+}
+
+.wiki-class-desc th,
+.wiki-class-desc td {
+    border: 1px solid #333;
+    padding: 8px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.wiki-class-desc th {
+    background: #111;
+    color: #0f0;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wiki-class-desc tr:nth-child(even) td {
+    background: #111;
+}
+
+.wiki-class-desc table code {
+    white-space: nowrap;
+}
+
 .wiki-toc {
     background: #111;
     border: 1px solid #222;
