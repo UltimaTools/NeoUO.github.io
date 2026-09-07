@@ -47,6 +47,13 @@ import os
 import json
 import re
 import sys
+from html import escape as html_escape
+
+try:
+    import markdown as _md
+    _MD_AVAILABLE = True
+except ImportError:
+    _MD_AVAILABLE = False
 
     
 
@@ -614,11 +621,13 @@ class WikiHTML:
 
     @staticmethod
     def ClassHeader(class_name, description=""):
-        desc_html = (
-            '<div class="wiki-class-desc">{}</div>\n'.format(description)
-            if description
-            else ""
-        )
+        desc_html = ""
+        if description:
+            if _MD_AVAILABLE:
+                body = _md.markdown(description, extensions=["tables"])
+            else:
+                body = html_escape(description).replace("\n", "<br>")
+            desc_html = '<div class="wiki-class-desc">{}</div>\n'.format(body)
         return '<h1 class="wiki-class-name">{}</h1>\n{}'.format(class_name, desc_html)
 
     @staticmethod
