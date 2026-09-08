@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,8 +46,13 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">CUO</h1>
-<div class="wiki-class-desc"><p>The CUO_Functions class contains invocation of CUO code using Harmony's
-AccessTools and Traverse instead of raw reflection.</p></div>
+<div class="wiki-class-desc"><p>Script interface to ClassicUO-only client features, unavailable on the OSI client:</p>
+<ul>
+<li>World map: markers (<code>MarkTile</code>, <code>RemoveMarkedTile</code>), <code>FreeView</code>, <code>GoToMarker</code>, treasure map gump</li>
+<li>Profile: <code>ProfilePropertySet</code>, <code>GetSetting</code>, <code>SetAutoOpenDoors</code>, native auto-open-corpse control</li>
+<li>Windows: gump/container placement (<code>OpenContainerAt</code>, <code>MoveGump</code>), status and health bars</li>
+<li>Extras: <code>PlayMacro</code>, <code>FollowMobile</code>, <code>ServerName</code></li>
+</ul></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
@@ -86,7 +91,7 @@ Returns true if a map was closed.</p>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.DisableNativeAutoOpenCorpses()</code></div>
 <p class="wiki-desc">Disable CUO's native AutoOpenCorpses so NeoUO's autoloot fully owns
 corpse opening (it must control which opens are hidden). Idempotent —
-pushes once until <see cref="M:Scripting.CUO.InvalidateAutoOpenCorpsesCache" /> runs.</p>
+pushes once until `InvalidateAutoOpenCorpsesCache()` runs.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>

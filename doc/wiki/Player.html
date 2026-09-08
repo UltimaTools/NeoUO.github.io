@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,7 +46,15 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Player</h1>
-<div class="wiki-class-desc"><p>The Player class represent the currently logged in character.</p></div>
+<div class="wiki-class-desc"><p>Represents the currently logged-in character, with direct access to its state and actions:</p>
+<ul>
+<li>Stats, skill and resistance values: <code>Hits</code>, <code>Mana</code>, <code>Stam</code>, <code>Str</code>/<code>Dex</code>/<code>Int</code>, resistances, <code>GetSkillValue</code></li>
+<li>Position and movement: <code>Position</code>, <code>Run</code>, <code>Walk</code>, <code>PathFindTo</code>, <code>Fly</code></li>
+<li>Combat: <code>Attack</code>, <code>SetWarMode</code>, weapon special abilities, <code>InvokeVirtue</code></li>
+<li>Chat, party and guild: <code>ChatSay</code>, <code>ChatParty</code>, <code>ChatGuild</code>, <code>ChatAlliance</code></li>
+<li>Inventory and equipment: <code>Backpack</code>, <code>Bank</code>, <code>Quiver</code>, <code>Mount</code>, <code>EquipItem</code>, layer helpers</li>
+<li>Buffs and misc: <code>Buffs</code>, <code>BuffsExist</code>, <code>Corpses</code>, <code>Zone</code>, <code>Area</code>, <code>Gold</code></li>
+</ul></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
 <li><a href="#methods">Methods</a></li></ul></div>
@@ -1387,7 +1395,7 @@ Intelligence</li>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SkillDelay()</code></div>
 <p class="wiki-desc">Returns the remaining milliseconds until the next skill use is allowed by the server.
 Returns 0 if no skill delay is active.
-Use with <see cref="M:Scripting.Misc.Pause(System.Int32)" /> to moderate script timing: Misc.Pause(Player.SkillDelay())</p>
+Use with `Misc.Pause(Player.SkillDelay())` to moderate script timing.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 </div>

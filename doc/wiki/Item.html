@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Item - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Item - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,10 +46,8 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Item</h1>
-<div class="wiki-class-desc"><p>The Item class represent a single in-game Item object. Examples of Item are: Swords, bags, bandages, reagents, clothing.
-While the Item.Serial is unique for each Item, Item.ItemID is the unique for the Item appearance, or image. Sometimes is also called ID or Graphics ID.
-Item can also be house foriture as well as decorative items on the ground, like lamp post and banches.
-However, for Item on the ground that cannot be picked up, they might be part of the world map, see Statics class.</p></div>
+<div class="wiki-class-desc"><p>Represents a single in-game Item: a world or ground object, a container's content, or an equipped piece of equipment.</p>
+<p><code>Item.Serial</code> is unique for each instance, while <code>Item.ItemID</code> (alias of <code>Item.Graphics</code>) identifies the appearance type. Items that are part of the world map and cannot be picked up belong to the <code>Statics</code> class instead, while searches for items are done with the <code>Items</code> class.</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
 <li><a href="#methods">Methods</a></li></ul></div>

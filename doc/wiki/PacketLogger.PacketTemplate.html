@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>PacketLogger.PacketTemplate - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>PacketLogger.PacketTemplate - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,19 +46,7 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">PacketLogger.PacketTemplate</h1>
-<div class="wiki-class-desc"><p>Rapresents a general purpose template system for packets. 
-The templates allow to format packets in the logger, making them readable.
-Example of "Damage" (0x0B) packet:
-{
- 'packetID': 0x0B,
- 'name': 'Damage 0x0B',
- 'showHexDump': true,
- 'fields':[
-   { 'name':'packetID', 'length':1, 'type':'packetID'},
-   { 'name':'Serial', 'length':4, 'type':'serial'},
-   { 'name':'Damage', 'length': 2, 'type':'int'},
- ]
-}</p></div>
+<div class="wiki-class-desc"><p>Template that tells the packet logger how to decode and display a single packet type: its packetID, a readable name, optional hex dump, dynamic length, and the ordered list of <code>FieldTemplate</code>s.</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li></ul></div>
 <h2 id="properties" class="wiki-section-header">Properties</h2>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>PacketLogger - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>PacketLogger - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,7 +46,13 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">PacketLogger</h1>
-<div class="wiki-class-desc"><p>packet logger.</p></div>
+<div class="wiki-class-desc"><p>Network debugger that logs the packets exchanged between the client and the server.</p>
+<ul>
+<li>Logging: <code>Start</code>, <code>Stop</code>, <code>SetOutputPath</code>, <code>Reset</code></li>
+<li>Filtering: <code>AddBlacklist</code>, <code>AddWhitelist</code>, <code>DiscardAll</code>, <code>DiscardShowHeader</code>, <code>ListenPacketPath</code></li>
+<li>Templates: <code>AddTemplate</code>, <code>RemoveTemplate</code> to decode packet content</li>
+<li>Replay: <code>SendToServer</code> / <code>SendToClient</code> to re-send captured bytes</li>
+</ul></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
 <li><a href="#methods">Methods</a></li></ul></div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Mobile - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Mobile - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,9 +46,8 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Mobile</h1>
-<div class="wiki-class-desc"><p>The Mobile class represents an single alive entity. 
-While the Mobile.Serial is unique for each Mobile, Mobile.MobileID is the unique for the Mobile appearance, or image. Sometimes is also called Body or Body ID.
-Mobiles which dies and leave a corpse behind, they stop existing as Mobiles and instead leave a corpse as a Item object appears.</p></div>
+<div class="wiki-class-desc"><p>Represents a single non-player entity in the world.</p>
+<p><code>Mobile.Serial</code> is unique for each instance; <code>Mobile.MobileID</code> (alias of <code>Mobile.Body</code>) identifies the appearance type. A mobile that dies leaves a corpse behind as an <code>Item</code> object. Provides read access to the mobile's state (name, hue, position, stats, fame/karma, notoriety, equipment) and <code>DistanceTo</code>. Search mobiles with the <code>Mobiles</code> class.</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
 <li><a href="#methods">Methods</a></li></ul></div>

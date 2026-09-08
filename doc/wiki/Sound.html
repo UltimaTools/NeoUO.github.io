@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Sound - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Sound - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,12 +46,7 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Sound</h1>
-<div class="wiki-class-desc"><p>The Sound class provides an api to manipulate Sounds. 
-For now it just turns logging for sounds on / off or waits for a list of sounds
-All the WeakRef stuff seems like overkill and a pia. 
-The problem was if you started the wait and then killed the python script, the entry in the waiters list just stayed forever
-The only way around this is to have a weakref stored in the list, then if the local var ManualResetEvent went out of scope, 
-the WeakRef will go to null.  At end of loop we clean up all null entries so the list stays clean.</p></div>
+<div class="wiki-class-desc"><p>Controls in-game sound handling: log the sound requests the client receives, filter which ones are played, or wait until a given list of sounds occurs.</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>

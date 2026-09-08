@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,7 +46,15 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Misc</h1>
-<div class="wiki-class-desc"><p>The Misc class contains general purpose functions of common use.</p></div>
+<div class="wiki-class-desc"><p>The Misc class contains general-purpose functions used throughout scripts.</p>
+<ul>
+<li>Entity checks and distance: <code>IsItem</code>, <code>IsMobile</code>, <code>Distance</code>, <code>DistanceSqrt</code></li>
+<li>Context menus and prompts: <code>WaitForContext</code>, <code>UseContextMenu</code>, <code>ContextReply</code>, prompt helpers</li>
+<li>Client interaction: <code>SendToClient</code>, <code>SendMessage</code>, <code>PlaySound</code>, <code>Beep</code>, <code>Disconnect</code>, <code>Resync</code>, mouse and window helpers</li>
+<li>File I/O inside the RE directory: <code>AppendToFile</code>, <code>DeleteFile</code>, <code>RemoveLineInFile</code></li>
+<li>Shared values and ignore list: <code>SetSharedValue</code>, <code>IgnoreObject</code> and friends</li>
+<li>Script control, profiles and more: <code>ScriptRun</code>, <code>ScriptStop</code>, <code>ChangeProfile</code>, <code>LastHotKey</code></li>
+</ul></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
@@ -394,7 +402,7 @@ Shared values are accessible by every script.
 Get a Shared Value, if value not exist return null.
 Shared values are accessible by every script.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>T<T></code>, <code>Object</code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
 <h3 class="wiki-entry-name">RemoveLineInFile</h3>
@@ -521,9 +529,11 @@ This path maybe be different from the Python starting folder when RE is loaded a
 <div class="wiki-entry" id="M-Scripting-Misc-SendToClient">
 <h3 class="wiki-entry-name">SendToClient</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.SendToClient(keys)</code></div>
-<p class="wiki-desc">Send to the client a list of keystrokes. Can contain control characters: 
+<p class="wiki-desc">Send to the client a list of keystrokes. Can contain control characters:
+            
 - Send Control+Key: ctrl+u: ^u
 - Send ENTER: {Enter}
+            
 Note: some keys don't work with ClassicUO (es: {Enter} )</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">keys</code> <span class="wiki-param-type">(String)</span>: List of keys.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>

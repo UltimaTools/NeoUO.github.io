@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Vendor - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.193</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Vendor - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,8 +46,7 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link active" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Vendor</h1>
-<div class="wiki-class-desc"><p>@experimental
-The Vendor class allow you to read list items purchased last.</p></div>
+<div class="wiki-class-desc"><p>Script access to NPC vendors: buy items by name or ItemID (<code>Buy</code>), and inspect the last trade (<code>LastBuyList</code>, <code>LastResellList</code>, <code>BuyList</code>).</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
 <li><a href="#methods">Methods</a></li></ul></div>
@@ -68,24 +67,14 @@ The Vendor class allow you to read list items purchased last.</p></div>
 <div class="wiki-entry" id="M-Scripting-Vendor-Buy">
 <h3 class="wiki-entry-name">Buy</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Vendor.Buy(vendorSerial, itemName, amount, maxPrice)</code></div>
-<p class="wiki-desc">Attempts to buy item from; vendor specified.
-<param name="vendorSerial">The Vendor to buy from</param>
-<param name="itemName">the name of; item to buy; (can be partial)</param>
-<param name="amount">amount to attempt to; buy</param>
-<param name="maxPrice">Don't buy; them if; cost exceeds this price.
-default value = -1 means don't check price</param>
+<p class="wiki-desc">Attempts to buy an item from the vendor specified.
 Returns True if a purchase is made, False otherwise
-Attempts to buy; item from; vendor specified.
-<param name="vendorSerial">The Vendor to buy from</param>
-<param name="itemID">the itemID of; type of; item to buy</param>
-<param name="amount">amount to attempt to; buy</param>
-<param name="maxPrice">Don't buy; them if; cost exceeds this price.
-default value = -1 means don't check price</param>
+Attempts to buy an item from the vendor specified.
 Returns True if a purchase is made, False otherwise</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">vendorSerial</code> <span class="wiki-param-type">(Int32)</span>: The Vendor to buy from</li>
-<li><code class="wiki-param-name">itemName</code> <span class="wiki-param-type">(String)</span>: the name of; item to buy; (can be partial)</li>
-<li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: amount to attempt to; buy</li>
-<li><code class="wiki-param-name">maxPrice</code> <span class="wiki-param-type">(Int32)</span>: Don't buy; them if; cost exceeds this price.
+<li><code class="wiki-param-name">itemName</code> <span class="wiki-param-type">(String)</span>: the name of the item to buy (can be partial)</li>
+<li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: amount to attempt to buy</li>
+<li><code class="wiki-param-name">maxPrice</code> <span class="wiki-param-type">(Int32)</span>: Don't buy them if cost exceeds this price.
             default value = -1 means don't check price</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
