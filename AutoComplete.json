@@ -9,7 +9,7 @@
       "itemKind": "class",
       "itemClass": "Misc",
       "itemName": "Misc",
-      "itemDescription": "The Misc class contains general purpose functions of common use.",
+      "itemDescription": "The Misc class contains general-purpose functions used throughout scripts.\n            \n- Entity checks and distance: `IsItem`, `IsMobile`, `Distance`, `DistanceSqrt`\n- Context menus and prompts: `WaitForContext`, `UseContextMenu`, `ContextReply`, prompt helpers\n- Client interaction: `SendToClient`, `SendMessage`, `PlaySound`, `Beep`, `Disconnect`, `Resync`, mouse and window helpers\n- File I/O inside the RE directory: `AppendToFile`, `DeleteFile`, `RemoveLineInFile`\n- Shared values and ignore list: `SetSharedValue`, `IgnoreObject` and friends\n- Script control, profiles and more: `ScriptRun`, `ScriptStop`, `ChangeProfile`, `LastHotKey`",
       "flagAutocomplete": false
     },
     {
@@ -17,7 +17,7 @@
       "itemKind": "class",
       "itemClass": "Misc.Context",
       "itemName": "Misc.Context",
-      "itemDescription": "The Context class holds information about a single entry in the Context Menu.",
+      "itemDescription": "Holds a single entry of a context menu. Returned by `Misc.WaitForContext` and used with `Misc.UseContextMenu` and `Misc.ContextReply`.",
       "flagAutocomplete": false
     },
     {
@@ -25,7 +25,7 @@
       "itemKind": "class",
       "itemClass": "Misc.MapInfo",
       "itemName": "Misc.MapInfo",
-      "itemDescription": "The MapInfo class is used to store information about the Map location.",
+      "itemDescription": "Stores the map location information: the serial whose pin was clicked, the pin X/Y position, the visible map origin/end coordinates, and the facet. Obtained with `Misc.GetMapInfo`.",
       "flagAutocomplete": false
     },
     {
@@ -33,7 +33,7 @@
       "itemKind": "class",
       "itemClass": "Item",
       "itemName": "Item",
-      "itemDescription": "The Item class represent a single in-game Item object. Examples of Item are: Swords, bags, bandages, reagents, clothing.\nWhile the Item.Serial is unique for each Item, Item.ItemID is the unique for the Item appearance, or image. Sometimes is also called ID or Graphics ID.\nItem can also be house foriture as well as decorative items on the ground, like lamp post and banches.\nHowever, for Item on the ground that cannot be picked up, they might be part of the world map, see Statics class.",
+      "itemDescription": "Represents a single in-game Item: a world or ground object, a container's content, or an equipped piece of equipment.\n            \n`Item.Serial` is unique for each instance, while `Item.ItemID` (alias of `Item.Graphics`) identifies the appearance type. Items that are part of the world map and cannot be picked up belong to the `Statics` class instead, while searches for items are done with the `Items` class.",
       "flagAutocomplete": false
     },
     {
@@ -41,7 +41,7 @@
       "itemKind": "class",
       "itemClass": "Items",
       "itemName": "Items",
-      "itemDescription": "The Items class provides a wide range of functions to search and interact with Items.",
+      "itemDescription": "Search and interact with Items in the world, in containers, and in the paperdoll:\n            \n- Lookup: `FindBySerial`, `FindByID`, `FindAllByID`, `FindByName`, `BackpackCount`, `ContainerCount`\n- Filtering: `ApplyFilter`, `IgnoreTypes`\n- Acting on items: `UseItem`, `UseItemByID`, `SingleClick`, `GetProperties`, `Message`\n- Moving: `Move`, `MoveOnGround`, `MoveAndWait`, `Lift`, `DropFromHand`, `WaitForContents`, `OpenContainerAt`",
       "flagAutocomplete": false
     },
     {
@@ -57,7 +57,7 @@
       "itemKind": "class",
       "itemClass": "Mobile",
       "itemName": "Mobile",
-      "itemDescription": "The Mobile class represents an single alive entity. \nWhile the Mobile.Serial is unique for each Mobile, Mobile.MobileID is the unique for the Mobile appearance, or image. Sometimes is also called Body or Body ID.\nMobiles which dies and leave a corpse behind, they stop existing as Mobiles and instead leave a corpse as a Item object appears.",
+      "itemDescription": "Represents a single non-player entity in the world.\n            \n`Mobile.Serial` is unique for each instance; `Mobile.MobileID` (alias of `Mobile.Body`) identifies the appearance type. A mobile that dies leaves a corpse behind as an `Item` object. Provides read access to the mobile's state (name, hue, position, stats, fame/karma, notoriety, equipment) and `DistanceTo`. Search mobiles with the `Mobiles` class.",
       "flagAutocomplete": false
     },
     {
@@ -65,7 +65,7 @@
       "itemKind": "class",
       "itemClass": "Mobiles",
       "itemName": "Mobiles",
-      "itemDescription": "The Mobiles class provides a wide range of functions to search and interact with Mobile.",
+      "itemDescription": "Search and interact with Mobiles in the world and in the paperdoll:\n            \n- Lookup: `FindBySerial`, `FindMobile`, `Select`\n- Filtering: `ApplyFilter`, `GetTargetingFilter`\n- Acting: `UseMobile`, `SingleClick`, `Message`, `WaitForProps`, `WaitForStats`, `ContextExist`\n- Tracking: `GetTrackingInfo`",
       "flagAutocomplete": false
     },
     {
@@ -73,7 +73,7 @@
       "itemKind": "class",
       "itemClass": "Mobiles.TrackingInfo",
       "itemName": "Mobiles.TrackingInfo",
-      "itemDescription": "The TrackingInfo class hold the latest information about.",
+      "itemDescription": "Holds the most recent tracking information about a target: its X/Y coordinates, serial, and the time of the last update. Returned by `Mobiles.GetTrackingInfo`.",
       "flagAutocomplete": false
     },
     {
@@ -89,7 +89,7 @@
       "itemKind": "class",
       "itemClass": "Player",
       "itemName": "Player",
-      "itemDescription": "The Player class represent the currently logged in character.",
+      "itemDescription": "Represents the currently logged-in character, with direct access to its state and actions:\n            \n- Stats, skill and resistance values: `Hits`, `Mana`, `Stam`, `Str`/`Dex`/`Int`, resistances, `GetSkillValue`\n- Position and movement: `Position`, `Run`, `Walk`, `PathFindTo`, `Fly`\n- Combat: `Attack`, `SetWarMode`, weapon special abilities, `InvokeVirtue`\n- Chat, party and guild: `ChatSay`, `ChatParty`, `ChatGuild`, `ChatAlliance`\n- Inventory and equipment: `Backpack`, `Bank`, `Quiver`, `Mount`, `EquipItem`, layer helpers\n- Buffs and misc: `Buffs`, `BuffsExist`, `Corpses`, `Zone`, `Area`, `Gold`",
       "flagAutocomplete": false
     },
     {
@@ -97,7 +97,7 @@
       "itemKind": "class",
       "itemClass": "Spells",
       "itemName": "Spells",
-      "itemDescription": "The Spells class allow you to cast any spell and use abilities, via scripting.",
+      "itemDescription": "Cast any spell by name, from any school: Magery, Necromancy, Chivalry, Bushido, Ninjitsu, Spellweaving, Mysticism, Mastery, Cleric and Druid.\n            \nOptionally target a Serial or Mobile, interrupt casting, or re-cast the last spell. `ExportSpellsToJson` exports the current spell list for customization.",
       "flagAutocomplete": false
     },
     {
@@ -105,7 +105,7 @@
       "itemKind": "class",
       "itemClass": "Gumps",
       "itemName": "Gumps",
-      "itemDescription": "The Gumps class is used to read and interact with in-game gumps, via scripting.\nNOTE\n----\nDuring development of scripts that involves interacting with Gumps, is often needed to know gumpids and buttonids.\nFor this purpose, can be particularly useful to use *Inspect Gumps* and *Record*, top right, in the internal RE script editor.",
+      "itemDescription": "The Gumps class is used to read and interact with in-game gumps, via scripting.\n            \n**NOTE:** During development of scripts that involves interacting with Gumps, is often needed to know gumpids and buttonids.\nFor this purpose, can be particularly useful to use *Inspect Gumps* and *Record*, top right, in the internal RE script editor.",
       "flagAutocomplete": false
     },
     {
@@ -113,7 +113,7 @@
       "itemKind": "class",
       "itemClass": "Gumps.GumpData",
       "itemName": "Gumps.GumpData",
-      "itemDescription": "",
+      "itemDescription": "Structure describing a Gump: its gump ID and client serial, X/Y position, layout definition, and the text or strings it contains. It also carries the state of a response (pressed button id, switches and text entries). Created with `Gumps.CreateGump`, populated with the `Add*` builders, and sent with `Gumps.SendGump`.",
       "flagAutocomplete": false
     },
     {
@@ -121,7 +121,7 @@
       "itemKind": "class",
       "itemClass": "Journal",
       "itemName": "Journal",
-      "itemDescription": "The Journal class provides access to the message Journal.",
+      "itemDescription": "Access to the in-game message Journal: search its lines by text, source, color or type, wait for specific messages to appear, block messages with filters, and read the current speech.",
       "flagAutocomplete": false
     },
     {
@@ -129,7 +129,7 @@
       "itemKind": "class",
       "itemClass": "Journal.JournalEntry",
       "itemName": "Journal.JournalEntry",
-      "itemDescription": "The JournalEntry class rapresents a line in the Journal.",
+      "itemDescription": "A single line of the message Journal, carrying the text, source name and serial, message type, color, and a UnixTime timestamp. Returned by `Journal.GetJournalEntry`.",
       "flagAutocomplete": false
     },
     {
@@ -145,7 +145,7 @@
       "itemKind": "class",
       "itemClass": "Trade",
       "itemName": "Trade",
-      "itemDescription": "",
+      "itemDescription": "Interface to the Secure Trading window: list the active trades (`TradeList`), manage the accept/cancel state, and update the gold and platinum offers.",
       "flagAutocomplete": false
     },
     {
@@ -153,7 +153,7 @@
       "itemKind": "class",
       "itemClass": "Trade.TradeData",
       "itemName": "Trade.TradeData",
-      "itemDescription": "SecureTrades holds the information about a single tradeing window.",
+      "itemDescription": "Information about a single Secure Trade window: the trader (serial and name), the offered containers, gold/platinum amounts on both sides, and the accept state. Returned by `Trade.TradeList`.",
       "flagAutocomplete": false
     },
     {
@@ -161,7 +161,7 @@
       "itemKind": "class",
       "itemClass": "Statics",
       "itemName": "Statics",
-      "itemDescription": "The Statics class provides access to informations about the Map, down to the individual tile.\nWhen using this function it's important to remember the distinction between Land and Tile:\nLand\n----\nFor a given (X,Y,map) there can be only 1 (0 zero) Land item, and has 1 specific Z coordinate.\nTile\n----\nFor a given (X,Y,map) there can be any number of Tile items.",
+      "itemDescription": "The Statics class provides access to informations about the Map, down to the individual tile.\nWhen using this function it's important to remember the distinction between Land and Tile:\n            \n**Land:** For a given (X,Y,map) there can be only 1 (0 zero) Land item, and has 1 specific Z coordinate.\n            \n**Tile:** For a given (X,Y,map) there can be any number of Tile items.",
       "flagAutocomplete": false
     },
     {
@@ -169,7 +169,7 @@
       "itemKind": "class",
       "itemClass": "Statics.TileInfo",
       "itemName": "Statics.TileInfo",
-      "itemDescription": "The TileInfo class hold the values represeting Tile or Land items for a given X,Y coordinate.",
+      "itemDescription": "Holds the values representing a single Tile or Land item at a given X/Y coordinate: its static ID, hue, and Z height. Returned by `Statics.GetStaticsLandInfo` and `Statics.GetStaticsTileInfo`.",
       "flagAutocomplete": false
     },
     {
@@ -177,7 +177,7 @@
       "itemKind": "class",
       "itemClass": "Sound",
       "itemName": "Sound",
-      "itemDescription": "The Sound class provides an api to manipulate Sounds. \nFor now it just turns logging for sounds on / off or waits for a list of sounds\nAll the WeakRef stuff seems like overkill and a pia. \nThe problem was if you started the wait and then killed the python script, the entry in the waiters list just stayed forever\nThe only way around this is to have a weakref stored in the list, then if the local var ManualResetEvent went out of scope, \nthe WeakRef will go to null.  At end of loop we clean up all null entries so the list stays clean.",
+      "itemDescription": "Controls in-game sound handling: log the sound requests the client receives, filter which ones are played, or wait until a given list of sounds occurs.",
       "flagAutocomplete": false
     },
     {
@@ -185,7 +185,7 @@
       "itemKind": "class",
       "itemClass": "CUO",
       "itemName": "CUO",
-      "itemDescription": "The CUO_Functions class contains invocation of CUO code using Harmony's\nAccessTools and Traverse instead of raw reflection.",
+      "itemDescription": "Script interface to ClassicUO-only client features, unavailable on the OSI client:\n            \n- World map: markers (`MarkTile`, `RemoveMarkedTile`), `FreeView`, `GoToMarker`, treasure map gump\n- Profile: `ProfilePropertySet`, `GetSetting`, `SetAutoOpenDoors`, native auto-open-corpse control\n- Windows: gump/container placement (`OpenContainerAt`, `MoveGump`), status and health bars\n- Extras: `PlayMacro`, `FollowMobile`, `ServerName`",
       "flagAutocomplete": false
     },
     {
@@ -193,7 +193,7 @@
       "itemKind": "class",
       "itemClass": "HotKeyEvent",
       "itemName": "HotKeyEvent",
-      "itemDescription": "@nodoc",
+      "itemDescription": "Data structure for a recorded hotkey event: the pressed key, its modifiers, and metadata about the event. Returned by `Misc.LastHotKey`.",
       "flagAutocomplete": false
     },
     {
@@ -201,7 +201,7 @@
       "itemKind": "class",
       "itemClass": "PacketLogger",
       "itemName": "PacketLogger",
-      "itemDescription": "packet logger.",
+      "itemDescription": "Network debugger that logs the packets exchanged between the client and the server.\n            \n- Logging: `Start`, `Stop`, `SetOutputPath`, `Reset`\n- Filtering: `AddBlacklist`, `AddWhitelist`, `DiscardAll`, `DiscardShowHeader`, `ListenPacketPath`\n- Templates: `AddTemplate`, `RemoveTemplate` to decode packet content\n- Replay: `SendToServer` / `SendToClient` to re-send captured bytes",
       "flagAutocomplete": false
     },
     {
@@ -209,7 +209,7 @@
       "itemKind": "class",
       "itemClass": "PacketLogger.PacketTemplate",
       "itemName": "PacketLogger.PacketTemplate",
-      "itemDescription": "Rapresents a general purpose template system for packets. \nThe templates allow to format packets in the logger, making them readable.\nExample of \"Damage\" (0x0B) packet:\n{\n 'packetID': 0x0B,\n 'name': 'Damage 0x0B',\n 'showHexDump': true,\n 'fields':[\n   { 'name':'packetID', 'length':1, 'type':'packetID'},\n   { 'name':'Serial', 'length':4, 'type':'serial'},\n   { 'name':'Damage', 'length': 2, 'type':'int'},\n ]\n}",
+      "itemDescription": "Template that tells the packet logger how to decode and display a single packet type: its packetID, a readable name, optional hex dump, dynamic length, and the ordered list of `FieldTemplate`s.",
       "flagAutocomplete": false
     },
     {
@@ -217,7 +217,7 @@
       "itemKind": "class",
       "itemClass": "PacketLogger.FieldTemplate",
       "itemName": "PacketLogger.FieldTemplate",
-      "itemDescription": "Class representing the fields inside a packet template.\nExample of \"Damage\" (0x0B) packet:\n{\n 'packetID': 0x0B,\n 'name': 'Damage 0x0B',\n 'showHexDump': true,\n 'fields':[\n   { 'name':'packetID', 'length':1, 'type':'packetID'},\n   { 'name':'Serial', 'length':4, 'type':'serial'},\n   { 'name':'Damage', 'length': 2, 'type':'int'},\n ]\n}",
+      "itemDescription": "A single field inside a packet template: the display name, its byte length, the `FieldType`, and optional subfields or a subpacket.",
       "flagAutocomplete": false
     },
     {
@@ -225,7 +225,7 @@
       "itemKind": "class",
       "itemClass": "PacketLogger.FieldType",
       "itemName": "PacketLogger.FieldType",
-      "itemDescription": "Type of Fields available for FieldTemplate \nExample of \"Damage\" (0x0B) packet:\n{\n 'packetID': 0x0B,\n 'name': 'Damage 0x0B',\n 'showHexDump': true,\n 'fields':[\n   { 'name':'packetID', 'length':1, 'type':'packetID'},\n   { 'name':'Serial', 'length':4, 'type':'serial'},\n   { 'name':'Damage', 'length': 2, 'type':'int'},\n ]\n}",
+      "itemDescription": "Enumerates the field types available for packet templates: `PACKETID`, `SERIAL`, `MODELID`, `BOOL`, `INT`, `UINT`, `HEX`, `TEXT`, `UTF8`, `SKIP`, `DUMP`, `SUBPACKET` and `FIELDS`. Use `IsValid` to test a name.",
       "flagAutocomplete": false
     },
     {
@@ -233,7 +233,7 @@
       "itemKind": "class",
       "itemClass": "AutoLoot",
       "itemName": "AutoLoot",
-      "itemDescription": "The Autoloot class allow to interact with the Autoloot Agent, via scripting.",
+      "itemDescription": "The Autoloot class allow to interact with the Autoloot Agent, via scripting.\n            \nThe item row **Name** column can carry a match pattern (all compares case-insensitive):\n            \n| Enter this...  | Mode     | Matches |\n|----------------|----------|---------|\n| `\"exact name\"` | Exact    | Only items with exactly that name (leading quantity digits ignored) |\n| `*glob*`       | Contains | Any item whose name contains the pattern (`*` = any run, `?` = one char) |\n| `/regex/`      | Regex    | Items matching the .NET regex, case-insensitive |\n            \nA bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.",
       "flagAutocomplete": false
     },
     {
@@ -241,7 +241,7 @@
       "itemKind": "class",
       "itemClass": "AutoLoot.AutoLootItem",
       "itemName": "AutoLoot.AutoLootItem",
-      "itemDescription": "",
+      "itemDescription": "A single item entry in an `AutoLoot` list: how to match the loot (name or graphics/hue, plus optional properties), an optional per-item loot-bag override, and its selected state.",
       "flagAutocomplete": false
     },
     {
@@ -249,7 +249,7 @@
       "itemKind": "class",
       "itemClass": "Scavenger",
       "itemName": "Scavenger",
-      "itemDescription": "The Scavenger class allow you to interect with the Scavenger Agent, via scripting.",
+      "itemDescription": "The Scavenger Agent collects items dropped on the ground into a destination bag, according to configured lists.\n            \nProvides the agent lifecycle and list management: `Start`/`Stop`/`Status`, `SetBag`, `AddItemByTarget`, `ChangeList`, list CRUD, and `RunOnce` with custom parameters.",
       "flagAutocomplete": false
     },
     {
@@ -257,7 +257,7 @@
       "itemKind": "class",
       "itemClass": "SellAgent",
       "itemName": "SellAgent",
-      "itemDescription": "The SellAgent class allow you to interect with; SellAgent, via scripting.",
+      "itemDescription": "The Sell Agent sells the items of a configured list at NPC vendors.\n            \nProvides the agent lifecycle and list management: `Enable`/`Disable`/`Status`, `SetBag`, `ChangeList`, list CRUD.",
       "flagAutocomplete": false
     },
     {
@@ -265,7 +265,7 @@
       "itemKind": "class",
       "itemClass": "BuyAgent",
       "itemName": "BuyAgent",
-      "itemDescription": "The BuyAgent class allow you to interect with; BuyAgent, via scripting.",
+      "itemDescription": "The Buy Agent buys configured items from NPC vendors, matching by name (or a compare-name).\n            \nProvides the agent lifecycle and list management: `Enable`/`Disable`/`Status`, `ChangeList`, list CRUD.",
       "flagAutocomplete": false
     },
     {
@@ -273,7 +273,7 @@
       "itemKind": "class",
       "itemClass": "Organizer",
       "itemName": "Organizer",
-      "itemDescription": "The Organizer class allow you to interect with the Scavenger Agent, via scripting.",
+      "itemDescription": "The Organizer Agent moves items from a source bag to a destination bag according to a configured list.\n            \nProvides the agent lifecycle: `FStart`/`FStop`/`Status`, `SetSource`/`SetDestination`, `AddItem`, list CRUD, and `RunOnce`.",
       "flagAutocomplete": false
     },
     {
@@ -281,7 +281,7 @@
       "itemKind": "class",
       "itemClass": "Dress",
       "itemName": "Dress",
-      "itemDescription": "",
+      "itemDescription": "The Dress Agent equips or removes a configured set of items in one command, per profile list.\n            \nProvides engine control (`DressFStart`/`UnDressFStart`/stop/status), item editing (`ItemInsert`, `ItemReplace`, `ItemInsertByLayer`) and list CRUD. `DressByProfile` / `UndressByProfile` run a profile without changing the selected one.",
       "flagAutocomplete": false
     },
     {
@@ -289,7 +289,7 @@
       "itemKind": "class",
       "itemClass": "Friend",
       "itemName": "Friend",
-      "itemDescription": "",
+      "itemDescription": "The Friend Agent maintains named lists of friendly players and guilds, to control hostile actions and acceptable targets.\n            \nProvides list and entry management: `AddList`/`RemoveList`, `ChangeList`, `IsFriend`, `AddFriendTarget`, and player/guild insert/delete/replace/exists.",
       "flagAutocomplete": false
     },
     {
@@ -297,7 +297,7 @@
       "itemKind": "class",
       "itemClass": "Restock",
       "itemName": "Restock",
-      "itemDescription": "The Restock class allow you to interact with the Restock Agent, via scripting.",
+      "itemDescription": "The Restock Agent moves items from a source bag to a destination bag (filling the destination) according to a configured list.\n            \nProvides the agent lifecycle: `FStart`/`FStop`/`Status`, `SetSource`/`SetDestination`, `AddItem`, list CRUD, and `RunOnce`.",
       "flagAutocomplete": false
     },
     {
@@ -305,7 +305,7 @@
       "itemKind": "class",
       "itemClass": "BandageHeal",
       "itemName": "BandageHeal",
-      "itemDescription": "",
+      "itemDescription": "The BandageHeal Agent automatically applies bandages to heal the player when hurt. Provides `Enable`/`Start`/`Stop` and `Status`.",
       "flagAutocomplete": false
     },
     {
@@ -313,7 +313,7 @@
       "itemKind": "class",
       "itemClass": "PathFinding",
       "itemName": "PathFinding",
-      "itemDescription": "",
+      "itemDescription": "Controls the assistant's pathfinding engine: compute a path to a destination and walk or run it.\n            \n- One-shot: `PathFindTo`, `GetPath`\n- Walk/run: `Walk`/`Run`, `walkPath`/`runPath`\n- Route-based: `Go` with a configured `PathFinding.Route`",
       "flagAutocomplete": false
     },
     {
@@ -321,7 +321,7 @@
       "itemKind": "class",
       "itemClass": "PathFinding.Route",
       "itemName": "PathFinding.Route",
-      "itemDescription": "",
+      "itemDescription": "Configuration for a `PathFinding.Go` route: the destination X/Y, and the behavior flags (`Run`, `IgnoreMobile`, `IgnoreDoors`, `StopIfStuck`, `MaxRetry`, `Timeout`) plus an optional debug message.",
       "flagAutocomplete": false
     },
     {
@@ -329,7 +329,7 @@
       "itemKind": "class",
       "itemClass": "Tile",
       "itemName": "Tile",
-      "itemDescription": "",
+      "itemDescription": "A single tile in a computed path: its X/Y (and expected Z when verified), the network send state (`Sent`/`Acked`/`Nacked`), optional resync/verify requirements, and a per-tile pause delay.",
       "flagAutocomplete": false
     },
     {
@@ -337,7 +337,7 @@
       "itemKind": "class",
       "itemClass": "DamageMeter",
       "itemName": "DamageMeter",
-      "itemDescription": "The DamageMeter class implements a Damage Per Second meter which can be useful to tune meta-builds.(???)",
+      "itemDescription": "Measures the damage dealt per second, useful to tune meta builds.\n            \nWhile running it records the damage dealt to every mobile, mapped by corpse serial (`GetOriginalSerial`). `Stop` keeps the data, `Pause` halts recording, `ClearDamage` resets it, and `GetDamage` reads the dps of a serial.",
       "flagAutocomplete": false
     },
     {
@@ -345,7 +345,7 @@
       "itemKind": "class",
       "itemClass": "Timer",
       "itemName": "Timer",
-      "itemDescription": "Timer are normally used to display messages after a certain period of time. \nThey are also often used to keep track of the maximum amount of time for an action to complete.",
+      "itemDescription": "Named timers that count down a duration in milliseconds, used to time actions or display messages after a delay.\n            \nCreate a timer with `Create`, then poll `Check` for expiry or read the `Remaining` time.",
       "flagAutocomplete": false
     },
     {
@@ -353,7 +353,7 @@
       "itemKind": "class",
       "itemClass": "Vendor",
       "itemName": "Vendor",
-      "itemDescription": "@experimental\nThe Vendor class allow you to read list items purchased last.",
+      "itemDescription": "Script access to NPC vendors: buy items by name or ItemID (`Buy`), and inspect the last trade (`LastBuyList`, `LastResellList`, `BuyList`).",
       "flagAutocomplete": false
     },
     {
@@ -361,7 +361,7 @@
       "itemKind": "class",
       "itemClass": "Vendor.BuyItem",
       "itemName": "Vendor.BuyItem",
-      "itemDescription": "The BuyItem class store informations about a recently purchased item.",
+      "itemDescription": "Information about a single item purchased in the last vendor trade: its name, serial, ItemID, amount and price. Returned by `Vendor.BuyList`.",
       "flagAutocomplete": false
     },
     {
@@ -369,7 +369,7 @@
       "itemKind": "class",
       "itemClass": "Point2D",
       "itemName": "Point2D",
-      "itemDescription": "",
+      "itemDescription": "A two-dimensional point with an X and a Y coordinate, used to represent a position on the world map.",
       "flagAutocomplete": false
     },
     {
@@ -377,7 +377,7 @@
       "itemKind": "class",
       "itemClass": "Point3D",
       "itemName": "Point3D",
-      "itemDescription": "",
+      "itemDescription": "A three-dimensional point with X, Y and Z coordinates - the world position of entities and locations. Returned by `Player.Position` and `Mobile.Position`.",
       "flagAutocomplete": false
     },
     {
@@ -385,7 +385,7 @@
       "itemKind": "class",
       "itemClass": "Property",
       "itemName": "Property",
-      "itemDescription": "",
+      "itemDescription": "A line of an item or mobile tooltip: the property number (Cliloc) and its argument string, from which the localized text is built. Returned by `Item.Properties` and `Mobile.Properties`.",
       "flagAutocomplete": false
     }
   ],
@@ -3883,7 +3883,7 @@
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "SendToClient",
-      "itemDescription": "Send to the client a list of keystrokes. Can contain control characters: \n- Send Control+Key: ctrl+u: ^u\n- Send ENTER: {Enter}\nNote: some keys don't work with ClassicUO (es: {Enter} )",
+      "itemDescription": "Send to the client a list of keystrokes. Can contain control characters:\n            \n- Send Control+Key: ctrl+u: ^u\n- Send ENTER: {Enter}\n            \nNote: some keys don't work with ClassicUO (es: {Enter} )",
       "flagAutocomplete": false
     },
     {
@@ -10631,7 +10631,7 @@
       "itemKind": "method",
       "itemClass": "Player",
       "itemName": "SkillDelay",
-      "itemDescription": "Returns the remaining milliseconds until the next skill use is allowed by the server.\nReturns 0 if no skill delay is active.\nUse with <see cref=\"M:Scripting.Misc.Pause(System.Int32)\" /> to moderate script timing: Misc.Pause(Player.SkillDelay())",
+      "itemDescription": "Returns the remaining milliseconds until the next skill use is allowed by the server.\nReturns 0 if no skill delay is active.\nUse with `Misc.Pause(Player.SkillDelay())` to moderate script timing.",
       "flagAutocomplete": false
     },
     {
@@ -16510,7 +16510,7 @@
       "itemKind": "method",
       "itemClass": "CUO",
       "itemName": "DisableNativeAutoOpenCorpses",
-      "itemDescription": "Disable CUO's native AutoOpenCorpses so NeoUO's autoloot fully owns\ncorpse opening (it must control which opens are hidden). Idempotent —\npushes once until <see cref=\"M:Scripting.CUO.InvalidateAutoOpenCorpsesCache\" /> runs.",
+      "itemDescription": "Disable CUO's native AutoOpenCorpses so NeoUO's autoloot fully owns\ncorpse opening (it must control which opens are hidden). Idempotent —\npushes once until `InvalidateAutoOpenCorpsesCache()` runs.",
       "flagAutocomplete": false
     },
     {
@@ -21094,21 +21094,21 @@
           "itemType": "String",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "the name of; item to buy; (can be partial)"
+          "itemDescription": "the name of the item to buy (can be partial)"
         },
         {
           "itemName": "amount",
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "amount to attempt to; buy"
+          "itemDescription": "amount to attempt to buy"
         },
         {
           "itemName": "maxPrice",
           "itemType": "Int32",
           "itemHasDefault": true,
           "itemDefaultValue": "-1",
-          "itemDescription": "Don't buy; them if; cost exceeds this price.\n            default value = -1 means don't check price"
+          "itemDescription": "Don't buy them if cost exceeds this price.\n            default value = -1 means don't check price"
         }
       ],
       "isStatic": true,
@@ -21116,7 +21116,7 @@
       "itemKind": "method",
       "itemClass": "Vendor",
       "itemName": "Buy",
-      "itemDescription": "Attempts to buy item from; vendor specified.\n<param name=\"vendorSerial\">The Vendor to buy from</param>\n<param name=\"itemName\">the name of; item to buy; (can be partial)</param>\n<param name=\"amount\">amount to attempt to; buy</param>\n<param name=\"maxPrice\">Don't buy; them if; cost exceeds this price.\ndefault value = -1 means don't check price</param>\nReturns True if a purchase is made, False otherwise",
+      "itemDescription": "Attempts to buy an item from the vendor specified.\nReturns True if a purchase is made, False otherwise",
       "flagAutocomplete": false
     },
     {
@@ -21135,21 +21135,21 @@
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "the itemID of; type of; item to buy"
+          "itemDescription": "the itemID of the type of item to buy"
         },
         {
           "itemName": "amount",
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "amount to attempt to; buy"
+          "itemDescription": "amount to attempt to buy"
         },
         {
           "itemName": "maxPrice",
           "itemType": "Int32",
           "itemHasDefault": true,
           "itemDefaultValue": "-1",
-          "itemDescription": "Don't buy; them if; cost exceeds this price.\n            default value = -1 means don't check price"
+          "itemDescription": "Don't buy them if cost exceeds this price.\n            default value = -1 means don't check price"
         }
       ],
       "isStatic": true,
@@ -21157,7 +21157,7 @@
       "itemKind": "method",
       "itemClass": "Vendor",
       "itemName": "Buy",
-      "itemDescription": "Attempts to buy; item from; vendor specified.\n<param name=\"vendorSerial\">The Vendor to buy from</param>\n<param name=\"itemID\">the itemID of; type of; item to buy</param>\n<param name=\"amount\">amount to attempt to; buy</param>\n<param name=\"maxPrice\">Don't buy; them if; cost exceeds this price.\ndefault value = -1 means don't check price</param>\nReturns True if a purchase is made, False otherwise",
+      "itemDescription": "Attempts to buy an item from the vendor specified.\nReturns True if a purchase is made, False otherwise",
       "flagAutocomplete": false
     },
     {
