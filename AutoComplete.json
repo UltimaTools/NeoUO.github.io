@@ -233,7 +233,7 @@
       "itemKind": "class",
       "itemClass": "AutoLoot",
       "itemName": "AutoLoot",
-      "itemDescription": "The Autoloot class allow to interact with the Autoloot Agent, via scripting.\n            \nThe item row **Name** column can carry a match pattern (all compares case-insensitive):\n            \n| Enter this...  | Mode     | Matches |\n|----------------|----------|---------|\n| `\"exact name\"` | Exact    | Only items with exactly that name (leading quantity digits ignored) |\n| `*glob*`       | Contains | Any item whose name contains the pattern (`*` = any run, `?` = one char) |\n| `/regex/`      | Regex    | Items matching the .NET regex, case-insensitive |\n            \nA bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.",
+      "itemDescription": "The Autoloot class allow to interact with the Autoloot Agent, via scripting.\n            \nThe item row **Name** column can carry a match pattern (all compares case-insensitive):\n            \n| Enter this...  | Mode     | Matches |\n|----------------|----------|---------|\n| `\"exact name\"` | Exact    | Only items with exactly that name (leading quantity digits ignored) |\n| `*glob*`       | Contains | Any item whose name contains the pattern (`*` = any run, `?` = one char) |\n| `/regex/`      | Regex    | Items matching the .NET regex, case-insensitive |\n            \nA bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.\n            \nProperty filters accept the same pattern syntax on their **Name** field:\n  `*glob*` / `/regex/` match any property whose rendered line matches, and\n  the min/max range applies to ANY matching property; a bare or `\"quoted\"`\n  name stays an exact property lookup (e.g. `Dexterity Bonus`).",
       "flagAutocomplete": false
     },
     {
@@ -2179,6 +2179,16 @@
       "itemClass": "Player",
       "itemName": "WarMode",
       "itemDescription": "Player has war mode active.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.InBattle",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "InBattle",
+      "itemDescription": "True while the player is engaged in combat: recently dealt or received\ndamage, recently issued an attack, or currently has a combatant within\nrange. Combats end about 5 seconds after the last combat event.",
       "flagAutocomplete": false
     },
     {
@@ -8716,6 +8726,26 @@
       "paramList": [
         {
           "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Message to send."
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatAlliance(System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatAlliance",
+      "itemDescription": "Send message to the alliace chat.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
@@ -10840,26 +10870,6 @@
       "itemClass": "Player",
       "itemName": "ChatGuild",
       "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Message to send."
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatAlliance(System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatAlliance",
-      "itemDescription": "Send message to the alliace chat.",
       "flagAutocomplete": false
     },
     {
