@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.195</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -365,6 +365,14 @@
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">Maximum hit points.</p>
 </div>
+<div class="wiki-entry" id="P-Scripting-Player-InBattle">
+<h3 class="wiki-entry-name">InBattle</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InBattle</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True while the player is engaged in combat: recently dealt or received
+damage, recently issued an attack, or currently has a combatant within
+range. Combats end about 5 seconds after the last combat event.</p>
+</div>
 <div class="wiki-entry" id="P-Scripting-Player-InParty">
 <h3 class="wiki-entry-name">InParty</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InParty</code></div>
@@ -698,7 +706,7 @@ Regions are defined inside by Persistence/regions.json.</p>
 <h3 class="wiki-entry-name">ChatAlliance</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatAlliance(msg)</code></div>
 <p class="wiki-desc">Send message to the alliace chat.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-ChatChannel">
@@ -1657,6 +1665,7 @@ Regions are defined inside by Persistence/regions.json.</p>
 <li><a href="#P-Scripting-Player-HitPointsRegeneration">HitPointsRegeneration</a></li>
 <li><a href="#P-Scripting-Player-Hits">Hits</a></li>
 <li><a href="#P-Scripting-Player-HitsMax">HitsMax</a></li>
+<li><a href="#P-Scripting-Player-InBattle">InBattle</a></li>
 <li><a href="#P-Scripting-Player-InParty">InParty</a></li>
 <li><a href="#M-Scripting-Player-InRange">InRange</a></li>
 <li><a href="#M-Scripting-Player-InRangeItem">InRangeItem</a></li>

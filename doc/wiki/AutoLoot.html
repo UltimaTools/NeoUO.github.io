@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>AutoLoot - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.194</a></div><div class="wiki-nav"><a class="wiki-nav-link active" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>AutoLoot - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.195</a></div><div class="wiki-nav"><a class="wiki-nav-link active" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -74,7 +74,11 @@
 </tr>
 </tbody>
 </table>
-<p>A bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.</p></div>
+<p>A bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.</p>
+<p>Property filters accept the same pattern syntax on their <strong>Name</strong> field:
+  <code>*glob*</code> / <code>/regex/</code> match any property whose rendered line matches, and
+  the min/max range applies to ANY matching property; a bare or <code>"quoted"</code>
+  name stays an exact property lookup (e.g. <code>Dexterity Bonus</code>).</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
