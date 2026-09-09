@@ -17681,10 +17681,17 @@
           "itemHasDefault": true,
           "itemDefaultValue": "True",
           "itemDescription": ""
+        },
+        {
+          "itemName": "defaultBagOverride",
+          "itemType": "Nullable[Int32]",
+          "itemHasDefault": true,
+          "itemDefaultValue": null,
+          "itemDescription": ""
         }
       ],
       "isStatic": true,
-      "xmlKey": "M:Scripting.AutoLoot.ItemsRead(System.String,System.Collections.Generic.IEnumerable`1[],System.Boolean)",
+      "xmlKey": "M:Scripting.AutoLoot.ItemsRead(System.String,System.Collections.Generic.IEnumerable`1[],System.Boolean,System.Nullable`1[])",
       "itemKind": "method",
       "itemClass": "AutoLoot",
       "itemName": "ItemsRead",
