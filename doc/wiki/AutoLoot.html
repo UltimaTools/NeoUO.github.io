@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>AutoLoot - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.195</a></div><div class="wiki-nav"><a class="wiki-nav-link active" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>AutoLoot - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.196</a></div><div class="wiki-nav"><a class="wiki-nav-link active" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -136,11 +136,12 @@ Called when autoloot configuration is modified.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-AutoLoot-ItemsRead">
 <h3 class="wiki-entry-name">ItemsRead</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>AutoLoot.ItemsRead(list, includedLists, expand)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>AutoLoot.ItemsRead(list, includedLists, expand, defaultBagOverride)</code></div>
 
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">list</code> <span class="wiki-param-type">(String)</span></li>
 <li><code class="wiki-param-name">includedLists</code> <span class="wiki-param-type">(IEnumerable[String])</span></li>
-<li><code class="wiki-param-name">expand</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<li><code class="wiki-param-name">expand</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">defaultBagOverride</code> <span class="wiki-param-type">(Nullable[Int32])</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Dictionary[Int32, List[AutoLoot.AutoLootItem]]</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-AutoLoot-ListDelete">
