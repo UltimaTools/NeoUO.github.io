@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Statics - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.197</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Statics - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.198</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -169,6 +169,22 @@ Wet</li></ul></div></div>
 5 = TerMur</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Statics.TileInfo]</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-Statics-GetTileCliloc">
+<h3 class="wiki-entry-name">GetTileCliloc</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Statics.GetTileCliloc(StaticID)</code></div>
+<p class="wiki-desc">Tile: Get the cliloc number used as the default (localized) name of a Tile item given the StaticID.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">StaticID</code> <span class="wiki-param-type">(Int32)</span>: Tile item StaticID.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Statics-GetTileDefaultName">
+<h3 class="wiki-entry-name">GetTileDefaultName</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Statics.GetTileDefaultName(StaticID)</code></div>
+<p class="wiki-desc">Tile: Get the localized default name of a Tile item given the StaticID. Resolves the default-name cliloc
+(1020000 + id, 1078872 + id, or 1084024 + id depending on the ID range) through the client language files,
+falling back to the tiledata.mul name when the cliloc has no text.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">StaticID</code> <span class="wiki-param-type">(Int32)</span>: Tile item StaticID.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-Statics-GetTileFlag">
 <h3 class="wiki-entry-name">GetTileFlag</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Statics.GetTileFlag(StaticID, flagname)</code></div>
@@ -203,6 +219,14 @@ Wet</li></ul></div></div>
 <p class="wiki-desc">Tile: Get the name of a Tile item given the StaticID.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">StaticID</code> <span class="wiki-param-type">(Int32)</span>: Tile item StaticID.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Statics-GetTileStaticData">
+<h3 class="wiki-entry-name">GetTileStaticData</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Statics.GetTileStaticData(StaticID)</code></div>
+<p class="wiki-desc">Tile: Get the static file data of a Tile item given the StaticID: the tiledata.mul name, the default-name
+cliloc number, and its localized text.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">StaticID</code> <span class="wiki-param-type">(Int32)</span>: Tile item StaticID.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Statics.StaticTileData</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Statics-CheckDeedHouse">CheckDeedHouse</a></li>
 <li><a href="#M-Scripting-Statics-FindClearGroundLocations">FindClearGroundLocations</a></li>
 <li><a href="#M-Scripting-Statics-FindNextMiningSpot">FindNextMiningSpot</a></li>
@@ -213,6 +237,9 @@ Wet</li></ul></div></div>
 <li><a href="#M-Scripting-Statics-GetLandZ">GetLandZ</a></li>
 <li><a href="#M-Scripting-Statics-GetStaticsLandInfo">GetStaticsLandInfo</a></li>
 <li><a href="#M-Scripting-Statics-GetStaticsTileInfo">GetStaticsTileInfo</a></li>
+<li><a href="#M-Scripting-Statics-GetTileCliloc">GetTileCliloc</a></li>
+<li><a href="#M-Scripting-Statics-GetTileDefaultName">GetTileDefaultName</a></li>
 <li><a href="#M-Scripting-Statics-GetTileFlag">GetTileFlag</a></li>
 <li><a href="#M-Scripting-Statics-GetTileHeight">GetTileHeight</a></li>
-<li><a href="#M-Scripting-Statics-GetTileName">GetTileName</a></li></ul></aside></div></body></html>
+<li><a href="#M-Scripting-Statics-GetTileName">GetTileName</a></li>
+<li><a href="#M-Scripting-Statics-GetTileStaticData">GetTileStaticData</a></li></ul></aside></div></body></html>
