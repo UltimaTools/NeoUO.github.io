@@ -233,7 +233,7 @@
       "itemKind": "class",
       "itemClass": "AutoLoot",
       "itemName": "AutoLoot",
-      "itemDescription": "The Autoloot class allow to interact with the Autoloot Agent, via scripting.\n            \nThe item row **Name** column can carry a match pattern (all compares case-insensitive):\n            \n| Enter this...  | Mode     | Matches |\n|----------------|----------|---------|\n| `\"exact name\"` | Exact    | Only items with exactly that name (leading quantity digits ignored) |\n| `*glob*`       | Contains | Any item whose name contains the pattern (`*` = any run, `?` = one char) |\n| `/regex/`      | Regex    | Items matching the .NET regex, case-insensitive |\n            \nA bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.\n            \nProperty filters accept the same pattern syntax on their **Name** field:\n  `*glob*` / `/regex/` match any property whose rendered line matches, and\n  the min/max range applies to ANY matching property; a bare or `\"quoted\"`\n  name stays an exact property lookup (e.g. `Dexterity Bonus`).",
+      "itemDescription": "The Autoloot class allow to interact with the Autoloot Agent, via scripting.\n            \nThe item row **Name** column can carry a match pattern (all compares case-insensitive):\n            \n| Enter this...  | Mode     | Matches |\n|----------------|----------|---------|\n| `\"exact name\"` | Exact    | Only items with exactly that name (leading quantity digits ignored) |\n| `*glob*`       | Contains | Any item whose name contains the pattern (`*` = any run, `?` = one char) |\n| `/regex/`      | Regex    | Items matching the .NET regex, case-insensitive |\n            \nA bare name (no quotes, globs, or slashes) does no name filtering — matching stays purely by ItemID/hue/props.\n            \nProperty filters accept the same pattern syntax on their **Name** field:\n  `*glob*` / `/regex/` match any property whose rendered line matches, and\n  the min/max range applies to ANY matching property; a bare or `\"quoted\"`\n  name stays an exact property lookup (e.g. `Dexterity Bonus`).\n            \nThe synthetic property **Unique Name** (any spacing/case) is operator-only:\n`==` matches when the item's name differs from its static default name\n(custom/named items), `!=` matches when it equals the default. Min/Max are\nignored.",
       "flagAutocomplete": false
     },
     {
@@ -15953,6 +15953,66 @@
       "itemClass": "Statics",
       "itemName": "GetTileName",
       "itemDescription": "Tile: Get the name of a Tile item given the StaticID.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Int32",
+      "returnDesc": "The cliloc number of the default name.",
+      "paramList": [
+        {
+          "itemName": "StaticID",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Tile item StaticID."
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Statics.GetTileCliloc(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Statics",
+      "itemName": "GetTileCliloc",
+      "itemDescription": "Tile: Get the cliloc number used as the default (localized) name of a Tile item given the StaticID.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "String",
+      "returnDesc": "The localized default name of the Tile item.",
+      "paramList": [
+        {
+          "itemName": "StaticID",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Tile item StaticID."
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Statics.GetTileDefaultName(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Statics",
+      "itemName": "GetTileDefaultName",
+      "itemDescription": "Tile: Get the localized default name of a Tile item given the StaticID. Resolves the default-name cliloc\n(1020000 + id, 1078872 + id, or 1084024 + id depending on the ID range) through the client language files,\nfalling back to the tiledata.mul name when the cliloc has no text.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Statics.StaticTileData",
+      "returnDesc": "A StaticTileData entry.",
+      "paramList": [
+        {
+          "itemName": "StaticID",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Tile item StaticID."
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Statics.GetTileStaticData(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Statics",
+      "itemName": "GetTileStaticData",
+      "itemDescription": "Tile: Get the static file data of a Tile item given the StaticID: the tiledata.mul name, the default-name\ncliloc number, and its localized text.",
       "flagAutocomplete": false
     },
     {
