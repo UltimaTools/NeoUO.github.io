@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -67,8 +67,8 @@
 <h3 class="wiki-entry-name">CloseMobileHealthBar</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.CloseMobileHealthBar(mobileserial)</code></div>
 <p class="wiki-desc">Close a mobile's health bar gump.
-Close a mobile's health bar gump.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+Accepts a Mobile or a serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(Object)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-CUO-CloseMyStatusBar">
@@ -179,8 +179,8 @@ Map must be open for this to work.</p>
 <h3 class="wiki-entry-name">OpenContainerAt</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.OpenContainerAt(bag, x, y)</code></div>
 <p class="wiki-desc">Set a location that CUO will open the container at.
-Set a location that CUO will open the container at.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Item)</span></li>
+Accepts an Item or a serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Object)</span></li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
@@ -189,8 +189,8 @@ Set a location that CUO will open the container at.</p>
 <h3 class="wiki-entry-name">OpenMobileHealthBar</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.OpenMobileHealthBar(mobileserial, x, y, custom)</code></div>
 <p class="wiki-desc">Open a mobile's health bar at a position.
-Open a mobile's health bar at a position.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(Int32)</span></li>
+Accepts a Mobile or a serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobileserial</code> <span class="wiki-param-type">(Object)</span></li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">custom</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>

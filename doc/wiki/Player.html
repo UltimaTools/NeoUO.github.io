@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -664,9 +664,9 @@ Regions are defined inside by Persistence/regions.json.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-Attack">
 <h3 class="wiki-entry-name">Attack</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Attack(serial)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.Attack(mobile)</code></div>
 <p class="wiki-desc">Attack a Mobile.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Mobile to attack.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to attack.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-AttackLast">
@@ -678,9 +678,9 @@ Regions are defined inside by Persistence/regions.json.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-AttackType">
 <h3 class="wiki-entry-name">AttackType</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.AttackType(graphic, rangemax, selector, color, notoriety)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.AttackType(graphics, rangemax, selector, color, notoriety)</code></div>
 
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphic</code> <span class="wiki-param-type">(Int32)</span></li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphics</code> <span class="wiki-param-type">(Object)</span></li>
 <li><code class="wiki-param-name">rangemax</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">selector</code> <span class="wiki-param-type">(String)</span></li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(List[Int32])</span></li>
@@ -804,7 +804,7 @@ Send message in game using 1153 for color.</p>
 <h3 class="wiki-entry-name">DistanceTo</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.DistanceTo(target)</code></div>
 <p class="wiki-desc">Returns the distance between the Player and a Mobile or an Item.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UOEntity)</span>: The other Mobile or Item</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile/Item entity.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-EmoteAction">
@@ -816,9 +816,9 @@ Send message in game using 1153 for color.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-EquipItem">
 <h3 class="wiki-entry-name">EquipItem</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EquipItem(serial)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EquipItem(item)</code></div>
 <p class="wiki-desc">Equip an Item</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to equip.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to equip.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-EquipLastWeapon">
@@ -831,8 +831,8 @@ Send message in game using 1153 for color.</p>
 <div class="wiki-entry" id="M-Scripting-Player-EquipUO-D">
 <h3 class="wiki-entry-name">EquipUO3D</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.EquipUO3D(serials)</code></div>
-<p class="wiki-desc">Equip a python list of item by using UO3D packet.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serials</code> <span class="wiki-param-type">(List[Int32])</span></li></ul></div></div>
+<p class="wiki-desc">Equip a list of item by using UO3D packet.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serials</code> <span class="wiki-param-type">(Object)</span>: List of Serials (or a single Serial) of Items to equip.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-Fly">
@@ -1178,10 +1178,9 @@ Intelligence</li></ul></div></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-InRange">
 <h3 class="wiki-entry-name">InRange</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRange(entity, range)</code></div>
-<p class="wiki-desc">Check if the mobile or item is within a certain range (&lt;=).
-Check if the serial is within a certain range (&lt;=).</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">entity</code> <span class="wiki-param-type">(UOEntity)</span></li>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRange(target, range)</code></div>
+<p class="wiki-desc">Check if the mobile or item is within a certain range (&lt;=).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial, Item or Mobile object.</li>
 <li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Maximum distance in tiles.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
@@ -1189,16 +1188,15 @@ Check if the serial is within a certain range (&lt;=).</p>
 <h3 class="wiki-entry-name">InRangeItem</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRangeItem(item, range)</code></div>
 <p class="wiki-desc">Check if the Item is within a certain range (&lt;=).</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item object.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item object.</li>
 <li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Maximum distance in tiles.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-InRangeMobile">
 <h3 class="wiki-entry-name">InRangeMobile</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.InRangeMobile(mobile, range)</code></div>
-<p class="wiki-desc">Check if the Mobile is within a certain range (&lt;=).
-Check if the mobile is within a certain range (&lt;=).</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Int32)</span>: Serial or Mobile object.</li>
+<p class="wiki-desc">Check if the Mobile is within a certain range (&lt;=).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile object.</li>
 <li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Maximum distance in tiles.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
@@ -1464,9 +1462,9 @@ NOTE: This function is slow.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-UnEquipUO-D">
 <h3 class="wiki-entry-name">UnEquipUO3D</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UnEquipUO3D(_layers)</code></div>
-<p class="wiki-desc">UnEquip a python list of layer names by using UO3D packet.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">_layers</code> <span class="wiki-param-type">(IEnumerable[String])</span></li></ul></div></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.UnEquipUO3D(layers)</code></div>
+<p class="wiki-desc">UnEquip a list of item by using UO3D packet.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">layers</code> <span class="wiki-param-type">(Object)</span>: List of layer names to unequip.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-UpdateKarma">
@@ -1538,7 +1536,7 @@ Bushido
 Ninjitsu
 Spell Weaving
 Imbuing</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Int32)</span>: Optional: Serial, Mobile or Item to target. (default: null)</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial, Mobile or Item to target.</li>
 <li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: True: wait for confirmation from the server (default: False)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>

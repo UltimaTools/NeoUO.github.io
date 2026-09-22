@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Target - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Target - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -181,9 +181,9 @@ Optionally specify the target flag and check if the cursor is "Beneficial", "Har
 </div>
 <div class="wiki-entry" id="M-Scripting-Target-SetLast">
 <h3 class="wiki-entry-name">SetLast</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.SetLast(serial, wait)</code></div>
-<p class="wiki-desc">Set the last target to specific mobile, using the serial.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Mobile.</li>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.SetLast(target, wait)</code></div>
+<p class="wiki-desc">Set the last target to a specific mobile or serial.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to set as last target.</li>
 <li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Wait confirmation from the server.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -208,23 +208,23 @@ Targets the Mobile or Item specified</p>
 <div class="wiki-entry" id="M-Scripting-Target-TargetExecuteRelative">
 <h3 class="wiki-entry-name">TargetExecuteRelative</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetExecuteRelative(mobile, offset)</code></div>
-<p class="wiki-desc">Execute target on specific land point with offset distance from Mobile. Distance is calculated by target Mobile.Direction.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span>: Mobile object to target.</li>
-<li><code class="wiki-param-name">offset</code> <span class="wiki-param-type">(Int32)</span>: Distance from the target.</li></ul></div></div>
+
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to offset from.</li>
+<li><code class="wiki-param-name">offset</code> <span class="wiki-param-type">(Int32)</span>: +- distance to offset from the mobile identified with serial</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Target-TargetResource">
 <h3 class="wiki-entry-name">TargetResource</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetResource(item_serial, resource_number)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Target.TargetResource(item, resource)</code></div>
 <p class="wiki-desc">Find and target a resource using the specified kvpItem.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item_serial</code> <span class="wiki-param-type">(Int32)</span>: Item object to use.</li>
-<li><code class="wiki-param-name">resource_number</code> <span class="wiki-param-type">(Int32)</span>: Resource as standard name or custom number
-               0: ore
-               1: sand
-               2: wood
-               3: graves
-               4: red_mushrooms
-               n: custom</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item object to use.</li>
+<li><code class="wiki-param-name">resource</code> <span class="wiki-param-type">(Object)</span>: Resource as standard name or custom number. 
+                0: ore
+                1: sand
+                2: wood
+                3: graves
+                4: red_mushrooms
+                n: custom</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Target-TargetType">

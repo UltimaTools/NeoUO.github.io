@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Spells - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Spells - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -53,19 +53,18 @@
 <h2 id="methods" class="wiki-section-header">Methods</h2>
 <div class="wiki-entry" id="M-Scripting-Spells-Cast">
 <h3 class="wiki-entry-name">Cast</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.Cast(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.Cast(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast spell using the spell name. See the skill-specific functions to get the full list of spell names.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Name of the spell to cast.</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastBushido">
 <h3 class="wiki-entry-name">CastBushido</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastBushido(SpellName, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastBushido(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Bushido spell using the spell name.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">SpellName</code> <span class="wiki-param-type">(String)</span>: Honorable Execution
 Confidence
@@ -73,13 +72,13 @@ Counter Attack
 Lightning Strike
 Evasion
 Momentum Strike</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span></li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastChivalry">
 <h3 class="wiki-entry-name">CastChivalry</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastChivalry(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastChivalry(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Chivalry spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -93,14 +92,13 @@ Holy Light
 Noble Sacrifice
 Remove Curse
 Sacred Journey</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastCleric">
 <h3 class="wiki-entry-name">CastCleric</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastCleric(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastCleric(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Cleric spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -124,14 +122,13 @@ Spring Of Life : Creates a magical spring that heals the Druid and their party.
 Swarm Of Insects : Summons a swarm of insects that bite and sting the Druid's enemies.
 Treefellow : Summons a powerful woodland spirit to fight for the Druid.
 Volcanic Eruption : A blast of molten lava bursts from the ground, hitting every enemy nearby.</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastDruid">
 <h3 class="wiki-entry-name">CastDruid</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastDruid(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastDruid(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Druid spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -147,9 +144,8 @@ Sacrifice : Heals your party members when you take damage. Sort of like thorns, 
 Smite : Causes energy damage
 Touch of Life : Heals even if Mortal Strike or poison are active on the target
 Trial by Fire : Attackers receive damage when they strike you, sort of like a temporary RPD buff</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: target to use the druid spell on</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span></li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: target to use the druid spell on</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastLastSpell">
@@ -169,7 +165,7 @@ Trial by Fire : Attackers receive damage when they strike you, sort of like a te
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastMagery">
 <h3 class="wiki-entry-name">CastMagery</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMagery(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMagery(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Magery spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -237,14 +233,13 @@ Summon Daemon
 Summon Earth Elemental
 Summon Fire Elemental
 Summon Water Elemental</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastMastery">
 <h3 class="wiki-entry-name">CastMastery</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMastery(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMastery(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Mastery spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -293,14 +288,13 @@ Knockout
 Whispering
 Combat Training
 Boarding</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastMysticism">
 <h3 class="wiki-entry-name">CastMysticism</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMysticism(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastMysticism(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Mysticism spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -319,14 +313,13 @@ Spell Plague
 Hail Storm
 Nether Cyclone
 Rising Colossus</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastNecro">
 <h3 class="wiki-entry-name">CastNecro</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNecro(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNecro(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Necromany spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -347,14 +340,13 @@ Lich Form
 Exorcism
 Vengeful Spirit
 Vampiric Embrace</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastNinjitsu">
 <h3 class="wiki-entry-name">CastNinjitsu</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNinjitsu(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastNinjitsu(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Ninjitsu spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -365,14 +357,13 @@ Mirror Image
 Shadow jump
 Focus Attack
 Ki Attack</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-CastSpellweaving">
 <h3 class="wiki-entry-name">CastSpellweaving</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastSpellweaving(SpellName, target, wait, waitAfter)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.CastSpellweaving(SpellName, target, wait)</code></div>
 <p class="wiki-desc">Cast a Spellweaving spell using the spell name.
 Optionally is possible to specify the Mobile or a Serial as target of the spell. Upon successful casting, the target will be executed automatically by the server.
 NOTE: The "automatic" target is not supported by all shards, but you can restort to the Target class to handle it manually.</p>
@@ -392,9 +383,8 @@ Ethereal Voyage
 Word Of Death
 Gift Of Life
 Arcane Empowerment</li>
-<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(UInt32)</span>: Optional: Serial or Mobile to target (default: null)</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li>
-<li><code class="wiki-param-name">waitAfter</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial or Mobile to target (default: null)</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait server to confirm. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Spells-ExportSpellsToJson">
@@ -410,6 +400,17 @@ Arcane Empowerment</li>
 <p class="wiki-desc">Interrupt the casting of a spell by performing an equip/unequip.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Spells-WaitCastComplete">
+<h3 class="wiki-entry-name">WaitCastComplete</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Spells.WaitCastComplete(maxWait)</code></div>
+<p class="wiki-desc">Waits up to <paramref name="maxWait" /> milliseconds for a cast to resolve.
+Returns early when the fizzle sound (0x5C) is heard, a target cursor appears,
+or - on servers that flag the player as paralyzed for the duration of the cast
+animation - the paralyze flag clears; otherwise it blocks for the full duration.
+Servers that do not paralyze during casting simply fall back to the other signals.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">maxWait</code> <span class="wiki-param-type">(Int32)</span>: Maximum time to wait, in milliseconds.</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Spells-Cast">Cast</a></li>
 <li><a href="#M-Scripting-Spells-CastBushido">CastBushido</a></li>
 <li><a href="#M-Scripting-Spells-CastChivalry">CastChivalry</a></li>
@@ -424,4 +425,5 @@ Arcane Empowerment</li>
 <li><a href="#M-Scripting-Spells-CastNinjitsu">CastNinjitsu</a></li>
 <li><a href="#M-Scripting-Spells-CastSpellweaving">CastSpellweaving</a></li>
 <li><a href="#M-Scripting-Spells-ExportSpellsToJson">ExportSpellsToJson</a></li>
-<li><a href="#M-Scripting-Spells-Interrupt">Interrupt</a></li></ul></aside></div></body></html>
+<li><a href="#M-Scripting-Spells-Interrupt">Interrupt</a></li>
+<li><a href="#M-Scripting-Spells-WaitCastComplete">WaitCastComplete</a></li></ul></aside></div></body></html>

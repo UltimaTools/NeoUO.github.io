@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -118,9 +118,9 @@ The filename MUST end in a limited file suffix list</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-CheckIgnoreObject">
 <h3 class="wiki-entry-name">CheckIgnoreObject</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CheckIgnoreObject(serial)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.CheckIgnoreObject(target)</code></div>
 <p class="wiki-desc">Check object from ignore list, return true if present. Can check Serial, Items or Mobiles</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial to check.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or entity to check.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-CheckSharedValue">
@@ -153,9 +153,9 @@ The filename MUST end in a limited file suffix list</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-ContextReply">
 <h3 class="wiki-entry-name">ContextReply</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ContextReply(serial, response_num)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ContextReply(target, response_num)</code></div>
 <p class="wiki-desc">Respond to a context menu on mobile or item. Menu ID is base zero, or can use string of menu text.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Entity</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or Item/Mobile entity.</li>
 <li><code class="wiki-param-name">response_num</code> <span class="wiki-param-type">(Int32)</span>: Position of the option in the menu. Starts from 0.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -282,9 +282,9 @@ See also: https://docs.microsoft.com/dotnet/api/system.drawing.rectangle</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-IgnoreObject">
 <h3 class="wiki-entry-name">IgnoreObject</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.IgnoreObject(serial)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.IgnoreObject(target)</code></div>
 <p class="wiki-desc">Add an entity to the ignore list. Can ignore Serial, Items or Mobiles.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial to ignore.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or entity to ignore.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-Inspect">
@@ -370,9 +370,9 @@ Is possible to use absolute Screen Coordinates by setting clientCoords=False.</p
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-PetRename">
 <h3 class="wiki-entry-name">PetRename</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.PetRename(serial, name)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.PetRename(mob, name)</code></div>
 <p class="wiki-desc">Rename a specific pet.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the pet.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mob</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile of the pet.</li>
 <li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: New name to set.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -402,7 +402,7 @@ Shared values are accessible by every script.
 Get a Shared Value, if value not exist return null.
 Shared values are accessible by every script.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>T<T></code>, <code>Object</code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
 <h3 class="wiki-entry-name">RemoveLineInFile</h3>
@@ -519,11 +519,10 @@ This path maybe be different from the Python starting folder when RE is loaded a
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-SendMessage">
 <h3 class="wiki-entry-name">SendMessage</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.SendMessage(msg, color, wait)</code></div>
-<p class="wiki-desc">Send a message to the client.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: The object to print.</li>
-<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the message.</li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: True: Wait for confirmation. - False: Returns instantly.</li></ul></div></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.SendMessage(obj, color)</code></div>
+<p class="wiki-desc">Send a message to the client. Returns instantly (fire-and-forget).</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">obj</code> <span class="wiki-param-type">(Object)</span>: The object to print.</li>
+<li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the message. (default: 945)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-SendToClient">
@@ -556,9 +555,9 @@ Shared values are accessible by every script.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-UnIgnoreObject">
 <h3 class="wiki-entry-name">UnIgnoreObject</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UnIgnoreObject(serial)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UnIgnoreObject(target)</code></div>
 <p class="wiki-desc">Remove object from ignore list. Can remove serial, items or mobiles</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial to unignore.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or entity to unignore.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-UseContextMenu">
@@ -572,12 +571,12 @@ Shared values are accessible by every script.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-WaitForContext">
 <h3 class="wiki-entry-name">WaitForContext</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.WaitForContext(serial, delay, showContext)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.WaitForContext(obj, delay, showContext)</code></div>
 <p class="wiki-desc">Return the List entry of a Context menu, of Mobile or Item objects.
 The function will ask the server for the List and wait for a maximum amount of time.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the entity.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">obj</code> <span class="wiki-param-type">(Object)</span>: Serial or Item/Mobile entity.</li>
 <li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait.</li>
-<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span>: Show context menu in-game. (default: True)</li></ul></div></div>
+<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span>: Show context menu in-game. (default: False)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Misc.Context]</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-WaitForMenu">

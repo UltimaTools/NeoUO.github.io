@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Sound - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Sound - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -65,13 +65,16 @@
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">activateLogging</code> <span class="wiki-param-type">(Boolean)</span>: True= activate sound logging/ False Deactivate sound logging</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
-<div class="wiki-entry" id="M-Scripting-Sound-OnFilter">
-<h3 class="wiki-entry-name">OnFilter</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.OnFilter(p, args)</code></div>
+<div class="wiki-entry" id="M-Scripting-Sound-OnSound">
+<h3 class="wiki-entry-name">OnSound</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Sound.OnSound(sound, volume, x, y, z)</code></div>
 
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">p</code> <span class="wiki-param-type">(PacketReader)</span></li>
-<li><code class="wiki-param-name">args</code> <span class="wiki-param-type">(PacketHandlerEventArgs)</span></li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">sound</code> <span class="wiki-param-type">(UInt16)</span></li>
+<li><code class="wiki-param-name">volume</code> <span class="wiki-param-type">(UInt16)</span></li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(UInt16)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(UInt16)</span></li>
+<li><code class="wiki-param-name">z</code> <span class="wiki-param-type">(UInt16)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Sound-RemoveFilter">
 <h3 class="wiki-entry-name">RemoveFilter</h3>
@@ -89,6 +92,6 @@
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Sound-AddFilter">AddFilter</a></li>
 <li><a href="#M-Scripting-Sound-Log">Log</a></li>
-<li><a href="#M-Scripting-Sound-OnFilter">OnFilter</a></li>
+<li><a href="#M-Scripting-Sound-OnSound">OnSound</a></li>
 <li><a href="#M-Scripting-Sound-RemoveFilter">RemoveFilter</a></li>
 <li><a href="#M-Scripting-Sound-WaitForSound">WaitForSound</a></li></ul></aside></div></body></html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Mobiles - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Mobiles - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -66,24 +66,24 @@
 <div class="wiki-entry" id="M-Scripting-Mobiles-ContextExist">
 <h3 class="wiki-entry-name">ContextExist</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.ContextExist(mob, name, showContext)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mob</code> <span class="wiki-param-type">(Mobile)</span></li>
-<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span></li>
-<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<p class="wiki-desc">Check if a context menu entry exists on a Mobile, returning its entry key or -1.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mob</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to inspect.</li>
+<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Context menu entry name.</li>
+<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span>: Show the context menu while waiting. (default: False)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-FindBySerial">
 <h3 class="wiki-entry-name">FindBySerial</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.FindBySerial(serial)</code></div>
 <p class="wiki-desc">Find the Mobile with a specific Serial.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Mobile.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to search.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Mobile</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-FindMobile">
 <h3 class="wiki-entry-name">FindMobile</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.FindMobile(graphic, notoriety, rangemax, selector, highlight)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.FindMobile(graphics, notoriety, rangemax, selector, highlight)</code></div>
 
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphic</code> <span class="wiki-param-type">(Int32)</span></li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">graphics</code> <span class="wiki-param-type">(Object)</span></li>
 <li><code class="wiki-param-name">notoriety</code> <span class="wiki-param-type">(List[Byte])</span></li>
 <li><code class="wiki-param-name">rangemax</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">selector</code> <span class="wiki-param-type">(String)</span></li>
@@ -93,24 +93,24 @@
 <div class="wiki-entry" id="M-Scripting-Mobiles-GetPropStringByIndex">
 <h3 class="wiki-entry-name">GetPropStringByIndex</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetPropStringByIndex(serial, index)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li>
-<li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<p class="wiki-desc">Get a Property line of a Mobile, by index. If not found returns an empty string.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to read.</li>
+<li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span>: Number of the Property line.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-GetPropStringList">
 <h3 class="wiki-entry-name">GetPropStringList</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetPropStringList(serial)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<p class="wiki-desc">Get string list of all Properties of a Mobile, if no props list is empty.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to read.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[String]</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-GetPropValue">
 <h3 class="wiki-entry-name">GetPropValue</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.GetPropValue(serial, name)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li>
-<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
+<p class="wiki-desc">Read the value of a Property of a Mobile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to read.</li>
+<li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the Property.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Single</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-GetTargetingFilter">
@@ -130,11 +130,11 @@
 <div class="wiki-entry" id="M-Scripting-Mobiles-Message">
 <h3 class="wiki-entry-name">Message</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.Message(mobile, hue, message, wait)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span></li>
-<li><code class="wiki-param-name">hue</code> <span class="wiki-param-type">(Int32)</span></li>
-<li><code class="wiki-param-name">message</code> <span class="wiki-param-type">(String)</span></li>
-<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<p class="wiki-desc">Display an in-game message on top of a Mobile, visibile only for the Player.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to display text on.</li>
+<li><code class="wiki-param-name">hue</code> <span class="wiki-param-type">(Int32)</span>: Color of the message.</li>
+<li><code class="wiki-param-name">message</code> <span class="wiki-param-type">(String)</span>: Message text.</li>
+<li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Wait for the client to process the message. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-Select">
@@ -148,31 +148,31 @@
 <div class="wiki-entry" id="M-Scripting-Mobiles-SingleClick">
 <h3 class="wiki-entry-name">SingleClick</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.SingleClick(mobile)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span></li></ul></div></div>
+<p class="wiki-desc">Send a single click network event to the server.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to click.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-UseMobile">
 <h3 class="wiki-entry-name">UseMobile</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.UseMobile(mobile)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Mobile)</span></li></ul></div></div>
+<p class="wiki-desc">Double-click (use) a Mobile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">mobile</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to use.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-WaitForProps">
 <h3 class="wiki-entry-name">WaitForProps</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.WaitForProps(m, delay)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">m</code> <span class="wiki-param-type">(Mobile)</span></li>
-<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<p class="wiki-desc">If not updated, request the Properties of a Mobile and wait up to a maximum time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">m</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to read.</li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum waiting time, in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Mobiles-WaitForStats">
 <h3 class="wiki-entry-name">WaitForStats</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Mobiles.WaitForStats(m, delay)</code></div>
-
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">m</code> <span class="wiki-param-type">(Mobile)</span></li>
-<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<p class="wiki-desc">Request the Stats of a Mobile and wait up to a maximum time.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">m</code> <span class="wiki-param-type">(Object)</span>: Serial or Mobile to read.</li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum waiting time, in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Mobiles-ApplyFilter">ApplyFilter</a></li>
 <li><a href="#M-Scripting-Mobiles-ContextExist">ContextExist</a></li>

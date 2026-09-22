@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Items - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.200</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Items - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.201</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -76,8 +76,8 @@
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.ChangeDyeingTubColor(dyes, dyeingTub, color)</code></div>
 <p class="wiki-desc">Use the Dyes on a Dyeing Tub and select the color via color picker, using dedicated packets. 
 Need to specify the dyes, the dye tube and the color to use.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">dyes</code> <span class="wiki-param-type">(Item)</span>: Dyes as Item object.</li>
-<li><code class="wiki-param-name">dyeingTub</code> <span class="wiki-param-type">(Item)</span>: Dyeing Tub as Item object.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">dyes</code> <span class="wiki-param-type">(Object)</span>: Dyes as Item object or serial.</li>
+<li><code class="wiki-param-name">dyeingTub</code> <span class="wiki-param-type">(Object)</span>: Dyeing Tub as Item object or serial.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color to choose.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -87,14 +87,14 @@ Need to specify the dyes, the dye tube and the color to use.</p>
 <p class="wiki-desc">Close opened container window. 
 On OSI, to close opened corpse window, you need to close the corpse's root container 
 Currently corpse's root container can be found by using item filter.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to hide.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to close.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-ContainerCount">
 <h3 class="wiki-entry-name">ContainerCount</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.ContainerCount(container, itemid, color, recursive)</code></div>
 <p class="wiki-desc">Count items inside a container, summing also the amount in stacks.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Item)</span>: Serial or Item to search into.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to search into.</li>
 <li><code class="wiki-param-name">itemid</code> <span class="wiki-param-type">(Int32)</span>: ItemID of the item to search.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color to match. (default: -1, any color)</li>
 <li><code class="wiki-param-name">recursive</code> <span class="wiki-param-type">(Boolean)</span>: Search also in already open subcontainers.</li></ul></div></div>
@@ -104,7 +104,7 @@ Currently corpse's root container can be found by using item filter.</p>
 <h3 class="wiki-entry-name">ContextExist</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.ContextExist(serial, name)</code></div>
 <p class="wiki-desc">Check if Context Menu entry exists for an Item.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to check.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to check.</li>
 <li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the Context Manu entry</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 </div>
@@ -112,19 +112,18 @@ Currently corpse's root container can be found by using item filter.</p>
 <h3 class="wiki-entry-name">DropFromHand</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.DropFromHand(item, container)</code></div>
 <p class="wiki-desc">Drop into a bag an Item currently held in-hand. ( see: Items.Lift )</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Item)</span>: Item object to drop.</li>
-<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Item)</span>: Target container.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Item object or serial to drop.</li>
+<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Object)</span>: Target container object or serial.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-DropItemGroundSelf">
 <h3 class="wiki-entry-name">DropItemGroundSelf</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.DropItemGroundSelf(item, amount, direction)</code></div>
 <p class="wiki-desc">Drop an Item on the ground, at the current Player position.
-NOTE: On some server is not allowed to drop Items on tiles occupied by Mobiles and the Player.
-This function seldom works because the servers don't allow drop where you're standing</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Item)</span>: Item object to drop.</li>
+NOTE: On some server is not allowed to drop Items on tiles occupied by Mobiles and the Player.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to drop.</li>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount to move. (default: 0, the whole stack)</li>
-<li><code class="wiki-param-name">direction</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<li><code class="wiki-param-name">direction</code> <span class="wiki-param-type">(Int32)</span>: Direction to drop. (default: 0)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-FindAllByID">
@@ -134,12 +133,15 @@ This function seldom works because the servers don't allow drop where you're sta
 Optionally can search in all subcontainers or to a maximum depth in subcontainers.
 Can use -1 on color for no chose color, can use -1 on container for search in all item in memory.
 The depth defaults to only the top but can search for # of sub containers.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemids</code> <span class="wiki-param-type">(PythonList)</span></li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemids</code> <span class="wiki-param-type">(Object)</span>: ItemID or list of ItemIDs filter.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color filter. (-1: any, 0: natural )</li>
-<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Int32)</span>: Serial of the container to search. (-1: any Item)</li>
-<li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Object)</span>: Serial or Item of the container to search. (-1: any Item)</li>
+<li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Search subcontainers. 
+    True: all subcontainers
+    False: only main
+    1,2,n: Maximum subcontainer depth</li>
 <li><code class="wiki-param-name">considerIgnoreList</code> <span class="wiki-param-type">(Boolean)</span>: True: Ignore Items are excluded - False: any Item.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Item]</code>, <code>PythonList</code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>PythonList</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-FindByID">
 <h3 class="wiki-entry-name">FindByID</h3>
@@ -149,7 +151,7 @@ Optionally can search in all subcontainers or to a maximum depth in subcontainer
 Can use -1 on color for no chose color, can use -1 on container for search in all item in memory. The depth defaults to only the top but can search for # of sub containers.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemid</code> <span class="wiki-param-type">(Int32)</span>: ItemID filter.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color filter. (-1: any, 0: natural )</li>
-<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Int32)</span>: Serial of the container to search. (-1: any Item)</li>
+<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Object)</span>: Serial or Item of the container to search. (-1: any Item)</li>
 <li><code class="wiki-param-name">recursive</code> <span class="wiki-param-type">(Boolean)</span>: Search subcontainers. 
     True: all subcontainers
     False: only main
@@ -165,7 +167,7 @@ Optionally can search in all subcontainers or to a maximum depth in subcontainer
 Can use -1 on color for no chose color, can use -1 on container for search in all item in memory. The depth defaults to only the top but can search for # of sub containers.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemName</code> <span class="wiki-param-type">(String)</span>: Item Name filter.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color filter. (-1: any, 0: natural )</li>
-<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Int32)</span>: Serial of the container to search. (-1: any Item)</li>
+<li><code class="wiki-param-name">container</code> <span class="wiki-param-type">(Object)</span>: Serial or Item of the container to search. (-1: any Item)</li>
 <li><code class="wiki-param-name">range</code> <span class="wiki-param-type">(Int32)</span>: Search subcontainers. 
     1,2,n: Maximum subcontainer depth</li>
 <li><code class="wiki-param-name">considerIgnoreList</code> <span class="wiki-param-type">(Boolean)</span>: True: Ignore Items are excluded - False: any Item.</li></ul></div></div>
@@ -175,7 +177,7 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <h3 class="wiki-entry-name">FindBySerial</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.FindBySerial(serial)</code></div>
 <p class="wiki-desc">Search for a specific Item by using it Serial</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Item.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to search.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Item</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-GetImage">
@@ -190,7 +192,7 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <h3 class="wiki-entry-name">GetPropStringByIndex</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.GetPropStringByIndex(serial, index)</code></div>
 <p class="wiki-desc">Get a Property line, by index. if not found returns and empty string.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to read.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to read.</li>
 <li><code class="wiki-param-name">index</code> <span class="wiki-param-type">(Int32)</span>: Number of the Property line.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
@@ -198,14 +200,14 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <h3 class="wiki-entry-name">GetPropStringList</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.GetPropStringList(serial)</code></div>
 <p class="wiki-desc">Get string list of all Properties of an item, if item no props list is empty.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to read.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to read.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[String]</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-GetPropValue">
 <h3 class="wiki-entry-name">GetPropValue</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.GetPropValue(serial, name)</code></div>
 <p class="wiki-desc">Read the value of a Property.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to read.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to read.</li>
 <li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the Propery.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Single</code></div>
 </div>
@@ -213,7 +215,7 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <h3 class="wiki-entry-name">GetPropValueString</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.GetPropValueString(serial, name)</code></div>
 <p class="wiki-desc">Get a Property line, by name. if not found returns and empty string.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to read.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to read.</li>
 <li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Number of the Property line.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
@@ -223,7 +225,7 @@ Can use -1 on color for no chose color, can use -1 on container for search in al
 <p class="wiki-desc">Request to get immediately the Properties of an Item, and wait for a specified amount of time.
 This only returns properties and does not attempt to update the object.
 Used in this way, properties for object not yet seen can be retrieved</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemserial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item read.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemserial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item read.</li>
 <li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum waiting time, in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>List[Property]</code></div>
 </div>
@@ -241,7 +243,7 @@ for the supplied item ID.
 <h3 class="wiki-entry-name">Hide</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.Hide(serial)</code></div>
 <p class="wiki-desc">Hied an Item, affects only the player.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to hide.</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to hide.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-IgnoreTypes">
@@ -256,7 +258,7 @@ and could result in a mobile being able to kill you without you seeing it</p>
 <h3 class="wiki-entry-name">Lift</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.Lift(item, amount)</code></div>
 <p class="wiki-desc">Lift an Item and hold it in-hand. ( see: Items.DropFromHand )</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Item)</span>: Item object to Lift.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Item object or serial to Lift.</li>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount to lift. (-1: the whole stack, &gt;0: specific amount)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -264,7 +266,7 @@ and could result in a mobile being able to kill you without you seeing it</p>
 <h3 class="wiki-entry-name">Message</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.Message(item, hue, message)</code></div>
 <p class="wiki-desc">Display an in-game message on top of an Item, visibile only for the Player.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Item)</span>: Serial or Item to display text on.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to display text on.</li>
 <li><code class="wiki-param-name">hue</code> <span class="wiki-param-type">(Int32)</span>: Color of the message.</li>
 <li><code class="wiki-param-name">message</code> <span class="wiki-param-type">(String)</span>: Message as</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
@@ -272,9 +274,10 @@ and could result in a mobile being able to kill you without you seeing it</p>
 <div class="wiki-entry" id="M-Scripting-Items-Move">
 <h3 class="wiki-entry-name">Move</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.Move(source, destination, amount, x, y)</code></div>
-<p class="wiki-desc">Move an Item to a destination, which can be an Item or a Mobile.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item of the Item to move.</li>
-<li><code class="wiki-param-name">destination</code> <span class="wiki-param-type">(Int32)</span>: Serial, Mobile or Item as destination.</li>
+<p class="wiki-desc">Move an Item to a destination, which can be an Item or a Mobile.
+Move an Item to a destination, which can be an Item or a Mobile.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Object)</span>: Serial or Item of the Item to move.</li>
+<li><code class="wiki-param-name">destination</code> <span class="wiki-param-type">(Object)</span>: Serial, Mobile or Item as destination.</li>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount to move (-1: the whole stack)</li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: Optional: X coordinate inside the container.</li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Optional: Y coordinate inside the container.</li></ul></div></div>
@@ -286,8 +289,8 @@ and could result in a mobile being able to kill you without you seeing it</p>
 <p class="wiki-desc">Move an item and wait for the server to confirm the move via ContainerContentUpdate (0x25).
 This is useful when moving multiple items in sequence to avoid "you must wait" errors.
 Watches for "wait" messages in journal to detect rate limiting and retries automatically.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Int32)</span>: Serial of the item to move.</li>
-<li><code class="wiki-param-name">destination</code> <span class="wiki-param-type">(Int32)</span>: Serial of the destination container.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to move.</li>
+<li><code class="wiki-param-name">destination</code> <span class="wiki-param-type">(Object)</span>: Serial or Item of the destination container.</li>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount of items to move (0: the whole stack).</li>
 <li><code class="wiki-param-name">timeoutMs</code> <span class="wiki-param-type">(Int32)</span>: Maximum time to wait for confirmation in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
@@ -296,7 +299,7 @@ Watches for "wait" messages in journal to detect rate limiting and retries autom
 <h3 class="wiki-entry-name">MoveOnGround</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.MoveOnGround(source, amount, x, y, z)</code></div>
 <p class="wiki-desc">Move an Item on the ground to a specific location.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to move.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to move.</li>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount of Items to move (0: the whole stack )</li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: X world coordinates.</li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Y world coordinates.</li>
@@ -307,7 +310,7 @@ Watches for "wait" messages in journal to detect rate limiting and retries autom
 <h3 class="wiki-entry-name">OpenAt</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.OpenAt(serial, x, y)</code></div>
 
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span></li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span></li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
@@ -316,7 +319,7 @@ Watches for "wait" messages in journal to detect rate limiting and retries autom
 <h3 class="wiki-entry-name">OpenContainerAt</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.OpenContainerAt(bag, x, y)</code></div>
 <p class="wiki-desc">Open a container at a specific location on the screen</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Item)</span>: Container as Item object.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Object)</span>: Container as Item object or serial.</li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: x location to open at</li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: y location to open at</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
@@ -334,7 +337,7 @@ Watches for "wait" messages in journal to detect rate limiting and retries autom
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.SetColor(serial, color)</code></div>
 <p class="wiki-desc">Change/override the Color of an Item, the change affects only Player client. The change is not persistent.
 If the color is -1 or unspecified, the color of the item is restored.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Item.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item.</li>
 <li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color as number. (default: -1, reset original color)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -342,16 +345,20 @@ If the color is -1 or unspecified, the color of the item is restored.</p>
 <h3 class="wiki-entry-name">SingleClick</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.SingleClick(item)</code></div>
 <p class="wiki-desc">Send a single click network event to the server.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Item)</span>: Serial or Item to click</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to click.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-UseItem">
 <h3 class="wiki-entry-name">UseItem</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.UseItem(itemSerial, targetSerial, wait)</code></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.UseItem(item, target, wait)</code></div>
 <p class="wiki-desc">Use an Item, optionally is possible to specify a Item or Mobile target.
+NOTE: The optional target may not work on some free shards. Use Target.Execute instead.
+Use an Item, optionally is possible to specify a Item or Mobile target.
+NOTE: The optional target may not work on some free shards. Use Target.Execute instead.
+Use an Item, optionally is possible to specify a Item or Mobile target.
 NOTE: The optional target may not work on some free shards. Use Target.Execute instead.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemSerial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item to use.</li>
-<li><code class="wiki-param-name">targetSerial</code> <span class="wiki-param-type">(Int32)</span>: Optional: Serial of the Item or Mobile target.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">item</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to use.</li>
+<li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Optional: Serial, Item or Mobile target.</li>
 <li><code class="wiki-param-name">wait</code> <span class="wiki-param-type">(Boolean)</span>: Optional: Wait for confirmation by the server. (default: True)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -367,7 +374,7 @@ NOTE: The optional target may not work on some free shards. Use Target.Execute i
 <h3 class="wiki-entry-name">WaitForContents</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.WaitForContents(bag, delay)</code></div>
 <p class="wiki-desc">Open a container an wait for the Items to load, for a maximum amount of time.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Item)</span>: Container as Item object.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">bag</code> <span class="wiki-param-type">(Object)</span>: Container as Item object or serial.</li>
 <li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait, in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
@@ -375,7 +382,7 @@ NOTE: The optional target may not work on some free shards. Use Target.Execute i
 <h3 class="wiki-entry-name">WaitForProps</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.WaitForProps(itemserial, delay)</code></div>
 <p class="wiki-desc">If not updated, request to the Properties of an Item, and wait for a maximum amount of time.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemserial</code> <span class="wiki-param-type">(Int32)</span>: Serial or Item read.</li>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">itemserial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item read.</li>
 <li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum waiting time, in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Items-ApplyFilter">ApplyFilter</a></li>
