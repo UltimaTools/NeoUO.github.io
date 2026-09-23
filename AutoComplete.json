@@ -15086,6 +15086,18 @@
       "returnDesc": "",
       "paramList": [],
       "isStatic": true,
+      "xmlKey": "M:Scripting.CUO.Dbl_Click",
+      "itemKind": "method",
+      "itemClass": "CUO",
+      "itemName": "Dbl_Click",
+      "itemDescription": "Simulates a double-click on the object currently under the ClassicUO\ncursor (world item/mobile, or an item inside a container gump), exactly\nlike a real left double-click. Marshals onto the CUO game thread so all\nworld/UI accesses are safe. Mirror of the GameController dispatch:\nScene.OnMouseDoubleClick(Left) || UIManager.OnMouseDoubleClick(Left).",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
       "xmlKey": "M:Scripting.CUO.Exit",
       "itemKind": "method",
       "itemClass": "CUO",
