@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.203</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.204</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -85,6 +85,17 @@ Accepts a Mobile or a serial.</p>
 Returns true if a map was closed.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-Dbl-Click">
+<h3 class="wiki-entry-name">Dbl_Click</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.Dbl_Click()</code></div>
+<p class="wiki-desc">Simulates a double-click on the object currently under the ClassicUO
+cursor (world item/mobile, or an item inside a container gump), exactly
+like a real left double-click. Marshals onto the CUO game thread so all
+world/UI accesses are safe. Mirror of the GameController dispatch:
+Scene.OnMouseDoubleClick(Left) || UIManager.OnMouseDoubleClick(Left).</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-CUO-DisableNativeAutoOpenCorpses">
 <h3 class="wiki-entry-name">DisableNativeAutoOpenCorpses</h3>
@@ -266,6 +277,7 @@ Returns null if the gump isn't open or on OSI client.</p>
 <li><a href="#M-Scripting-CUO-CloseMobileHealthBar">CloseMobileHealthBar</a></li>
 <li><a href="#M-Scripting-CUO-CloseMyStatusBar">CloseMyStatusBar</a></li>
 <li><a href="#M-Scripting-CUO-CloseTMap">CloseTMap</a></li>
+<li><a href="#M-Scripting-CUO-Dbl-Click">Dbl_Click</a></li>
 <li><a href="#M-Scripting-CUO-DisableNativeAutoOpenCorpses">DisableNativeAutoOpenCorpses</a></li>
 <li><a href="#M-Scripting-CUO-Exit">Exit</a></li>
 <li><a href="#M-Scripting-CUO-Following">Following</a></li>
