@@ -321,7 +321,7 @@
       "itemKind": "class",
       "itemClass": "PathFinding.Route",
       "itemName": "PathFinding.Route",
-      "itemDescription": "Configuration for a `PathFinding.Go` route: the destination X/Y, and the behavior flags (`Run`, `IgnoreMobile`, `IgnoreDoors`, `StopIfStuck`, `MaxRetry`, `Timeout`) plus an optional debug message.",
+      "itemDescription": "Configuration for a `PathFinding.Go` route: the destination X/Y, the behavior flags\n(`Run`, `IgnoreMobile`, `IgnoreDoors`, `StopIfStuck`, `MaxRetry`, `Timeout`), an\noptional debug message, and an optional `PathFile` cache.",
       "flagAutocomplete": false
     },
     {
@@ -3273,6 +3273,16 @@
     },
     {
       "propertyType": "Int32",
+      "isStatic": true,
+      "xmlKey": "F:Scripting.PathFinding.MaxPathEntranceDistance",
+      "itemKind": "property",
+      "itemClass": "PathFinding",
+      "itemName": "MaxPathEntranceDistance",
+      "itemDescription": "How far (Chebyshev) the player may be from the nearest tile of a cached road and still\nuse it. `Go` walks the short hop onto the road from that entrance, so this bounds both\nthe extra planning and the extra walking spent to get back onto a cached route. Beyond\nit the cache is ignored and a full compute runs. Raise it if your routes start from\nplaces the character often ends up a little away from (house doors, rune spots).",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Int32",
       "isStatic": false,
       "xmlKey": "F:Scripting.PathFinding.Route.X",
       "itemKind": "property",
@@ -3288,16 +3298,6 @@
       "itemKind": "property",
       "itemClass": "PathFinding.Route",
       "itemName": "Y",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "propertyType": "Boolean",
-      "isStatic": false,
-      "xmlKey": "F:Scripting.PathFinding.Route.DebugMessage",
-      "itemKind": "property",
-      "itemClass": "PathFinding.Route",
-      "itemName": "DebugMessage",
       "itemDescription": "",
       "flagAutocomplete": false
     },
@@ -3359,6 +3359,36 @@
       "itemClass": "PathFinding.Route",
       "itemName": "Run",
       "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.PathFinding.Route.UseResync",
+      "itemKind": "property",
+      "itemClass": "PathFinding.Route",
+      "itemName": "UseResync",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.PathFinding.Route.DebugMessage",
+      "itemKind": "property",
+      "itemClass": "PathFinding.Route",
+      "itemName": "DebugMessage",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "String",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.PathFinding.Route.PathFile",
+      "itemKind": "property",
+      "itemClass": "PathFinding.Route",
+      "itemName": "PathFile",
+      "itemDescription": "Optional cache file for the computed road. When set, `Go` walks the cached path\ninstead of running a full D* Lite search; on the first run (or when the cache is\nstale) the freshly computed road is saved for later reuse. Relative names resolve\nto DataDirectory/Paths. See `PathFinding.ComputePath` to precompute without walking.",
       "flagAutocomplete": false
     },
     {
@@ -18964,6 +18994,59 @@
       "itemClass": "PathFinding",
       "itemName": "Go",
       "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "file",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "x",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "y",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "ignoreMobile",
+          "itemType": "Boolean",
+          "itemHasDefault": true,
+          "itemDefaultValue": "False",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "ignoreDoors",
+          "itemType": "Boolean",
+          "itemHasDefault": true,
+          "itemDefaultValue": "False",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.PathFinding.ComputePath(System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)",
+      "itemKind": "method",
+      "itemClass": "PathFinding",
+      "itemName": "ComputePath",
+      "itemDescription": "Computes a full D* Lite road from the player's current position to (x, y) and saves\nit to the cache file, without walking it. Useful to precompute long routes at a\nconvenient moment; a later `PathFinding.Go` on a route with the same `PathFile`\nloads the cached road instead of searching again.\nReturns true if a road was computed and saved.",
       "flagAutocomplete": false
     },
     {
