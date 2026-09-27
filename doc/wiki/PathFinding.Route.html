@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>PathFinding.Route - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.208</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>PathFinding.Route - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.209</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,7 +46,9 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">PathFinding.Route</h1>
-<div class="wiki-class-desc"><p>Configuration for a <code>PathFinding.Go</code> route: the destination X/Y, and the behavior flags (<code>Run</code>, <code>IgnoreMobile</code>, <code>IgnoreDoors</code>, <code>StopIfStuck</code>, <code>MaxRetry</code>, <code>Timeout</code>) plus an optional debug message.</p></div>
+<div class="wiki-class-desc"><p>Configuration for a <code>PathFinding.Go</code> route: the destination X/Y, the behavior flags
+(<code>Run</code>, <code>IgnoreMobile</code>, <code>IgnoreDoors</code>, <code>StopIfStuck</code>, <code>MaxRetry</code>, <code>Timeout</code>), an
+optional debug message, and an optional <code>PathFile</code> cache.</p></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li></ul></div>
 <h2 id="properties" class="wiki-section-header">Properties</h2>
@@ -74,6 +76,15 @@
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 
 </div>
+<div class="wiki-entry" id="F-Scripting-PathFinding-Route-PathFile">
+<h3 class="wiki-entry-name">PathFile</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.Route.PathFile</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Optional cache file for the computed road. When set, `Go` walks the cached path
+instead of running a full D* Lite search; on the first run (or when the cache is
+stale) the freshly computed road is saved for later reuse. Relative names resolve
+to DataDirectory/Paths. See `PathFinding.ComputePath` to precompute without walking.</p>
+</div>
 <div class="wiki-entry" id="F-Scripting-PathFinding-Route-Run">
 <h3 class="wiki-entry-name">Run</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.Route.Run</code></div>
@@ -92,6 +103,12 @@
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Single</code></div>
 
 </div>
+<div class="wiki-entry" id="F-Scripting-PathFinding-Route-UseResync">
+<h3 class="wiki-entry-name">UseResync</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.Route.UseResync</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+
+</div>
 <div class="wiki-entry" id="F-Scripting-PathFinding-Route-X">
 <h3 class="wiki-entry-name">X</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.Route.X</code></div>
@@ -107,8 +124,10 @@
 <li><a href="#F-Scripting-PathFinding-Route-IgnoreDoors">IgnoreDoors</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-IgnoreMobile">IgnoreMobile</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-MaxRetry">MaxRetry</a></li>
+<li><a href="#F-Scripting-PathFinding-Route-PathFile">PathFile</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-Run">Run</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-StopIfStuck">StopIfStuck</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-Timeout">Timeout</a></li>
+<li><a href="#F-Scripting-PathFinding-Route-UseResync">UseResync</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-X">X</a></li>
 <li><a href="#F-Scripting-PathFinding-Route-Y">Y</a></li></ul></aside></div></body></html>

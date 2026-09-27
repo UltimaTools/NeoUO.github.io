@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>PathFinding - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.208</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>PathFinding - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.209</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -53,8 +53,35 @@
 <li>Route-based: <code>Go</code> with a configured <code>PathFinding.Route</code></li>
 </ul></div>
 
-<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="F-Scripting-PathFinding-MaxPathEntranceDistance">
+<h3 class="wiki-entry-name">MaxPathEntranceDistance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.MaxPathEntranceDistance</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">How far (Chebyshev) the player may be from the nearest tile of a cached road and still
+use it. `Go` walks the short hop onto the road from that entrance, so this bounds both
+the extra planning and the extra walking spent to get back onto a cached route. Beyond
+it the cache is ignored and a full compute runs. Raise it if your routes start from
+places the character often ends up a little away from (house doors, rune spots).</p>
+</div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
+<div class="wiki-entry" id="M-Scripting-PathFinding-ComputePath">
+<h3 class="wiki-entry-name">ComputePath</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.ComputePath(file, x, y, ignoreMobile, ignoreDoors)</code></div>
+<p class="wiki-desc">Computes a full D* Lite road from the player's current position to (x, y) and saves
+it to the cache file, without walking it. Useful to precompute long routes at a
+convenient moment; a later `PathFinding.Go` on a route with the same `PathFile`
+loads the cached road instead of searching again.
+Returns true if a road was computed and saved.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">file</code> <span class="wiki-param-type">(String)</span></li>
+<li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">ignoreMobile</code> <span class="wiki-param-type">(Boolean)</span></li>
+<li><code class="wiki-param-name">ignoreDoors</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-PathFinding-GetPath">
 <h3 class="wiki-entry-name">GetPath</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.GetPath(dst_x, dst_y, ignoremob)</code></div>
@@ -121,8 +148,10 @@
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">timeout</code> <span class="wiki-param-type">(Single)</span></li>
 <li><code class="wiki-param-name">debugMessage</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
-</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-PathFinding-GetPath">GetPath</a></li>
+</div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-PathFinding-ComputePath">ComputePath</a></li>
+<li><a href="#M-Scripting-PathFinding-GetPath">GetPath</a></li>
 <li><a href="#M-Scripting-PathFinding-Go">Go</a></li>
+<li><a href="#F-Scripting-PathFinding-MaxPathEntranceDistance">MaxPathEntranceDistance</a></li>
 <li><a href="#M-Scripting-PathFinding-PathFindTo">PathFindTo</a></li>
 <li><a href="#M-Scripting-PathFinding-RunPath">RunPath</a></li>
 <li><a href="#M-Scripting-PathFinding-runPath">runPath</a></li>
