@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>PathFinding - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.209</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>PathFinding - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.210</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -66,6 +66,20 @@ the extra planning and the extra walking spent to get back onto a cached route. 
 it the cache is ignored and a full compute runs. Raise it if your routes start from
 places the character often ends up a little away from (house doors, rune spots).</p>
 </div>
+<div class="wiki-entry" id="F-Scripting-PathFinding-NearPathStartDistance">
+<h3 class="wiki-entry-name">NearPathStartDistance</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.NearPathStartDistance</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+<p class="wiki-desc">How close to the beginning of a cached road counts as "at the start". A player is
+nearly always placed within a few tiles of where the route began — a rune, a house
+door, the spot the script walked from — so when they're within this distance of the
+head of the road the route is entered there and simply walked from the start. Entering
+at the head keeps the whole road usable, stair zones included; entering at whatever
+tile happens to be nearest can drop the player halfway into a route whose segments were
+built for a different start, which is where a long recompute comes from. Only when the
+player is further than this from the head does the nearest point anywhere on the road
+get considered, still bounded by <see cref="F:Scripting.PathFinding.MaxPathEntranceDistance" />.</p>
+</div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
 <div class="wiki-entry" id="M-Scripting-PathFinding-ComputePath">
 <h3 class="wiki-entry-name">ComputePath</h3>
@@ -80,6 +94,14 @@ Returns true if a road was computed and saved.</p>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">ignoreMobile</code> <span class="wiki-param-type">(Boolean)</span></li>
 <li><code class="wiki-param-name">ignoreDoors</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-PathFinding-DeleteCachedPath">
+<h3 class="wiki-entry-name">DeleteCachedPath</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PathFinding.DeleteCachedPath(file)</code></div>
+<p class="wiki-desc">Drops a cached road so the next <see cref="M:Scripting.PathFinding.Go(Scripting.PathFinding.Route)" /> to that destination recomputes it.
+A road is otherwise only replaced when a fresh plan is computed.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">file</code> <span class="wiki-param-type">(String)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-PathFinding-GetPath">
@@ -149,9 +171,11 @@ Returns true if a road was computed and saved.</p>
 <li><code class="wiki-param-name">debugMessage</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-PathFinding-ComputePath">ComputePath</a></li>
+<li><a href="#M-Scripting-PathFinding-DeleteCachedPath">DeleteCachedPath</a></li>
 <li><a href="#M-Scripting-PathFinding-GetPath">GetPath</a></li>
 <li><a href="#M-Scripting-PathFinding-Go">Go</a></li>
 <li><a href="#F-Scripting-PathFinding-MaxPathEntranceDistance">MaxPathEntranceDistance</a></li>
+<li><a href="#F-Scripting-PathFinding-NearPathStartDistance">NearPathStartDistance</a></li>
 <li><a href="#M-Scripting-PathFinding-PathFindTo">PathFindTo</a></li>
 <li><a href="#M-Scripting-PathFinding-RunPath">RunPath</a></li>
 <li><a href="#M-Scripting-PathFinding-runPath">runPath</a></li>
