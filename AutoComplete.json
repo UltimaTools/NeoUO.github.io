@@ -3283,6 +3283,16 @@
     },
     {
       "propertyType": "Int32",
+      "isStatic": true,
+      "xmlKey": "F:Scripting.PathFinding.NearPathStartDistance",
+      "itemKind": "property",
+      "itemClass": "PathFinding",
+      "itemName": "NearPathStartDistance",
+      "itemDescription": "How close to the beginning of a cached road counts as \"at the start\". A player is\nnearly always placed within a few tiles of where the route began — a rune, a house\ndoor, the spot the script walked from — so when they're within this distance of the\nhead of the road the route is entered there and simply walked from the start. Entering\nat the head keeps the whole road usable, stair zones included; entering at whatever\ntile happens to be nearest can drop the player halfway into a route whose segments were\nbuilt for a different start, which is where a long recompute comes from. Only when the\nplayer is further than this from the head does the nearest point anywhere on the road\nget considered, still bounded by <see cref=\"F:Scripting.PathFinding.MaxPathEntranceDistance\" />.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Int32",
       "isStatic": false,
       "xmlKey": "F:Scripting.PathFinding.Route.X",
       "itemKind": "property",
@@ -19047,6 +19057,27 @@
       "itemClass": "PathFinding",
       "itemName": "ComputePath",
       "itemDescription": "Computes a full D* Lite road from the player's current position to (x, y) and saves\nit to the cache file, without walking it. Useful to precompute long routes at a\nconvenient moment; a later `PathFinding.Go` on a route with the same `PathFile`\nloads the cached road instead of searching again.\nReturns true if a road was computed and saved.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "file",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.PathFinding.DeleteCachedPath(System.String)",
+      "itemKind": "method",
+      "itemClass": "PathFinding",
+      "itemName": "DeleteCachedPath",
+      "itemDescription": "Drops a cached road so the next <see cref=\"M:Scripting.PathFinding.Go(Scripting.PathFinding.Route)\" /> to that destination recomputes it.\nA road is otherwise only replaced when a fresh plan is computed.",
       "flagAutocomplete": false
     },
     {
