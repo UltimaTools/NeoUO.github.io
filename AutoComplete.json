@@ -41,7 +41,7 @@
       "itemKind": "class",
       "itemClass": "Items",
       "itemName": "Items",
-      "itemDescription": "Search and interact with Items in the world, in containers, and in the paperdoll:\n            \n- Lookup: `FindBySerial`, `FindByID`, `FindAllByID`, `FindByName`, `BackpackCount`, `ContainerCount`\n- Filtering: `ApplyFilter`, `IgnoreTypes`\n- Acting on items: `UseItem`, `UseItemByID`, `SingleClick`, `GetProperties`, `Message`\n- Moving: `Move`, `MoveOnGround`, `MoveAndWait`, `Lift`, `DropFromHand`, `WaitForContents`, `OpenContainerAt`",
+      "itemDescription": "Search and interact with Items in the world, in containers, and in the paperdoll:\n            \n- Lookup: `FindBySerial`, `FindByID`, `FindAllByID`, `FindByName`, `BackpackCount`, `ContainerCount`\n- Filtering: `ApplyFilter`, `IgnoreTypes`\n- Acting on items: `UseItem`, `UseItemByID`, `SingleClick`, `GetProperties`, `Message`\n- Moving: `Move`, `MoveOnGround`, `Lift`, `DropFromHand`, `WaitForContents`, `OpenContainerAt`",
       "flagAutocomplete": false
     },
     {
@@ -5675,8 +5675,8 @@
       "flagAutocomplete": false
     },
     {
-      "returnType": "Void",
-      "returnDesc": "",
+      "returnType": "Boolean",
+      "returnDesc": "True if the server confirmed the move.",
       "paramList": [
         {
           "itemName": "source",
@@ -5776,57 +5776,6 @@
       "itemClass": "Items",
       "itemName": "Move",
       "itemDescription": "Move an Item to a destination, which can be an Item or a Mobile.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Boolean",
-      "returnDesc": "True if the move was confirmed, false if all retries exhausted.",
-      "paramList": [
-        {
-          "itemName": "source",
-          "itemType": "Object",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Serial or Item to move.",
-          "itemAcceptedTypes": [
-            "Item",
-            "int"
-          ]
-        },
-        {
-          "itemName": "destination",
-          "itemType": "Object",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Serial or Item of the destination container.",
-          "itemAcceptedTypes": [
-            "Item",
-            "int"
-          ]
-        },
-        {
-          "itemName": "amount",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Amount of items to move (0: the whole stack).",
-          "itemAcceptedTypes": []
-        },
-        {
-          "itemName": "timeoutMs",
-          "itemType": "Int32",
-          "itemHasDefault": true,
-          "itemDefaultValue": "2000",
-          "itemDescription": "Maximum time to wait for confirmation in milliseconds.",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Items.MoveAndWait(System.Object,System.Object,System.Int32,System.Int32)",
-      "itemKind": "method",
-      "itemClass": "Items",
-      "itemName": "MoveAndWait",
-      "itemDescription": "Move an item and wait for the server to confirm the move via ContainerContentUpdate (0x25).\nThis is useful when moving multiple items in sequence to avoid \"you must wait\" errors.\nWatches for \"wait\" messages in journal to detect rate limiting and retries automatically.",
       "flagAutocomplete": false
     },
     {
