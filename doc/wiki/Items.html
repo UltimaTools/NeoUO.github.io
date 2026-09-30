@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Items - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.211</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Items - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.212</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -51,7 +51,7 @@
 <li>Lookup: <code>FindBySerial</code>, <code>FindByID</code>, <code>FindAllByID</code>, <code>FindByName</code>, <code>BackpackCount</code>, <code>ContainerCount</code></li>
 <li>Filtering: <code>ApplyFilter</code>, <code>IgnoreTypes</code></li>
 <li>Acting on items: <code>UseItem</code>, <code>UseItemByID</code>, <code>SingleClick</code>, <code>GetProperties</code>, <code>Message</code></li>
-<li>Moving: <code>Move</code>, <code>MoveOnGround</code>, <code>MoveAndWait</code>, <code>Lift</code>, <code>DropFromHand</code>, <code>WaitForContents</code>, <code>OpenContainerAt</code></li>
+<li>Moving: <code>Move</code>, <code>MoveOnGround</code>, <code>Lift</code>, <code>DropFromHand</code>, <code>WaitForContents</code>, <code>OpenContainerAt</code></li>
 </ul></div>
 
 <div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
@@ -281,18 +281,6 @@ Move an Item to a destination, which can be an Item or a Mobile.</p>
 <li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount to move (-1: the whole stack)</li>
 <li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span>: Optional: X coordinate inside the container.</li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span>: Optional: Y coordinate inside the container.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code>, <code>Boolean</code></div>
-</div>
-<div class="wiki-entry" id="M-Scripting-Items-MoveAndWait">
-<h3 class="wiki-entry-name">MoveAndWait</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Items.MoveAndWait(source, destination, amount, timeoutMs)</code></div>
-<p class="wiki-desc">Move an item and wait for the server to confirm the move via ContainerContentUpdate (0x25).
-This is useful when moving multiple items in sequence to avoid "you must wait" errors.
-Watches for "wait" messages in journal to detect rate limiting and retries automatically.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">source</code> <span class="wiki-param-type">(Object)</span>: Serial or Item to move.</li>
-<li><code class="wiki-param-name">destination</code> <span class="wiki-param-type">(Object)</span>: Serial or Item of the destination container.</li>
-<li><code class="wiki-param-name">amount</code> <span class="wiki-param-type">(Int32)</span>: Amount of items to move (0: the whole stack).</li>
-<li><code class="wiki-param-name">timeoutMs</code> <span class="wiki-param-type">(Int32)</span>: Maximum time to wait for confirmation in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Items-MoveOnGround">
@@ -409,7 +397,6 @@ NOTE: The optional target may not work on some free shards. Use Target.Execute i
 <li><a href="#M-Scripting-Items-Lift">Lift</a></li>
 <li><a href="#M-Scripting-Items-Message">Message</a></li>
 <li><a href="#M-Scripting-Items-Move">Move</a></li>
-<li><a href="#M-Scripting-Items-MoveAndWait">MoveAndWait</a></li>
 <li><a href="#M-Scripting-Items-MoveOnGround">MoveOnGround</a></li>
 <li><a href="#M-Scripting-Items-OpenAt">OpenAt</a></li>
 <li><a href="#M-Scripting-Items-OpenContainerAt">OpenContainerAt</a></li>
