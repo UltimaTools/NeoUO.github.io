@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.218</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.219</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -220,8 +220,8 @@ The filename MUST end in a limited file suffix list</p>
 <div class="wiki-entry" id="M-Scripting-Misc-FilterSeason">
 <h3 class="wiki-entry-name">FilterSeason</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.FilterSeason(enable, seasonFlag)</code></div>
-<p class="wiki-desc">Enable or disable the Seasons filter forcing a specific season
-Season filter state will be saved on logout but not the season flag that will be recovered.</p>
+<p class="wiki-desc">Enable or disable the Seasons filter forcing a specific season.
+Filter state and season are saved to the character's settings.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">enable</code> <span class="wiki-param-type">(Boolean)</span>: True: enable seasons filter</li>
 <li><code class="wiki-param-name">seasonFlag</code> <span class="wiki-param-type">(UInt32)</span>: 0: Spring (default fallback)
 1: Summer
@@ -402,7 +402,7 @@ Shared values are accessible by every script.
 Get a Shared Value, if value not exist return null.
 Shared values are accessible by every script.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>T<T></code>, <code>Object</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
 <h3 class="wiki-entry-name">RemoveLineInFile</h3>
