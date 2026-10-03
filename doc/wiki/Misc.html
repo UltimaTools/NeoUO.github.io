@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.217</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.218</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -147,7 +147,7 @@ The filename MUST end in a limited file suffix list</p>
 <div class="wiki-entry" id="M-Scripting-Misc-ConfigDirectory">
 <h3 class="wiki-entry-name">ConfigDirectory</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ConfigDirectory()</code></div>
-<p class="wiki-desc">Get the full path to the Persistence Directory.</p>
+<p class="wiki-desc">Get the full path to the Config Directory.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
@@ -170,7 +170,7 @@ Kept for backward compatibility with existing user scripts.</p>
 <div class="wiki-entry" id="M-Scripting-Misc-DataDirectory">
 <h3 class="wiki-entry-name">DataDirectory</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.DataDirectory()</code></div>
-<p class="wiki-desc">Get the full path to the Persistence Directory.</p>
+<p class="wiki-desc">Get the full path to the Data Directory.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
@@ -311,7 +311,7 @@ See also: https://docs.microsoft.com/dotnet/api/system.drawing.rectangle</p>
 <div class="wiki-entry" id="M-Scripting-Misc-LastHotKey">
 <h3 class="wiki-entry-name">LastHotKey</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.LastHotKey()</code></div>
-<p class="wiki-desc">Returns the latest HotKey recorded by razor as HotKeyEvent object.</p>
+<p class="wiki-desc">Returns the latest HotKey recorded by neouo as HotKeyEvent object.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>HotKeyEvent</code></div>
 </div>
@@ -463,8 +463,8 @@ Checks to see if an identical line is in the file, and if it exists, it is remov
 <div class="wiki-entry" id="M-Scripting-Misc-ScriptDirectory">
 <h3 class="wiki-entry-name">ScriptDirectory</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ScriptDirectory()</code></div>
-<p class="wiki-desc">Get the full path to the main Razor Enhanced folder.
-This path maybe be different from the Python starting folder when RE is loaded as plugin (ex: ClassicUO)</p>
+<p class="wiki-desc">Get the full path to the main NeoUO Enhanced folder.
+This path maybe be different from the Python starting folder when NeoUO is loaded as plugin (ex: ClassicUO)</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
@@ -559,6 +559,14 @@ Shared values are accessible by every script.</p>
 <p class="wiki-desc">Remove object from ignore list. Can remove serial, items or mobiles</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or entity to unignore.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-UoDirectory">
+<h3 class="wiki-entry-name">UoDirectory</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UoDirectory()</code></div>
+<p class="wiki-desc">Get the full path to the Ultima Online data directory
+(the folder holding Cliloc.enu, art.mul, etc).</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-UseContextMenu">
 <h3 class="wiki-entry-name">UseContextMenu</h3>
@@ -663,6 +671,7 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-SetSharedValue">SetSharedValue</a></li>
 <li><a href="#M-Scripting-Misc-ShardName">ShardName</a></li>
 <li><a href="#M-Scripting-Misc-UnIgnoreObject">UnIgnoreObject</a></li>
+<li><a href="#M-Scripting-Misc-UoDirectory">UoDirectory</a></li>
 <li><a href="#M-Scripting-Misc-UseContextMenu">UseContextMenu</a></li>
 <li><a href="#M-Scripting-Misc-WaitForContext">WaitForContext</a></li>
 <li><a href="#M-Scripting-Misc-WaitForMenu">WaitForMenu</a></li>
