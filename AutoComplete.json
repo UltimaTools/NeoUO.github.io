@@ -5089,7 +5089,7 @@
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "FilterSeason",
-      "itemDescription": "Enable or disable the Seasons filter forcing a specific season\nSeason filter state will be saved on logout but not the season flag that will be recovered.",
+      "itemDescription": "Enable or disable the Seasons filter forcing a specific season.\nFilter state and season are saved to the character's settings.",
       "flagAutocomplete": false
     },
     {
