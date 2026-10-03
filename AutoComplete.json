@@ -4042,7 +4042,7 @@
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "ScriptDirectory",
-      "itemDescription": "Get the full path to the main Razor Enhanced folder.\nThis path maybe be different from the Python starting folder when RE is loaded as plugin (ex: ClassicUO)",
+      "itemDescription": "Get the full path to the main NeoUO Enhanced folder.\nThis path maybe be different from the Python starting folder when NeoUO is loaded as plugin (ex: ClassicUO)",
       "flagAutocomplete": false
     },
     {
@@ -4059,26 +4059,38 @@
     },
     {
       "returnType": "String",
-      "returnDesc": "Full path to the Scripts Directory.",
+      "returnDesc": "Full path to the Config Directory.",
       "paramList": [],
       "isStatic": true,
       "xmlKey": "M:Scripting.Misc.ConfigDirectory",
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "ConfigDirectory",
-      "itemDescription": "Get the full path to the Persistence Directory.",
+      "itemDescription": "Get the full path to the Config Directory.",
       "flagAutocomplete": false
     },
     {
       "returnType": "String",
-      "returnDesc": "Full path to the Persistence Directory.",
+      "returnDesc": "Full path to the Data Directory.",
       "paramList": [],
       "isStatic": true,
       "xmlKey": "M:Scripting.Misc.DataDirectory",
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "DataDirectory",
-      "itemDescription": "Get the full path to the Persistence Directory.",
+      "itemDescription": "Get the full path to the Data Directory.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "String",
+      "returnDesc": "Path as text.",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Misc.UoDirectory",
+      "itemKind": "method",
+      "itemClass": "Misc",
+      "itemName": "UoDirectory",
+      "itemDescription": "Get the full path to the Ultima Online data directory\n(the folder holding Cliloc.enu, art.mul, etc).",
       "flagAutocomplete": false
     },
     {
@@ -5048,7 +5060,7 @@
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "LastHotKey",
-      "itemDescription": "Returns the latest HotKey recorded by razor as HotKeyEvent object.",
+      "itemDescription": "Returns the latest HotKey recorded by neouo as HotKeyEvent object.",
       "flagAutocomplete": false
     },
     {
