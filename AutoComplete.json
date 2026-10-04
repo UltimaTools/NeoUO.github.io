@@ -185,7 +185,7 @@
       "itemKind": "class",
       "itemClass": "CUO",
       "itemName": "CUO",
-      "itemDescription": "Script interface to ClassicUO-only client features, unavailable on the OSI client:\n            \n- World map: markers (`MarkTile`, `RemoveMarkedTile`), `FreeView`, `GoToMarker`, treasure map gump\n- Profile: `ProfilePropertySet`, `GetSetting`, `SetAutoOpenDoors`, native auto-open-corpse control\n- Windows: gump/container placement (`OpenContainerAt`, `MoveGump`), status and health bars\n- Extras: `PlayMacro`, `FollowMobile`, `ServerName`",
+      "itemDescription": "Script interface to ClassicUO-only client features, unavailable on the OSI client:\n            \n- World map: markers (`MarkTile`, `RemoveMarkedTile`, `IsTileMarked`, `GetMarkedTileHue`), `FreeView`, `GoToMarker`, treasure map gump\n- Profile: `ProfilePropertySet`, `GetSetting`, `SetAutoOpenDoors`, native auto-open-corpse control\n- Windows: gump/container placement (`OpenContainerAt`, `MoveGump`), status and health bars\n- Extras: `PlayMacro`, `FollowMobile`, `ServerName`",
       "flagAutocomplete": false
     },
     {
@@ -15068,6 +15068,80 @@
       "itemClass": "CUO",
       "itemName": "RemoveMarkedTile",
       "itemDescription": "Remove a marked world tile.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "x",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "y",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "map",
+          "itemType": "Int32",
+          "itemHasDefault": true,
+          "itemDefaultValue": "-1",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.CUO.IsTileMarked(System.Int32,System.Int32,System.Int32)",
+      "itemKind": "method",
+      "itemClass": "CUO",
+      "itemName": "IsTileMarked",
+      "itemDescription": "Returns whether a world tile is currently marked, reading the live in-memory\nTileMarkerManager state rather than the on-disk TileMarkers.json, which TazUO\nonly flushes on exit/relog.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Int32",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "x",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "y",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "map",
+          "itemType": "Int32",
+          "itemHasDefault": true,
+          "itemDefaultValue": "-1",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.CUO.GetMarkedTileHue(System.Int32,System.Int32,System.Int32)",
+      "itemKind": "method",
+      "itemClass": "CUO",
+      "itemName": "GetMarkedTileHue",
+      "itemDescription": "Returns the marker hue for a world tile, or -1 when it is not marked. Reads the\nlive in-memory TileMarkerManager state, like <see cref=\"M:Scripting.CUO.IsTileMarked(System.Int32,System.Int32,System.Int32)\" />.",
       "flagAutocomplete": false
     },
     {
