@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.221</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.222</a></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -48,7 +48,7 @@
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">CUO</h1>
 <div class="wiki-class-desc"><p>Script interface to ClassicUO-only client features, unavailable on the OSI client:</p>
 <ul>
-<li>World map: markers (<code>MarkTile</code>, <code>RemoveMarkedTile</code>), <code>FreeView</code>, <code>GoToMarker</code>, treasure map gump</li>
+<li>World map: markers (<code>MarkTile</code>, <code>RemoveMarkedTile</code>, <code>IsTileMarked</code>, <code>GetMarkedTileHue</code>), <code>FreeView</code>, <code>GoToMarker</code>, treasure map gump</li>
 <li>Profile: <code>ProfilePropertySet</code>, <code>GetSetting</code>, <code>SetAutoOpenDoors</code>, native auto-open-corpse control</li>
 <li>Windows: gump/container placement (<code>OpenContainerAt</code>, <code>MoveGump</code>), status and health bars</li>
 <li>Extras: <code>PlayMacro</code>, <code>FollowMobile</code>, <code>ServerName</code></li>
@@ -142,6 +142,16 @@ Same as alt + left-clicking.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">free</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-CUO-GetMarkedTileHue">
+<h3 class="wiki-entry-name">GetMarkedTileHue</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.GetMarkedTileHue(x, y, map)</code></div>
+<p class="wiki-desc">Returns the marker hue for a world tile, or -1 when it is not marked. Reads the
+live in-memory TileMarkerManager state, like <see cref="M:Scripting.CUO.IsTileMarked(System.Int32,System.Int32,System.Int32)" />.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">map</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-CUO-GetSetting">
 <h3 class="wiki-entry-name">GetSetting</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.GetSetting(settingName)</code></div>
@@ -157,6 +167,17 @@ Map must be open for this to work.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
 <li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-CUO-IsTileMarked">
+<h3 class="wiki-entry-name">IsTileMarked</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.IsTileMarked(x, y, map)</code></div>
+<p class="wiki-desc">Returns whether a world tile is currently marked, reading the live in-memory
+TileMarkerManager state rather than the on-disk TileMarkers.json, which TazUO
+only flushes on exit/relog.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">x</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">y</code> <span class="wiki-param-type">(Int32)</span></li>
+<li><code class="wiki-param-name">map</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-CUO-LoadMarkers">
 <h3 class="wiki-entry-name">LoadMarkers</h3>
@@ -284,8 +305,10 @@ Returns null if the gump isn't open or on OSI client.</p>
 <li><a href="#M-Scripting-CUO-FollowMobile">FollowMobile</a></li>
 <li><a href="#M-Scripting-CUO-FollowOff">FollowOff</a></li>
 <li><a href="#M-Scripting-CUO-FreeView">FreeView</a></li>
+<li><a href="#M-Scripting-CUO-GetMarkedTileHue">GetMarkedTileHue</a></li>
 <li><a href="#M-Scripting-CUO-GetSetting">GetSetting</a></li>
 <li><a href="#M-Scripting-CUO-GoToMarker">GoToMarker</a></li>
+<li><a href="#M-Scripting-CUO-IsTileMarked">IsTileMarked</a></li>
 <li><a href="#M-Scripting-CUO-LoadMarkers">LoadMarkers</a></li>
 <li><a href="#M-Scripting-CUO-MarkTile">MarkTile</a></li>
 <li><a href="#M-Scripting-CUO-MoveGump">MoveGump</a></li>
