@@ -7332,6 +7332,35 @@
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "msg",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatEmote(System.Int32,System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatEmote",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "color",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
           "itemDescription": "Color of the text",
           "itemAcceptedTypes": []
         },
@@ -8370,6 +8399,18 @@
       "flagAutocomplete": false
     },
     {
+      "returnType": "String",
+      "returnDesc": "Name of the sub-area. Unknown if not recognized.",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.SubArea",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "SubArea",
+      "itemDescription": "Get the name of the sub-area in which the Player is currently in. (Ex: Entrance Chamber inside Stygian Abyss)\nSub-areas are named locations inside a dungeon, defined inside by Persistence/regions.json.",
+      "flagAutocomplete": false
+    },
+    {
       "returnType": "Void",
       "returnDesc": "",
       "paramList": [
@@ -9280,35 +9321,6 @@
       "itemKind": "method",
       "itemClass": "Player",
       "itemName": "EmoteAction",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "color",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        },
-        {
-          "itemName": "msg",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatEmote(System.Int32,System.Int32)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatEmote",
       "itemDescription": "",
       "flagAutocomplete": false
     },
