@@ -369,3 +369,124 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
+.wiki-search {
+    padding: 0 12px 12px;
+}
+
+.wiki-search-input {
+    width: 100%;
+    background: #1a1a1a;
+    color: #ddd;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 6px 9px;
+    font: inherit;
+    font-size: 0.88em;
+    outline: none;
+}
+
+.wiki-search-input::placeholder {
+    color: #666;
+}
+
+.wiki-search-input:focus {
+    border-color: #0f0;
+    box-shadow: 0 0 0 1px rgba(0, 255, 0, 0.25);
+}
+
+.wiki-search-results {
+    position: fixed;
+    z-index: 1000;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 6px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.wiki-search-results[hidden] {
+    display: none;
+}
+
+.wiki-search-result {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 4px;
+    color: #ccc;
+    text-decoration: none;
+    line-height: 1.35;
+}
+
+.wiki-search-result:hover,
+.wiki-search-result.active {
+    background: rgba(0, 255, 0, 0.1);
+    text-shadow: none;
+}
+
+.wiki-search-kind {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    border-radius: 3px;
+    font-size: 0.68em;
+    font-weight: bold;
+    line-height: 18px;
+    text-align: center;
+}
+
+.wiki-search-kind-class {
+    background: #0a6;
+    color: #000;
+}
+
+.wiki-search-kind-property {
+    background: #08a;
+    color: #000;
+}
+
+.wiki-search-kind-method {
+    background: #a80;
+    color: #000;
+}
+
+.wiki-search-main {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.wiki-search-name {
+    display: block;
+    color: #0f0;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 0.88em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wiki-search-name mark {
+    background: rgba(0, 255, 0, 0.25);
+    color: #fff;
+    border-radius: 2px;
+}
+
+.wiki-search-snippet {
+    display: block;
+    margin-top: 2px;
+    color: #888;
+    font-size: 0.78em;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wiki-search-empty {
+    padding: 10px;
+    color: #888;
+    font-size: 0.85em;
+    text-align: center;
+}

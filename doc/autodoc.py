@@ -48,6 +48,7 @@ import json
 import re
 import sys
 from html import escape as html_escape
+from html import unescape as html_unescape
 
 try:
     import markdown as _md
@@ -55,7 +56,32 @@ try:
 except ImportError:
     _MD_AVAILABLE = False
 
-    
+
+_MD_LINK_RE = re.compile(r"!?\[([^\]]*)\]\([^)]*\)")
+_MD_FENCE_RE = re.compile(r"```.*?```", re.DOTALL)
+_MD_TAG_RE = re.compile(r"<[^>]+>")
+_MD_TABLE_SEP_RE = re.compile(r"(?m)^\s*\|?[\s:|-]+\|?\s*$")
+_MD_HEADING_RE = re.compile(r"(?m)^\s{0,3}#{1,6}\s*")
+_MD_BULLET_RE = re.compile(r"(?m)^\s*[-*+]\s+")
+_MD_EMPHASIS_RE = re.compile(r"\*\*|__|`+|~~")
+_MD_WS_RE = re.compile(r"\s+")
+
+
+def strip_markdown(text):
+    """Convert a markdown snippet to plain text suitable for search and snippets."""
+    if not text:
+        return ""
+    text = _MD_FENCE_RE.sub(" ", text)
+    text = _MD_LINK_RE.sub(r"\1", text)
+    text = _MD_TAG_RE.sub(" ", text)
+    text = html_unescape(text)
+    text = _MD_TABLE_SEP_RE.sub(" ", text)
+    text = _MD_HEADING_RE.sub("", text)
+    text = _MD_BULLET_RE.sub("", text)
+    text = _MD_EMPHASIS_RE.sub("", text)
+    text = text.replace("|", " ")
+    text = _MD_WS_RE.sub(" ", text)
+    return text.strip()
 
 def main():
     ## SETTINGS
@@ -570,7 +596,8 @@ class WikiHTML:
         title_html = "<title>{}</title>".format(title) if title else ""
         css = '<link rel="stylesheet" type="text/css" href="./wiki.css">'
         js = '<script src="./wiki.js"></script>'
-        header = "<head>{}{}{}</head>".format(title_html, css, js)
+        search_js = '<script src="./search.js" defer></script>'
+        header = "<head>{}{}{}{}</head>".format(title_html, css, js, search_js)
 
         sidebar_html = '<nav class="wiki-sidebar">{}</nav>'.format(sidebar)
         content_html = '<main class="wiki-content">{}</main>'.format(content)
@@ -588,9 +615,17 @@ class WikiHTML:
         version_html = '<div class="wiki-version"><a href="./index.html">NeoUO API v{}</a></div>'.format(
             version
         )
+        search_html = (
+            '<div class="wiki-search" data-version="{}">'
+            '<input id="wiki-search-input" class="wiki-search-input" type="search" '
+            'placeholder="Search API..." autocomplete="off" spellcheck="false" '
+            'aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false">'
+            '<div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div>'
+            '</div>'
+        ).format(html_escape("" if version is None else str(version)))
         links_html = "\n".join(class_links)
         nav = '<div class="wiki-nav">{}</div>'.format(links_html)
-        return version_html + nav
+        return version_html + search_html + nav
 
     @staticmethod
     def SidebarLink(name, url, active=False):
@@ -837,8 +872,76 @@ class WikiAutoDocHTML:
 
         return "\n".join(parts)
 
+    def SearchIndex(self):
+        """Build a compact JSON search index for the generated pages."""
+        version = self.version_override if self.version_override else self.ad.GetVersion()
+        entries = []
+
+        for cls in self.ad.GetClasses():
+            class_name = cls["itemClass"]
+            entries.append({
+                "k": "class",
+                "n": class_name,
+                "c": class_name,
+                "d": strip_markdown(cls.get("itemDescription", "")),
+                "s": "",
+                "u": "{}.html".format(class_name),
+            })
+
+        for prop in self.ad.GetProperties():
+            class_name = prop["itemClass"]
+            entries.append({
+                "k": "property",
+                "n": "{}.{}".format(class_name, prop["itemName"]),
+                "c": class_name,
+                "d": strip_markdown(prop.get("itemDescription", "")),
+                "s": prop.get("propertyType", "") or "",
+                "u": "{}.html#{}".format(class_name, self.KeyToSlug(prop["xmlKey"])),
+            })
+
+        methods = {}
+        for method in self.ad.GetMethods():
+            key = (method["itemClass"], method["itemName"])
+            methods.setdefault(key, []).append(method)
+
+        for (class_name, method_name), overloads in sorted(methods.items()):
+            first = overloads[0]
+            descriptions = []
+            extra = []
+            for overload in overloads:
+                desc = strip_markdown(overload.get("itemDescription", ""))
+                if desc and desc not in descriptions:
+                    descriptions.append(desc)
+                for param in overload.get("paramList", []):
+                    param_text = " ".join(filter(None, (
+                        param.get("itemName", ""),
+                        param.get("itemType", ""),
+                        strip_markdown(param.get("itemDescription", "")),
+                    )))
+                    if param_text and param_text not in extra:
+                        extra.append(param_text)
+                return_type = overload.get("returnType", "")
+                if return_type and return_type not in extra:
+                    extra.append(return_type)
+
+            entries.append({
+                "k": "method",
+                "n": "{}.{}".format(class_name, method_name),
+                "c": class_name,
+                "d": " ".join(descriptions),
+                "s": " | ".join(extra),
+                "u": "{}.html#{}".format(class_name, self.KeyToSlug(first["xmlKey"])),
+            })
+
+        entries.sort(key=lambda e: (e["c"].lower(), e["n"].lower()))
+
+        return {
+            "version": version,
+            "entries": entries,
+        }
+
     def WriteToFile(self, path, content):
-        fullpath = self.doc_path + path
+        fullpath = os.path.join(self.doc_path, path)
         print("Wiki: " + fullpath)
         dirpath = os.path.dirname(fullpath)
         if not os.path.exists(dirpath):
@@ -861,6 +964,12 @@ class WikiAutoDocHTML:
             index = self.RightIndexHTML(class_name)
             page_html = WikiHTML.Page(sidebar, content, "{} - NeoUO API".format(class_name), right_index=index)
             self.WriteToFile("{}.html".format(class_name), page_html)
+
+        search_index = self.SearchIndex()
+        self.WriteToFile(
+            "search-index.json",
+            json.dumps(search_index, ensure_ascii=False, separators=(",", ":")),
+        )
 
 
 class AutoDoc:

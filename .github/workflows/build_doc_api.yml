@@ -8,6 +8,9 @@ on:
     paths:
       - 'update-feed-alpha-net472.json'
       - 'AutoComplete.json'
+      - 'doc/autodoc.py'
+      - 'doc/wiki/search.js'
+      - 'doc/wiki/wiki.css'
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
