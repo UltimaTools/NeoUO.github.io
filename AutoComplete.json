@@ -462,6 +462,46 @@
       "flagAutocomplete": false
     },
     {
+      "propertyType": "Point2D",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.Misc.MapInfo.Location",
+      "itemKind": "property",
+      "itemClass": "Misc.MapInfo",
+      "itemName": "Location",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "String",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.Misc.MapInfo.Zone",
+      "itemKind": "property",
+      "itemClass": "Misc.MapInfo",
+      "itemName": "Zone",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "String",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.Misc.MapInfo.Area",
+      "itemKind": "property",
+      "itemClass": "Misc.MapInfo",
+      "itemName": "Area",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "String",
+      "isStatic": false,
+      "xmlKey": "F:Scripting.Misc.MapInfo.SubArea",
+      "itemKind": "property",
+      "itemClass": "Misc.MapInfo",
+      "itemName": "SubArea",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
       "propertyType": "Int32",
       "isStatic": false,
       "xmlKey": "P:Scripting.Item.Serial",
