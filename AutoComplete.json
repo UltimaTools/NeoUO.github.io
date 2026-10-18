@@ -672,6 +672,16 @@
       "flagAutocomplete": false
     },
     {
+      "propertyType": "Int32",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Item.Points",
+      "itemKind": "property",
+      "itemClass": "Item",
+      "itemName": "Points",
+      "itemDescription": "Point value calculated from Config/points.json. 0 for non-weapons.",
+      "flagAutocomplete": false
+    },
+    {
       "propertyType": "List[Item]",
       "isStatic": false,
       "xmlKey": "P:Scripting.Item.Contains",
