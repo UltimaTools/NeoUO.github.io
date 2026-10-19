@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>PacketLogger.FieldType - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.236</a></div><div class="wiki-search" data-version="0.0.236"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>PacketLogger.FieldType - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.237</a></div><div class="wiki-search" data-version="0.0.237"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -90,7 +90,20 @@ Example:
 <h3 class="wiki-entry-name">FIELDSFOR</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>PacketLogger.FieldType.FIELDSFOR</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">A special field which has subfields, useful for displaying stucts. 
+'fields' is mandatory, 'type' must be set to 'for'.
+'length' &gt; 0: subfields are collected in sequence, a fixed number of times. 
+'length' &lt;= 0: subfields are collected in sequence, until the end of the packet.
 
+Example:
+{'name':'House tiles', 'type':'for',
+  'fields':[
+         {'name':'X', 'type':'uint', 'length': 2}
+         {'name':'Y', 'type':'uint', 'length': 2}
+         {'name':'Z', 'type':'uint', 'length': 1}
+         {'name':'staticID', 'type':'modelID'}
+   ]
+}</p>
 </div>
 <div class="wiki-entry" id="F-Scripting-PacketLogger-FieldType-HEX">
 <h3 class="wiki-entry-name">HEX</h3>
