@@ -3238,7 +3238,7 @@
       "itemKind": "property",
       "itemClass": "PacketLogger.FieldType",
       "itemName": "FIELDSFOR",
-      "itemDescription": "",
+      "itemDescription": "A special field which has subfields, useful for displaying stucts. \n'fields' is mandatory, 'type' must be set to 'for'.\n'length' &gt; 0: subfields are collected in sequence, a fixed number of times. \n'length' &lt;= 0: subfields are collected in sequence, until the end of the packet.\n\nExample:\n{'name':'House tiles', 'type':'for',\n  'fields':[\n         {'name':'X', 'type':'uint', 'length': 2}\n         {'name':'Y', 'type':'uint', 'length': 2}\n         {'name':'Z', 'type':'uint', 'length': 1}\n         {'name':'staticID', 'type':'modelID'}\n   ]\n}",
       "flagAutocomplete": false
     },
     {
@@ -4444,14 +4444,14 @@
     },
     {
       "returnType": "List[String]",
-      "returnDesc": "",
+      "returnDesc": "List&lt;string&gt; containing all the shared value keys",
       "paramList": [],
       "isStatic": true,
       "xmlKey": "M:Scripting.Misc.AllSharedValue",
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "AllSharedValue",
-      "itemDescription": "",
+      "itemDescription": "List all Shared Value Keys\nShared values are accessible by every script.",
       "flagAutocomplete": false
     },
     {
@@ -5245,7 +5245,7 @@
           "itemType": "Int32",
           "itemHasDefault": true,
           "itemDefaultValue": "100",
-          "itemDescription": "",
+          "itemDescription": "Maximum subcontainer depth to search.",
           "itemAcceptedTypes": []
         }
       ],
@@ -5274,7 +5274,7 @@
           "itemType": "Int32",
           "itemHasDefault": true,
           "itemDefaultValue": "100",
-          "itemDescription": "",
+          "itemDescription": "Maximum subcontainer depth to search.",
           "itemAcceptedTypes": []
         }
       ],
@@ -6699,15 +6699,18 @@
           "itemType": "Object",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
+          "itemDescription": "Serial or Item to open.",
+          "itemAcceptedTypes": [
+            "Item",
+            "int"
+          ]
         },
         {
           "itemName": "x",
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "",
+          "itemDescription": "x location to open at",
           "itemAcceptedTypes": []
         },
         {
@@ -6715,7 +6718,7 @@
           "itemType": "Int32",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "",
+          "itemDescription": "y location to open at",
           "itemAcceptedTypes": []
         }
       ],
@@ -6724,7 +6727,7 @@
       "itemKind": "method",
       "itemClass": "Items",
       "itemName": "OpenAt",
-      "itemDescription": "",
+      "itemDescription": "Open a container at a specific location",
       "flagAutocomplete": false
     },
     {
@@ -8620,14 +8623,14 @@
     },
     {
       "returnType": "Int32",
-      "returnDesc": "",
+      "returnDesc": "Duration",
       "paramList": [
         {
           "itemName": "buffname",
           "itemType": "String",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "",
+          "itemDescription": "Name of the buff.",
           "itemAcceptedTypes": []
         }
       ],
@@ -8636,7 +8639,7 @@
       "itemKind": "method",
       "itemClass": "Player",
       "itemName": "BuffTime",
-      "itemDescription": "",
+      "itemDescription": "Get durations from buff actived by buff name.",
       "flagAutocomplete": false
     },
     {
@@ -9560,7 +9563,7 @@
           "itemType": "Object",
           "itemHasDefault": true,
           "itemDefaultValue": null,
-          "itemDescription": "",
+          "itemDescription": "Optional: Target serial or object.",
           "itemAcceptedTypes": []
         },
         {
@@ -12465,7 +12468,7 @@
           "itemType": "Boolean",
           "itemHasDefault": true,
           "itemDefaultValue": "False",
-          "itemDescription": "",
+          "itemDescription": "True: return only the data lines.",
           "itemAcceptedTypes": []
         }
       ],
@@ -15606,7 +15609,7 @@
           "itemType": "Boolean",
           "itemHasDefault": true,
           "itemDefaultValue": "True",
-          "itemDescription": "",
+          "itemDescription": "True: include active packet paths.",
           "itemAcceptedTypes": []
         }
       ],
@@ -15726,7 +15729,7 @@
           "itemType": "Boolean",
           "itemHasDefault": true,
           "itemDefaultValue": "False",
-          "itemDescription": "",
+          "itemDescription": "True: include items with amount -1.",
           "itemAcceptedTypes": []
         }
       ],
@@ -16993,14 +16996,14 @@
     },
     {
       "returnType": "Boolean",
-      "returnDesc": "",
+      "returnDesc": "True: if; BuyAgent is active - False: otherwise",
       "paramList": [],
       "isStatic": true,
       "xmlKey": "M:Scripting.BuyAgent.Status",
       "itemKind": "method",
       "itemClass": "BuyAgent",
       "itemName": "Status",
-      "itemDescription": "",
+      "itemDescription": "Check BuyAgent Agent status",
       "flagAutocomplete": false
     },
     {
@@ -17891,14 +17894,14 @@
     },
     {
       "returnType": "Void",
-      "returnDesc": "",
+      "returnDesc": "nothing",
       "paramList": [
         {
           "itemName": "newList",
           "itemType": "String",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "",
+          "itemDescription": "name of the new friend list to create",
           "itemAcceptedTypes": []
         }
       ],
@@ -17907,19 +17910,19 @@
       "itemKind": "method",
       "itemClass": "Friend",
       "itemName": "AddList",
-      "itemDescription": "",
+      "itemDescription": "Create a new Friend List",
       "flagAutocomplete": false
     },
     {
       "returnType": "Void",
-      "returnDesc": "",
+      "returnDesc": "nothing",
       "paramList": [
         {
           "itemName": "list",
           "itemType": "String",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "",
+          "itemDescription": "name of the friend list to remove",
           "itemAcceptedTypes": []
         }
       ],
@@ -17928,7 +17931,7 @@
       "itemKind": "method",
       "itemClass": "Friend",
       "itemName": "RemoveList",
-      "itemDescription": "",
+      "itemDescription": "Removes a Friend List",
       "flagAutocomplete": false
     },
     {
