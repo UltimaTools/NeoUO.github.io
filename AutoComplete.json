@@ -794,6 +794,26 @@
     {
       "propertyType": "Boolean",
       "isStatic": false,
+      "xmlKey": "P:Scripting.Item.IsDoorClosed",
+      "itemKind": "property",
+      "itemClass": "Item",
+      "itemName": "IsDoorClosed",
+      "itemDescription": "True: if the item is a door currently in its closed position - False: otherwise.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Item.IsDoorOpen",
+      "itemKind": "property",
+      "itemClass": "Item",
+      "itemName": "IsDoorOpen",
+      "itemDescription": "True: if the item is a door currently in its open position - False: otherwise.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": false,
       "xmlKey": "P:Scripting.Item.IsLootable",
       "itemKind": "property",
       "itemClass": "Item",
@@ -14684,6 +14704,27 @@
       "itemClass": "CUO",
       "itemName": "SetAutoOpenDoors",
       "itemDescription": "Push the \"auto open doors\" and \"open doors while pathfinding\" settings\nto the ClassicUO profile. Fail-safe — no-ops if reflection is disabled\nor the properties don't exist (standard CUO lacks TazUO sub-options).",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "enabled",
+          "itemType": "Boolean",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.CUO.SetAutoCloseDoors(System.Boolean)",
+      "itemKind": "method",
+      "itemClass": "CUO",
+      "itemName": "SetAutoCloseDoors",
+      "itemDescription": "Push the \"auto close doors\" setting to the ClassicUO/TazUO global settings.\nThe host client then closes a door it is about to step into (on a direction\nchange, or a door flanking a diagonal step) before its own movement\nvalidation rejects the walk. Fail-safe — no-ops on standard CUO.",
       "flagAutocomplete": false
     },
     {
