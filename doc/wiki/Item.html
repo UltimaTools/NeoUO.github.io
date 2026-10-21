@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Item - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.239</a></div><div class="wiki-search" data-version="0.0.239"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Item - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.240</a></div><div class="wiki-search" data-version="0.0.240"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -172,6 +172,18 @@ For non-corpses, returns the item's TypeID.</p>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsDoor</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 <p class="wiki-desc">True: if the item is a door - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsDoorClosed">
+<h3 class="wiki-entry-name">IsDoorClosed</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsDoorClosed</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a door currently in its closed position - False: otherwise.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-IsDoorOpen">
+<h3 class="wiki-entry-name">IsDoorOpen</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.IsDoorOpen</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True: if the item is a door currently in its open position - False: otherwise.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Item-IsInBank">
 <h3 class="wiki-entry-name">IsInBank</h3>
@@ -391,6 +403,8 @@ For non-corpses, returns the item's TypeID.</p>
 <li><a href="#P-Scripting-Item-IsContainer">IsContainer</a></li>
 <li><a href="#P-Scripting-Item-IsCorpse">IsCorpse</a></li>
 <li><a href="#P-Scripting-Item-IsDoor">IsDoor</a></li>
+<li><a href="#P-Scripting-Item-IsDoorClosed">IsDoorClosed</a></li>
+<li><a href="#P-Scripting-Item-IsDoorOpen">IsDoorOpen</a></li>
 <li><a href="#P-Scripting-Item-IsInBank">IsInBank</a></li>
 <li><a href="#P-Scripting-Item-IsLootable">IsLootable</a></li>
 <li><a href="#P-Scripting-Item-IsPotion">IsPotion</a></li>

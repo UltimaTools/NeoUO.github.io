@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.239</a></div><div class="wiki-search" data-version="0.0.239"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>CUO - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.240</a></div><div class="wiki-search" data-version="0.0.240"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -269,6 +269,16 @@ Set a string property on the current CUO profile by name.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-CUO-SetAutoCloseDoors">
+<h3 class="wiki-entry-name">SetAutoCloseDoors</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.SetAutoCloseDoors(enabled)</code></div>
+<p class="wiki-desc">Push the "auto close doors" setting to the ClassicUO/TazUO global settings.
+The host client then closes a door it is about to step into (on a direction
+change, or a door flanking a diagonal step) before its own movement
+validation rejects the walk. Fail-safe — no-ops on standard CUO.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">enabled</code> <span class="wiki-param-type">(Boolean)</span></li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-CUO-SetAutoOpenDoors">
 <h3 class="wiki-entry-name">SetAutoOpenDoors</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>CUO.SetAutoOpenDoors(enabled)</code></div>
@@ -319,6 +329,7 @@ Returns null if the gump isn't open or on OSI client.</p>
 <li><a href="#M-Scripting-CUO-ProfilePropertySet">ProfilePropertySet</a></li>
 <li><a href="#M-Scripting-CUO-RemoveMarkedTile">RemoveMarkedTile</a></li>
 <li><a href="#M-Scripting-CUO-ServerName">ServerName</a></li>
+<li><a href="#M-Scripting-CUO-SetAutoCloseDoors">SetAutoCloseDoors</a></li>
 <li><a href="#M-Scripting-CUO-SetAutoOpenDoors">SetAutoOpenDoors</a></li>
 <li><a href="#M-Scripting-CUO-SetGumpOpenLocation">SetGumpOpenLocation</a></li>
 <li><a href="#M-Scripting-CUO-TryGetGumpLocation">TryGetGumpLocation</a></li></ul></aside></div></body></html>
