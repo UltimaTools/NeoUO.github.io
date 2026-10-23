@@ -2552,6 +2552,76 @@
       "flagAutocomplete": false
     },
     {
+      "propertyType": "Double",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.StepsPerSecond",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "StepsPerSecond",
+      "itemDescription": "Confirmed movement steps in the last second.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Double",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.RunStepRatio",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "RunStepRatio",
+      "itemDescription": "Fraction of the last second's confirmed steps that used the run flag, from 0.0 to 1.0.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.LastStepWasRun",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "LastStepWasRun",
+      "itemDescription": "True if the most recent confirmed step used the run flag.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Double",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.MillisecondsSinceLastMove",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "MillisecondsSinceLastMove",
+      "itemDescription": "Milliseconds since the last step was sent or confirmed, or -1 if none has been recorded.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "DateTime",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.LastMoveTime",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "LastMoveTime",
+      "itemDescription": "UTC time of the most recent step, or DateTime.MinValue if none has been recorded.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "String",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.LastMoveDirection",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "LastMoveDirection",
+      "itemDescription": "Direction of the most recent confirmed step: North, South, East, West, Right, Left, Down, Up, or Undefined.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Double",
+      "isStatic": true,
+      "xmlKey": "P:Scripting.Player.RunSpeedThreshold",
+      "itemKind": "property",
+      "itemClass": "Player",
+      "itemName": "RunSpeedThreshold",
+      "itemDescription": "Steps per second at or above which IsRunning returns true. Defaults to 7.0.\nAdjust for shards whose walk/run speeds differ from 5/10 tiles per second.",
+      "flagAutocomplete": false
+    },
+    {
       "propertyType": "List[BuffInfo]",
       "isStatic": true,
       "xmlKey": "P:Scripting.Player.BuffsInfo",
@@ -7401,6 +7471,261 @@
       "returnDesc": "",
       "paramList": [
         {
+          "itemName": "msg",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.MapSay(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "MapSay",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "color",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Color of the text",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Message to send.",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatSay(System.Int32,System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatSay",
+      "itemDescription": "Send message in game.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "color",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "msg",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatSay(System.Int32,System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatSay",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Message to send.",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatSay(System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatSay",
+      "itemDescription": "Send message in game using 1153 for color.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Message to send.",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatGuild(System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatGuild",
+      "itemDescription": "Send message to the guild chat.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatGuild(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatGuild",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Message to send.",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatAlliance(System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatAlliance",
+      "itemDescription": "Send message to the alliace chat.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatAlliance(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatAlliance",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "color",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Color of the text",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Message to send.",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatEmote(System.Int32,System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatEmote",
+      "itemDescription": "Send an emote in game.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "msg",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.ChatEmote(System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "ChatEmote",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "action",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.EmoteAction(System.String)",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "EmoteAction",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
           "itemName": "color",
           "itemType": "Int32",
           "itemHasDefault": false,
@@ -8517,6 +8842,42 @@
       "flagAutocomplete": false
     },
     {
+      "returnType": "Boolean",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.IsMoving",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "IsMoving",
+      "itemDescription": "True if the player has taken a step within the last 600 milliseconds.\nTurning in place and server-rejected steps do not count.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.IsRunning",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "IsRunning",
+      "itemDescription": "True if the player is moving and has averaged at least RunSpeedThreshold steps per second over the last second.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Player.IsWalking",
+      "itemKind": "method",
+      "itemClass": "Player",
+      "itemName": "IsWalking",
+      "itemDescription": "True if the player is moving but not running.",
+      "flagAutocomplete": false
+    },
+    {
       "returnType": "Int32",
       "returnDesc": "Distance in number of tiles. (-1 if not found)",
       "paramList": [
@@ -9140,261 +9501,6 @@
       "itemClass": "Player",
       "itemName": "MapSay",
       "itemDescription": "Send message in the Map chat.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.MapSay(System.Int32)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "MapSay",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "color",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Color of the text",
-          "itemAcceptedTypes": []
-        },
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Message to send.",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatSay(System.Int32,System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatSay",
-      "itemDescription": "Send message in game.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "color",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        },
-        {
-          "itemName": "msg",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatSay(System.Int32,System.Int32)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatSay",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Message to send.",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatSay(System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatSay",
-      "itemDescription": "Send message in game using 1153 for color.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Message to send.",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatGuild(System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatGuild",
-      "itemDescription": "Send message to the guild chat.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatGuild(System.Int32)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatGuild",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Message to send.",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatAlliance(System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatAlliance",
-      "itemDescription": "Send message to the alliace chat.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatAlliance(System.Int32)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatAlliance",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "color",
-          "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Color of the text",
-          "itemAcceptedTypes": []
-        },
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Message to send.",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatEmote(System.Int32,System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatEmote",
-      "itemDescription": "Send an emote in game.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "msg",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.ChatEmote(System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "ChatEmote",
-      "itemDescription": "",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Void",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "action",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.Player.EmoteAction(System.String)",
-      "itemKind": "method",
-      "itemClass": "Player",
-      "itemName": "EmoteAction",
-      "itemDescription": "",
       "flagAutocomplete": false
     },
     {
