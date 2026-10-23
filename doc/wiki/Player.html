@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.243</a></div><div class="wiki-search" data-version="0.0.243"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Player - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.244</a></div><div class="wiki-search" data-version="0.0.244"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -410,6 +410,24 @@ range. Combats end about 5 seconds after the last combat event.</p>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
 <p class="wiki-desc">This is the title string returned from the server</p>
 </div>
+<div class="wiki-entry" id="P-Scripting-Player-LastMoveDirection">
+<h3 class="wiki-entry-name">LastMoveDirection</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LastMoveDirection</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Direction of the most recent confirmed step: North, South, East, West, Right, Left, Down, Up, or Undefined.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-LastMoveTime">
+<h3 class="wiki-entry-name">LastMoveTime</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LastMoveTime</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>DateTime</code></div>
+<p class="wiki-desc">UTC time of the most recent step, or DateTime.MinValue if none has been recorded.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-LastStepWasRun">
+<h3 class="wiki-entry-name">LastStepWasRun</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LastStepWasRun</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True if the most recent confirmed step used the run flag.</p>
+</div>
 <div class="wiki-entry" id="P-Scripting-Player-LowerManaCost">
 <h3 class="wiki-entry-name">LowerManaCost</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.LowerManaCost</code></div>
@@ -475,6 +493,12 @@ range. Combats end about 5 seconds after the last combat event.</p>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MaximumStaminaIncrease</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">Get total Maximum Stamina Increase.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-MillisecondsSinceLastMove">
+<h3 class="wiki-entry-name">MillisecondsSinceLastMove</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MillisecondsSinceLastMove</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Milliseconds since the last step was sent or confirmed, or -1 if none has been recorded.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Player-MobileID">
 <h3 class="wiki-entry-name">MobileID</h3>
@@ -557,6 +581,19 @@ This isn't the server information on your pets, but its good enough for most cas
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">Get total Reflect Physical Damage.</p>
 </div>
+<div class="wiki-entry" id="P-Scripting-Player-RunSpeedThreshold">
+<h3 class="wiki-entry-name">RunSpeedThreshold</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.RunSpeedThreshold</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Steps per second at or above which IsRunning returns true. Defaults to 7.0.
+Adjust for shards whose walk/run speeds differ from 5/10 tiles per second.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-RunStepRatio">
+<h3 class="wiki-entry-name">RunStepRatio</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.RunStepRatio</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Fraction of the last second's confirmed steps that used the run flag, from 0.0 to 1.0.</p>
+</div>
 <div class="wiki-entry" id="P-Scripting-Player-SecondarySpecial">
 <h3 class="wiki-entry-name">SecondarySpecial</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.SecondarySpecial</code></div>
@@ -610,6 +647,12 @@ This isn't the server information on your pets, but its good enough for most cas
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StaticMount</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Int32</code></div>
 <p class="wiki-desc">Retrieves serial of mount set in Filter/Mount GUI.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Player-StepsPerSecond">
+<h3 class="wiki-entry-name">StepsPerSecond</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.StepsPerSecond</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+<p class="wiki-desc">Confirmed movement steps in the last second.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Player-Str">
 <h3 class="wiki-entry-name">Str</h3>
@@ -720,8 +763,8 @@ Regions are defined inside by Persistence/regions.json.</p>
 <h3 class="wiki-entry-name">ChatEmote</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.ChatEmote(color, msg)</code></div>
 <p class="wiki-desc">Send an emote in game.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span></li>
-<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">color</code> <span class="wiki-param-type">(Int32)</span>: Color of the text</li>
+<li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-ChatGuild">
@@ -1215,6 +1258,28 @@ Justice
 Spirituality</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-Player-IsMoving">
+<h3 class="wiki-entry-name">IsMoving</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.IsMoving()</code></div>
+<p class="wiki-desc">True if the player has taken a step within the last 600 milliseconds.
+Turning in place and server-rejected steps do not count.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-IsRunning">
+<h3 class="wiki-entry-name">IsRunning</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.IsRunning()</code></div>
+<p class="wiki-desc">True if the player is moving and has averaged at least RunSpeedThreshold steps per second over the last second.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Player-IsWalking">
+<h3 class="wiki-entry-name">IsWalking</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.IsWalking()</code></div>
+<p class="wiki-desc">True if the player is moving but not running.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-Player-KickMember">
 <h3 class="wiki-entry-name">KickMember</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.KickMember(serial)</code></div>
@@ -1233,7 +1298,7 @@ Spirituality</li></ul></div></div>
 <h3 class="wiki-entry-name">MapSay</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Player.MapSay(msg)</code></div>
 <p class="wiki-desc">Send message in the Map chat.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(String)</span>: Message to send</li></ul></div></div>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">msg</code> <span class="wiki-param-type">(Int32)</span></li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Player-OpenPaperDoll">
@@ -1680,9 +1745,15 @@ Regions are defined inside by Persistence/regions.json.</p>
 <li><a href="#P-Scripting-Player-IntelligenceIncrease">IntelligenceIncrease</a></li>
 <li><a href="#M-Scripting-Player-InvokeVirtue">InvokeVirtue</a></li>
 <li><a href="#P-Scripting-Player-IsGhost">IsGhost</a></li>
+<li><a href="#M-Scripting-Player-IsMoving">IsMoving</a></li>
+<li><a href="#M-Scripting-Player-IsRunning">IsRunning</a></li>
+<li><a href="#M-Scripting-Player-IsWalking">IsWalking</a></li>
 <li><a href="#P-Scripting-Player-Karma">Karma</a></li>
 <li><a href="#P-Scripting-Player-KarmaTitle">KarmaTitle</a></li>
 <li><a href="#M-Scripting-Player-KickMember">KickMember</a></li>
+<li><a href="#P-Scripting-Player-LastMoveDirection">LastMoveDirection</a></li>
+<li><a href="#P-Scripting-Player-LastMoveTime">LastMoveTime</a></li>
+<li><a href="#P-Scripting-Player-LastStepWasRun">LastStepWasRun</a></li>
 <li><a href="#M-Scripting-Player-LeaveParty">LeaveParty</a></li>
 <li><a href="#P-Scripting-Player-LowerManaCost">LowerManaCost</a></li>
 <li><a href="#P-Scripting-Player-LowerReagentCost">LowerReagentCost</a></li>
@@ -1696,6 +1767,7 @@ Regions are defined inside by Persistence/regions.json.</p>
 <li><a href="#P-Scripting-Player-MaximumHitPointsIncrease">MaximumHitPointsIncrease</a></li>
 <li><a href="#P-Scripting-Player-MaximumStaminaIncrease">MaximumStaminaIncrease</a></li>
 <li><a href="#P-Scripting-Player-MaxWeight">MaxWeight</a></li>
+<li><a href="#P-Scripting-Player-MillisecondsSinceLastMove">MillisecondsSinceLastMove</a></li>
 <li><a href="#P-Scripting-Player-MobileID">MobileID</a></li>
 <li><a href="#P-Scripting-Player-Mount">Mount</a></li>
 <li><a href="#P-Scripting-Player-Name">Name</a></li>
@@ -1715,6 +1787,8 @@ Regions are defined inside by Persistence/regions.json.</p>
 <li><a href="#P-Scripting-Player-Quiver">Quiver</a></li>
 <li><a href="#P-Scripting-Player-ReflectPhysicalDamage">ReflectPhysicalDamage</a></li>
 <li><a href="#M-Scripting-Player-Run">Run</a></li>
+<li><a href="#P-Scripting-Player-RunSpeedThreshold">RunSpeedThreshold</a></li>
+<li><a href="#P-Scripting-Player-RunStepRatio">RunStepRatio</a></li>
 <li><a href="#P-Scripting-Player-SecondarySpecial">SecondarySpecial</a></li>
 <li><a href="#P-Scripting-Player-Serial">Serial</a></li>
 <li><a href="#M-Scripting-Player-SetSkillStatus">SetSkillStatus</a></li>
@@ -1730,6 +1804,7 @@ Regions are defined inside by Persistence/regions.json.</p>
 <li><a href="#P-Scripting-Player-StamMax">StamMax</a></li>
 <li><a href="#P-Scripting-Player-StatCap">StatCap</a></li>
 <li><a href="#P-Scripting-Player-StaticMount">StaticMount</a></li>
+<li><a href="#P-Scripting-Player-StepsPerSecond">StepsPerSecond</a></li>
 <li><a href="#P-Scripting-Player-Str">Str</a></li>
 <li><a href="#P-Scripting-Player-StrengthIncrease">StrengthIncrease</a></li>
 <li><a href="#M-Scripting-Player-SubArea">SubArea</a></li>
