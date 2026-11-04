@@ -5580,6 +5580,50 @@
     },
     {
       "returnType": "Boolean",
+      "returnDesc": "True if the item type has the stackable (Generic) tile flag.",
+      "paramList": [
+        {
+          "itemName": "itemID",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "ItemID (graphics) to check.",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Items.IsStackable(System.Int32)",
+      "itemKind": "method",
+      "itemClass": "Items",
+      "itemName": "IsStackable",
+      "itemDescription": "Check whether an item type is stackable, based on its tile data.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
+      "returnDesc": "True if the item type has the stackable (Generic) tile flag.",
+      "paramList": [
+        {
+          "itemName": "item",
+          "itemType": "Item",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "Item to check.",
+          "itemAcceptedTypes": [
+            "Item"
+          ]
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Items.IsStackable(Scripting.Item)",
+      "itemKind": "method",
+      "itemClass": "Items",
+      "itemName": "IsStackable",
+      "itemDescription": "Check whether an item is stackable, based on its tile data.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Boolean",
       "returnDesc": "",
       "paramList": [
         {

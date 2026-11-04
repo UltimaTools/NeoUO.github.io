@@ -1,7 +1,7 @@
 {
-  "version": "0.0.249",
-  "tag": "v0.0.249-alpha-net10-linux",
+  "version": "0.0.250",
+  "tag": "v0.0.250-alpha-net10-linux",
   "baseUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/",
-  "publishedAt": "2026-11-02T07:39:43Z",
-  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.249-alpha.tar.gz"
+  "publishedAt": "2026-11-04T14:05:55Z",
+  "downloadUrl": "https://releases.neouo.net/alpha/neouo-net10-linux/neouo-net10-linux-0.0.250-alpha.tar.gz"
 }
