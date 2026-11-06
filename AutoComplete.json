@@ -265,7 +265,7 @@
       "itemKind": "class",
       "itemClass": "BuyAgent",
       "itemName": "BuyAgent",
-      "itemDescription": "The Buy Agent buys configured items from NPC vendors, matching by name (or a compare-name).\n            \nProvides the agent lifecycle and list management: `Enable`/`Disable`/`Status`, `ChangeList`, list CRUD.",
+      "itemDescription": "The Buy Agent buys configured items from NPC vendors, matching by name pattern.\n            \nProvides the agent lifecycle and list management: `Enable`/`Disable`/`Status`, `ChangeList`, list CRUD.",
       "flagAutocomplete": false
     },
     {
@@ -619,6 +619,16 @@
       "itemClass": "Item",
       "itemName": "Name",
       "itemDescription": "Item name",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Item.HasName",
+      "itemKind": "property",
+      "itemClass": "Item",
+      "itemName": "HasName",
+      "itemDescription": "True when a real name is known. When false, <see cref=\"P:Scripting.Item.Name\" /> is\njust the numeric item ID and must not be used for name matching.",
       "flagAutocomplete": false
     },
     {
@@ -6774,6 +6784,59 @@
       "itemClass": "Items",
       "itemName": "ContainerCount",
       "itemDescription": "Count items inside a container, summing also the amount in stacks.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Int32",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "container",
+          "itemType": "Object",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "itemid",
+          "itemType": "Int32",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "namePattern",
+          "itemType": "String",
+          "itemHasDefault": false,
+          "itemDefaultValue": "",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "color",
+          "itemType": "Int32",
+          "itemHasDefault": true,
+          "itemDefaultValue": "-1",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "recursive",
+          "itemType": "Boolean",
+          "itemHasDefault": true,
+          "itemDefaultValue": "False",
+          "itemDescription": "",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Items.ContainerCount(System.Object,System.Int32,System.String,System.Int32,System.Boolean)",
+      "itemKind": "method",
+      "itemClass": "Items",
+      "itemName": "ContainerCount",
+      "itemDescription": "Count items inside a container using the same match rules as the\nitem agents: ItemID -1/0xFFFF means any graphic (only valid with a\nname pattern), the name pattern follows <see cref=\"T:Scripting.NamePattern\" />,\nand color -1 means any hue.",
       "flagAutocomplete": false
     },
     {
@@ -17017,27 +17080,6 @@
       "itemClass": "BuyAgent",
       "itemName": "ItemsRead",
       "itemDescription": "Read items from a BuyAgent list.",
-      "flagAutocomplete": false
-    },
-    {
-      "returnType": "Boolean",
-      "returnDesc": "",
-      "paramList": [
-        {
-          "itemName": "listName",
-          "itemType": "String",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "",
-          "itemAcceptedTypes": []
-        }
-      ],
-      "isStatic": true,
-      "xmlKey": "M:Scripting.BuyAgent.CompareNameRead(System.String)",
-      "itemKind": "method",
-      "itemClass": "BuyAgent",
-      "itemName": "CompareNameRead",
-      "itemDescription": "Read; compare name setting for; a specific BuyAgent list.",
       "flagAutocomplete": false
     },
     {
