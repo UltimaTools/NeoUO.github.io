@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Item - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.251</a></div><div class="wiki-search" data-version="0.0.251"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Item - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.252</a></div><div class="wiki-search" data-version="0.0.252"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -136,6 +136,13 @@ For non-corpses, returns the item's TypeID.</p>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.GridNum</code></div>
 <div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Byte</code></div>
 <p class="wiki-desc">Returns the GridNum of the item. (need better documentation)</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Item-HasName">
+<h3 class="wiki-entry-name">HasName</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Item.HasName</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True when a real name is known. When false, <see cref="P:Scripting.Item.Name" /> is
+just the numeric item ID and must not be used for name matching.</p>
 </div>
 <div class="wiki-entry" id="P-Scripting-Item-Hue">
 <h3 class="wiki-entry-name">Hue</h3>
@@ -396,6 +403,7 @@ For non-corpses, returns the item's TypeID.</p>
 <li><a href="#M-Scripting-Item-GetWorldPosition">GetWorldPosition</a></li>
 <li><a href="#P-Scripting-Item-Graphics">Graphics</a></li>
 <li><a href="#P-Scripting-Item-GridNum">GridNum</a></li>
+<li><a href="#P-Scripting-Item-HasName">HasName</a></li>
 <li><a href="#P-Scripting-Item-Hue">Hue</a></li>
 <li><a href="#P-Scripting-Item-Image">Image</a></li>
 <li><a href="#P-Scripting-Item-IsBagOfSending">IsBagOfSending</a></li>
