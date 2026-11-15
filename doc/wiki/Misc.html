@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.256</a></div><div class="wiki-search" data-version="0.0.256"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.258</a></div><div class="wiki-search" data-version="0.0.258"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -50,7 +50,7 @@
 <ul>
 <li>Entity checks and distance: <code>IsItem</code>, <code>IsMobile</code>, <code>Distance</code>, <code>DistanceSqrt</code></li>
 <li>Context menus and prompts: <code>WaitForContext</code>, <code>UseContextMenu</code>, <code>ContextReply</code>, prompt helpers</li>
-<li>Client interaction: <code>SendToClient</code>, <code>SendMessage</code>, <code>PlaySound</code>, <code>Beep</code>, <code>Disconnect</code>, <code>Resync</code>, mouse and window helpers</li>
+<li>Client interaction: <code>SendToClient</code>, <code>SendMessage</code>, <code>PlaySound</code>, <code>Beep</code>, <code>Disconnect</code>, <code>Exit</code>, <code>Resync</code>, mouse and window helpers</li>
 <li>File I/O inside the RE directory: <code>AppendToFile</code>, <code>DeleteFile</code>, <code>RemoveLineInFile</code></li>
 <li>Shared values and ignore list: <code>SetSharedValue</code>, <code>IgnoreObject</code> and friends</li>
 <li>Script control, profiles and more: <code>ScriptRun</code>, <code>ScriptStop</code>, <code>ChangeProfile</code>, <code>LastHotKey</code></li>
@@ -188,7 +188,8 @@ The filename MUST end in a limited file suffix list</p>
 <div class="wiki-entry" id="M-Scripting-Misc-Disconnect">
 <h3 class="wiki-entry-name">Disconnect</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Disconnect()</code></div>
-<p class="wiki-desc">Force client to disconnect.</p>
+<p class="wiki-desc">Disconnect from the server. Auto-login/reconnect settings may log you
+back in afterwards; use <see cref="M:Scripting.Misc.Exit" /> to stay logged out.</p>
 
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
@@ -209,6 +210,13 @@ The filename MUST end in a limited file suffix list</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">point_a</code> <span class="wiki-param-type">(Point3D)</span>: First coordinates.</li>
 <li><code class="wiki-param-name">point_b</code> <span class="wiki-param-type">(Point3D)</span>: Second coordinates.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Double</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Misc-Exit">
+<h3 class="wiki-entry-name">Exit</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.Exit()</code></div>
+<p class="wiki-desc">Log out and stay on the login screen, even when auto-login is enabled.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-ExportPythonAPI">
 <h3 class="wiki-entry-name">ExportPythonAPI</h3>
@@ -627,6 +635,7 @@ The function will ask the server for the List and wait for a maximum amount of t
 <li><a href="#M-Scripting-Misc-Disconnect">Disconnect</a></li>
 <li><a href="#M-Scripting-Misc-Distance">Distance</a></li>
 <li><a href="#M-Scripting-Misc-DistanceSqrt">DistanceSqrt</a></li>
+<li><a href="#M-Scripting-Misc-Exit">Exit</a></li>
 <li><a href="#M-Scripting-Misc-ExportPythonAPI">ExportPythonAPI</a></li>
 <li><a href="#M-Scripting-Misc-FilterSeason">FilterSeason</a></li>
 <li><a href="#M-Scripting-Misc-FocusUOWindow">FocusUOWindow</a></li>
