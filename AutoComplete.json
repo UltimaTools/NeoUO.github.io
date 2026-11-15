@@ -9,7 +9,7 @@
       "itemKind": "class",
       "itemClass": "Misc",
       "itemName": "Misc",
-      "itemDescription": "The Misc class contains general-purpose functions used throughout scripts.\n            \n- Entity checks and distance: `IsItem`, `IsMobile`, `Distance`, `DistanceSqrt`\n- Context menus and prompts: `WaitForContext`, `UseContextMenu`, `ContextReply`, prompt helpers\n- Client interaction: `SendToClient`, `SendMessage`, `PlaySound`, `Beep`, `Disconnect`, `Resync`, mouse and window helpers\n- File I/O inside the RE directory: `AppendToFile`, `DeleteFile`, `RemoveLineInFile`\n- Shared values and ignore list: `SetSharedValue`, `IgnoreObject` and friends\n- Script control, profiles and more: `ScriptRun`, `ScriptStop`, `ChangeProfile`, `LastHotKey`",
+      "itemDescription": "The Misc class contains general-purpose functions used throughout scripts.\n            \n- Entity checks and distance: `IsItem`, `IsMobile`, `Distance`, `DistanceSqrt`\n- Context menus and prompts: `WaitForContext`, `UseContextMenu`, `ContextReply`, prompt helpers\n- Client interaction: `SendToClient`, `SendMessage`, `PlaySound`, `Beep`, `Disconnect`, `Exit`, `Resync`, mouse and window helpers\n- File I/O inside the RE directory: `AppendToFile`, `DeleteFile`, `RemoveLineInFile`\n- Shared values and ignore list: `SetSharedValue`, `IgnoreObject` and friends\n- Script control, profiles and more: `ScriptRun`, `ScriptStop`, `ChangeProfile`, `LastHotKey`",
       "flagAutocomplete": false
     },
     {
@@ -4264,7 +4264,19 @@
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "Disconnect",
-      "itemDescription": "Force client to disconnect.",
+      "itemDescription": "Disconnect from the server. Auto-login/reconnect settings may log you\nback in afterwards; use <see cref=\"M:Scripting.Misc.Exit\" /> to stay logged out.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": true,
+      "xmlKey": "M:Scripting.Misc.Exit",
+      "itemKind": "method",
+      "itemClass": "Misc",
+      "itemName": "Exit",
+      "itemDescription": "Log out and stay on the login screen, even when auto-login is enabled.",
       "flagAutocomplete": false
     },
     {
