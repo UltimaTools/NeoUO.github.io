@@ -17,7 +17,7 @@
       "itemKind": "class",
       "itemClass": "Misc.Context",
       "itemName": "Misc.Context",
-      "itemDescription": "Holds a single entry of a context menu. Returned by `Misc.WaitForContext` and used with `Misc.UseContextMenu` and `Misc.ContextReply`.",
+      "itemDescription": "Holds a single entry of a context menu. Returned by `Misc.WaitForContext`; pass its `Entry` text or `Response` id to `Misc.UseContextMenu`.",
       "flagAutocomplete": false
     },
     {
@@ -408,6 +408,16 @@
       "itemKind": "property",
       "itemClass": "Misc.Context",
       "itemName": "Entry",
+      "itemDescription": "",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "Boolean",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Misc.Context.Enabled",
+      "itemKind": "property",
+      "itemClass": "Misc.Context",
+      "itemName": "Enabled",
       "itemDescription": "",
       "flagAutocomplete": false
     },
@@ -4281,39 +4291,54 @@
     },
     {
       "returnType": "Boolean",
-      "returnDesc": "True: Optional selected successfully - False: otherwise.",
+      "returnDesc": "True: option found and replied - False: otherwise.",
       "paramList": [
         {
           "itemName": "serial",
-          "itemType": "Int32",
+          "itemType": "Object",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "Serial of the Item or Mobile.",
-          "itemAcceptedTypes": []
+          "itemDescription": "Serial or Item/Mobile entity.",
+          "itemAcceptedTypes": [
+            "Item",
+            "Mobile",
+            "int"
+          ]
         },
         {
           "itemName": "choice",
-          "itemType": "String",
+          "itemType": "Object",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "Option as Text or integer.",
-          "itemAcceptedTypes": []
+          "itemDescription": "Entry text or response id.",
+          "itemAcceptedTypes": [
+            "string",
+            "int"
+          ]
         },
         {
           "itemName": "delay",
           "itemType": "Int32",
-          "itemHasDefault": false,
-          "itemDefaultValue": "",
-          "itemDescription": "Maximum wait for the action to complete.",
+          "itemHasDefault": true,
+          "itemDefaultValue": "1000",
+          "itemDescription": "Maximum wait for the menu to arrive. (default: 1000)",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "showContext",
+          "itemType": "Boolean",
+          "itemHasDefault": true,
+          "itemDefaultValue": "False",
+          "itemDescription": "Show the context menu in-game while waiting. (default: False)",
           "itemAcceptedTypes": []
         }
       ],
       "isStatic": true,
-      "xmlKey": "M:Scripting.Misc.UseContextMenu(System.Int32,System.String,System.Int32)",
+      "xmlKey": "M:Scripting.Misc.UseContextMenu(System.Object,System.Object,System.Int32,System.Boolean)",
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "UseContextMenu",
-      "itemDescription": "Open and click the option of Context menu, given the serial of Mobile or Item, via packets.",
+      "itemDescription": "Open and click the option of a Context menu, given the serial of a Mobile or Item, via packets.\nWaits up to `delay` ms for the menu, then replies with the matching entry.",
       "flagAutocomplete": false
     },
     {
@@ -4420,7 +4445,7 @@
       "itemKind": "method",
       "itemClass": "Misc",
       "itemName": "ContextReply",
-      "itemDescription": "",
+      "itemDescription": "Respond to a context menu already fetched by `Misc.WaitForContext`. Does not ask the server for the menu.",
       "flagAutocomplete": false
     },
     {
@@ -6970,7 +6995,7 @@
     },
     {
       "returnType": "Int32",
-      "returnDesc": "",
+      "returnDesc": "Entry key, or -1 when no matching entry exists.",
       "paramList": [
         {
           "itemName": "serial",
@@ -6988,12 +7013,20 @@
           "itemType": "String",
           "itemHasDefault": false,
           "itemDefaultValue": "",
-          "itemDescription": "Name of the Context Manu entry",
+          "itemDescription": "Name of the Context Menu entry.",
+          "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "ignoreDisabled",
+          "itemType": "Boolean",
+          "itemHasDefault": true,
+          "itemDefaultValue": "True",
+          "itemDescription": "Skip entries the server marked disabled. False restores the old behaviour of returning them. (default: True)",
           "itemAcceptedTypes": []
         }
       ],
       "isStatic": true,
-      "xmlKey": "M:Scripting.Items.ContextExist(System.Object,System.String)",
+      "xmlKey": "M:Scripting.Items.ContextExist(System.Object,System.String,System.Boolean)",
       "itemKind": "method",
       "itemClass": "Items",
       "itemName": "ContextExist",
@@ -7575,10 +7608,18 @@
           "itemDefaultValue": "False",
           "itemDescription": "Show the context menu while waiting. (default: False)",
           "itemAcceptedTypes": []
+        },
+        {
+          "itemName": "ignoreDisabled",
+          "itemType": "Boolean",
+          "itemHasDefault": true,
+          "itemDefaultValue": "True",
+          "itemDescription": "Skip entries the server marked disabled. False restores the old behaviour of returning them. (default: True)",
+          "itemAcceptedTypes": []
         }
       ],
       "isStatic": true,
-      "xmlKey": "M:Scripting.Mobiles.ContextExist(System.Object,System.String,System.Boolean)",
+      "xmlKey": "M:Scripting.Mobiles.ContextExist(System.Object,System.String,System.Boolean,System.Boolean)",
       "itemKind": "method",
       "itemClass": "Mobiles",
       "itemName": "ContextExist",
