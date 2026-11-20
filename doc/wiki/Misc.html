@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.261</a></div><div class="wiki-search" data-version="0.0.261"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Misc - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.262</a></div><div class="wiki-search" data-version="0.0.262"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -155,7 +155,8 @@ The filename MUST end in a limited file suffix list</p>
 <div class="wiki-entry" id="M-Scripting-Misc-ContextReply">
 <h3 class="wiki-entry-name">ContextReply</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.ContextReply(target, response_num)</code></div>
-<p class="wiki-desc">Respond to a context menu on mobile or item. Menu ID is base zero, or can use string of menu text.</p>
+<p class="wiki-desc">Respond to a context menu on mobile or item. Menu ID is base zero, or can use string of menu text.
+Respond to a context menu already fetched by `Misc.WaitForContext`. Does not ask the server for the menu.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">target</code> <span class="wiki-param-type">(Object)</span>: Serial or Item/Mobile entity.</li>
 <li><code class="wiki-param-name">response_num</code> <span class="wiki-param-type">(Int32)</span>: Position of the option in the menu. Starts from 0.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
@@ -411,7 +412,7 @@ Shared values are accessible by every script.
 Get a Shared Value, if value not exist return null.
 Shared values are accessible by every script.</p>
 <div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">name</code> <span class="wiki-param-type">(String)</span>: Name of the value.</li></ul></div></div>
-<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Object</code>, <code>T<T></code></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>T<T></code>, <code>Object</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-RemoveLineInFile">
 <h3 class="wiki-entry-name">RemoveLineInFile</h3>
@@ -579,11 +580,13 @@ Shared values are accessible by every script.</p>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-UseContextMenu">
 <h3 class="wiki-entry-name">UseContextMenu</h3>
-<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UseContextMenu(serial, choice, delay)</code></div>
-<p class="wiki-desc">Open and click the option of Context menu, given the serial of Mobile or Item, via packets.</p>
-<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Int32)</span>: Serial of the Item or Mobile.</li>
-<li><code class="wiki-param-name">choice</code> <span class="wiki-param-type">(String)</span>: Option as Text or integer.</li>
-<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait for the action to complete.</li></ul></div></div>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Misc.UseContextMenu(serial, choice, delay, showContext)</code></div>
+<p class="wiki-desc">Open and click the option of a Context menu, given the serial of a Mobile or Item, via packets.
+Waits up to `delay` ms for the menu, then replies with the matching entry.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">serial</code> <span class="wiki-param-type">(Object)</span>: Serial or Item/Mobile entity.</li>
+<li><code class="wiki-param-name">choice</code> <span class="wiki-param-type">(Object)</span>: Entry text or response id.</li>
+<li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum wait for the menu to arrive. (default: 1000)</li>
+<li><code class="wiki-param-name">showContext</code> <span class="wiki-param-type">(Boolean)</span>: Show the context menu in-game while waiting. (default: False)</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
 <div class="wiki-entry" id="M-Scripting-Misc-WaitForContext">
