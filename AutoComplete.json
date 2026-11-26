@@ -121,7 +121,7 @@
       "itemKind": "class",
       "itemClass": "Journal",
       "itemName": "Journal",
-      "itemDescription": "Access to the in-game message Journal: search its lines by text, source, color or type, wait for specific messages to appear, block messages with filters, and read the current speech.",
+      "itemDescription": "Access to the in-game message Journal: search its lines by text, source, color or type, wait for specific messages to appear, block messages with filters, read the current speech, and mirror incoming lines to a file on disk.",
       "flagAutocomplete": false
     },
     {
@@ -2822,6 +2822,26 @@
       "flagAutocomplete": false
     },
     {
+      "propertyType": "Boolean",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Journal.FileLogEnabled",
+      "itemKind": "property",
+      "itemClass": "Journal",
+      "itemName": "FileLogEnabled",
+      "itemDescription": "True while journal lines are being appended to a file on disk.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "String",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Journal.FileLogPath",
+      "itemKind": "property",
+      "itemClass": "Journal",
+      "itemName": "FileLogPath",
+      "itemDescription": "Full path of the file journal lines are appended to. Empty when file logging is off.",
+      "flagAutocomplete": false
+    },
+    {
       "propertyType": "String",
       "isStatic": false,
       "xmlKey": "P:Scripting.Journal.JournalEntry.Text",
@@ -2872,6 +2892,16 @@
       "flagAutocomplete": false
     },
     {
+      "propertyType": "Int32",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Journal.JournalEntry.MessageId",
+      "itemKind": "property",
+      "itemClass": "Journal.JournalEntry",
+      "itemName": "MessageId",
+      "itemDescription": "Cliloc number the server sent for a localized message; 0 for plain speech and for lines this client generated itself.",
+      "flagAutocomplete": false
+    },
+    {
       "propertyType": "Double",
       "isStatic": false,
       "xmlKey": "P:Scripting.Journal.JournalEntry.Timestamp",
@@ -2879,6 +2909,16 @@
       "itemClass": "Journal.JournalEntry",
       "itemName": "Timestamp",
       "itemDescription": "Timestamp as UnixTime, the number of seconds elapsed since 01-Jan-1970.",
+      "flagAutocomplete": false
+    },
+    {
+      "propertyType": "DateTime",
+      "isStatic": false,
+      "xmlKey": "P:Scripting.Journal.JournalEntry.Time",
+      "itemKind": "property",
+      "itemClass": "Journal.JournalEntry",
+      "itemName": "Time",
+      "itemDescription": "Local date and time the line was received, i.e. the timestamp converted back to a DateTime.",
       "flagAutocomplete": false
     },
     {
@@ -13030,6 +13070,39 @@
       "itemClass": "Journal",
       "itemName": "RemoveFilterText",
       "itemDescription": "Remove a stored a string that if matched, would block journal message ( case insensitive )",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [
+        {
+          "itemName": "path",
+          "itemType": "String",
+          "itemHasDefault": true,
+          "itemDefaultValue": null,
+          "itemDescription": "File name or absolute path. (default: null, \"journal.log\" in the data directory)",
+          "itemAcceptedTypes": []
+        }
+      ],
+      "isStatic": false,
+      "xmlKey": "M:Scripting.Journal.StartFileLog(System.String)",
+      "itemKind": "method",
+      "itemClass": "Journal",
+      "itemName": "StartFileLog",
+      "itemDescription": "Start appending every incoming journal line to a file. Relative names are placed in the data directory; an empty name logs to \"journal.log\" there. A file that cannot be written falls back to that default. This is a runtime setting and does not change the saved Filters setting.",
+      "flagAutocomplete": false
+    },
+    {
+      "returnType": "Void",
+      "returnDesc": "",
+      "paramList": [],
+      "isStatic": false,
+      "xmlKey": "M:Scripting.Journal.StopFileLog",
+      "itemKind": "method",
+      "itemClass": "Journal",
+      "itemName": "StopFileLog",
+      "itemDescription": "Stop appending journal lines to disk. This is a runtime change and does not clear the saved Filters setting.",
       "flagAutocomplete": false
     },
     {
