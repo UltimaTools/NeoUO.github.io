@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>Journal - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.269</a></div><div class="wiki-search" data-version="0.0.269"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
+<!DOCTYPE html><html><head><title>Journal - NeoUO API</title><link rel="stylesheet" type="text/css" href="./wiki.css"><script src="./wiki.js"></script><script src="./search.js" defer></script></head><body><div class="wiki-layout"><nav class="wiki-sidebar"><div class="wiki-version"><a href="./index.html">NeoUO API v0.0.270</a></div><div class="wiki-search" data-version="0.0.270"><input id="wiki-search-input" class="wiki-search-input" type="search" placeholder="Search API..." autocomplete="off" spellcheck="false" aria-label="Search API" aria-controls="wiki-search-results" aria-expanded="false"><div id="wiki-search-results" class="wiki-search-results" role="listbox" hidden></div></div><div class="wiki-nav"><a class="wiki-nav-link" href="./AutoLoot.html">AutoLoot</a>
 <a class="wiki-nav-link" href="./AutoLoot.AutoLootItem.html">AutoLoot.AutoLootItem</a>
 <a class="wiki-nav-link" href="./BandageHeal.html">BandageHeal</a>
 <a class="wiki-nav-link" href="./BuyAgent.html">BuyAgent</a>
@@ -46,9 +46,23 @@
 <a class="wiki-nav-link" href="./Trade.TradeData.html">Trade.TradeData</a>
 <a class="wiki-nav-link" href="./Vendor.html">Vendor</a>
 <a class="wiki-nav-link" href="./Vendor.BuyItem.html">Vendor.BuyItem</a></div></nav><main class="wiki-content"><h1 class="wiki-class-name">Journal</h1>
-<div class="wiki-class-desc"><p>Access to the in-game message Journal: search its lines by text, source, color or type, wait for specific messages to appear, block messages with filters, and read the current speech.</p></div>
+<div class="wiki-class-desc"><p>Access to the in-game message Journal: search its lines by text, source, color or type, wait for specific messages to appear, block messages with filters, read the current speech, and mirror incoming lines to a file on disk.</p></div>
 
-<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#methods">Methods</a></li></ul></div>
+<div class="wiki-toc"><h3>Table of Contents</h3><ul><li><a href="#properties">Properties</a></li>
+<li><a href="#methods">Methods</a></li></ul></div>
+<h2 id="properties" class="wiki-section-header">Properties</h2>
+<div class="wiki-entry" id="P-Scripting-Journal-FileLogEnabled">
+<h3 class="wiki-entry-name">FileLogEnabled</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Journal.FileLogEnabled</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
+<p class="wiki-desc">True while journal lines are being appended to a file on disk.</p>
+</div>
+<div class="wiki-entry" id="P-Scripting-Journal-FileLogPath">
+<h3 class="wiki-entry-name">FileLogPath</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Journal.FileLogPath</code></div>
+<div class="wiki-returns"><span class="wiki-label">Returns:</span> <code>String</code></div>
+<p class="wiki-desc">Full path of the file journal lines are appended to. Empty when file logging is off.</p>
+</div>
 <h2 id="methods" class="wiki-section-header">Methods</h2>
 <div class="wiki-entry" id="M-Scripting-Journal-Clear">
 <h3 class="wiki-entry-name">Clear</h3>
@@ -182,6 +196,20 @@ Encoded
 Special</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Boolean</code></div>
 </div>
+<div class="wiki-entry" id="M-Scripting-Journal-StartFileLog">
+<h3 class="wiki-entry-name">StartFileLog</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Journal.StartFileLog(path)</code></div>
+<p class="wiki-desc">Start appending every incoming journal line to a file. Relative names are placed in the data directory; an empty name logs to "journal.log" there. A file that cannot be written falls back to that default. This is a runtime setting and does not change the saved Filters setting.</p>
+<div class="wiki-params"><div class="wiki-param-list"><span class="wiki-label">Parameters:</span><ul><li><code class="wiki-param-name">path</code> <span class="wiki-param-type">(String)</span>: File name or absolute path. (default: null, "journal.log" in the data directory)</li></ul></div></div>
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
+<div class="wiki-entry" id="M-Scripting-Journal-StopFileLog">
+<h3 class="wiki-entry-name">StopFileLog</h3>
+<div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Journal.StopFileLog()</code></div>
+<p class="wiki-desc">Stop appending journal lines to disk. This is a runtime change and does not clear the saved Filters setting.</p>
+
+<div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>Void</code></div>
+</div>
 <div class="wiki-entry" id="M-Scripting-Journal-WaitByName">
 <h3 class="wiki-entry-name">WaitByName</h3>
 <div class="wiki-syntax"><span class="wiki-label">Syntax:</span> <code>Journal.WaitByName(name, delay)</code></div>
@@ -198,6 +226,8 @@ Special</li></ul></div></div>
 <li><code class="wiki-param-name">delay</code> <span class="wiki-param-type">(Int32)</span>: Maximum pause in milliseconds.</li></ul></div></div>
 <div class="wiki-returns-section"><span class="wiki-label">Returns:</span> <code>String</code>, <code>Boolean</code></div>
 </div></main><aside class="wiki-index"><div class="wiki-index-header">Index</div><ul class="wiki-index-list"><li><a href="#M-Scripting-Journal-Clear">Clear</a></li>
+<li><a href="#P-Scripting-Journal-FileLogEnabled">FileLogEnabled</a></li>
+<li><a href="#P-Scripting-Journal-FileLogPath">FileLogPath</a></li>
 <li><a href="#M-Scripting-Journal-FilterText">FilterText</a></li>
 <li><a href="#M-Scripting-Journal-GetJournalEntry">GetJournalEntry</a></li>
 <li><a href="#M-Scripting-Journal-GetLineText">GetLineText</a></li>
@@ -211,5 +241,7 @@ Special</li></ul></div></div>
 <li><a href="#M-Scripting-Journal-SearchByColor">SearchByColor</a></li>
 <li><a href="#M-Scripting-Journal-SearchByName">SearchByName</a></li>
 <li><a href="#M-Scripting-Journal-SearchByType">SearchByType</a></li>
+<li><a href="#M-Scripting-Journal-StartFileLog">StartFileLog</a></li>
+<li><a href="#M-Scripting-Journal-StopFileLog">StopFileLog</a></li>
 <li><a href="#M-Scripting-Journal-WaitByName">WaitByName</a></li>
 <li><a href="#M-Scripting-Journal-WaitJournal">WaitJournal</a></li></ul></aside></div></body></html>
